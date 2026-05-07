@@ -318,23 +318,6 @@
     "postedAt": "2026-04-20"
   },
   {
-    "title": "Lead Product Designer",
-    "company": "K Health",
-    "companyUrl": "https://khealth.com",
-    "url": "https://job-boards.greenhouse.io/khealthcareers/jobs/5982984004",
-    "level": "Lead",
-    "locationType": "Onsite",
-    "location": "New York, NY",
-    "tags": [
-      "telehealth",
-      "AI",
-      "primary care",
-      "consumer health"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/khealthcareers",
-    "postedAt": "2026-04-27"
-  },
-  {
     "title": "Principal Design System Designer",
     "company": "Twin Health",
     "companyUrl": "https://twinhealth.com",
@@ -367,23 +350,6 @@
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/usenourish",
     "postedAt": "2026-04-03"
-  },
-  {
-    "title": "Design Intern - Summer 2026",
-    "company": "BetterHelp",
-    "companyUrl": "https://www.betterhelp.com",
-    "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5134132008",
-    "level": "Junior",
-    "locationType": "Remote",
-    "location": "USA",
-    "tags": [
-      "mental health",
-      "telehealth",
-      "therapy",
-      "B2C"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/betterhelpcom",
-    "postedAt": "2026-04-06"
   },
   {
     "id": "spring-health-senior-product-designer-member-growth-nyc",
@@ -1463,56 +1429,6 @@
     "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Scispot (YC S21) — Best Data Infrastructure for Biotechs. Multi-agent platform for lab operations, AI agents for biotech R&D. Senior AI Product Designer/Manager hybrid role — owns UX design + product management lifecycle. Manages junior designer + QA. Users are scientists and researchers. $100K-$150K CAD, remote Ontario Canada. Posted ~about 1 month ago per YC board."
   },
   {
-    "id": "eli-health-product-designer",
-    "title": "Product Designer",
-    "company": "Eli Health",
-    "companyUrl": "https://www.elimedical.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "Montreal, QC / Remote",
-    "url": "https://jobs.ashbyhq.com/eli/084c1b95-4182-487e-84b4-4a27e24367ff",
-    "postedDate": "2026-02-17",
-    "tags": [
-      "women's health",
-      "wearables",
-      "consumer",
-      "B2C",
-      "startup",
-      "design systems",
-      "mobile",
-      "hormone health"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/eli/084c1b95-4182-487e-84b4-4a27e24367ff",
-    "_searchQuery": "site:jobs.ashbyhq.com designer health",
-    "_verifiedAt": "2026-03-20",
-    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/eli). Full job description confirmed (rawLength 7229). Published 2026-02-17. First Product Designer hire — founding role, owns end-to-end design for hormone monitoring mobile app (iOS/Android). Eli Health makes the Hormometer™, instant hormone monitoring from saliva. 7+ years required, deep consumer health/health tech experience. Montreal-based, remote-eligible. No salary listed. Not a duplicate — Eli Health not in existing jobs.json.",
-    "postedAt": "2026-02-17"
-  },
-  {
-    "id": "sidecar-health-lead-product-designer",
-    "title": "Lead Product Designer",
-    "company": "Sidecar Health",
-    "companyUrl": "https://www.sidecarhealth.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/sidecarhealth/jobs/5821203004",
-    "postedDate": null,
-    "tags": [
-      "health insurance",
-      "insurtech",
-      "B2C",
-      "consumer",
-      "design systems",
-      "AI"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/sidecarhealth/jobs/5821203004",
-    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health telehealth 2026",
-    "_verifiedAt": "2026-03-19",
-    "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Lead Product Designer, Member & Provider Experience — owns experience vision and strategy across mobile and web. Strong emphasis on design systems, AI-forward design practice, accessibility. Competitive salary, bonus, equity. No salary range listed.",
-    "postedAt": "2026-04-21"
-  },
-  {
     "id": "spring-health-senior-ux-researcher",
     "title": "Senior UX Researcher",
     "company": "Spring Health",
@@ -1535,28 +1451,6 @@
     "_verifiedAt": "2026-03-19",
     "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Spring Health ($3.3B valuation) — Senior UX Researcher for member mental health experience. 5+ years required, hybrid NYC (2–3 days/week, 60 Madison Ave). Qualitative + quantitative mixed-methods. Partners with 450+ companies incl. Microsoft, Target, Delta.",
     "postedAt": "2026-03-24"
-  },
-  {
-    "id": "qualified-health-product-designer",
-    "title": "Product Designer",
-    "company": "Qualified Health",
-    "companyUrl": "https://www.qualified.com",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "Palo Alto, CA",
-    "url": "https://job-boards.greenhouse.io/qualifiedhealth/jobs/5113771008",
-    "postedDate": null,
-    "tags": [
-      "clinical AI",
-      "value-based care",
-      "enterprise",
-      "healthcare data",
-      "AI"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/qualifiedhealth",
-    "_verifiedAt": "2026-02-27",
-    "_verificationNote": "Fetched directly. Page returned 200 with live application form and confirmed job title. Found while browsing Qualified Health's job board after stale search result (4947649008) redirected to error.",
-    "postedAt": "2026-03-23"
   },
   {
     "id": "oura-staff-designer-womens-health",
@@ -1634,26 +1528,6 @@
     ],
     "_verifiedAt": "2026-02-23",
     "postedAt": "2025-08-15"
-  },
-  {
-    "id": "pomelo-care-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Pomelo Care",
-    "companyUrl": "https://www.pomelocare.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/pomelocare/jobs/5744101004",
-    "postedDate": "2026-02-20",
-    "tags": [
-      "maternal health",
-      "women's health",
-      "B2C",
-      "consumer",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-20",
-    "postedAt": "2026-03-13"
   },
   {
     "id": "cohere-health-sr-product-designer",
