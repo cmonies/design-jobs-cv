@@ -1,1 +1,100 @@
-[]
+[
+  {
+    "id": "alpaca-health-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Alpaca Health",
+    "companyUrl": "https://www.alpacahealth.com",
+    "url": "https://jobs.ashbyhq.com/alpacahealth/5c318642-c273-4955-b1d0-dd186b063d40",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "New York City, NY",
+    "postedAt": "2026-05-09",
+    "salary": "$100,000 - $200,000",
+    "tags": [
+      "autism care",
+      "pediatric",
+      "EHR",
+      "clinician tools",
+      "parent-facing",
+      "B2B2C",
+      "startup",
+      "founding role",
+      "0-to-1",
+      "AI"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/alpacahealth/5c318642-c273-4955-b1d0-dd186b063d40",
+    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible on page; using today's date. Alpaca Health — enables clinicians to become entrepreneurs in autism care; raises $14M from Core Innovation Capital, Adverb Ventures, South Park Commons; 30% MoM growth. Founding PD owns 0→1 parent-facing portal (intake, scheduling, communications, payments) + EHR overhaul for BCBAs/clinicians. $100K–$200K + equity. NYC onsite, 5 days/week. NOT a duplicate — Alpaca Health not in existing jobs.json."
+  },
+  {
+    "id": "mochi-health-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Mochi Health",
+    "companyUrl": "https://joinmochi.com",
+    "url": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-03-20",
+    "salary": "$180,000 - $225,000",
+    "tags": [
+      "AI",
+      "health marketplace",
+      "GLP-1",
+      "weight management",
+      "telehealth",
+      "B2C",
+      "consumer health",
+      "pharmacy"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/mochihealth/jobs/5161094008, 200, job details confirmed). First published March 20, 2026; last updated May 8, 2026 (yesterday). ⚠️ FRESHNESS: 50 days since posting — outside 30-day guideline, but actively updated yesterday; validator should confirm. Mochi Health — AI-driven marketplace connecting patients to providers, transparent pharmacy pricing, and affordable medications (GLP-1/weight loss focus, available all 50 states). Technically hands-on role: Figma, Framer, Claude Code, TypeScript, React, CSS. $180K–$225K + equity. SF onsite. NOT a duplicate — Mochi Health not in existing jobs.json."
+  },
+  {
+    "id": "hinge-health-senior-manager-product-design",
+    "title": "Senior Manager, Product Design",
+    "company": "Hinge Health",
+    "companyUrl": "https://www.hingehealth.com",
+    "url": "https://jobs.ashbyhq.com/hinge-health/131ba92a-bd2c-448f-8802-d04557b63233",
+    "level": "Lead",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA (3 days/week)",
+    "postedAt": "2026-05-09",
+    "salary": "$235,000 - $323,000",
+    "tags": [
+      "MSK",
+      "musculoskeletal",
+      "physical therapy",
+      "AI",
+      "enterprise",
+      "B2B",
+      "design management",
+      "consumer health",
+      "care discovery"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health/131ba92a-bd2c-448f-8802-d04557b63233",
+    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible on page; using today's date. Hinge Health — leverages software + AI to automate MSK care; headquartered SF. Senior Manager, Product Design leads HingeSelect pillar: care discovery, visits, accounts, financial systems, enterprise products. 10+ years design required, 3+ years people management. $235K–$323K + equity. SF hybrid 3 days/week. DISTINCT from existing Hinge Health entries (staff-product-designer-program-experience, staff-product-designer-enterprise-ai, staff-ux-motion-designer, senior-product-designer-design-systems-bengaluru) — this is a people management role."
+  },
+  {
+    "id": "cohere-health-lead-product-designer-india",
+    "title": "Lead Product Designer",
+    "company": "Cohere Health",
+    "companyUrl": "https://coherehealth.com",
+    "url": "https://job-boards.greenhouse.io/coherehealth/jobs/7620705003",
+    "level": "Lead",
+    "locationType": "Hybrid",
+    "location": "Hyderabad, Telangana, India",
+    "postedAt": "2026-05-07",
+    "salary": null,
+    "tags": [
+      "prior authorization",
+      "health insurance",
+      "AI",
+      "B2B",
+      "payer",
+      "clinical intelligence",
+      "India"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/coherehealth/jobs/7620705003",
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/coherehealth/jobs/7620705003, 200, last updated May 7, 2026). ⚠️ India-based: Hyderabad, Telangana — requires commute/relocation. No salary listed. Cohere Health — clinical intelligence platform for prior authorization; serves 700,000+ healthcare professionals, 12 million prior authorizations annually. Lead PD in India hybrid split between leading and supporting product design. DISTINCT from existing cohere-health-sr-product-designer (different job ID). Flag for Carmen: India location."
+  }
+]
