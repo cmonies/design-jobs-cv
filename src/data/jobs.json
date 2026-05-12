@@ -143,27 +143,6 @@
     "_verifiedAt": "2026-05-05"
   },
   {
-    "id": "sprinter-health-senior-product-designer-2026",
-    "title": "Senior Product Designer",
-    "company": "Sprinter Health",
-    "companyUrl": "https://www.sprinterhealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "Menlo Park, CA (SF Bay Area)",
-    "url": "https://jobs.ashbyhq.com/sprinter-health/ae98584c-937d-4316-81ae-5bee39afe7e5",
-    "postedAt": null,
-    "salary": "$160,000 - $205,000",
-    "tags": [
-      "home health",
-      "in-home care",
-      "mobile workforce",
-      "startup",
-      "AI"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/sprinter-health/ae98584c-937d-4316-81ae-5bee39afe7e5",
-    "_verifiedAt": "2026-05-05"
-  },
-  {
     "id": "pointclickcare-senior-ux-designer-senior-care",
     "title": "Senior UX Designer (Senior Care)",
     "company": "PointClickCare",
@@ -452,58 +431,6 @@
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/usenourish",
     "postedAt": "2026-04-03"
-  },
-  {
-    "id": "spring-health-senior-product-designer-member-growth-nyc",
-    "title": "Senior Product Designer, Member Growth",
-    "company": "Spring Health",
-    "companyUrl": "https://www.springhealth.com",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4633473005",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY (60 Madison Ave, 2-3 days/week)",
-    "tags": [
-      "mental health",
-      "B2C",
-      "consumer",
-      "growth",
-      "conversion",
-      "startup",
-      "design systems",
-      "AI"
-    ],
-    "postedAt": "2026-03-26",
-    "salary": "$150,000 - $202,400",
-    "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
-    "_searchQuery": "Greenhouse API scan: boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
-    "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API board scan AND full page WebFetch (200, complete job description with application form confirmed). updated_at: 2026-03-26. NYC hybrid, 2-3 days/week in-office at 60 Madison Avenue. Candidates must be in NYC metro or able to relocate within 90 days. Spring Health ($3.3B valuation) — mental health platform partnering with 450+ companies incl. Microsoft, Target, Delta. Senior PD, Member Growth: owns hypothesis-driven growth design for identification, activation, engagement, retention. 5+ years required, portfolio showing measurable growth impact. $150K-$202,400 + equity. DISTINCT from existing spring-health-senior-product-designer-member-growth (4650623005, Seattle). NYC metro residency required."
-  },
-  {
-    "id": "spring-health-senior-product-designer-member-growth-sf",
-    "title": "Senior Product Designer, Member Growth",
-    "company": "Spring Health",
-    "companyUrl": "https://www.springhealth.com",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4657800005",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA (2-3 days/week)",
-    "tags": [
-      "mental health",
-      "B2C",
-      "consumer",
-      "growth",
-      "conversion",
-      "startup",
-      "design systems",
-      "AI"
-    ],
-    "postedAt": "2026-03-26",
-    "salary": "$165,000 - $202,500",
-    "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
-    "_searchQuery": "Greenhouse API scan: boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
-    "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API board scan AND full page WebFetch (200, complete job description with application form confirmed). updated_at: 2026-03-26. SF hybrid, 2-3 days/week in-office. Candidates must be in SF metro or able to relocate within 90 days. Same role as NYC variant but SF-based. $165K-$202,500 + equity. DISTINCT from existing spring-health-senior-product-designer-member-growth (4650623005, Seattle) and spring-health-senior-product-designer-member-growth-nyc (4633473005, New York)."
   },
   {
     "id": "betterhelp-product-designer-therapist-platform",
@@ -899,29 +826,6 @@
     "_verificationNote": "Verified live via Greenhouse job page (200, full job description + active application form). Published April 15, 2026 (3 days ago). Staff Product Designer, Group Practices — design anchor for Headway's group practices segment. Owns end-to-end experience for supervisory billing (all 50 states, ~250K provider market), admin tooling, bulk workflows, multi-user role-based interfaces for practice owners/managers. AI tools expected (Claude, Cursor, MagicPatterns). 8+ years required, platform/marketplace experience, 0-1 background. $212K–$265K + equity. NY, SF, or Seattle (hybrid). DISTINCT from existing Headway entries: Staff Payments (5843916004), Staff Provider Onboarding (5733640004), Director Foundations (5670918004)."
   },
   {
-    "id": "sprinter-health-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Sprinter Health",
-    "companyUrl": "https://sprinterhealth.com",
-    "url": "https://jobs.ashbyhq.com/sprinter-health/a1cd234e-f73a-4f23-8950-0c42d859d892",
-    "level": "Staff",
-    "locationType": "Onsite",
-    "location": "Menlo Park, CA",
-    "tags": [
-      "healthcare",
-      "home care",
-      "preventive care",
-      "B2B2C",
-      "in-home diagnostics"
-    ],
-    "postedAt": "2026-01-14",
-    "salary": null,
-    "_sourceUrl": "https://jobs.ashbyhq.com/sprinter-health/ae98584c-937d-4316-81ae-5bee39afe7e5",
-    "_searchQuery": "site:jobs.ashbyhq.com \"senior product designer\" health 2026",
-    "_verifiedAt": "2026-04-18",
-    "_verificationNote": "Confirmed live via Ashby API (job still in active board as of April 18, 2026). Sprinter Health brings phlebotomists and community health workers to patients' homes for preventive care; partners with Humana and Molina. Staff PD role seeks 5+ yrs B2B/B2B2C software design experience. Menlo Park onsite. Salary not listed. Posted Jan 14, 2026 — still active per Ashby board."
-  },
-  {
     "id": "rythm-health-senior-product-designer-uiux",
     "title": "Senior Product Designer (UI/UX)",
     "company": "Rythm Health",
@@ -1279,32 +1183,6 @@
     "_verificationNote": "Verified live. Sr. Experience Designer at NextGen Healthcare (NXGN Management LLC). Remote USA. 5+ years enterprise/SaaS product design. Healthcare background preferred. Figma required. Owns design across mobile, desktop, web. Design system contributions. No salary listed."
   },
   {
-    "id": "headway-staff-product-designer-payments",
-    "title": "Staff Product Designer, Payments",
-    "company": "Headway",
-    "companyUrl": "https://headway.co",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/headway/jobs/5843916004",
-    "postedAt": "2026-04-03",
-    "salary": "$212,000 - $265,000",
-    "tags": [
-      "mental health",
-      "B2C",
-      "insurance",
-      "payments",
-      "billing",
-      "AI",
-      "design systems",
-      "startup"
-    ],
-    "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/headway/jobs",
-    "_searchQuery": "Greenhouse API scan: boards-api.greenhouse.io/v1/boards/headway/jobs",
-    "_verifiedAt": "2026-04-06",
-    "_verificationNote": "Verified live via direct Greenhouse page fetch (200, full job description). Posted April 3, 2026 (3 days ago). Staff Product Designer, Payments — owns billing, insurance verification, claims processing, and provider payout UX across Headway's platform. AI-first design expected (Claude, Cursor, MagicPatterns for prototyping). Remote USA. $212K–$265K base. 6+ years required. Headway: software-enabled national network of mental health providers accepting insurance. DISTINCT from existing entries: Senior PD Provider Growth (5733640004) and Director Product Design Foundations (5670918004)."
-  },
-  {
     "id": "medplum-product-designer",
     "title": "Product Designer",
     "company": "Medplum",
@@ -1356,32 +1234,6 @@
     "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health 2026",
     "_verifiedAt": "2026-04-01",
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/zocalohealth/jobs/5164755008). Full job description confirmed (rawLength 5229). Published 2026-03-24, updated 2026-03-24. Zócalo Health — tech-enabled primary care for underserved populations, value-based care, culturally competent care delivery. Senior Product Designer founding member of product team. Designs workflow-heavy tools for Community Health Workers, clinicians, care coordinators. $145K–$155K remote USA. 5+ years required. Founded 2021, backed by healthcare/mission-aligned investors. Preferred: experience with Medicaid, bilingual/culturally sensitive UX (Spanish a plus). Reports to VP of Product."
-  },
-  {
-    "id": "j2-health-product-designer-i",
-    "title": "Product Designer I",
-    "company": "J2 Health",
-    "companyUrl": "https://j2health.com",
-    "level": "Mid",
-    "locationType": "Hybrid",
-    "location": "New York, NY (or Remote East Coast)",
-    "url": "https://job-boards.greenhouse.io/j2health/jobs/5151001008",
-    "postedAt": "2026-03-23",
-    "salary": null,
-    "tags": [
-      "healthcare data",
-      "provider networks",
-      "B2B",
-      "enterprise",
-      "health plans",
-      "design systems",
-      "AI",
-      "startup"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/j2health/jobs/5151001008",
-    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health 2026",
-    "_verifiedAt": "2026-04-01",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/j2health/jobs/5151001008). Full job description confirmed (rawLength 5229). Published 2026-03-23. J2 Health — platform combining best-in-class data + software to help healthcare organizations build smarter provider networks. Backed by Tiger Global + Primary Ventures. Product Designer I — high-craft UI design, Figma, design systems. 1-2 years professional experience required. NYC hybrid (3x/week) or fully remote Eastern time zone. No salary listed. Entry-to-mid level."
   },
   {
     "id": "tebra-product-designer",
@@ -1707,25 +1559,6 @@
     ],
     "_verifiedAt": "2026-02-15",
     "postedAt": "2026-02-10"
-  },
-  {
-    "id": "spring-health-senior-product-designer-member-growth",
-    "title": "Senior Product Designer, Member Growth",
-    "company": "Spring Health",
-    "companyUrl": "https://www.springhealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY / San Francisco, CA / Seattle, WA",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4650623005",
-    "postedDate": "2026-02-15",
-    "tags": [
-      "mental health",
-      "B2C",
-      "consumer",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-15",
-    "postedAt": "2026-03-26"
   },
   {
     "id": "3y-health-ai-product-designer",
