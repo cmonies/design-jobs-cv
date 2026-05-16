@@ -154,31 +154,6 @@
     "_verifiedAt": "2026-05-09"
   },
   {
-    "id": "mochi-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Mochi Health",
-    "companyUrl": "https://joinmochi.com",
-    "url": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "San Francisco, CA",
-    "postedAt": "2026-03-20",
-    "salary": "$180,000 - $225,000",
-    "tags": [
-      "AI",
-      "health marketplace",
-      "GLP-1",
-      "weight management",
-      "telehealth",
-      "B2C",
-      "consumer health",
-      "pharmacy"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/mochihealth/jobs/5161094008, 200, job details confirmed). First published March 20, 2026; last updated May 8, 2026 (yesterday). ⚠️ FRESHNESS: 50 days since posting — outside 30-day guideline, but actively updated yesterday; validator should confirm. Mochi Health — AI-driven marketplace connecting patients to providers, transparent pharmacy pricing, and affordable medications (GLP-1/weight loss focus, available all 50 states). Technically hands-on role: Figma, Framer, Claude Code, TypeScript, React, CSS. $180K–$225K + equity. SF onsite. NOT a duplicate — Mochi Health not in existing jobs.json.",
-    "_verifiedAt": "2026-05-09"
-  },
-  {
     "id": "hinge-health-senior-manager-product-design",
     "title": "Senior Manager, Product Design",
     "company": "Hinge Health",
@@ -1549,25 +1524,6 @@
     "postedAt": "2026-04-03"
   },
   {
-    "id": "baba-founding-product-designer",
-    "title": "Founding Product Designer",
-    "company": "Baba",
-    "companyUrl": "https://jobs.ashbyhq.com/baba",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "New York, NY",
-    "url": "https://jobs.ashbyhq.com/baba/262c3826-39e0-49aa-891f-03211a8af128",
-    "postedDate": "2026-02-16",
-    "tags": [
-      "AI",
-      "B2B",
-      "startup",
-      "clinical"
-    ],
-    "_verifiedAt": "2026-02-16",
-    "postedAt": "2026-01-02"
-  },
-  {
     "id": "hone-health-senior-product-designer-clinical",
     "title": "Senior Product Designer, Clinical Experience",
     "company": "Hone Health",
@@ -1603,25 +1559,6 @@
     ],
     "_verifiedAt": "2026-02-15",
     "postedAt": "2025-09-08"
-  },
-  {
-    "id": "layer-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Layer Health",
-    "companyUrl": "https://www.layerhealth.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/layerhealth/jobs/5025477008",
-    "postedDate": "2026-02-14",
-    "tags": [
-      "AI",
-      "clinical documentation",
-      "B2B",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-14",
-    "postedAt": "2026-04-13"
   },
   {
     "id": "flo-health-senior-product-designer-user-centric",
