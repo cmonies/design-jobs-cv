@@ -1,1 +1,48 @@
-[]
+[
+  {
+    "id": "parsley-health-product-designer-part-time-contract",
+    "title": "Product Designer (Part-Time Contract)",
+    "company": "Parsley Health",
+    "companyUrl": "https://www.parsleyhealth.com",
+    "url": "https://job-boards.greenhouse.io/parsleyhealth/jobs/7712555003",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-04-23",
+    "salary": "$75 - $200/hr",
+    "tags": [
+      "functional medicine",
+      "B2C",
+      "consumer",
+      "clinician tools",
+      "design systems",
+      "mobile",
+      "fractional",
+      "contract"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/parsleyhealth/jobs/7712555003"
+  },
+  {
+    "id": "cofertility-part-time-product-designer",
+    "title": "Part-Time Product Designer",
+    "company": "Cofertility",
+    "companyUrl": "https://www.cofertility.com",
+    "url": "https://job-boards.greenhouse.io/cofertility/jobs/4247084009",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-05-13",
+    "salary": "",
+    "tags": [
+      "fertility",
+      "women's health",
+      "B2C",
+      "consumer",
+      "design systems",
+      "mobile",
+      "component libraries",
+      "contract"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/cofertility/jobs/4247084009"
+  }
+]
