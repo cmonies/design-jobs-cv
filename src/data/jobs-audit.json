@@ -5,30 +5,40 @@
   "failed": 0,
   "results": [
     {
-      "id": "parsley-health-product-designer-part-time-contract",
-      "company": "Parsley Health",
-      "title": "Product Designer (Part-Time Contract)",
-      "url": "https://job-boards.greenhouse.io/parsleyhealth/jobs/7712555003",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-05-19T03:09:49.192Z"
+      "id": "doubling-design-engineer-contract",
+      "company": "Doubling",
+      "title": "Design Engineer (Contract)",
+      "url": "https://www.doubling.io/careers/design-engineer/",
+      "pass": false,
+      "reason": "HTTP 404",
+      "status": 404,
+      "checkedAt": "2026-05-19T03:20:18.041Z"
     },
     {
-      "id": "cofertility-part-time-product-designer",
-      "company": "Cofertility",
-      "title": "Part-Time Product Designer",
-      "url": "https://job-boards.greenhouse.io/cofertility/jobs/4247084009",
+      "id": "trase-systems-ux-designer-contract",
+      "company": "Trase Systems",
+      "title": "UX Designer (Contract)",
+      "url": "https://job-boards.greenhouse.io/redcellpartners/jobs/5095257007",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-05-19T03:09:49.192Z"
+      "checkedAt": "2026-05-19T03:20:18.041Z"
+    },
+    {
+      "id": "chorus-innovations-principal-product-designer-contract",
+      "company": "Chorus Innovations",
+      "title": "Principal Product Designer (Contract-to-Hire)",
+      "url": "https://job-boards.greenhouse.io/chorusinnovations/jobs/5126846007",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-05-19T03:20:18.041Z"
     }
   ],
-  "lastRun": "2026-05-19T03:09:49.192Z",
+  "lastRun": "2026-05-19T03:20:18.041Z",
   "summary": {
     "passed": 2,
-    "failed": 0,
-    "total": 2
+    "failed": 1,
+    "total": 3
   }
 }

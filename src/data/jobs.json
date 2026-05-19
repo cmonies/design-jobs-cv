@@ -1,5 +1,53 @@
 [
   {
+    "id": "trase-systems-ux-designer-contract",
+    "title": "UX Designer (Contract)",
+    "company": "Trase Systems",
+    "companyUrl": "https://trase.ai",
+    "url": "https://job-boards.greenhouse.io/redcellpartners/jobs/5095257007",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Remote",
+    "postedAt": "2026-05-18",
+    "salary": "$75 - $100/hr",
+    "tags": [
+      "healthcare AI",
+      "enterprise AI",
+      "product design",
+      "multi-surface",
+      "Figma",
+      "presentation design",
+      "contract"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/redcellpartners/jobs/5095257007",
+    "_verifiedAt": "2026-05-18",
+    "_verificationNote": "Verified live via Playwright (200, no dead signals)"
+  },
+  {
+    "id": "chorus-innovations-principal-product-designer-contract",
+    "title": "Principal Product Designer (Contract-to-Hire)",
+    "company": "Chorus Innovations",
+    "companyUrl": "https://joinchorus.com",
+    "url": "https://job-boards.greenhouse.io/chorusinnovations/jobs/5126846007",
+    "level": "Principal",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-05-18",
+    "salary": "$165,000 - $190,000",
+    "tags": [
+      "healthcare PaaS",
+      "mobile health",
+      "public health",
+      "community health",
+      "design leadership",
+      "design systems",
+      "contract-to-hire"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/chorusinnovations/jobs/5126846007",
+    "_verifiedAt": "2026-05-18",
+    "_verificationNote": "Verified live via Playwright (200, no dead signals)"
+  },
+  {
     "id": "parsley-health-product-designer-part-time-contract",
     "title": "Product Designer (Part-Time Contract)",
     "company": "Parsley Health",
