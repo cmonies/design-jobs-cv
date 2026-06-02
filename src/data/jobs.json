@@ -281,30 +281,6 @@
     "_verifiedAt": "2026-05-09"
   },
   {
-    "id": "cohere-health-lead-product-designer-india",
-    "title": "Lead Product Designer",
-    "company": "Cohere Health",
-    "companyUrl": "https://coherehealth.com",
-    "url": "https://job-boards.greenhouse.io/coherehealth/jobs/7620705003",
-    "level": "Lead",
-    "locationType": "Hybrid",
-    "location": "Hyderabad, Telangana, India",
-    "postedAt": "2026-05-07",
-    "salary": null,
-    "tags": [
-      "prior authorization",
-      "health insurance",
-      "AI",
-      "B2B",
-      "payer",
-      "clinical intelligence",
-      "India"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/coherehealth/jobs/7620705003",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/coherehealth/jobs/7620705003, 200, last updated May 7, 2026). ⚠️ India-based: Hyderabad, Telangana — requires commute/relocation. No salary listed. Cohere Health — clinical intelligence platform for prior authorization; serves 700,000+ healthcare professionals, 12 million prior authorizations annually. Lead PD in India hybrid split between leading and supporting product design. DISTINCT from existing cohere-health-sr-product-designer (different job ID). Flag for Carmen: India location.",
-    "_verifiedAt": "2026-05-09"
-  },
-  {
     "id": "assort-health-product-designer",
     "title": "Product Designer",
     "company": "Assort Health",
@@ -685,33 +661,6 @@
     "_searchQuery": "site:job-boards.greenhouse.io \"UX researcher\" healthcare 2026",
     "_verifiedAt": "2026-04-25",
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/stratacareers/jobs/7704966003, 200, full job details confirmed). Published April 20, 2026 (5 days ago). Strata Decision Technology — financial planning and analytics SaaS for health systems; primary market is hospitals and healthcare organizations (StrataJazz platform). UX Researcher conducts generative and evaluative research to inform product decisions. 2+ years product research required; SaaS/healthcare background preferred. Pendo analytics experience a plus. Chicago hybrid (2 days/week) or St. Louis. $80K-$100K + variable. ⚠️ NOTE: healthcare-adjacent (financial analytics for health systems), not pure clinical/patient-facing — flag for Carmen. Not in existing jobs.json."
-  },
-  {
-    "id": "maven-clinic-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Maven Clinic",
-    "companyUrl": "https://www.mavenclinic.com",
-    "url": "https://job-boards.greenhouse.io/mavenclinic/jobs/8508157002",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "New York, NY / Remote US (Hub cities)",
-    "tags": [
-      "women's health",
-      "family health",
-      "AI",
-      "design systems",
-      "mobile",
-      "B2C",
-      "consumer",
-      "clinical",
-      "startup"
-    ],
-    "postedAt": "2026-04-15",
-    "salary": "$200,000 - $220,000",
-    "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/mavenclinic/jobs",
-    "_searchQuery": "Greenhouse board scan: boards-api.greenhouse.io/v1/boards/mavenclinic/jobs",
-    "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/mavenclinic/jobs/8508157002, 200, full job description confirmed). Published April 15, 2026 (10 days ago). Maven Clinic — world's largest virtual clinic for women and families; 2,000+ employers and health plans. Staff Product Designer takes joint ownership of member-facing experience; shapes future of AI-native design; defines how AI behaves in women's and family health contexts (uncertainty, clinical deferrals); builds functional prototypes using Claude and Cursor; develops scalable AI patterns and design system standards; mentors designers and cross-functional partners. Daily AI tool proficiency required; shipping production code expected. $200K–$220K + equity. NY office + US remote hub cities (hybrid). DISTINCT from existing Maven entries: maven-clinic-senior-product-designer-ai-platform (8516677002, $180–200K, Senior) and maven-clinic-product-designer-maternity-experience (8493856002, $140–160K, mid-senior). This is Staff level. NOT a duplicate."
   },
   {
     "id": "casechek-senior-ux-researcher-analyst",
@@ -1353,26 +1302,6 @@
     "postedAt": "2025-08-15"
   },
   {
-    "id": "cohere-health-sr-product-designer",
-    "title": "Sr. Product Designer",
-    "company": "Cohere Health",
-    "companyUrl": "https://coherehealth.com",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "Hyderabad, India",
-    "url": "https://job-boards.greenhouse.io/coherehealth/jobs/7620705003",
-    "postedDate": "2026-02-18",
-    "tags": [
-      "healthcare AI",
-      "prior authorization",
-      "design systems",
-      "enterprise",
-      "B2B"
-    ],
-    "_verifiedAt": "2026-02-18",
-    "postedAt": "2026-04-28"
-  },
-  {
     "id": "nourish-staff-product-designer",
     "title": "Staff Product Designer",
     "company": "Nourish",
@@ -1447,41 +1376,45 @@
     "postedAt": "2026-04-14"
   },
   {
-    "id": "headway-senior-product-designer-provider-growth",
-    "title": "Senior Product Designer, Provider Growth",
+    "id": "headway-staff-product-designer-provider-onboarding",
+    "title": "Staff Product Designer, Provider Onboarding",
     "company": "Headway",
     "companyUrl": "https://headway.co",
-    "level": "Senior",
+    "level": "Staff",
     "locationType": "Remote",
     "location": "USA",
     "url": "https://job-boards.greenhouse.io/headway/jobs/5733640004",
-    "postedDate": "2026-02-14",
+    "salary": "$212,000 - $265,000",
     "tags": [
       "mental health",
-      "B2C",
-      "startup",
-      "consumer"
+      "provider onboarding",
+      "credentialing",
+      "insurance",
+      "startup"
     ],
-    "_verifiedAt": "2026-02-14",
-    "postedAt": "2026-04-06"
+    "_verifiedAt": "2026-06-01",
+    "_verificationNote": "Greenhouse API confirmed live (ID 5733640004, updated 2026-05-28). Role was previously listed as Senior Product Designer, Provider Growth — retitled to Staff Product Designer, Provider Onboarding as of May 28 update.",
+    "postedAt": "2026-05-28"
   },
   {
-    "id": "headway-director-product-design-foundations",
-    "title": "Director, Product Design (Foundations)",
+    "id": "headway-design-director-core-insurance-design-systems",
+    "title": "Design Director, Core Insurance & Design Systems",
     "company": "Headway",
     "companyUrl": "https://headway.co",
     "level": "Director",
     "locationType": "Remote",
     "location": "USA",
     "url": "https://job-boards.greenhouse.io/headway/jobs/5670918004",
-    "postedDate": "2026-02-14",
+    "salary": "$249,600 - $312,000",
     "tags": [
       "mental health",
-      "B2C",
-      "startup",
-      "design systems"
+      "design systems",
+      "insurance",
+      "director",
+      "startup"
     ],
-    "_verifiedAt": "2026-02-14",
+    "_verifiedAt": "2026-06-01",
+    "_verificationNote": "Greenhouse API confirmed live (ID 5670918004). Role was previously listed as Director, Product Design (Foundations) — retitled to Design Director, Core Insurance & Design Systems.",
     "postedAt": "2026-03-16"
   }
 ]
