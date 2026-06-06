@@ -257,27 +257,6 @@
     "_verifiedAt": "2026-05-09"
   },
   {
-    "id": "assort-health-product-designer",
-    "title": "Product Designer",
-    "company": "Assort Health",
-    "companyUrl": "https://www.assort.health",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "San Francisco, CA",
-    "url": "https://jobs.ashbyhq.com/assorthealth/37e3a179-e08d-43ba-b8d3-2314358a6674",
-    "postedAt": null,
-    "salary": "$145,000 - $160,000",
-    "tags": [
-      "AI",
-      "patient experience",
-      "specialty care",
-      "B2B",
-      "healthcare"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/assorthealth/37e3a179-e08d-43ba-b8d3-2314358a6674",
-    "_verifiedAt": "2026-05-05"
-  },
-  {
     "id": "ro-staff-product-designer",
     "title": "Staff Product Designer",
     "company": "Ro",
@@ -528,23 +507,6 @@
     "postedAt": "2026-04-08"
   },
   {
-    "title": "Staff User Researcher",
-    "company": "Nourish",
-    "companyUrl": "https://usenourish.com",
-    "url": "https://job-boards.greenhouse.io/usenourish/jobs/5043059008",
-    "level": "Staff",
-    "locationType": "Onsite",
-    "location": "New York, NY",
-    "tags": [
-      "nutrition",
-      "telehealth",
-      "dietitian",
-      "user research"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/usenourish",
-    "postedAt": "2026-04-03"
-  },
-  {
     "id": "betterhelp-product-designer-therapist-platform",
     "title": "Product Designer, Therapist Platform",
     "company": "BetterHelp",
@@ -676,32 +638,6 @@
     "_searchQuery": "site:job-boards.greenhouse.io \"senior product designer\" OR \"staff product designer\" health telehealth clinical 2026",
     "_verifiedAt": "2026-04-23",
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/mavenclinic/jobs/8516677002, 200, full job description, last updated April 21 2026). Posted April 21, 2026 (2 days ago). Maven Clinic — world's largest virtual clinic for women and families; 2,000+ employers and health plans. DISTINCT from existing entry maven-clinic-product-designer-maternity-experience (job 8493856002, $140K-$160K, posted April 7, Maternity Experience team). This new role covers the full Maven platform: fertility & family building, maternity & newborn care, parenting & pediatrics, menopause & midlife. Owns member-facing experiences end-to-end. Expected to define AI behavior in women's health contexts, prototype with Claude/Cursor/Figma AI, ship code to production. $180K-$200K + equity. NY hybrid or US remote hub cities."
-  },
-  {
-    "id": "transcarent-staff-ux-designer",
-    "title": "Staff UX Designer",
-    "company": "Transcarent",
-    "companyUrl": "https://transcarent.com",
-    "url": "https://job-boards.greenhouse.io/transcarent/jobs/5848505004",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "USA",
-    "tags": [
-      "cancer care",
-      "expert second opinion",
-      "health benefits",
-      "employer health",
-      "B2B",
-      "clinical AI",
-      "design systems",
-      "healthcare navigation"
-    ],
-    "postedAt": "2026-04-08",
-    "salary": "$145,000 - $165,000",
-    "_sourceUrl": "https://job-boards.greenhouse.io/transcarent/jobs/5848505004",
-    "_searchQuery": "Greenhouse board check: boards-api.greenhouse.io/v1/boards/transcarent/jobs",
-    "_verifiedAt": "2026-04-23",
-    "_verificationNote": "Verified live via Greenhouse API and full page fetch (200, active application form confirmed, first_published 2026-04-08). Published April 8, 2026 (15 days ago). Transcarent — AI-powered \"One Place for Health and Care\" serving 21M members across 1,700+ employers and health plans; combines medical, pharmacy, and care solutions. Staff UX Designer owns experiences for Cancer care and Expert Second Opinion products. Reports to Senior Director of Product Design. 7+ years required; healthcare industry background preferred; Figma proficiency required. $145K-$165K USD remote. NOT a duplicate — Transcarent not in existing jobs.json."
   },
   {
     "id": "counsel-health-senior-product-designer-clinical",
