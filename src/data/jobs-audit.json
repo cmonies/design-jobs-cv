@@ -12,7 +12,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "chorus-innovations-principal-product-designer-contract",
@@ -22,7 +22,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "cofertility-part-time-product-designer",
@@ -32,17 +32,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
-    },
-    {
-      "id": "spring-health-senior-product-designer-member-growth-nyc",
-      "company": "Spring Health",
-      "title": "Senior Product Designer, Member Growth",
-      "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4694164005",
-      "pass": false,
-      "reason": "Redirected to error page: https://job-boards.greenhouse.io/springhealth66?error=true",
-      "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "spring-health-senior-product-designer-member-growth-sf",
@@ -52,7 +42,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "spring-health-senior-product-designer-member-growth-seattle",
@@ -62,7 +52,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "garner-health-staff-product-designer-visual-systems",
@@ -72,7 +62,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "alpaca-health-founding-product-designer",
@@ -82,7 +72,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "hinge-health-senior-manager-product-design",
@@ -92,7 +82,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "ro-staff-product-designer",
@@ -102,7 +92,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "pointclickcare-senior-ux-designer-senior-care",
@@ -112,7 +102,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "abridge-staff-product-designer",
@@ -122,7 +112,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "abridge-senior-product-designer",
@@ -132,7 +122,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "pomelo-care-senior-brand-designer",
@@ -142,7 +132,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "benchling-product-designer-app-foundations",
@@ -152,7 +142,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "commure-product-designer",
@@ -162,7 +152,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "company": "Oura",
@@ -171,7 +161,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "company": "Oura",
@@ -180,16 +170,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
-    },
-    {
-      "company": "Oura",
-      "title": "Senior Manager, UX Design",
-      "url": "https://job-boards.greenhouse.io/oura/jobs/4230682009",
-      "pass": false,
-      "reason": "Redirected to error page: https://job-boards.greenhouse.io/oura?error=true",
-      "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "company": "Oura",
@@ -198,7 +179,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "company": "Twin Health",
@@ -207,7 +188,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "betterhelp-product-designer-therapist-platform",
@@ -217,27 +198,17 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "strata-decision-technology-ux-researcher",
       "company": "Strata Decision Technology",
       "title": "User Experience Researcher",
       "url": "https://job-boards.greenhouse.io/stratacareers/jobs/7704966003",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
-    },
-    {
-      "id": "casechek-senior-ux-researcher-analyst",
-      "company": "Casechek",
-      "title": "Senior UX Researcher & Analyst",
-      "url": "https://job-boards.greenhouse.io/casechek/jobs/4671999006",
       "pass": false,
-      "reason": "Redirected to error page: https://job-boards.greenhouse.io/casechek?error=true",
+      "reason": "Redirected to error page: https://job-boards.greenhouse.io/stratacareers?error=true",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "everlywell-visual-senior-product-designer-contract",
@@ -247,7 +218,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "maven-clinic-senior-product-designer-ai-platform",
@@ -257,7 +228,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "counsel-health-senior-product-designer-clinical",
@@ -267,7 +238,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "amperos-health-product-designer",
@@ -277,7 +248,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "mdalgorithms-designer-ai-healthcare",
@@ -287,7 +258,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "whoop-senior-product-designer-growth",
@@ -297,7 +268,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "finch-care-product-designer",
@@ -307,7 +278,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "maven-clinic-product-designer-maternity-experience",
@@ -317,17 +288,17 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "twin-health-senior-product-designer",
       "company": "Twin Health",
       "title": "Senior Product Designer",
       "url": "https://job-boards.greenhouse.io/twinhealth/jobs/5855133004",
-      "pass": true,
-      "reason": "OK",
+      "pass": false,
+      "reason": "Redirected to error page: https://job-boards.greenhouse.io/twinhealth?error=true",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "tava-health-senior-product-designer",
@@ -337,7 +308,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "future-senior-product-designer",
@@ -347,7 +318,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "blink-health-lead-product-designer",
@@ -357,7 +328,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "readily-founding-design-engineer",
@@ -367,7 +338,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "tennr-senior-product-designer",
@@ -377,7 +348,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "reframe-product-designer",
@@ -387,7 +358,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "vitalize-senior-product-designer",
@@ -397,7 +368,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "scispot-senior-ai-product-designer",
@@ -407,7 +378,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "spring-health-senior-ux-researcher",
@@ -417,7 +388,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "oura-staff-designer-womens-health",
@@ -427,17 +398,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
-    },
-    {
-      "id": "oura-staff-product-designer-enterprise",
-      "company": "Ōura",
-      "title": "Staff Product Designer, Enterprise Products",
-      "url": "https://job-boards.greenhouse.io/oura/jobs/4068982009",
-      "pass": false,
-      "reason": "Redirected to error page: https://job-boards.greenhouse.io/oura?error=true",
-      "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "leona-health-lead-product-designer",
@@ -447,7 +408,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "nourish-staff-product-designer",
@@ -457,7 +418,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "hone-health-senior-product-designer-clinical",
@@ -467,7 +428,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "3y-health-ai-product-designer",
@@ -477,7 +438,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     },
     {
       "id": "flo-health-senior-product-designer-user-centric",
@@ -487,13 +448,13 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-06-11T16:30:59.663Z"
+      "checkedAt": "2026-06-13T16:30:53.924Z"
     }
   ],
-  "lastRun": "2026-06-11T16:30:59.663Z",
+  "lastRun": "2026-06-13T16:30:53.924Z",
   "summary": {
-    "passed": 45,
-    "failed": 4,
-    "total": 49
+    "passed": 43,
+    "failed": 2,
+    "total": 45
   }
 }

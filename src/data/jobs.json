@@ -443,32 +443,6 @@
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/betterhelpcom/jobs/5168402008, 200, full job details confirmed). Published April 8, 2026, updated April 24, 2026 (yesterday). BetterHelp — world's largest online therapy service, 30,000+ licensed therapists. Product Designer, Therapist Platform owns end-to-end design for therapist-facing product: scheduling, session management, notes, billing. $130K-$140K + performance bonus. Remote USA. DISTINCT from existing betterhelp-product-designer-client-growth (5082314008, $95K-$105K, Client Growth/patient-facing) — this role is therapist-facing. Not in existing jobs.json."
   },
   {
-    "id": "strata-decision-technology-ux-researcher",
-    "title": "User Experience Researcher",
-    "company": "Strata Decision Technology",
-    "companyUrl": "https://www.stratadecision.com",
-    "url": "https://job-boards.greenhouse.io/stratacareers/jobs/7704966003",
-    "level": "Mid",
-    "locationType": "Hybrid",
-    "location": "Chicago, IL (or St. Louis, MO)",
-    "tags": [
-      "healthcare analytics",
-      "financial planning",
-      "health systems",
-      "enterprise",
-      "B2B",
-      "SaaS",
-      "UX research",
-      "mixed-methods"
-    ],
-    "postedAt": "2026-04-20",
-    "salary": "$80,000 - $100,000",
-    "_sourceUrl": "https://job-boards.greenhouse.io/stratacareers/jobs/7704966003",
-    "_searchQuery": "site:job-boards.greenhouse.io \"UX researcher\" healthcare 2026",
-    "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/stratacareers/jobs/7704966003, 200, full job details confirmed). Published April 20, 2026 (5 days ago). Strata Decision Technology — financial planning and analytics SaaS for health systems; primary market is hospitals and healthcare organizations (StrataJazz platform). UX Researcher conducts generative and evaluative research to inform product decisions. 2+ years product research required; SaaS/healthcare background preferred. Pendo analytics experience a plus. Chicago hybrid (2 days/week) or St. Louis. $80K-$100K + variable. ⚠️ NOTE: healthcare-adjacent (financial analytics for health systems), not pure clinical/patient-facing — flag for Carmen. Not in existing jobs.json."
-  },
-  {
     "id": "everlywell-visual-senior-product-designer-contract",
     "title": "Visual Senior Product Designer (Contract)",
     "company": "Everlywell",
@@ -675,33 +649,6 @@
     "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health telehealth April 2026",
     "_verifiedAt": "2026-04-11",
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/mavenclinic/jobs/8493856002, 200, full job description). Posted April 7, 2026 (4 days ago). Maven Clinic — world's largest virtual clinic for women and families; 2,000+ employers and health plans. Product Designer, Maternity Experience designs AI-native maternity journeys end-to-end. Expected to build functional prototypes with AI coding tools (Cursor, Claude), define how AI handles uncertainty in healthcare contexts, and contribute to design systems. Healthcare background a plus. $140K–$160K + equity. NY office + US remote hub cities (hybrid)."
-  },
-  {
-    "id": "twin-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Twin Health",
-    "companyUrl": "https://www.twinhealth.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/twinhealth/jobs/5855133004",
-    "postedAt": "2026-04-08",
-    "salary": "$160,000 - $165,000",
-    "tags": [
-      "metabolic health",
-      "diabetes",
-      "obesity",
-      "AI",
-      "clinical tools",
-      "B2B",
-      "care teams",
-      "digital twin",
-      "enterprise"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/twinhealth/jobs/5855133004",
-    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health telehealth April 2026",
-    "_verifiedAt": "2026-04-11",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/twinhealth/jobs/5855133004, 200, full job description). Posted April 8, 2026 (3 days ago). Twin Health — AI Digital Twin platform for chronic metabolic disease (type 2 diabetes, obesity); builds personalized metabolic models from wearable + health data. Senior PD designs clinical tools for coaches and doctors: coach dashboards, care team interfaces, AI/ML-augmented workflows. 5+ years UX required, 2-3 years healthcare or enterprise. Must be US-authorized, no visa sponsorship. $160K–$165K + equity + full benefits. Remote USA."
   },
   {
     "id": "tava-health-senior-product-designer",
