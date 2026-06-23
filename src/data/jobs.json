@@ -284,31 +284,6 @@
     "_verificationNote": "Verified live via Playwright (200, no dead signals)"
   },
   {
-    "id": "cofertility-part-time-product-designer",
-    "title": "Part-Time Product Designer",
-    "company": "Cofertility",
-    "companyUrl": "https://www.cofertility.com",
-    "url": "https://job-boards.greenhouse.io/cofertility/jobs/4247084009",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "Remote (US)",
-    "postedAt": "2026-05-13",
-    "salary": "",
-    "tags": [
-      "fertility",
-      "women's health",
-      "B2C",
-      "consumer",
-      "design systems",
-      "mobile",
-      "component libraries",
-      "contract"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/cofertility/jobs/4247084009",
-    "_verifiedAt": "2026-05-18",
-    "_verificationNote": "Verified live via Playwright (200, no dead signals)"
-  },
-  {
     "id": "spring-health-senior-product-designer-member-growth-sf",
     "title": "Senior Product Designer, Member Growth",
     "company": "Spring Health",
@@ -429,27 +404,6 @@
       "patient experience"
     ],
     "_sourceUrl": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
-    "_verifiedAt": "2026-05-05"
-  },
-  {
-    "id": "pointclickcare-senior-ux-designer-senior-care",
-    "title": "Senior UX Designer (Senior Care)",
-    "company": "PointClickCare",
-    "companyUrl": "https://pointclickcare.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.lever.co/pointclickcare/3429a3c0-309a-4197-853b-a65f193be5de",
-    "postedAt": null,
-    "salary": null,
-    "tags": [
-      "senior care",
-      "long-term care",
-      "EHR",
-      "B2B",
-      "post-acute care"
-    ],
-    "_sourceUrl": "https://jobs.lever.co/pointclickcare/3429a3c0-309a-4197-853b-a65f193be5de",
     "_verifiedAt": "2026-05-05"
   },
   {
@@ -1007,30 +961,6 @@
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-03-23",
     "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Vitalize (YC W23) — Autonomous hospital operations platform, live at 20+ hospitals, near 8-figures in revenue, 3x'ed revenue in last 3 months. Second product designer, joins founding designer. Owns data-dense interfaces (shift schedules, staffing dashboards), builds design system. $170K-$250K, SF HQ. 6+ years required. Posted ~18 days ago per YC board."
-  },
-  {
-    "id": "scispot-senior-ai-product-designer",
-    "title": "Senior AI Product Designer/Manager",
-    "company": "Scispot",
-    "companyUrl": "https://www.scispot.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "Ontario, Canada / Remote (Canada)",
-    "url": "https://www.ycombinator.com/companies/scispot-io/jobs/ISpaEFi-senior-ai-product-designer-manager",
-    "postedAt": "2026-02-23",
-    "salary": "$100K - $150K CAD",
-    "tags": [
-      "biotech",
-      "life sciences",
-      "AI",
-      "B2B",
-      "startup",
-      "YC",
-      "research tools"
-    ],
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verifiedAt": "2026-03-23",
-    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Scispot (YC S21) — Best Data Infrastructure for Biotechs. Multi-agent platform for lab operations, AI agents for biotech R&D. Senior AI Product Designer/Manager hybrid role — owns UX design + product management lifecycle. Manages junior designer + QA. Users are scientists and researchers. $100K-$150K CAD, remote Ontario Canada. Posted ~about 1 month ago per YC board."
   },
   {
     "id": "spring-health-senior-ux-researcher",
