@@ -554,34 +554,6 @@
     "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Headway — mental health platform, Series D $325M+. Senior PD, New Channels owns patient experience across Health Systems, EAP, and Payer Partnership channels. Designs handoff-to-care flows, Booking Assistant tool, EAP onboarding, co-branded payer journeys, conversion experiments. B2B2C design experience required, experimentation fluency, AI-native workflow (Claude.ai, Claude Code, Cursor, MagicPatterns). $180K-$225K + equity. NY/SF/Seattle hybrid. DISTINCT from headway-staff-product-designer-group-practices — different team (Patient team vs Group Practices). Not in existing jobs.json."
   },
   {
-    "id": "vetrec-product-design-lead",
-    "title": "Product Design Lead",
-    "company": "VetRec",
-    "companyUrl": "https://vetrec.io",
-    "url": "https://www.ycombinator.com/companies/vetrec/jobs/4Yt5owH-product-design-lead",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "Seattle, WA / Remote (USA)",
-    "postedAt": "2026-05-21",
-    "salary": "$100,000 - $130,000",
-    "tags": [
-      "veterinary",
-      "clinical AI",
-      "AI scribe",
-      "clinical documentation",
-      "B2B",
-      "startup",
-      "YC",
-      "first designer hire",
-      "0-to-1",
-      "mobile",
-      "design systems"
-    ],
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verifiedAt": "2026-05-21",
-    "_verificationNote": "Verified live via browse.py (YC job page rendered, full job description confirmed). No posted date visible; using today's date. VetRec (YC S23) — enterprise-grade AI veterinary assistant for medical note generation, dental charts, discharge instructions, and patient record summaries. 25-person team, founded 2023. First in-house product designer hire. Owns end-to-end UX across Webapp, iOS, Android, and Chrome extension for veterinarians, vet techs, medical directors, and practice managers. AI tool fluency required (Claude, Cursor, Figma Make). 5+ years B2B or clinical software required. $100K-$130K + equity. Remote US or Seattle HQ. ⚠️ NOTE: Veterinary medicine, not human healthcare — borderline inclusion. NOT a duplicate."
-  },
-  {
     "id": "chorus-innovations-principal-product-designer-contract",
     "title": "Principal Product Designer (Contract-to-Hire)",
     "company": "Chorus Innovations",
@@ -604,56 +576,6 @@
     "_sourceUrl": "https://job-boards.greenhouse.io/chorusinnovations/jobs/5126846007",
     "_verifiedAt": "2026-05-18",
     "_verificationNote": "Verified live via Playwright (200, no dead signals)"
-  },
-  {
-    "id": "spring-health-senior-product-designer-member-growth-sf",
-    "title": "Senior Product Designer, Member Growth",
-    "company": "Spring Health",
-    "companyUrl": "https://www.springhealth.com",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4694168005",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA (2-3 days/week on-site)",
-    "postedAt": "2026-05-11",
-    "salary": "$165,000 - $202,500",
-    "tags": [
-      "mental health",
-      "precision mental health",
-      "B2C",
-      "consumer",
-      "member experience",
-      "mobile",
-      "design systems",
-      "startup"
-    ],
-    "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
-    "_verifiedAt": "2026-05-16",
-    "_verificationNote": "Verified live via Greenhouse API (200, full job description confirmed). Posted May 11, 2026. Same role as NYC listing (4694164005) but based in San Francisco, slightly higher salary floor ($165K vs $150K). Spring Health Precision Mental Healthcare, $3.3B Series E. Senior PD Member Growth — member-facing experience design, design system contribution, visual craft + speed balance. 5+ years required. SF hybrid 2-3 days/week. Same role also posted for Seattle (4694166005)."
-  },
-  {
-    "id": "spring-health-senior-product-designer-member-growth-seattle",
-    "title": "Senior Product Designer, Member Growth",
-    "company": "Spring Health",
-    "companyUrl": "https://www.springhealth.com",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4694166005",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "Seattle, WA (2-3 days/week on-site)",
-    "postedAt": "2026-05-11",
-    "salary": "$150,000 - $196,880",
-    "tags": [
-      "mental health",
-      "precision mental health",
-      "B2C",
-      "consumer",
-      "member experience",
-      "mobile",
-      "design systems",
-      "startup"
-    ],
-    "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
-    "_verifiedAt": "2026-05-16",
-    "_verificationNote": "Verified live via Greenhouse API (200, full job description confirmed). Posted May 11, 2026. Same role as NYC (4694164005) and SF (4694168005) listings but based in Seattle. Spring Health Precision Mental Healthcare, $3.3B Series E. Senior PD Member Growth — member-facing experience design, design system contribution. 5+ years required. Seattle hybrid 2-3 days/week. Slightly lower salary ceiling ($196K vs $202K in NYC/SF)."
   },
   {
     "id": "alpaca-health-founding-product-designer",
@@ -1034,32 +956,6 @@
     "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/finch, isListed: true, publishedAt: 2026-04-02). Finch Care — mental health self-care app built around a virtual pet companion; 20M+ users, profitable, 100% remote team, backed by indie growth. Product Designer role: 4+ years consumer mobile app design at scale. Designs mental health exercises, gaming mechanics, and growth loops. Emphasis on balancing aesthetics with pragmatism. Full-time, remote North/South America. No salary disclosed. Company description: founded 2021 by two friends who struggled with anxiety and depression. NOT a duplicate — Finch Care not in existing jobs.json."
   },
   {
-    "id": "tava-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Tava Health",
-    "companyUrl": "https://www.tavahealth.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA (Salt Lake City area preferred)",
-    "url": "https://jobs.ashbyhq.com/tavahealth/f428de8a-a625-45c0-bb9b-ee1e2029a0c7",
-    "postedAt": "2026-01-08",
-    "salary": null,
-    "tags": [
-      "mental health",
-      "telehealth",
-      "patient experience",
-      "B2C",
-      "consumer",
-      "onboarding",
-      "payments",
-      "startup"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/tavahealth/f428de8a-a625-45c0-bb9b-ee1e2029a0c7",
-    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health 2026",
-    "_verifiedAt": "2026-04-11",
-    "_verificationNote": "Verified live via Ashby (WebFetch, 200, full job description). Posted January 8, 2026, last updated February 24, 2026. ⚠️ FRESHNESS: 46 days since last update — validator should confirm currency. Tava Health — mental health platform, patient-facing experiences. Sr. PD designs conversion flows, appointment scheduling, payment UX, telehealth interfaces. 5+ years consumer digital products. Remote USA (Salt Lake City area mentioned). No salary listed. No dead-link signals."
-  },
-  {
     "id": "future-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Future",
@@ -1183,31 +1079,6 @@
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-03-23",
     "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Reframe (YC S21) — #1 app to help people cut back on drinking alcohol. 150K+ paying customers, $13M ARR, growing fast. Full-time Product Designer to build new products/features across ecosystems. Will sponsor visa. $70K-$120K, Atlanta GA (onsite). Posted ~19 days ago per YC board."
-  },
-  {
-    "id": "vitalize-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Vitalize",
-    "companyUrl": "https://www.vitalize.co",
-    "level": "Senior",
-    "locationType": "Onsite",
-    "location": "San Francisco, CA",
-    "url": "https://www.ycombinator.com/companies/vitalize/jobs/vaE7tnq-senior-product-designer",
-    "postedAt": "2026-03-05",
-    "salary": "$170K - $250K",
-    "tags": [
-      "hospital operations",
-      "workforce management",
-      "B2B",
-      "enterprise",
-      "startup",
-      "YC",
-      "data visualization",
-      "design systems"
-    ],
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verifiedAt": "2026-03-23",
-    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Vitalize (YC W23) — Autonomous hospital operations platform, live at 20+ hospitals, near 8-figures in revenue, 3x'ed revenue in last 3 months. Second product designer, joins founding designer. Owns data-dense interfaces (shift schedules, staffing dashboards), builds design system. $170K-$250K, SF HQ. 6+ years required. Posted ~18 days ago per YC board."
   },
   {
     "id": "oura-staff-designer-womens-health",
