@@ -23,6 +23,19 @@ if [ -z "$ISSUES" ]; then
   exit 0
 fi
 
+# Helper: extract a field from issue body using Python (macOS-compatible, no grep -P)
+extract_field() {
+  local body="$1"
+  local field="$2"
+  echo "$body" | python3 -c "
+import sys, re
+body = sys.stdin.read()
+pattern = r'\*\*${field}:\*\*\s*(.+)'
+m = re.search(pattern, body)
+print(m.group(1).strip() if m else '')
+"
+}
+
 echo "$ISSUES" | while read -r ISSUE_B64; do
   NUMBER=$(echo "$ISSUE_B64" | base64 -d | python3 -c "import json,sys; print(json.loads(sys.stdin.read())['number'])")
   TITLE=$(echo "$ISSUE_B64" | base64 -d | python3 -c "import json,sys; print(json.loads(sys.stdin.read())['title'])")
@@ -30,8 +43,15 @@ echo "$ISSUES" | while read -r ISSUE_B64; do
 
   echo "Processing issue #$NUMBER: $TITLE"
 
-  # Extract the job URL from the issue body
-  JOB_URL=$(echo "$BODY" | grep -oP '(?<=\*\*Job URL:\*\* )https?://[^\s]+' | head -1)
+  # Extract fields using Python (macOS-compatible)
+  JOB_URL=$(extract_field "$BODY" "Job URL")
+  COMPANY=$(extract_field "$BODY" "Company")
+  COMPANY_URL=$(extract_field "$BODY" "Company URL")
+  LEVEL=$(extract_field "$BODY" "Level")
+  LOCATION_TYPE=$(extract_field "$BODY" "Location Type")
+  LOCATION=$(extract_field "$BODY" "Location")
+  TAGS=$(extract_field "$BODY" "Tags")
+  JOB_TITLE_FROM_ISSUE=$(extract_field "$BODY" "Job Title")
 
   if [ -z "$JOB_URL" ]; then
     echo "  No job URL found in issue #$NUMBER — skipping"
@@ -40,14 +60,6 @@ echo "$ISSUES" | while read -r ISSUE_B64; do
   fi
 
   echo "  Job URL: $JOB_URL"
-
-  # Extract fields from issue body (used as hints, but we'll verify via scraping)
-  COMPANY=$(echo "$BODY" | grep -oP '(?<=\*\*Company:\*\* ).+' | head -1 | xargs)
-  COMPANY_URL=$(echo "$BODY" | grep -oP '(?<=\*\*Company URL:\*\* )https?://[^\s]+' | head -1)
-  LEVEL=$(echo "$BODY" | grep -oP '(?<=\*\*Level:\*\* ).+' | head -1 | xargs)
-  LOCATION_TYPE=$(echo "$BODY" | grep -oP '(?<=\*\*Location Type:\*\* ).+' | head -1 | xargs)
-  LOCATION=$(echo "$BODY" | grep -oP '(?<=\*\*Location:\*\* ).+' | head -1 | xargs)
-  TAGS=$(echo "$BODY" | grep -oP '(?<=\*\*Tags:\*\* ).+' | head -1 | xargs)
 
   # Check if URL is already in jobs.json
   if python3 -c "import json; data=json.load(open('$JOBS_FILE')); exit(0 if any(j['url']=='$JOB_URL' for j in data) else 1)" 2>/dev/null; then
@@ -68,7 +80,6 @@ echo "$ISSUES" | while read -r ISSUE_B64; do
   fi
 
   # Generate ID from title and company
-  JOB_TITLE_FROM_ISSUE=$(echo "$BODY" | grep -oP '(?<=\*\*Job Title:\*\* ).+' | head -1 | xargs)
   JOB_ID=$(echo "${COMPANY}-${JOB_TITLE_FROM_ISSUE}" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9-' | sed 's/--*/-/g' | sed 's/^-//;s/-$//')
 
   # Check for ID collision and make unique
@@ -86,29 +97,33 @@ echo "$ISSUES" | while read -r ISSUE_B64; do
   fi
 
   # Add to jobs.json
-  python3 << PYEOF
-import json
+  JOBS_FILE="$JOBS_FILE" JOB_ID="$JOB_ID" JOB_TITLE="$JOB_TITLE_FROM_ISSUE" \
+  COMPANY="$COMPANY" COMPANY_URL="$COMPANY_URL" LEVEL="$LEVEL" \
+  LOCATION_TYPE="$LOCATION_TYPE" LOCATION="$LOCATION" JOB_URL="$JOB_URL" \
+  TODAY="$TODAY" TAGS_JSON="$TAGS_JSON" python3 - <<'PYEOF'
+import json, os
 
-with open("$JOBS_FILE", "r") as f:
+jobs_file = os.environ["JOBS_FILE"]
+with open(jobs_file, "r") as f:
     jobs = json.load(f)
 
 new_job = {
-    "id": "$JOB_ID",
-    "title": $(python3 -c "import json; print(json.dumps('$JOB_TITLE_FROM_ISSUE'))"),
-    "company": $(python3 -c "import json; print(json.dumps('$COMPANY'))"),
-    "companyUrl": "$COMPANY_URL",
-    "level": "$LEVEL",
-    "locationType": "$LOCATION_TYPE",
-    "location": $(python3 -c "import json; print(json.dumps('$LOCATION'))"),
-    "url": "$JOB_URL",
-    "postedDate": "$TODAY",
-    "tags": $TAGS_JSON
+    "id": os.environ["JOB_ID"],
+    "title": os.environ["JOB_TITLE"],
+    "company": os.environ["COMPANY"],
+    "companyUrl": os.environ["COMPANY_URL"],
+    "level": os.environ["LEVEL"],
+    "locationType": os.environ["LOCATION_TYPE"],
+    "location": os.environ["LOCATION"],
+    "url": os.environ["JOB_URL"],
+    "postedDate": os.environ["TODAY"],
+    "tags": json.loads(os.environ["TAGS_JSON"]),
 }
 
 # Add at the beginning (newest first)
 jobs.insert(0, new_job)
 
-with open("$JOBS_FILE", "w") as f:
+with open(jobs_file, "w") as f:
     json.dump(jobs, f, indent=2)
     f.write("\n")
 
@@ -119,7 +134,7 @@ PYEOF
   git add "$JOBS_FILE"
   git commit -m "Add: ${JOB_TITLE_FROM_ISSUE} at ${COMPANY} (issue #${NUMBER})"
 
-  # Close the issue
+  # Close the issue with confirmation
   gh issue comment "$NUMBER" --repo "$REPO" --body "✅ Added to the site! Thanks for the submission 🎉
 
 **Listed as:**
