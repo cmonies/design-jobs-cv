@@ -11,10 +11,12 @@ const featuredJobs = [...jobs].sort((a, b) => {
   if (!a.postedAt) return 1;
   if (!b.postedAt) return -1;
   return b.postedAt.localeCompare(a.postedAt);
-}).slice(0, 8);
+}).slice(0, 18);
+
+const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.employmentType === 'Freelance').length;
 ---
 
-<Layout title="Design Jobs - Healthcare Design Jobs">
+<Layout title="designjobs.cv — Design jobs, verified">
   <Header />
 
   <main id="main-content" tabindex="-1">
@@ -23,105 +25,70 @@ const featuredJobs = [...jobs].sort((a, b) => {
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "designjobs",
-    "url": "https://health.designjobs.cv",
-    "description": "Healthcare UX jobs, curated by the community. Open source and free forever.",
+    "name": "designjobs.cv",
+    "url": "https://designjobs.cv",
+    "description": "Design jobs at startups across healthcare, AI, and unexpected verticals. Full-time and contract, every listing verified.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://health.designjobs.cv/jobs?q={search_term_string}",
+      "target": "https://designjobs.cv/jobs?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   })} />
 
-  <!-- Hero -->
-  <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pt-24 pb-20 text-center">
-    <div class="animate-fade-up stagger-1 inline-flex items-center gap-2 bg-brand-50 dark:bg-brand-900/20 text-brand-500 text-sm font-medium px-4 py-1.5 rounded-full mb-8">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-      Open source &amp; community-driven
-    </div>
-    <h1 class="animate-fade-up stagger-2 text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-[1.1] max-w-2xl mx-auto tracking-tight">
-      Where healthcare meets
-      <span class="text-brand-500">great design</span>
+  <!-- Statement — the page opens like a gallery wall label, then the work -->
+  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-12 md:pb-16">
+    <h1 class="animate-fade-up stagger-1 font-display font-semibold text-[2.6rem] md:text-7xl leading-[0.98] tracking-tight [text-wrap:balance] max-w-4xl">
+      Design work worth&nbsp;doing.
     </h1>
-    <p class="animate-fade-up stagger-3 text-lg text-slate-500 dark:text-slate-400 mt-6 max-w-lg mx-auto leading-relaxed">
-      A community-sourced board for UX roles at companies building products that actually matter. Free, open source, and always will be.
-    </p>
-    <div class="animate-fade-up stagger-4 flex flex-col sm:flex-row justify-center gap-3 mt-10">
-      <a
-        href="/jobs"
-        class="px-8 py-3.5 bg-brand-500 text-white font-semibold rounded-2xl hover:bg-brand-600 transition-colors text-sm shadow-soft-md hover:shadow-warm"
-      >
-        See what's open
-      </a>
-      <a
-        href="/submit"
-        class="px-8 py-3.5 bg-white dark:bg-transparent text-slate-700 dark:text-slate-200 font-semibold rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors text-sm shadow-soft"
-      >
-        Post a role
-      </a>
-    </div>
-  </section>
-
-  <!-- Value Props -->
-  <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-24">
-    <div class="grid md:grid-cols-3 gap-5">
-      <div class="animate-fade-in stagger-2">
-        <div class="bg-white dark:bg-surface-card rounded-3xl p-8 shadow-soft hover:shadow-warm transition-shadow duration-300 h-full">
-          <div class="w-10 h-10 rounded-2xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center mb-5">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-          </div>
-          <h3 class="text-base font-semibold text-slate-900 dark:text-white mb-2">Community-built</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-            Run by the people who use it. Anyone can contribute listings, flag issues, or improve the code. No gatekeepers.
-          </p>
-        </div>
-      </div>
-      <div class="animate-fade-in stagger-3">
-        <div class="bg-white dark:bg-surface-card rounded-3xl p-8 shadow-soft hover:shadow-warm transition-shadow duration-300 h-full">
-          <div class="w-10 h-10 rounded-2xl bg-brand-50 dark:bg-brand-900/20 flex items-center justify-center mb-5">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#244BF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-          </div>
-          <h3 class="text-base font-semibold text-slate-900 dark:text-white mb-2">Work that matters</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-            Healthcare UX shapes real outcomes for real people. These are roles where your craft has weight.
-          </p>
-        </div>
-      </div>
-      <div class="animate-fade-in stagger-4">
-        <div class="bg-white dark:bg-surface-card rounded-3xl p-8 shadow-soft hover:shadow-warm transition-shadow duration-300 h-full">
-          <div class="w-10 h-10 rounded-2xl bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center mb-5">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <h3 class="text-base font-semibold text-slate-900 dark:text-white mb-2">No ghost jobs</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-            Every listing is checked with real browser validation. If it's here, it's live.
-          </p>
-        </div>
+    <div class="animate-fade-up stagger-2 mt-6 md:mt-8 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <p class="text-base md:text-lg text-muted dark:text-slate-400 leading-relaxed max-w-md">
+        A community-curated board of design roles at startups — healthcare, AI, and the verticals nobody's watching. Every link goes to the real posting.
+      </p>
+      <div class="flex items-center gap-2.5 shrink-0">
+        <a href="/jobs" class="px-5 py-2.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-medium hover:opacity-85 transition-opacity" data-umami-event="hero-alljobs-click">
+          {jobs.length} open roles
+        </a>
+        <a href="/jobs?type=Contract" class="px-5 py-2.5 rounded-full border border-crust-300 dark:border-crust-700 text-crust-600 dark:text-crust-300 text-sm font-medium hover:bg-crust-50 dark:hover:bg-crust-900/30 transition-colors" data-umami-event="hero-contract-click">
+          Contract{contractCount > 0 ? ` (${contractCount})` : ''}
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Featured Jobs -->
-  <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-24">
-    <div class="reveal flex items-center justify-between mb-6" data-delay="0">
-      <h2 class="text-xl font-bold text-slate-900 dark:text-white">Latest jobs</h2>
-      <a href="/jobs" class="text-sm font-medium text-brand-500 hover:text-brand-600 transition-colors">
-        View all →
-      </a>
-    </div>
+  <!-- The wall: latest roles as typographic tiles -->
+  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-16">
     <JobTable jobs={featuredJobs} maxDelay={200} />
-    <div class="reveal text-center mt-10" data-delay="200">
+    <div class="reveal text-center mt-10" data-delay="100">
       <a
         href="/jobs"
-        class="inline-flex px-8 py-3.5 bg-brand-500 text-white font-semibold rounded-2xl hover:bg-brand-600 transition-colors text-sm shadow-soft-md hover:shadow-warm"
+        class="inline-flex px-7 py-3 rounded-full border border-ink dark:border-slate-300 text-ink dark:text-slate-100 font-medium text-sm hover:bg-ink hover:text-paper dark:hover:bg-slate-100 dark:hover:text-ink transition-colors"
+        data-umami-event="home-viewall-click"
       >
         View all {jobs.length} jobs →
       </a>
     </div>
   </section>
 
+  <!-- Why this board exists — quiet, three lines, no icon cards -->
+  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-16">
+    <div class="border-t border-line dark:border-slate-700/50 pt-10 grid md:grid-cols-3 gap-8 max-w-5xl">
+      <div class="reveal" data-delay="0">
+        <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-2">No ghost jobs</h3>
+        <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">Every listing is browser-verified before it's published, and re-checked while it's live. If it's here, it's real.</p>
+      </div>
+      <div class="reveal" data-delay="60">
+        <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-2">Real links only</h3>
+        <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">Straight to the company's own posting — never a LinkedIn wall, never an aggregator loop.</p>
+      </div>
+      <div class="reveal" data-delay="120">
+        <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-2">Community-built</h3>
+        <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">Open source, free forever. Anyone can submit a role, flag an issue, or improve the code.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Newsletter -->
-  <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-12">
+  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-12">
     <div class="reveal" data-delay="0">
       <Newsletter />
     </div>

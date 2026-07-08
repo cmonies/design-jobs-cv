@@ -184,12 +184,14 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           `**Job URL:** ${body.url}`,
           `**Level:** ${body.level}`,
           `**Location Type:** ${body.locationType}`,
+          `**Employment Type:** ${body.employmentType || 'Full-time'}`,
+          `**Vertical:** ${body.vertical || 'Other'}`,
           `**Location:** ${body.location}`,
           `**Tags:** ${body.tags || 'N/A'}`,
           '',
           '---',
           `**Submitted by:** ${body.submitterName} (${body.submitterEmail})`,
-          '_Submitted via health.designjobs.cv_',
+          '_Submitted via designjobs.cv_',
         ].join('\n');
         labels = ['job-submission'];
       }

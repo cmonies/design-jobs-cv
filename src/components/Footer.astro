@@ -2,41 +2,45 @@
 import DarkModeToggle from './DarkModeToggle.astro';
 ---
 
-<footer role="contentinfo" class="bg-white dark:bg-surface-footer border-t border-slate-100 dark:border-slate-700/50 mt-8">
-  <div class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 py-12">
+<footer role="contentinfo" class="bg-paper dark:bg-surface-footer border-t border-line dark:border-slate-700/50 mt-8">
+  <div class="w-full max-w-[1800px] mx-auto px-4 md:px-6 py-12">
     <div class="grid md:grid-cols-3 gap-8">
       <div>
-        <div class="flex items-center mb-3">
-          <img src="/logo.svg" alt="Design Jobs" class="h-6 dark:hidden" />
-          <img src="/logo-dark.svg" alt="Design Jobs" class="h-6 hidden dark:block" />
+        <div class="flex items-center gap-2.5 mb-3 text-ink dark:text-slate-100">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" class="text-crust-500">
+            <path d="m30.47 4.57 -1.52 0 0 -1.52 -1.53 0 0 -1.53 -3.04 0 0 -1.52L7.61 0l0 1.52 10.67 0 0 1.53 3.05 0 0 1.52 1.52 0 0 1.53 1.53 0 0 7.61 -1.53 0 0 1.53 -1.52 0 0 15.24 -16.76 0 0 1.52 21.33 0 0 -1.52 1.52 0 0 -1.53 1.53 0 0 -1.52 1.52 0 0 -13.72 1.53 0 0 -7.61 -1.53 0 0 -1.53z"/>
+            <path d="M15.23 21.33h1.53v1.53h-1.53Z"/><path d="M13.71 18.29h1.52v1.52h-1.52Z"/><path d="M9.14 22.86h6.09v1.52H9.14Z"/><path d="M9.14 18.29h1.52v1.52H9.14Z"/><path d="M7.61 21.33h1.53v1.53H7.61Z"/><path d="M4.57 1.52h3.04v1.53H4.57Z"/><path d="M3.04 15.24h1.53v15.24H3.04Z"/><path d="M3.04 3.05h1.53v1.52H3.04Z"/><path d="M1.52 13.71h1.52v1.53H1.52Z"/><path d="M1.52 4.57h1.52V6.1H1.52Z"/><path d="M0 6.1h1.52v7.61H0Z"/>
+          </svg>
+          <span class="font-display font-semibold text-[15px] tracking-tight">designjobs.cv</span>
         </div>
-        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-          Healthcare UX jobs, by the community. Open source and free forever.
+        <p class="text-sm text-muted dark:text-slate-400 leading-relaxed">
+          Design jobs with real links, by the community. Open source and free forever.
         </p>
       </div>
 
       <div>
-        <h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-3">Links</h4>
-        <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-          <li><a href="/jobs" class="hover:text-brand-500 transition-colors" data-umami-event="footer-jobs-click">All Jobs</a></li>
-          <li><a href="#newsletter" class="hover:text-brand-500 transition-colors" data-umami-event="footer-newsletter-click">Newsletter</a></li>
+        <h4 class="text-sm font-semibold text-ink dark:text-white mb-3">Links</h4>
+        <ul class="space-y-2 text-sm text-muted dark:text-slate-400">
+          <li><a href="/jobs" class="hover:text-ink dark:hover:text-white transition-colors" data-umami-event="footer-jobs-click">All jobs</a></li>
+          <li><a href="/jobs?type=Contract" class="hover:text-ink dark:hover:text-white transition-colors" data-umami-event="footer-contract-click">Contract roles</a></li>
+          <li><a href="#newsletter" class="hover:text-ink dark:hover:text-white transition-colors" data-umami-event="footer-newsletter-click">Newsletter</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-3">Contribute</h4>
-        <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-          <li><a href="https://github.com/cmonies/healthcare-jobs" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors" data-umami-event="footer-github-click">GitHub Repo <span class="sr-only">(opens in a new tab)</span></a></li>
-          <li><a href="/submit" class="hover:text-brand-500 transition-colors" data-umami-event="footer-submit-click">Submit a Job</a></li>
-          <li><a href="/report" class="hover:text-brand-500 transition-colors" data-umami-event="footer-feedback-click">Feedback</a></li>
+        <h4 class="text-sm font-semibold text-ink dark:text-white mb-3">Contribute</h4>
+        <ul class="space-y-2 text-sm text-muted dark:text-slate-400">
+          <li><a href="https://github.com/cmonies/healthcare-jobs" target="_blank" rel="noopener noreferrer" class="hover:text-ink dark:hover:text-white transition-colors" data-umami-event="footer-github-click">GitHub Repo <span class="sr-only">(opens in a new tab)</span></a></li>
+          <li><a href="/submit" class="hover:text-ink dark:hover:text-white transition-colors" data-umami-event="footer-submit-click">Submit a job</a></li>
+          <li><a href="/report" class="hover:text-ink dark:hover:text-white transition-colors" data-umami-event="footer-feedback-click">Feedback</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="border-t border-slate-100 dark:border-slate-700/50 mt-8 pt-6 flex items-center justify-between">
+    <div class="border-t border-line dark:border-slate-700/50 mt-8 pt-6 flex items-center justify-between">
       <p class="text-xs text-slate-400 dark:text-slate-500">
-        Made with care by <a href="https://carmen.cv/" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:underline" data-umami-event="footer-carmencv-click">carmen.cv <span class="sr-only">(opens in a new tab)</span></a> for the healthcare design community · Open source on
-        <a href="https://github.com/cmonies/healthcare-jobs" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:underline" data-umami-event="footer-github-bottom-click">GitHub <span class="sr-only">(opens in a new tab)</span></a>
+        Made with care by <a href="https://carmen.cv/" target="_blank" rel="noopener noreferrer" class="text-crust-600 dark:text-crust-300 hover:underline" data-umami-event="footer-carmencv-click">carmen.cv <span class="sr-only">(opens in a new tab)</span></a> for the design community · Open source on
+        <a href="https://github.com/cmonies/healthcare-jobs" target="_blank" rel="noopener noreferrer" class="text-crust-600 dark:text-crust-300 hover:underline" data-umami-event="footer-github-bottom-click">GitHub <span class="sr-only">(opens in a new tab)</span></a>
       </p>
       <DarkModeToggle />
     </div>

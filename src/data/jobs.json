@@ -6,7 +6,7 @@
     "companyUrl": "https://www.decodahealth.com",
     "url": "https://jobs.ashbyhq.com/decodahealth/5d90f7ca-eae1-406e-a4cf-461e7a30886c",
     "level": "Mid",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "Toronto, ON (onsite)",
     "postedAt": "2026-06-04",
     "salary": "CA$140,000 - CA$180,000",
@@ -21,7 +21,9 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/decodahealth",
     "_verifiedAt": "2026-07-04",
-    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/decodahealth, isListed: true, publishedAt: 2026-06-04). Company confirmed: AI-powered EMR and practice management platform for elective care clinics (med spas, wellness centers, weight loss practices). YC-backed. Product Designer owns full-stack features, design systems, and consults with engineers on layout/typography. 3+ years desktop/web SaaS design required. CA$140K-CA$180K + equity. Toronto onsite. ⚠️ NOTE: Toronto onsite; Canadian company — flag for Carmen."
+    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/decodahealth, isListed: true, publishedAt: 2026-06-04). Company confirmed: AI-powered EMR and practice management platform for elective care clinics (med spas, wellness centers, weight loss practices). YC-backed. Product Designer owns full-stack features, design systems, and consults with engineers on layout/typography. 3+ years desktop/web SaaS design required. CA$140K-CA$180K + equity. Toronto onsite. ⚠️ NOTE: Toronto onsite; Canadian company — flag for Carmen.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "tava-health-senior-product-designer",
@@ -47,7 +49,9 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/TavaHealth",
     "_verifiedAt": "2026-07-04",
-    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). Published 2026-07-01. Tava Health — venture-backed startup scaling access to behavioral healthcare; partners with organizations to bring mental health care to employees/members/communities. Senior PD leads patient-facing product experiences: conversion flows, onboarding, provider matching, booking, billing, and in-session telehealth. 5+ years consumer product design required; conversion funnels and payment experience; AI tool integration encouraged. Competitive salary + stock options + covered medical/dental. Remote US. New company not in jobs.json."
+    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). Published 2026-07-01. Tava Health — venture-backed startup scaling access to behavioral healthcare; partners with organizations to bring mental health care to employees/members/communities. Senior PD leads patient-facing product experiences: conversion flows, onboarding, provider matching, booking, billing, and in-session telehealth. 5+ years consumer product design required; conversion funnels and payment experience; AI tool integration encouraged. Competitive salary + stock options + covered medical/dental. Remote US. New company not in jobs.json.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "hinge-health-senior-product-designer-new-programs",
@@ -65,7 +69,9 @@
     ],
     "postedAt": "2026-06-08",
     "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "hinge-health-staff-product-designer-outcomes",
@@ -83,7 +89,9 @@
     ],
     "postedAt": "2026-06-05",
     "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "hinge-health-senior-product-designer-education",
@@ -101,7 +109,9 @@
     ],
     "postedAt": "2026-05-05",
     "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "headway-design-director-provider-experience",
@@ -119,7 +129,9 @@
     ],
     "postedAt": "2026-06-04",
     "_sourceUrl": "https://jobs.ashbyhq.com/headway",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "headway-principal-product-designer-payer",
@@ -137,7 +149,9 @@
     ],
     "postedAt": "2026-05-13",
     "_sourceUrl": "https://jobs.ashbyhq.com/headway",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "headway-design-director-core-insurance-design-systems",
@@ -155,7 +169,9 @@
     ],
     "postedAt": "2025-10-07",
     "_sourceUrl": "https://jobs.ashbyhq.com/headway",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "headway-staff-product-designer-provider-onboarding",
@@ -173,7 +189,9 @@
     ],
     "postedAt": "2025-12-09",
     "_sourceUrl": "https://jobs.ashbyhq.com/headway",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "maven-clinic-design-lead-consumer",
@@ -192,7 +210,9 @@
     ],
     "postedAt": "2026-06-23",
     "_sourceUrl": "https://job-boards.greenhouse.io/mavenclinic",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "maven-clinic-head-of-design",
@@ -210,7 +230,9 @@
     ],
     "postedAt": "2026-06-23",
     "_sourceUrl": "https://job-boards.greenhouse.io/mavenclinic",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "maven-clinic-senior-staff-product-designer",
@@ -228,7 +250,9 @@
     ],
     "postedAt": "2026-06-23",
     "_sourceUrl": "https://job-boards.greenhouse.io/mavenclinic",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "hone-health-product-designer-products-integrations",
@@ -246,7 +270,9 @@
     ],
     "postedAt": "2026-06-23",
     "_sourceUrl": "https://job-boards.greenhouse.io/honehealth",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "twin-health-staff-product-designer",
@@ -265,7 +291,9 @@
     ],
     "postedAt": "2026-06-23",
     "_sourceUrl": "https://job-boards.greenhouse.io/twinhealth",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "whoop-product-designer-ii-health",
@@ -274,7 +302,7 @@
     "companyUrl": "https://www.whoop.com",
     "url": "https://jobs.lever.co/whoop/33719380-d753-4e33-afcf-93e971d56cd8",
     "level": "Mid",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "Boston, MA",
     "tags": [
       "wearables",
@@ -283,7 +311,9 @@
     ],
     "postedAt": "2026-04-16",
     "_sourceUrl": "https://jobs.lever.co/whoop",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "whoop-senior-product-designer-ai",
@@ -292,7 +322,7 @@
     "companyUrl": "https://www.whoop.com",
     "url": "https://jobs.lever.co/whoop/a7971d82-ef9c-4ba2-b249-97c0ae924c06",
     "level": "Senior",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "Boston, MA",
     "tags": [
       "wearables",
@@ -302,7 +332,9 @@
     ],
     "postedAt": "2026-05-04",
     "_sourceUrl": "https://jobs.lever.co/whoop",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "whoop-senior-human-factors-researcher",
@@ -311,7 +343,7 @@
     "companyUrl": "https://www.whoop.com",
     "url": "https://jobs.lever.co/whoop/063a2c59-8327-4556-9dee-c0f69323357c",
     "level": "Senior",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "Boston, MA",
     "tags": [
       "wearables",
@@ -320,7 +352,9 @@
     ],
     "postedAt": "2026-05-21",
     "_sourceUrl": "https://jobs.lever.co/whoop",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "whoop-senior-research-manager-design-research",
@@ -329,7 +363,7 @@
     "companyUrl": "https://www.whoop.com",
     "url": "https://jobs.lever.co/whoop/4624e401-1a9e-494d-b2f8-119e29071e12",
     "level": "Manager",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "Boston, MA",
     "tags": [
       "wearables",
@@ -338,7 +372,9 @@
     ],
     "postedAt": "2026-03-12",
     "_sourceUrl": "https://jobs.lever.co/whoop",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "blink-health-staff-design-systems-engineer-ny",
@@ -347,7 +383,7 @@
     "companyUrl": "https://www.blinkhealth.com",
     "url": "https://job-boards.greenhouse.io/blinkhealth/jobs/8603510002",
     "level": "Staff",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "New York, NY",
     "tags": [
       "pharmacy",
@@ -357,7 +393,9 @@
     ],
     "postedAt": "2026-06-23",
     "_sourceUrl": "https://job-boards.greenhouse.io/blinkhealth",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "blink-health-staff-design-systems-engineer-pittsburgh",
@@ -366,7 +404,7 @@
     "companyUrl": "https://www.blinkhealth.com",
     "url": "https://job-boards.greenhouse.io/blinkhealth/jobs/8603511002",
     "level": "Staff",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "Pittsburgh, PA",
     "tags": [
       "pharmacy",
@@ -376,7 +414,9 @@
     ],
     "postedAt": "2026-06-23",
     "_sourceUrl": "https://job-boards.greenhouse.io/blinkhealth",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "9amhealth-senior-product-designer-member-app",
@@ -403,7 +443,9 @@
       "startup"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/join9am",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "mochi-health-senior-product-designer",
@@ -429,7 +471,9 @@
       "founding-level"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
-    "_verifiedAt": "2026-06-23"
+    "_verifiedAt": "2026-06-23",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "omada-health-staff-product-designer",
@@ -454,7 +498,9 @@
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/omadahealth/jobs/7821718",
     "_verifiedAt": "2026-06-16",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io, 200, full job details). Posted June 9, 2026, updated June 10, 2026. Omada Health — founded from IDEO principles, designs chronic disease management platform (diabetes, hypertension, musculoskeletal, behavioral health). Staff PD focuses on AI experience design across member + care ecosystem: defines interaction models for intelligent guidance, shapes how AI and human care teams collaborate, prototypes AI-powered experiences. 8+ years required; healthcare + AI product experience preferred. Salary: $174,800-$218,500 (CA/NY/WA), $167,200-$209,000 (CO) plus equity + bonus. Remote USA. Not in existing jobs.json."
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io, 200, full job details). Posted June 9, 2026, updated June 10, 2026. Omada Health — founded from IDEO principles, designs chronic disease management platform (diabetes, hypertension, musculoskeletal, behavioral health). Staff PD focuses on AI experience design across member + care ecosystem: defines interaction models for intelligent guidance, shapes how AI and human care teams collaborate, prototypes AI-powered experiences. 8+ years required; healthcare + AI product experience preferred. Salary: $174,800-$218,500 (CA/NY/WA), $167,200-$209,000 (CO) plus equity + bonus. Remote USA. Not in existing jobs.json.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "omada-health-senior-product-designer",
@@ -480,7 +526,9 @@
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/omadahealth/jobs/7800336",
     "_verifiedAt": "2026-06-16",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io, 200, full job details). Posted June 8, 2026, updated June 10, 2026. Omada Health care innovation team. Senior PD develops human-centered solutions for chronic disease management: 0-to-1 product design, rapid prototyping, mobile experience (iOS/Android). 6+ years required, healthcare domain expertise preferred, strong AI tool proficiency expected. Salary: $156,400-$195,500 (CA/NY/WA), $149,600-$187,000 (CO) plus equity + bonus. Remote USA. DISTINCT from Staff PD role (7821718) — different level, different scope. Not in existing jobs.json."
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io, 200, full job details). Posted June 8, 2026, updated June 10, 2026. Omada Health care innovation team. Senior PD develops human-centered solutions for chronic disease management: 0-to-1 product design, rapid prototyping, mobile experience (iOS/Android). 6+ years required, healthcare domain expertise preferred, strong AI tool proficiency expected. Salary: $156,400-$195,500 (CA/NY/WA), $149,600-$187,000 (CO) plus equity + bonus. Remote USA. DISTINCT from Staff PD role (7821718) — different level, different scope. Not in existing jobs.json.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "garner-health-product-designer-ii",
@@ -505,7 +553,9 @@
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/garnerhealth/jobs/6006458004",
     "_verifiedAt": "2026-06-16",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io, 200, full job details). Posted May 26, 2026. Garner Health — reimagines healthcare benefits using data-driven insights to guide employees to higher-quality, lower-cost care. Product Designer II on Financial Incentives team: designs user-facing features and internal tools for claims, payments, and eligibility workflows. End-to-end ownership, user research, design system contributions. 2-3+ years required. $143K-$160K. NYC hybrid Tue-Thu. DISTINCT from existing garner-health-staff-product-designer-visual-systems (job 5985995004, Staff level) — this is a mid-level role on a different team."
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io, 200, full job details). Posted May 26, 2026. Garner Health — reimagines healthcare benefits using data-driven insights to guide employees to higher-quality, lower-cost care. Product Designer II on Financial Incentives team: designs user-facing features and internal tools for claims, payments, and eligibility workflows. End-to-end ownership, user research, design system contributions. 2-3+ years required. $143K-$160K. NYC hybrid Tue-Thu. DISTINCT from existing garner-health-staff-product-designer-visual-systems (job 5985995004, Staff level) — this is a mid-level role on a different team.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "hinge-health-staff-product-designer-design-systems",
@@ -531,7 +581,9 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
     "_verifiedAt": "2026-06-16",
-    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Hinge Health — leverages software + AI to automate MSK care (51% YoY revenue growth, 47% member growth). Staff PD, Design Systems leads vision/strategy/roadmap for Hinge's design system: core components, patterns, tokens, interaction standards. Shapes how system evolves across member UI, Agent flows, enterprise templates. Claude Code / agentic coding tool fluency required. 4-6+ years with deep design system ownership. $195K-$275K + equity. SF hybrid 3 days/week. DISTINCT from existing hinge-health-senior-manager-product-design (management role) — this is an IC design systems specialist role."
+    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Hinge Health — leverages software + AI to automate MSK care (51% YoY revenue growth, 47% member growth). Staff PD, Design Systems leads vision/strategy/roadmap for Hinge's design system: core components, patterns, tokens, interaction standards. Shapes how system evolves across member UI, Agent flows, enterprise templates. Claude Code / agentic coding tool fluency required. 4-6+ years with deep design system ownership. $195K-$275K + equity. SF hybrid 3 days/week. DISTINCT from existing hinge-health-senior-manager-product-design (management role) — this is an IC design systems specialist role.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "headway-staff-product-designer-group-practices",
@@ -557,7 +609,9 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/headway/3e71f549-4318-48ff-9be6-57ffc5f3aece",
     "_verifiedAt": "2026-06-16",
-    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Headway — mental health platform, Series D $325M+ (a16z, Accel, Spark Capital), 75K+ therapists, 1M+ patients. Staff PD, Group Practices owns design anchor for segment: group practice onboarding, supervisory billing (250K new provider TAM, $100M+ revenue potential), admin/owner tooling, packaging tiers, practice analytics. 8+ years required, multi-user/permissions systems experience, AI-native design workflow (Claude Code, Cursor, MagicPatterns). $212K-$265K + equity. NY/SF/Seattle hybrid. Not in existing jobs.json."
+    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Headway — mental health platform, Series D $325M+ (a16z, Accel, Spark Capital), 75K+ therapists, 1M+ patients. Staff PD, Group Practices owns design anchor for segment: group practice onboarding, supervisory billing (250K new provider TAM, $100M+ revenue potential), admin/owner tooling, packaging tiers, practice analytics. 8+ years required, multi-user/permissions systems experience, AI-native design workflow (Claude Code, Cursor, MagicPatterns). $212K-$265K + equity. NY/SF/Seattle hybrid. Not in existing jobs.json.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "headway-senior-product-designer-new-channels",
@@ -583,7 +637,9 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/headway/82499b57-f003-4804-b2b9-bed36825aee5",
     "_verifiedAt": "2026-06-16",
-    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Headway — mental health platform, Series D $325M+. Senior PD, New Channels owns patient experience across Health Systems, EAP, and Payer Partnership channels. Designs handoff-to-care flows, Booking Assistant tool, EAP onboarding, co-branded payer journeys, conversion experiments. B2B2C design experience required, experimentation fluency, AI-native workflow (Claude.ai, Claude Code, Cursor, MagicPatterns). $180K-$225K + equity. NY/SF/Seattle hybrid. DISTINCT from headway-staff-product-designer-group-practices — different team (Patient team vs Group Practices). Not in existing jobs.json."
+    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Headway — mental health platform, Series D $325M+. Senior PD, New Channels owns patient experience across Health Systems, EAP, and Payer Partnership channels. Designs handoff-to-care flows, Booking Assistant tool, EAP onboarding, co-branded payer journeys, conversion experiments. B2B2C design experience required, experimentation fluency, AI-native workflow (Claude.ai, Claude Code, Cursor, MagicPatterns). $180K-$225K + equity. NY/SF/Seattle hybrid. DISTINCT from headway-staff-product-designer-group-practices — different team (Patient team vs Group Practices). Not in existing jobs.json.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "chorus-innovations-principal-product-designer-contract",
@@ -607,7 +663,9 @@
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/chorusinnovations/jobs/5126846007",
     "_verifiedAt": "2026-05-18",
-    "_verificationNote": "Verified live via Playwright (200, no dead signals)"
+    "_verificationNote": "Verified live via Playwright (200, no dead signals)",
+    "vertical": "Healthcare",
+    "employmentType": "Contract"
   },
   {
     "id": "alpaca-health-founding-product-designer",
@@ -634,7 +692,9 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/alpacahealth/5c318642-c273-4955-b1d0-dd186b063d40",
     "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible on page; using today's date. Alpaca Health — enables clinicians to become entrepreneurs in autism care; raises $14M from Core Innovation Capital, Adverb Ventures, South Park Commons; 30% MoM growth. Founding PD owns 0→1 parent-facing portal (intake, scheduling, communications, payments) + EHR overhaul for BCBAs/clinicians. $100K–$200K + equity. NYC onsite, 5 days/week. NOT a duplicate — Alpaca Health not in existing jobs.json.",
-    "_verifiedAt": "2026-05-09"
+    "_verifiedAt": "2026-05-09",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "hinge-health-senior-manager-product-design",
@@ -660,7 +720,9 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health/131ba92a-bd2c-448f-8802-d04557b63233",
     "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible on page; using today's date. Hinge Health — leverages software + AI to automate MSK care; headquartered SF. Senior Manager, Product Design leads HingeSelect pillar: care discovery, visits, accounts, financial systems, enterprise products. 10+ years design required, 3+ years people management. $235K–$323K + equity. SF hybrid 3 days/week. DISTINCT from existing Hinge Health entries (staff-product-designer-program-experience, staff-product-designer-enterprise-ai, staff-ux-motion-designer, senior-product-designer-design-systems-bengaluru) — this is a people management role.",
-    "_verifiedAt": "2026-05-09"
+    "_verifiedAt": "2026-05-09",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "abridge-staff-product-designer",
@@ -681,7 +743,9 @@
       "B2B"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/abridge",
-    "_verifiedAt": "2026-05-04"
+    "_verifiedAt": "2026-05-04",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "abridge-senior-product-designer",
@@ -702,7 +766,9 @@
       "B2B"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/abridge",
-    "_verifiedAt": "2026-05-04"
+    "_verifiedAt": "2026-05-04",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "commure-product-designer",
@@ -710,7 +776,7 @@
     "company": "Commure",
     "companyUrl": "https://www.commure.com",
     "level": "Mid",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "Mountain View, CA",
     "url": "https://jobs.ashbyhq.com/Commure/8134d3bd-9fcc-452a-96ed-4890a2de2e65",
     "postedAt": "2026-05-04",
@@ -722,7 +788,9 @@
       "startup"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/Commure",
-    "_verifiedAt": "2026-05-04"
+    "_verifiedAt": "2026-05-04",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "title": "Senior AI-Native Product Designer",
@@ -739,7 +807,9 @@
       "consumer health"
     ],
     "postedAt": "2026-04-27",
-    "_sourceUrl": "https://job-boards.greenhouse.io/oura"
+    "_sourceUrl": "https://job-boards.greenhouse.io/oura",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "title": "Senior Product Designer - Mobile",
@@ -756,7 +826,9 @@
       "consumer health"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/oura",
-    "postedAt": "2026-04-28"
+    "postedAt": "2026-04-28",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "title": "Staff Designer, New Sensing",
@@ -773,7 +845,9 @@
       "consumer health"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/oura",
-    "postedAt": "2026-04-20"
+    "postedAt": "2026-04-20",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "title": "Principal Design System Designer",
@@ -790,7 +864,9 @@
       "design systems"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/twinhealth",
-    "postedAt": "2026-04-08"
+    "postedAt": "2026-04-08",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "betterhelp-product-designer-therapist-platform",
@@ -815,7 +891,9 @@
     "_sourceUrl": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5168402008",
     "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health 2026 April",
     "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/betterhelpcom/jobs/5168402008, 200, full job details confirmed). Published April 8, 2026, updated April 24, 2026 (yesterday). BetterHelp — world's largest online therapy service, 30,000+ licensed therapists. Product Designer, Therapist Platform owns end-to-end design for therapist-facing product: scheduling, session management, notes, billing. $130K-$140K + performance bonus. Remote USA. DISTINCT from existing betterhelp-product-designer-client-growth (5082314008, $95K-$105K, Client Growth/patient-facing) — this role is therapist-facing. Not in existing jobs.json."
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/betterhelpcom/jobs/5168402008, 200, full job details confirmed). Published April 8, 2026, updated April 24, 2026 (yesterday). BetterHelp — world's largest online therapy service, 30,000+ licensed therapists. Product Designer, Therapist Platform owns end-to-end design for therapist-facing product: scheduling, session management, notes, billing. $130K-$140K + performance bonus. Remote USA. DISTINCT from existing betterhelp-product-designer-client-growth (5082314008, $95K-$105K, Client Growth/patient-facing) — this role is therapist-facing. Not in existing jobs.json.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "everlywell-visual-senior-product-designer-contract",
@@ -842,7 +920,9 @@
     "_sourceUrl": "https://jobs.lever.co/everlywell/7b7ac528-ec42-4480-b1fd-11ded686380e",
     "_searchQuery": "site:jobs.lever.co \"senior product designer\" health OR clinical OR telehealth 2026",
     "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via browse.py (Lever page rendered, full job description confirmed, active APPLY FOR THIS JOB button present, no dead-link signals). No posted date visible. Everlywell — pioneered at-home lab testing; expanded into advanced diagnostics, telehealth, and AI-powered health guidance; serves millions of consumers plus major health plans and enterprise partners. Visual Senior Product Designer (Contract) designs and scales web experiences: conversion-focused consumer flows, design system (Figma component library), high-fidelity UI and interactive prototypes. 6+ years consumer web/mobile design required; healthtech experience a bonus. Remote US, Contract (not full-time). No salary listed. ⚠️ NOTE: Contract role — flag for Carmen. NOT a duplicate — Everlywell not in existing jobs.json."
+    "_verificationNote": "Verified live via browse.py (Lever page rendered, full job description confirmed, active APPLY FOR THIS JOB button present, no dead-link signals). No posted date visible. Everlywell — pioneered at-home lab testing; expanded into advanced diagnostics, telehealth, and AI-powered health guidance; serves millions of consumers plus major health plans and enterprise partners. Visual Senior Product Designer (Contract) designs and scales web experiences: conversion-focused consumer flows, design system (Figma component library), high-fidelity UI and interactive prototypes. 6+ years consumer web/mobile design required; healthtech experience a bonus. Remote US, Contract (not full-time). No salary listed. ⚠️ NOTE: Contract role — flag for Carmen. NOT a duplicate — Everlywell not in existing jobs.json.",
+    "vertical": "Healthcare",
+    "employmentType": "Contract"
   },
   {
     "id": "counsel-health-senior-product-designer-clinical",
@@ -868,7 +948,9 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/counsel/1101017a-9b92-4ce6-8b02-ee468a122c5b",
     "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health",
     "_verifiedAt": "2026-04-18",
-    "_verificationNote": "Verified live via browse.py (200, full job description rendered). Published April 3, 2026. Counsel Health — AI-native medical group, $35M raised (a16z, Google Ventures, Pear VC), founded 2023. Senior Product Designer (Clinical) partners with clinical leaders to invent new paradigms for AI-enabled care delivery workflows. Owns clinical product end-to-end: advice/coaching, prescriptions, labs, referrals. 5+ years required; clinical product experience and early-stage startup background preferred. Competitive salary + equity. NYC hybrid, Boston hybrid, or Remote US. DISTINCT from existing entry counsel-health-senior-product-designer-consumer (ID: 385e95d2, patient-facing Consumer role) — this role is clinician-facing."
+    "_verificationNote": "Verified live via browse.py (200, full job description rendered). Published April 3, 2026. Counsel Health — AI-native medical group, $35M raised (a16z, Google Ventures, Pear VC), founded 2023. Senior Product Designer (Clinical) partners with clinical leaders to invent new paradigms for AI-enabled care delivery workflows. Owns clinical product end-to-end: advice/coaching, prescriptions, labs, referrals. 5+ years required; clinical product experience and early-stage startup background preferred. Competitive salary + equity. NYC hybrid, Boston hybrid, or Remote US. DISTINCT from existing entry counsel-health-senior-product-designer-consumer (ID: 385e95d2, patient-facing Consumer role) — this role is clinician-facing.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "amperos-health-product-designer",
@@ -876,7 +958,7 @@
     "company": "Amperos Health",
     "companyUrl": "https://www.amperoshealth.com",
     "level": "Mid-Senior",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "New York, NY (Flatiron)",
     "url": "https://jobs.ashbyhq.com/amperos/7170a997-79ef-4988-869d-f3099e794c72",
     "postedAt": "2026-02-13",
@@ -895,7 +977,9 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/amperos/7170a997-79ef-4988-869d-f3099e794c72",
     "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health",
     "_verifiedAt": "2026-04-18",
-    "_verificationNote": "Verified live via browse.py (200, full job description rendered). Published February 13, 2026 per Ashby API (isListed: true). ⚠️ FRESHNESS: 64 days since posting — validator should reconfirm liveness. Amperos Health — leading provider of multi-modal RCM agents for healthcare clinics; founded 2023, backed by Uncork, Neo, Nebular.vc, plus angels from OpenAI/Stripe/Twilio. First full-time PD hire. Designs workqueue software for claim tracking, internal service team tools, analytics dashboards, AI agent workflow UX. Strong B2B/healthcare product discovery skills required; design system 0-1 experience; AI-native design tools (Figma Make, Claude Code, Cursor). $200K–$250K + equity. Onsite NYC (WFH Fridays). Not a duplicate — Amperos Health not in existing jobs.json."
+    "_verificationNote": "Verified live via browse.py (200, full job description rendered). Published February 13, 2026 per Ashby API (isListed: true). ⚠️ FRESHNESS: 64 days since posting — validator should reconfirm liveness. Amperos Health — leading provider of multi-modal RCM agents for healthcare clinics; founded 2023, backed by Uncork, Neo, Nebular.vc, plus angels from OpenAI/Stripe/Twilio. First full-time PD hire. Designs workqueue software for claim tracking, internal service team tools, analytics dashboards, AI agent workflow UX. Strong B2B/healthcare product discovery skills required; design system 0-1 experience; AI-native design tools (Figma Make, Claude Code, Cursor). $200K–$250K + equity. Onsite NYC (WFH Fridays). Not a duplicate — Amperos Health not in existing jobs.json.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "whoop-senior-product-designer-growth",
@@ -904,7 +988,7 @@
     "companyUrl": "https://www.whoop.com",
     "url": "https://jobs.lever.co/whoop/76d39eda-4f33-4281-8fa0-947f9015f514",
     "level": "Senior",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "Boston, MA",
     "tags": [
       "wearable",
@@ -919,7 +1003,9 @@
     "_sourceUrl": "https://jobs.lever.co/whoop/76d39eda-4f33-4281-8fa0-947f9015f514",
     "_searchQuery": "site:jobs.lever.co whoop designer 2026",
     "_verifiedAt": "2026-04-18",
-    "_verificationNote": "Live — confirmed on designproject.io (14 days old as of April 18, posted April 4 2026). Boston onsite required. $155K-$215K. Designs ecommerce and core purchase journeys. WHOOP scaling with 600+ new hires in 2026. ⚠️ Lever direct fetch returns 403; verified via aggregator — validator should confirm via direct browse."
+    "_verificationNote": "Live — confirmed on designproject.io (14 days old as of April 18, posted April 4 2026). Boston onsite required. $155K-$215K. Designs ecommerce and core purchase journeys. WHOOP scaling with 600+ new hires in 2026. ⚠️ Lever direct fetch returns 403; verified via aggregator — validator should confirm via direct browse.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "finch-care-product-designer",
@@ -944,7 +1030,9 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/finch/3ecb9486-04a5-4afc-82c0-44255ed441fd",
     "_searchQuery": "site:jobs.ashbyhq.com designer health",
     "_verifiedAt": "2026-04-14",
-    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/finch, isListed: true, publishedAt: 2026-04-02). Finch Care — mental health self-care app built around a virtual pet companion; 20M+ users, profitable, 100% remote team, backed by indie growth. Product Designer role: 4+ years consumer mobile app design at scale. Designs mental health exercises, gaming mechanics, and growth loops. Emphasis on balancing aesthetics with pragmatism. Full-time, remote North/South America. No salary disclosed. Company description: founded 2021 by two friends who struggled with anxiety and depression. NOT a duplicate — Finch Care not in existing jobs.json."
+    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/finch, isListed: true, publishedAt: 2026-04-02). Finch Care — mental health self-care app built around a virtual pet companion; 20M+ users, profitable, 100% remote team, backed by indie growth. Product Designer role: 4+ years consumer mobile app design at scale. Designs mental health exercises, gaming mechanics, and growth loops. Emphasis on balancing aesthetics with pragmatism. Full-time, remote North/South America. No salary disclosed. Company description: founded 2021 by two friends who struggled with anxiety and depression. NOT a duplicate — Finch Care not in existing jobs.json.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "future-senior-product-designer",
@@ -970,7 +1058,9 @@
     "_sourceUrl": "https://job-boards.greenhouse.io/future/jobs/4683185005",
     "_searchQuery": "site:job-boards.greenhouse.io \"senior product designer\" health 2026",
     "_verifiedAt": "2026-04-11",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/future/jobs/4683185005, 200, full job description). Posted April 8, 2026 (3 days ago). Future — nation's largest personal training platform (AI-powered coaching; merged with Autograph by Tom Brady). Senior PD owns core consumer product: onboarding, training flows, coaching interactions across mobile app. AI tools expected in daily workflow. 5–8+ years consumer design. Remote USA. $155K–$200K + equity + wellness stipend + flexible PTO. ⚠️ NOTE: fitness/wellness platform, not clinical healthcare — borderline inclusion, flag for Carmen."
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/future/jobs/4683185005, 200, full job description). Posted April 8, 2026 (3 days ago). Future — nation's largest personal training platform (AI-powered coaching; merged with Autograph by Tom Brady). Senior PD owns core consumer product: onboarding, training flows, coaching interactions across mobile app. AI tools expected in daily workflow. 5–8+ years consumer design. Remote USA. $155K–$200K + equity + wellness stipend + flexible PTO. ⚠️ NOTE: fitness/wellness platform, not clinical healthcare — borderline inclusion, flag for Carmen.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "blink-health-lead-product-designer",
@@ -995,7 +1085,9 @@
     "_sourceUrl": "https://job-boards.greenhouse.io/blinkhealth/jobs/8420880002",
     "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health telehealth April 2026",
     "_verifiedAt": "2026-04-11",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/blinkhealth/jobs/8420880002, 200, full job description). Posted February 12, 2026, updated February 25, 2026. ⚠️ FRESHNESS: 45 days since last update — validator should confirm currency. Blink Health — healthcare tech company making prescriptions accessible and affordable (BlinkRx + Quick Save). Lead PD manages design for cross-functional product team: UX for prescription supply chain, user research, design systems, wireframes/prototypes. 7+ years required, Figma + Adobe CC. Remote USA. No salary listed."
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/blinkhealth/jobs/8420880002, 200, full job description). Posted February 12, 2026, updated February 25, 2026. ⚠️ FRESHNESS: 45 days since last update — validator should confirm currency. Blink Health — healthcare tech company making prescriptions accessible and affordable (BlinkRx + Quick Save). Lead PD manages design for cross-functional product team: UX for prescription supply chain, user research, design systems, wireframes/prototypes. 7+ years required, Figma + Adobe CC. Remote USA. No salary listed.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "readily-founding-design-engineer",
@@ -1003,7 +1095,7 @@
     "company": "Readily",
     "companyUrl": "https://goreadily.com",
     "level": "Mid-Senior",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "San Francisco, CA",
     "url": "https://www.ycombinator.com/companies/readily/jobs/eaFE5YB-founding-design-engineer",
     "postedAt": "2026-03-27",
@@ -1021,7 +1113,9 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-04-07",
-    "_verificationNote": "Verified live via YC job board (200, full job description). Posted March 27, 2026. Readily (YC S23) builds an AI compliance layer for healthcare organizations — automates audit/regulation readiness. 10x YoY revenue growth. First design hire: owns design system, frontend (React/TypeScript), and all customer-facing surfaces. Figma to React/TypeScript to production. 0.30%-1.50% equity. SF onsite. Requires B2B/enterprise design portfolio. Note: design engineer hybrid role, not pure UX."
+    "_verificationNote": "Verified live via YC job board (200, full job description). Posted March 27, 2026. Readily (YC S23) builds an AI compliance layer for healthcare organizations — automates audit/regulation readiness. 10x YoY revenue growth. First design hire: owns design system, frontend (React/TypeScript), and all customer-facing surfaces. Figma to React/TypeScript to production. 0.30%-1.50% equity. SF onsite. Requires B2B/enterprise design portfolio. Note: design engineer hybrid role, not pure UX.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "tennr-senior-product-designer",
@@ -1029,7 +1123,7 @@
     "company": "Tennr",
     "companyUrl": "https://www.tennr.com",
     "level": "Senior",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "New York, NY",
     "url": "https://www.ycombinator.com/companies/tennr/jobs/81hidB8-senior-product-designer",
     "postedAt": "2026-02-25",
@@ -1044,7 +1138,9 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-03-23",
-    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Tennr (YC W23) — Fast, Transparent Patient Experiences. AI-powered referral management that prevents patient delays in the US healthcare system. Senior Product Designer reporting to co-founder, full design ownership across product streams. $180K-$215K, NYC office. Posted ~26 days ago per YC board."
+    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Tennr (YC W23) — Fast, Transparent Patient Experiences. AI-powered referral management that prevents patient delays in the US healthcare system. Senior Product Designer reporting to co-founder, full design ownership across product streams. $180K-$215K, NYC office. Posted ~26 days ago per YC board.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "reframe-product-designer",
@@ -1052,7 +1148,7 @@
     "company": "Reframe",
     "companyUrl": "https://www.reframeapp.com",
     "level": "Mid",
-    "locationType": "Onsite",
+    "locationType": "On-site",
     "location": "Atlanta, GA",
     "url": "https://www.ycombinator.com/companies/reframe/jobs/4PA8ThD-product-designer",
     "postedAt": "2026-03-04",
@@ -1069,7 +1165,9 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-03-23",
-    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Reframe (YC S21) — #1 app to help people cut back on drinking alcohol. 150K+ paying customers, $13M ARR, growing fast. Full-time Product Designer to build new products/features across ecosystems. Will sponsor visa. $70K-$120K, Atlanta GA (onsite). Posted ~19 days ago per YC board."
+    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Reframe (YC S21) — #1 app to help people cut back on drinking alcohol. 150K+ paying customers, $13M ARR, growing fast. Full-time Product Designer to build new products/features across ecosystems. Will sponsor visa. $70K-$120K, Atlanta GA (onsite). Posted ~19 days ago per YC board.",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "oura-staff-designer-womens-health",
@@ -1089,7 +1187,9 @@
       "B2C"
     ],
     "_verifiedAt": "2026-02-23",
-    "postedAt": "2026-04-06"
+    "postedAt": "2026-04-06",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "leona-health-lead-product-designer",
@@ -1108,7 +1208,9 @@
       "startup"
     ],
     "_verifiedAt": "2026-02-23",
-    "postedAt": "2024-11-22"
+    "postedAt": "2024-11-22",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "nourish-staff-product-designer",
@@ -1127,7 +1229,9 @@
       "AI"
     ],
     "_verifiedAt": "2026-02-16",
-    "postedAt": "2026-04-03"
+    "postedAt": "2026-04-03",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "hone-health-senior-product-designer-clinical",
@@ -1146,7 +1250,9 @@
       "startup"
     ],
     "_verifiedAt": "2026-02-15",
-    "postedAt": "2026-02-10"
+    "postedAt": "2026-02-10",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "3y-health-ai-product-designer",
@@ -1164,7 +1270,9 @@
       "startup"
     ],
     "_verifiedAt": "2026-02-15",
-    "postedAt": "2025-09-08"
+    "postedAt": "2025-09-08",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   },
   {
     "id": "flo-health-senior-product-designer-user-centric",
@@ -1182,6 +1290,8 @@
       "startup"
     ],
     "_verifiedAt": "2026-02-14",
-    "postedAt": "2026-04-14"
+    "postedAt": "2026-04-14",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time"
   }
 ]

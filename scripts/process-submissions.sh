@@ -49,9 +49,14 @@ echo "$ISSUES" | while read -r ISSUE_B64; do
   COMPANY_URL=$(extract_field "$BODY" "Company URL")
   LEVEL=$(extract_field "$BODY" "Level")
   LOCATION_TYPE=$(extract_field "$BODY" "Location Type")
+  EMPLOYMENT_TYPE=$(extract_field "$BODY" "Employment Type")
+  VERTICAL=$(extract_field "$BODY" "Vertical")
   LOCATION=$(extract_field "$BODY" "Location")
   TAGS=$(extract_field "$BODY" "Tags")
   JOB_TITLE_FROM_ISSUE=$(extract_field "$BODY" "Job Title")
+  # Defaults for older submissions that predate these fields
+  [ -z "$EMPLOYMENT_TYPE" ] && EMPLOYMENT_TYPE="Full-time"
+  [ -z "$VERTICAL" ] && VERTICAL="Other"
 
   if [ -z "$JOB_URL" ]; then
     echo "  No job URL found in issue #$NUMBER — skipping"
@@ -100,6 +105,7 @@ echo "$ISSUES" | while read -r ISSUE_B64; do
   JOBS_FILE="$JOBS_FILE" JOB_ID="$JOB_ID" JOB_TITLE="$JOB_TITLE_FROM_ISSUE" \
   COMPANY="$COMPANY" COMPANY_URL="$COMPANY_URL" LEVEL="$LEVEL" \
   LOCATION_TYPE="$LOCATION_TYPE" LOCATION="$LOCATION" JOB_URL="$JOB_URL" \
+  EMPLOYMENT_TYPE="$EMPLOYMENT_TYPE" VERTICAL="$VERTICAL" \
   TODAY="$TODAY" TAGS_JSON="$TAGS_JSON" python3 - <<'PYEOF'
 import json, os
 
@@ -116,7 +122,9 @@ new_job = {
     "locationType": os.environ["LOCATION_TYPE"],
     "location": os.environ["LOCATION"],
     "url": os.environ["JOB_URL"],
-    "postedDate": os.environ["TODAY"],
+    "postedAt": os.environ["TODAY"],
+    "employmentType": os.environ["EMPLOYMENT_TYPE"],
+    "vertical": os.environ["VERTICAL"],
     "tags": json.loads(os.environ["TAGS_JSON"]),
 }
 

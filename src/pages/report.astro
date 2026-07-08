@@ -68,7 +68,7 @@ import Footer from '../components/Footer.astro';
             type="text"
             id="pageUrl"
             name="pageUrl"
-            placeholder="https://health.designjobs.cv/..."
+            placeholder="https://designjobs.cv/..."
             class="form-input"
           />
           <p class="text-xs text-slate-400 dark:text-slate-500 mt-1" id="url-hint">Link to the relevant page (optional for feature requests)</p>
@@ -234,7 +234,7 @@ import Footer from '../components/Footer.astro';
       urlInput.required = true;
       urlLabel!.innerHTML = 'Page or job URL <span class="text-red-400">*</span>';
       urlHint!.textContent = 'Link to the page or job listing with the issue';
-      urlInput.placeholder = 'https://health.designjobs.cv/jobs or the job listing URL';
+      urlInput.placeholder = 'https://designjobs.cv/jobs or the job listing URL';
     } else {
       urlInput.required = false;
       urlLabel!.textContent = 'Related page or URL';

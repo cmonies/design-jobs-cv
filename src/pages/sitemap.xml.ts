@@ -2,11 +2,11 @@ import type { APIContext } from 'astro';
 import jobs from '../data/jobs.json';
 
 export function GET(context: APIContext) {
-  const site = context.site || new URL('https://health.designjobs.cv');
+  const site = context.site || new URL('https://designjobs.cv');
 
   // Use most recent job's posted date as lastmod for dynamic pages
   const latestDate = jobs.length > 0
-    ? jobs.reduce((latest, job) => job.postedDate > latest ? job.postedDate : latest, jobs[0].postedDate)
+    ? jobs.reduce((latest, job) => (job.postedAt || job.postedDate) > latest ? (job.postedAt || job.postedDate) : latest, (jobs[0].postedAt || jobs[0].postedDate))
     : new Date().toISOString().split('T')[0];
 
   const pages = [

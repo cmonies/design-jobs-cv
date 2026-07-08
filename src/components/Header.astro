@@ -2,53 +2,51 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<header role="banner" class="bg-white/80 dark:bg-surface-header/90 backdrop-blur-xl sticky top-0 z-50 border-b border-slate-100 dark:border-slate-700/50">
-  <nav aria-label="Main navigation" class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center group" data-umami-event="nav-logo-click">
-      <img src="/logo.svg" alt="Design Jobs" class="h-6 dark:hidden" />
-      <img src="/logo-dark.svg" alt="Design Jobs" class="h-6 hidden dark:block" />
+<header role="banner" class="bg-paper/90 dark:bg-surface-header/90 backdrop-blur-xl sticky top-0 z-50 border-b border-line dark:border-slate-700/50">
+  <nav aria-label="Main navigation" class="w-full max-w-[1800px] mx-auto px-4 md:px-6 py-3.5 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5 group text-ink dark:text-slate-100" data-umami-event="nav-logo-click">
+      <!-- Pixel bread mark -->
+      <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" class="shrink-0 text-crust-500 group-hover:text-crust-600 transition-colors">
+        <path d="m30.47 4.57 -1.52 0 0 -1.52 -1.53 0 0 -1.53 -3.04 0 0 -1.52L7.61 0l0 1.52 10.67 0 0 1.53 3.05 0 0 1.52 1.52 0 0 1.53 1.53 0 0 7.61 -1.53 0 0 1.53 -1.52 0 0 15.24 -16.76 0 0 1.52 21.33 0 0 -1.52 1.52 0 0 -1.53 1.53 0 0 -1.52 1.52 0 0 -13.72 1.53 0 0 -7.61 -1.53 0 0 -1.53z"/>
+        <path d="M15.23 21.33h1.53v1.53h-1.53Z"/><path d="M13.71 18.29h1.52v1.52h-1.52Z"/><path d="M9.14 22.86h6.09v1.52H9.14Z"/><path d="M9.14 18.29h1.52v1.52H9.14Z"/><path d="M7.61 21.33h1.53v1.53H7.61Z"/><path d="M4.57 1.52h3.04v1.53H4.57Z"/><path d="M3.04 15.24h1.53v15.24H3.04Z"/><path d="M3.04 3.05h1.53v1.52H3.04Z"/><path d="M1.52 13.71h1.52v1.53H1.52Z"/><path d="M1.52 4.57h1.52V6.1H1.52Z"/><path d="M0 6.1h1.52v7.61H0Z"/>
+      </svg>
+      <span class="font-display font-semibold text-[15px] tracking-tight">designjobs.cv</span>
     </a>
 
     <!-- Desktop nav -->
-    <div class="hidden md:flex items-center gap-8">
-      <a
-        href="/"
-        aria-current={currentPath === "/" ? "page" : undefined}
-        class:list={[
-          "text-sm font-medium transition-colors",
-          currentPath === "/"
-            ? "text-brand-500"
-            : "text-slate-500 dark:text-slate-400 hover:text-brand-500"
-        ]}
-        data-umami-event="nav-home-click"
-      >
-        Home
-      </a>
+    <div class="hidden md:flex items-center gap-7">
       <a
         href="/jobs"
         aria-current={currentPath === "/jobs" || currentPath === "/jobs/" ? "page" : undefined}
         class:list={[
           "text-sm font-medium transition-colors",
           currentPath === "/jobs" || currentPath === "/jobs/"
-            ? "text-brand-500"
-            : "text-slate-500 dark:text-slate-400 hover:text-brand-500"
+            ? "text-ink dark:text-white"
+            : "text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white"
         ]}
         data-umami-event="nav-jobs-click"
       >
         Jobs
       </a>
       <a
+        href="/jobs?type=Contract"
+        class="text-sm font-medium text-crust-600 dark:text-crust-300 hover:text-crust-700 dark:hover:text-crust-200 transition-colors"
+        data-umami-event="nav-contract-click"
+      >
+        Contract
+      </a>
+      <a
         href="/submit"
-        class="text-sm bg-brand-500 text-white px-5 py-2 rounded-xl hover:bg-brand-600 transition-colors font-medium shadow-soft"
+        class="text-sm font-medium px-4 py-1.5 rounded-full border border-ink dark:border-slate-300 text-ink dark:text-slate-100 hover:bg-ink hover:text-paper dark:hover:bg-slate-100 dark:hover:text-ink transition-colors"
         data-umami-event="nav-submit-click"
       >
-        Submit a Job
+        Submit a job
       </a>
     </div>
 
     <!-- Mobile -->
     <div class="flex md:hidden items-center gap-2">
-      <button type="button" id="mobile-menu-btn" class="p-2 text-slate-500 dark:text-slate-400 hover:text-brand-500 transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button type="button" id="mobile-menu-btn" class="p-2 text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg id="menu-open-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
         <svg id="menu-close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
       </button>
@@ -56,11 +54,11 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 dark:border-slate-700/50 bg-white dark:bg-surface-header" role="region" aria-label="Mobile menu">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-line dark:border-slate-700/50 bg-paper dark:bg-surface-header" role="region" aria-label="Mobile menu">
     <div class="px-6 py-4 space-y-3">
-      <a href="/" aria-current={currentPath === "/" ? "page" : undefined} class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1" data-umami-event="nav-mobile-home-click">Home</a>
-      <a href="/jobs" aria-current={currentPath === "/jobs" || currentPath === "/jobs/" ? "page" : undefined} class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1" data-umami-event="nav-mobile-jobs-click">Jobs</a>
-      <a href="/submit" class="block text-sm text-brand-500 font-medium py-1" data-umami-event="nav-mobile-submit-click">Submit a Job →</a>
+      <a href="/jobs" aria-current={currentPath === "/jobs" || currentPath === "/jobs/" ? "page" : undefined} class="block text-sm font-medium text-ink-soft dark:text-slate-300 hover:text-ink dark:hover:text-white transition-colors py-1" data-umami-event="nav-mobile-jobs-click">Jobs</a>
+      <a href="/jobs?type=Contract" class="block text-sm font-medium text-crust-600 dark:text-crust-300 py-1" data-umami-event="nav-mobile-contract-click">Contract roles</a>
+      <a href="/submit" class="block text-sm font-medium text-ink dark:text-slate-100 py-1" data-umami-event="nav-mobile-submit-click">Submit a job →</a>
     </div>
   </div>
 </header>

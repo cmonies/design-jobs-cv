@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://health.designjobs.cv/sitemap.xml
+Sitemap: https://designjobs.cv/sitemap.xml
 
 # LLM discovery
 # See https://llmstxt.org
-LLMs.txt: https://health.designjobs.cv/llms.txt
+LLMs.txt: https://designjobs.cv/llms.txt

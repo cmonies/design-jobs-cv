@@ -6,8 +6,8 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "We are a community-sourced healthcare design job board. Open source, verified listings, and free forever. Find design roles where your work actually matters." } = Astro.props;
-const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv');
+const { title, description = "A community-sourced design job board. Startup, AI, and non-traditional verticals — full-time and contract, every listing verified. Open source and free forever." } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, 'https://designjobs.cv');
 ---
 
 <!doctype html>
@@ -17,8 +17,8 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#FFF7E6" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="format-detection" content="telephone=no" />
@@ -28,30 +28,30 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl.href} />
-    <meta property="og:site_name" content="Design Jobs" />
-    <meta property="og:image" content="https://health.designjobs.cv/og-image.png" />
+    <meta property="og:site_name" content="designjobs.cv" />
+    <meta property="og:image" content="https://designjobs.cv/og-image.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://health.designjobs.cv/og-image.png" />
+    <meta name="twitter:image" content="https://designjobs.cv/og-image.png" />
 
     <link rel="canonical" href={canonicalUrl.href} />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="alternate" type="application/rss+xml" title="designjobs Healthcare Jobs Feed" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="designjobs.cv feed" href="/rss.xml" />
 
     <!-- Umami Analytics (no cookies, privacy-friendly) -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="304941a8-35cd-4473-ad1a-2c131d7bbad5"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- Be Vietnam Pro is loaded via Google Fonts above -->
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title}</title>
 
     <script is:inline>
@@ -62,8 +62,8 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
       }
     </script>
   </head>
-  <body class="bg-warm-50 dark:bg-surface-page text-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col transition-colors">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-brand-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium">
+  <body class="bg-paper dark:bg-surface-page text-ink dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col transition-colors">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium">
       Skip to main content
     </a>
     <slot />
@@ -98,11 +98,9 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
   @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 
   /* Button press feedback */
-  a[class*="rounded-full"][class*="bg-sapphire"],
   button[type="submit"] {
     transition: background-color 150ms ease, transform 100ms var(--ease-out-cubic);
   }
-  a[class*="rounded-full"][class*="bg-sapphire"]:active,
   button[type="submit"]:active {
     transform: scale(0.97);
   }
@@ -173,7 +171,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
 
   /* Global focus visible styles */
   :where(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])):focus-visible {
-    outline: 2px solid #244BF8;
+    outline: 2px solid #C0722A;
     outline-offset: 2px;
   }
 

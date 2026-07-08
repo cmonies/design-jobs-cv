@@ -10,7 +10,11 @@ interface Job {
   location: string;
   url: string;
   postedDate?: string | null;
+  postedAt?: string | null;
   tags: string[];
+  vertical?: string;
+  employmentType?: string;
+  salary?: string | null;
 }
 
 interface Props {
@@ -27,23 +31,26 @@ interface Props {
 const { jobs, filterable = false, maxDelay = 150, delayStep = 20, id } = Astro.props;
 ---
 
+<!-- Masonry: CSS columns, tight gutters. Tiles flow top-to-bottom per column. -->
 <ul
-  class="bg-white dark:bg-surface-card rounded-3xl shadow-soft overflow-hidden list-none"
+  class="columns-1 sm:columns-2 lg:columns-3 2xl:columns-4 gap-2.5 list-none"
   id={id}
   aria-label="Job listings"
 >
   {jobs.map((job, i) => (
     <li
-      class:list={["reveal job-row border-b border-slate-100 dark:border-slate-700/30", filterable && "job-item"]}
+      class:list={["reveal reveal-fade break-inside-avoid mb-2.5", filterable && "job-item"]}
       data-delay={String(Math.min(i * delayStep, maxDelay))}
       {...(filterable ? {
         "data-level": job.level,
         "data-location-type": job.locationType,
         "data-location": job.location,
-        "data-search": `${job.title} ${job.company} ${job.location} ${job.tags.join(' ')}`.toLowerCase(),
+        "data-vertical": job.vertical || 'Healthcare',
+        "data-employment-type": job.employmentType || 'Full-time',
+        "data-search": `${job.title} ${job.company} ${job.location} ${job.vertical || ''} ${job.tags.join(' ')}`.toLowerCase(),
       } : {})}
     >
-      <JobCard {...job} />
+      <JobCard {...job} index={i} />
     </li>
   ))}
 </ul>

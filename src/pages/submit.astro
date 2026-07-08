@@ -4,16 +4,16 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Submit a Job — Design Jobs" description="Submit a healthcare UX job listing to the community-curated board.">
+<Layout title="Submit a job — designjobs.cv" description="Submit a design job listing to the community-curated board. Full-time and contract roles welcome.">
   <Header />
 
   <main id="main-content" tabindex="-1">
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pt-12 pb-20">
     <div id="form-container" class="max-w-2xl mx-auto">
       <div class="mb-10 text-center">
-        <h1 class="animate-fade-in stagger-1 text-3xl font-bold text-slate-900 dark:text-white mb-3">Submit a job</h1>
+        <h1 class="animate-fade-in stagger-1 font-display text-3xl font-semibold tracking-tight text-slate-900 dark:text-white mb-3">Submit a job</h1>
         <p class="animate-fade-in stagger-1 text-base text-slate-500 dark:text-slate-400">
-          Know of a great healthcare UX role? Add it to the board. Every submission is reviewed before publishing.
+          Know of a great design role? Add it to the board — full-time or contract. Every submission is reviewed before publishing.
         </p>
       </div>
 
@@ -76,7 +76,7 @@ import Footer from '../components/Footer.astro';
               id="company"
               name="company"
               required
-              placeholder="e.g., Oscar Health"
+              placeholder="e.g., Linear"
               class="form-input"
             />
           </div>
@@ -126,9 +126,37 @@ import Footer from '../components/Footer.astro';
             <label for="locationType" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Location Type <span class="text-red-400">*</span></label>
             <select id="locationType" name="locationType" required class="form-input">
               <option value="">Select type</option>
-              <option value="Remote">🌍 Remote</option>
-              <option value="Hybrid">🏢 Hybrid</option>
-              <option value="Onsite">📍 Onsite</option>
+              <option value="Remote">Remote</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="On-site">On-site</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Employment Type + Vertical -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="employmentType" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Employment Type <span class="text-red-400">*</span></label>
+            <select id="employmentType" name="employmentType" required class="form-input">
+              <option value="">Select type</option>
+              <option value="Full-time">Full-time</option>
+              <option value="Contract">Contract</option>
+              <option value="Freelance">Freelance</option>
+            </select>
+          </div>
+          <div>
+            <label for="vertical" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Vertical <span class="text-red-400">*</span></label>
+            <select id="vertical" name="vertical" required class="form-input">
+              <option value="">Select vertical</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="AI/ML">AI/ML</option>
+              <option value="Fintech">Fintech</option>
+              <option value="Climate">Climate</option>
+              <option value="Consumer">Consumer</option>
+              <option value="Enterprise/SaaS">Enterprise/SaaS</option>
+              <option value="Gov/Civic">Gov/Civic</option>
+              <option value="Education">Education</option>
+              <option value="Other">Other</option>
             </select>
           </div>
         </div>
@@ -153,7 +181,7 @@ import Footer from '../components/Footer.astro';
             type="text"
             id="tags"
             name="tags"
-            placeholder="e.g., telehealth, mental health, B2C"
+            placeholder="e.g., design systems, B2C, 0-to-1"
             class="form-input"
           />
           <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Comma-separated. Helps people find relevant roles.</p>
@@ -171,8 +199,8 @@ import Footer from '../components/Footer.astro';
             <span class="text-sm text-slate-600 dark:text-slate-400">The job posting is currently active</span>
           </label>
           <label class="flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" name="confirm_healthcare" required class="mt-0.5" />
-            <span class="text-sm text-slate-600 dark:text-slate-400">This is a UX/design role at a healthcare or health-tech company</span>
+            <input type="checkbox" name="confirm_design" required class="mt-0.5" />
+            <span class="text-sm text-slate-600 dark:text-slate-400">This is a UX/design role (product design, UX, research, design engineering)</span>
           </label>
           <label class="flex items-start gap-3 cursor-pointer">
             <input type="checkbox" name="confirm_real" required class="mt-0.5" />
@@ -244,8 +272,8 @@ import Footer from '../components/Footer.astro';
   }
   .form-input:focus {
     outline: none;
-    border-color: #8D9AFC;
-    box-shadow: 0 0 0 2px rgba(36, 75, 248, 0.12);
+    border-color: #E0A96A;
+    box-shadow: 0 0 0 2px rgba(192, 114, 42, 0.15);
   }
   .form-input::placeholder {
     color: #A1A1AA;
@@ -259,8 +287,8 @@ import Footer from '../components/Footer.astro';
     color: #71717A;
   }
   :global(.dark) .form-input:focus {
-    border-color: #5872FA;
-    box-shadow: 0 0 0 2px rgba(36, 75, 248, 0.2);
+    border-color: #C0722A;
+    box-shadow: 0 0 0 2px rgba(192, 114, 42, 0.25);
   }
   input[type="checkbox"] {
     appearance: none;
@@ -275,8 +303,8 @@ import Footer from '../components/Footer.astro';
     flex-shrink: 0;
   }
   input[type="checkbox"]:checked {
-    background: #4A6CF7;
-    border-color: #4A6CF7;
+    background: #C0722A;
+    border-color: #C0722A;
   }
   input[type="checkbox"]:checked::after {
     content: '';
@@ -291,15 +319,15 @@ import Footer from '../components/Footer.astro';
   }
   input[type="checkbox"]:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(74, 108, 247, 0.3);
+    box-shadow: 0 0 0 2px rgba(192, 114, 42, 0.3);
   }
   :global(.dark) input[type="checkbox"] {
     background: #131313;
     border-color: #232326;
   }
   :global(.dark) input[type="checkbox"]:checked {
-    background: #4A6CF7;
-    border-color: #4A6CF7;
+    background: #C0722A;
+    border-color: #C0722A;
   }
   select.form-input {
     appearance: none;
@@ -362,6 +390,8 @@ import Footer from '../components/Footer.astro';
       url: normalizeUrl(data.get('url') as string),
       level: data.get('level') as string,
       locationType: data.get('locationType') as string,
+      employmentType: data.get('employmentType') as string,
+      vertical: data.get('vertical') as string,
       location: data.get('location') as string,
       tags: data.get('tags') as string || '',
       website_url: data.get('website_url') as string || '',
