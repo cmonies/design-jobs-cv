@@ -12,7 +12,6 @@ const featuredJobs = [...jobs].sort((a, b) => {
   return b.postedAt.localeCompare(a.postedAt);
 }).slice(0, 18);
 
-const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.employmentType === 'Freelance').length;
 ---
 
 <Layout title="designjobs.cv — Design jobs, verified">
@@ -40,17 +39,13 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
       Design work worth&nbsp;doing.
     </h1>
     <div class="animate-fade-up stagger-2 mt-6 md:mt-8 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-      <p class="text-base md:text-lg text-muted dark:text-slate-400 leading-relaxed max-w-md">
+      <p class="text-base md:text-lg text-muted dark:text-slate-400 leading-relaxed max-w-2xl">
         A community-curated board of design roles at startups — healthcare, AI, and the verticals nobody's watching. Every link goes to the real posting.
       </p>
-      <div class="flex items-center gap-2.5 shrink-0">
-        <a href="/jobs" class="px-5 py-2.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-medium hover:opacity-85 transition-opacity" data-umami-event="hero-alljobs-click">
-          {jobs.length} open roles
-        </a>
-        <a href="/jobs?type=Contract" class="px-5 py-2.5 rounded-full border border-ink dark:border-slate-300 text-ink dark:text-slate-100 text-sm font-medium hover:bg-ink hover:text-paper dark:hover:bg-slate-100 dark:hover:text-ink transition-colors" data-umami-event="hero-contract-click">
-          Contract{contractCount > 0 ? ` (${contractCount})` : ''}
-        </a>
-      </div>
+      <a href="/jobs" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-medium hover:opacity-85 transition-opacity" data-umami-event="hero-alljobs-click">
+        View {jobs.length} jobs
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+      </a>
     </div>
   </section>
 
