@@ -14,7 +14,7 @@ const sortedJobs = [...jobs].sort((a, b) => {
   return b.postedAt.localeCompare(a.postedAt);
 });
 
-const levelOrder = ['Junior', 'Mid', 'Mid-Senior', 'Senior', 'Staff', 'Lead', 'Principal', 'Manager', 'Director'];
+const levelOrder = ['Entry', 'Junior', 'Mid', 'Mid-Senior', 'Senior', 'Staff', 'Lead', 'Principal', 'Manager', 'Director'];
 const levels = levelOrder.filter(l => jobs.some(j => j.level === l));
 const locationTypes = [...new Set(jobs.map(j => j.locationType))];
 const locations = allLocationBuckets(jobs);
@@ -24,12 +24,15 @@ const levelCounts: Record<string, number> = {};
 levels.forEach(l => { levelCounts[l] = jobs.filter(j => j.level === l).length; });
 const locationCounts: Record<string, number> = {};
 locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationType === lt).length; });
-
 const verticalCounts: Record<string, number> = {};
 verticals.forEach(v => { verticalCounts[v] = jobs.filter(j => (j.vertical || 'Healthcare') === v).length; });
 
 const fullTimeCount = jobs.filter(j => (j.employmentType || 'Full-time') === 'Full-time').length;
 const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.employmentType === 'Freelance').length;
+const employmentOptions = [
+  { value: 'Full-time', count: fullTimeCount },
+  { value: 'Contract', count: contractCount },
+];
 ---
 
 <Layout title="All jobs — designjobs.cv" description="Browse open design roles at startups across healthcare, AI, and unexpected verticals. Full-time and contract — every listing verified against the company's real posting.">
@@ -72,36 +75,11 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     <p class="animate-fade-in stagger-1 text-base text-muted dark:text-slate-400"><span id="visible-count">{jobs.length}</span> design roles currently open</p>
   </section>
 
-  <!-- Category + employment chips — the two core ways to slice the board -->
-  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-3 space-y-2">
-    <div class="animate-fade-in stagger-2 flex flex-wrap items-center gap-2" role="group" aria-label="Filter by category">
-      <button type="button" data-vert="" class="vert-chip emp-chip emp-chip-active px-4 py-2 rounded-full border text-sm font-medium transition-colors" data-umami-event="filter-vert-all">
-        All categories
-      </button>
-      {verticals.map(v => (
-        <button type="button" data-vert={v} class="vert-chip emp-chip px-4 py-2 rounded-full border text-sm font-medium transition-colors" data-umami-event="filter-vert">
-          {v} <span class="opacity-60">{verticalCounts[v]}</span>
-        </button>
-      ))}
-    </div>
-    <div class="animate-fade-in stagger-2 flex flex-wrap items-center gap-2" role="group" aria-label="Filter by employment type">
-      <button type="button" data-emp="" class="emp-chip emp-chip-active px-4 py-2 rounded-full border text-sm font-medium transition-colors" data-umami-event="filter-emp-all">
-        All roles
-      </button>
-      <button type="button" data-emp="Full-time" class="emp-chip px-4 py-2 rounded-full border text-sm font-medium transition-colors" data-umami-event="filter-emp-fulltime">
-        Full-time <span class="opacity-60">{fullTimeCount}</span>
-      </button>
-      <button type="button" data-emp="Contract" class="emp-chip px-4 py-2 rounded-full border text-sm font-medium transition-colors" data-umami-event="filter-emp-contract">
-        Contract <span class="opacity-60">{contractCount}</span>
-      </button>
-    </div>
-  </section>
-
-  <!-- Search, Location, Vertical & Filters -->
+  <!-- Search + filter row: one cohesive bar; selections become dismissible pills below -->
   <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-4 relative z-10" role="search" aria-label="Search and filter jobs">
-    <div class="animate-fade-in stagger-2 flex flex-col sm:flex-row gap-2.5">
+    <div class="animate-fade-in stagger-2 flex flex-col sm:flex-row sm:flex-wrap gap-2.5">
       <!-- Search -->
-      <div class="relative flex-1">
+      <div class="relative flex-1 min-w-[220px]">
         <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
         </svg>
@@ -119,9 +97,8 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
         </button>
       </div>
 
-
-      <!-- Location dropdown -->
-      <div class="relative sm:w-48">
+      <!-- Location dropdown (native select) -->
+      <div class="relative sm:w-44">
         <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
         </svg>
@@ -140,28 +117,72 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
         </svg>
       </div>
 
-      <!-- Filters dropdown trigger -->
-      <div class="relative" id="filter-dropdown-wrapper">
+      <!-- Category dropdown -->
+      <div class="relative dj-dropdown" data-dropdown="category">
         <button
-          id="filter-btn"
+          type="button"
+          class="dj-dropdown-btn flex items-center gap-2 px-4 py-3 rounded-full border border-line dark:border-slate-700 bg-paper dark:bg-surface-card text-sm font-medium text-ink-soft dark:text-slate-300 hover:border-ink dark:hover:border-slate-400 transition-[border-color] duration-150 cursor-pointer whitespace-nowrap"
           aria-expanded="false"
-          aria-controls="filter-dropdown"
-          class="flex items-center gap-2 px-4 py-3 rounded-full border border-line dark:border-slate-700 bg-paper dark:bg-surface-card text-sm font-medium text-ink-soft dark:text-slate-300 hover:border-ink dark:hover:border-slate-400 transition-[border-color] duration-150 cursor-pointer whitespace-nowrap"
+          aria-haspopup="true"
+        >
+          Category
+          <span class="dj-badge hidden text-xs bg-ink text-paper dark:bg-slate-100 dark:text-ink rounded-full w-5 h-5 inline-flex items-center justify-center font-semibold">0</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6" /></svg>
+        </button>
+        <div class="dj-dropdown-panel hidden absolute right-0 top-full mt-2 w-64 bg-paper dark:bg-surface-card border border-line dark:border-slate-700 rounded-2xl shadow-soft-lg z-50 overflow-hidden">
+          <div class="p-4 space-y-1.5">
+            {verticals.map(v => (
+              <label class="flex items-center gap-3 cursor-pointer py-1 px-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                <input type="checkbox" class="filter-checkbox rounded border-slate-300 dark:border-slate-600 text-ink focus:ring-slate-400" data-type="vertical" data-value={v} />
+                <span class="text-sm text-ink-soft dark:text-slate-300 flex-1">{v}</span>
+                <span class="text-xs text-slate-400 dark:text-slate-500">{verticalCounts[v]}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Type dropdown -->
+      <div class="relative dj-dropdown" data-dropdown="type">
+        <button
+          type="button"
+          class="dj-dropdown-btn flex items-center gap-2 px-4 py-3 rounded-full border border-line dark:border-slate-700 bg-paper dark:bg-surface-card text-sm font-medium text-ink-soft dark:text-slate-300 hover:border-ink dark:hover:border-slate-400 transition-[border-color] duration-150 cursor-pointer whitespace-nowrap"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          Type
+          <span class="dj-badge hidden text-xs bg-ink text-paper dark:bg-slate-100 dark:text-ink rounded-full w-5 h-5 inline-flex items-center justify-center font-semibold">0</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6" /></svg>
+        </button>
+        <div class="dj-dropdown-panel hidden absolute right-0 top-full mt-2 w-56 bg-paper dark:bg-surface-card border border-line dark:border-slate-700 rounded-2xl shadow-soft-lg z-50 overflow-hidden">
+          <div class="p-4 space-y-1.5">
+            {employmentOptions.map(opt => (
+              <label class="flex items-center gap-3 cursor-pointer py-1 px-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                <input type="checkbox" class="filter-checkbox rounded border-slate-300 dark:border-slate-600 text-ink focus:ring-slate-400" data-type="employment" data-value={opt.value} />
+                <span class="text-sm text-ink-soft dark:text-slate-300 flex-1">{opt.value}</span>
+                <span class="text-xs text-slate-400 dark:text-slate-500">{opt.count}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters dropdown (level + work type) -->
+      <div class="relative dj-dropdown" data-dropdown="more">
+        <button
+          type="button"
+          class="dj-dropdown-btn flex items-center gap-2 px-4 py-3 rounded-full border border-line dark:border-slate-700 bg-paper dark:bg-surface-card text-sm font-medium text-ink-soft dark:text-slate-300 hover:border-ink dark:hover:border-slate-400 transition-[border-color] duration-150 cursor-pointer whitespace-nowrap"
+          aria-expanded="false"
+          aria-haspopup="true"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <line x1="4" y1="6" x2="20" y2="6" /><line x1="8" y1="12" x2="16" y2="12" /><line x1="11" y1="18" x2="13" y2="18" />
           </svg>
           Filters
-          <span id="filter-badge" class="hidden text-xs bg-ink text-paper dark:bg-slate-100 dark:text-ink rounded-full w-5 h-5 inline-flex items-center justify-center font-semibold">0</span>
+          <span class="dj-badge hidden text-xs bg-ink text-paper dark:bg-slate-100 dark:text-ink rounded-full w-5 h-5 inline-flex items-center justify-center font-semibold">0</span>
         </button>
-
-        <!-- Dropdown panel -->
-        <div
-          id="filter-dropdown"
-          class="hidden absolute right-0 top-full mt-2 w-72 bg-paper dark:bg-surface-card border border-line dark:border-slate-700 rounded-2xl shadow-soft-lg z-50 overflow-hidden"
-        >
+        <div class="dj-dropdown-panel hidden absolute right-0 top-full mt-2 w-72 bg-paper dark:bg-surface-card border border-line dark:border-slate-700 rounded-2xl shadow-soft-lg z-50 overflow-hidden">
           <div class="p-4 space-y-4">
-            <!-- Level section -->
             <div>
               <p class="font-mono text-[10px] font-semibold text-muted dark:text-slate-500 uppercase tracking-[0.14em] mb-2">Level</p>
               <div class="space-y-1.5">
@@ -174,8 +195,6 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
                 ))}
               </div>
             </div>
-
-            <!-- Location Type section -->
             <div class="border-t border-line dark:border-slate-700/50 pt-4">
               <p class="font-mono text-[10px] font-semibold text-muted dark:text-slate-500 uppercase tracking-[0.14em] mb-2">Work type</p>
               <div class="space-y-1.5">
@@ -193,7 +212,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
       </div>
     </div>
 
-    <!-- Active filter pills (shown when filters selected) -->
+    <!-- Active filter pills (selections from any dropdown land here, dismissible) -->
     <div id="active-filters" class="hidden flex flex-wrap items-center gap-2 mt-3">
       <span class="text-xs text-slate-400 dark:text-slate-500">Filtered by:</span>
       <div id="active-pills" class="flex flex-wrap gap-1.5"></div>
@@ -224,22 +243,6 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
 </Layout>
 
 <style is:global>
-  /* Employment chips */
-  .emp-chip {
-    border-color: #EAE8E2;
-    background: #FFFFFF;
-    color: #55524B;
-  }
-  .emp-chip:hover { border-color: #161512; }
-  .emp-chip-active {
-    background: #161512;
-    border-color: #161512;
-    color: #FFFFFF;
-  }
-  .dark .emp-chip { border-color: #26251F; background: #181816; color: #A3A099; }
-  .dark .emp-chip:hover { border-color: #A3A099; }
-  .dark .emp-chip-active { background: #F1F0EC; border-color: #F1F0EC; color: #161512; }
-
   .filter-pill {
     display: inline-flex;
     align-items: center;
@@ -301,145 +304,108 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const searchClear = document.getElementById('search-clear');
   const locationSelect = document.getElementById('location-select') as HTMLSelectElement;
-  const vertChips = document.querySelectorAll('.vert-chip') as NodeListOf<HTMLButtonElement>;
   const visibleCount = document.getElementById('visible-count');
-  const filterBtn = document.getElementById('filter-btn');
-  const filterDropdown = document.getElementById('filter-dropdown');
-  const filterBadge = document.getElementById('filter-badge');
   const activeFiltersContainer = document.getElementById('active-filters');
   const activePills = document.getElementById('active-pills');
   const clearFilters = document.getElementById('clear-filters');
   const checkboxes = document.querySelectorAll('.filter-checkbox') as NodeListOf<HTMLInputElement>;
-  const empChips = document.querySelectorAll('.emp-chip') as NodeListOf<HTMLButtonElement>;
+  const dropdowns = document.querySelectorAll('.dj-dropdown') as NodeListOf<HTMLElement>;
 
-  // Restore saved filters
+  // Restore saved filters (with migration from the old single-value shape)
   const saved = JSON.parse(localStorage.getItem('dj-filters') || '{}');
   let searchQuery = saved.search || '';
   let activeLocation = saved.location || '';
-  let activeVertical = saved.vertical || '';
-  let activeEmployment = saved.employment || '';
-  let activeLevels: Set<string> = new Set(saved.levels || []);
-  let activeLocationTypes: Set<string> = new Set(saved.locationTypes || []);
+  const sets: Record<string, Set<string>> = {
+    vertical: new Set(saved.verticals || (saved.vertical ? [saved.vertical] : [])),
+    employment: new Set(saved.employments || (saved.employment ? [saved.employment] : [])),
+    level: new Set(saved.levels || []),
+    locationType: new Set(saved.locationTypes || []),
+  };
 
   // URL params take precedence: /jobs?type=Contract, /jobs?category=AI
   const params = new URLSearchParams(window.location.search);
   const urlType = params.get('type');
-  if (urlType === 'Contract' || urlType === 'Full-time') {
-    activeEmployment = urlType;
-  }
+  if (urlType === 'Contract' || urlType === 'Full-time') sets.employment.add(urlType);
   const urlCategory = params.get('category');
-  if (urlCategory) activeVertical = urlCategory;
+  if (urlCategory) sets.vertical.add(urlCategory);
 
   function saveFilters() {
     localStorage.setItem('dj-filters', JSON.stringify({
       search: searchQuery,
       location: activeLocation,
-      vertical: activeVertical,
-      employment: activeEmployment,
-      levels: [...activeLevels],
-      locationTypes: [...activeLocationTypes],
+      verticals: [...sets.vertical],
+      employments: [...sets.employment],
+      levels: [...sets.level],
+      locationTypes: [...sets.locationType],
     }));
   }
 
-  function syncEmpChips() {
-    empChips.forEach(chip => {
-      if (chip.classList.contains('vert-chip')) return;
-      chip.classList.toggle('emp-chip-active', (chip.dataset.emp || '') === activeEmployment);
+  // Which dropdown owns which filter types (drives the per-button badge)
+  const dropdownTypes: Record<string, string[]> = {
+    category: ['vertical'],
+    type: ['employment'],
+    more: ['level', 'locationType'],
+  };
+
+  // Generic dropdown open/close — one open at a time
+  function closeAllDropdowns(except?: HTMLElement) {
+    dropdowns.forEach(dd => {
+      if (dd === except) return;
+      dd.querySelector('.dj-dropdown-panel')?.classList.add('hidden');
+      dd.querySelector('.dj-dropdown-btn')?.setAttribute('aria-expanded', 'false');
     });
   }
 
-  function syncVertChips() {
-    vertChips.forEach(chip => {
-      chip.classList.toggle('emp-chip-active', (chip.dataset.vert || '') === activeVertical);
+  dropdowns.forEach(dd => {
+    const btn = dd.querySelector('.dj-dropdown-btn');
+    const panel = dd.querySelector('.dj-dropdown-panel');
+    btn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const willOpen = panel?.classList.contains('hidden');
+      closeAllDropdowns(dd);
+      panel?.classList.toggle('hidden');
+      btn?.setAttribute('aria-expanded', String(willOpen));
     });
-  }
+  });
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as Node;
+    const insideAny = [...dropdowns].some(dd => dd.contains(target));
+    if (!insideAny) closeAllDropdowns();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllDropdowns();
+  });
 
   // Restore UI state from saved filters
   if (searchInput && searchQuery) { searchInput.value = searchQuery; searchClear?.classList.remove('hidden'); }
   if (locationSelect && activeLocation) locationSelect.value = activeLocation;
-  syncEmpChips();
-  syncVertChips();
   checkboxes.forEach(cb => {
-    const type = cb.dataset.type;
+    const type = cb.dataset.type || '';
     const value = cb.dataset.value || '';
-    if (type === 'level' && activeLevels.has(value)) cb.checked = true;
-    if (type === 'locationType' && activeLocationTypes.has(value)) cb.checked = true;
+    if (sets[type]?.has(value)) cb.checked = true;
   });
-  // Apply restored filters on load
-  if (searchQuery || activeLocation || activeVertical || activeEmployment || activeLevels.size || activeLocationTypes.size) {
+  const anyActive = searchQuery || activeLocation || Object.values(sets).some(s => s.size);
+  if (anyActive) {
     requestAnimationFrame(() => { updatePills(); applyFilters(); });
   }
 
-  // Employment chips
-  empChips.forEach(chip => {
-    if (chip.classList.contains('vert-chip')) return;
-    chip.addEventListener('click', () => {
-      const val = chip.dataset.emp || '';
-      activeEmployment = (activeEmployment === val) ? '' : val;
-      if (val === '') activeEmployment = '';
-      syncEmpChips();
-      applyFilters();
-      saveFilters();
-    });
-  });
-
-  // Category chips
-  vertChips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      const val = chip.dataset.vert || '';
-      activeVertical = (activeVertical === val) ? '' : val;
-      if (val === '') activeVertical = '';
-      syncVertChips();
-      applyFilters();
-      saveFilters();
-    });
-  });
-
-  // Toggle dropdown
-  filterBtn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const open = filterDropdown?.classList.contains('hidden');
-    filterDropdown?.classList.toggle('hidden');
-    filterBtn?.setAttribute('aria-expanded', String(open));
-  });
-
-  // Close dropdown on outside click
-  document.addEventListener('click', (e) => {
-    const wrapper = document.getElementById('filter-dropdown-wrapper');
-    if (wrapper && !wrapper.contains(e.target as Node)) {
-      filterDropdown?.classList.add('hidden');
-      filterBtn?.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  // Close on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      filterDropdown?.classList.add('hidden');
-      filterBtn?.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  // Checkbox change
+  // One handler for every checkbox filter (vertical, employment, level, locationType)
   checkboxes.forEach(cb => {
     cb.addEventListener('change', () => {
-      const type = cb.dataset.type;
+      const type = cb.dataset.type || '';
       const value = cb.dataset.value || '';
-      if (type === 'level') {
-        cb.checked ? activeLevels.add(value) : activeLevels.delete(value);
-      } else if (type === 'locationType') {
-        cb.checked ? activeLocationTypes.add(value) : activeLocationTypes.delete(value);
-      }
+      if (!sets[type]) return;
+      cb.checked ? sets[type].add(value) : sets[type].delete(value);
       updatePills();
       applyFilters();
       saveFilters();
     });
   });
 
-  // Clear all
   clearFilters?.addEventListener('click', () => {
-    activeLevels.clear();
-    activeLocationTypes.clear();
+    Object.values(sets).forEach(s => s.clear());
     checkboxes.forEach(cb => cb.checked = false);
     updatePills();
     applyFilters();
@@ -447,31 +413,29 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
   });
 
   function updatePills() {
-    if (!activePills || !activeFiltersContainer || !filterBadge) return;
+    if (!activePills || !activeFiltersContainer) return;
 
-    const totalFilters = activeLevels.size + activeLocationTypes.size;
     activePills.innerHTML = '';
-
-    // Show/hide the active filters bar
+    const totalFilters = Object.values(sets).reduce((n, s) => n + s.size, 0);
     activeFiltersContainer.classList.toggle('hidden', totalFilters === 0);
 
-    // Update badge
-    if (totalFilters > 0) {
-      filterBadge.textContent = String(totalFilters);
-      filterBadge.classList.remove('hidden');
-    } else {
-      filterBadge.classList.add('hidden');
-    }
+    // Per-dropdown badges
+    dropdowns.forEach(dd => {
+      const key = dd.dataset.dropdown || '';
+      const badge = dd.querySelector('.dj-badge');
+      if (!badge) return;
+      const count = (dropdownTypes[key] || []).reduce((n, t) => n + sets[t].size, 0);
+      badge.textContent = String(count);
+      badge.classList.toggle('hidden', count === 0);
+    });
 
-    // Create pills
     const createPill = (label: string, type: string, value: string) => {
       const pill = document.createElement('button');
       pill.className = 'filter-pill';
+      pill.setAttribute('aria-label', `Remove filter: ${label}`);
       pill.innerHTML = `${label}<span class="pill-x">✕</span>`;
       pill.addEventListener('click', () => {
-        if (type === 'level') activeLevels.delete(value);
-        else activeLocationTypes.delete(value);
-        // Uncheck the corresponding checkbox
+        sets[type].delete(value);
         checkboxes.forEach(cb => {
           if (cb.dataset.type === type && cb.dataset.value === value) cb.checked = false;
         });
@@ -482,8 +446,10 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
       return pill;
     };
 
-    activeLevels.forEach(v => activePills.appendChild(createPill(v, 'level', v)));
-    activeLocationTypes.forEach(v => activePills.appendChild(createPill(v, 'locationType', v)));
+    sets.vertical.forEach(v => activePills!.appendChild(createPill(v, 'vertical', v)));
+    sets.employment.forEach(v => activePills!.appendChild(createPill(v, 'employment', v)));
+    sets.level.forEach(v => activePills!.appendChild(createPill(v, 'level', v)));
+    sets.locationType.forEach(v => activePills!.appendChild(createPill(v, 'locationType', v)));
   }
 
   let settleTimer: ReturnType<typeof setTimeout> | undefined;
@@ -504,27 +470,25 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
       const el = item as HTMLElement;
       let show = true;
 
-      // Employment type chip (Contract also matches Freelance)
-      if (activeEmployment) {
-        const emp = el.dataset.employmentType || 'Full-time';
-        show = activeEmployment === 'Contract'
-          ? (emp === 'Contract' || emp === 'Freelance')
-          : emp === activeEmployment;
+      // Category multi-select
+      if (sets.vertical.size > 0) {
+        show = sets.vertical.has(el.dataset.vertical || 'Healthcare');
       }
 
-      // Vertical
-      if (show && activeVertical) {
-        show = el.dataset.vertical === activeVertical;
+      // Employment multi-select (Contract also matches Freelance)
+      if (show && sets.employment.size > 0) {
+        const emp = el.dataset.employmentType || 'Full-time';
+        show = sets.employment.has(emp) || (sets.employment.has('Contract') && emp === 'Freelance');
       }
 
       // Level multi-select
-      if (show && activeLevels.size > 0) {
-        show = activeLevels.has(el.dataset.level || '');
+      if (show && sets.level.size > 0) {
+        show = sets.level.has(el.dataset.level || '');
       }
 
       // Location type multi-select
-      if (show && activeLocationTypes.size > 0) {
-        show = activeLocationTypes.has(el.dataset.locationType || '');
+      if (show && sets.locationType.size > 0) {
+        show = sets.locationType.has(el.dataset.locationType || '');
       }
 
       // Location dropdown — matches any of the job's normalized buckets
@@ -557,14 +521,9 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     if (locationSelect) locationSelect.value = '';
     searchQuery = '';
     activeLocation = '';
-    activeVertical = '';
-    activeEmployment = '';
-    activeLevels.clear();
-    activeLocationTypes.clear();
+    Object.values(sets).forEach(s => s.clear());
     checkboxes.forEach(cb => cb.checked = false);
     searchClear?.classList.add('hidden');
-    syncEmpChips();
-    syncVertChips();
     updatePills();
     applyFilters();
     saveFilters();
@@ -585,5 +544,4 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     applyFilters();
     saveFilters();
   });
-
 </script>

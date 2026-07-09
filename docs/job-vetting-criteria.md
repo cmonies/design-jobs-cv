@@ -114,6 +114,9 @@ Each staged job in `jobs-staging.json` — ALL of these fields are required
 }
 ```
 
+- `level`: Entry, Junior, Mid, Senior, Staff, Lead, Principal, Manager, Director.
+  **Associate / entry-level / new-grad roles get `Entry`** — actively hunt for these;
+  they're underrepresented on the board and valuable to early-career designers.
 - `locationType`: `Remote`, `Hybrid`, or `On-site` (with the hyphen)
 - `postedAt`: YYYY-MM-DD; extract from the page, else today. The site sorts by it.
 - `_verifiedAt` is set by the validator at promotion — never set it manually.
