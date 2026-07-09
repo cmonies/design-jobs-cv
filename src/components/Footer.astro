@@ -18,7 +18,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
         </p>
       </div>
 
-      <div class="flex gap-16 lg:gap-24 md:pr-8">
+      <div class="flex flex-col sm:flex-row gap-10 sm:gap-16 lg:gap-24 md:pr-8">
       <div>
         <h4 class="text-sm font-semibold text-ink dark:text-white mb-3">Links</h4>
         <ul class="space-y-2 text-sm text-muted dark:text-slate-400">
@@ -35,6 +35,16 @@ import DarkModeToggle from './DarkModeToggle.astro';
           <li><a href="/submit" class="hover:text-ink dark:hover:text-white transition-colors" data-umami-event="footer-submit-click">Submit a job</a></li>
           <li><a href="/report" class="hover:text-ink dark:hover:text-white transition-colors" data-umami-event="footer-feedback-click">Feedback</a></li>
         </ul>
+      </div>
+
+      <div id="newsletter" class="max-w-xs">
+        <h4 class="text-sm font-semibold text-ink dark:text-white mb-3">Newsletter</h4>
+        <p class="text-sm text-muted dark:text-slate-400 leading-relaxed mb-4">
+          Don't miss the good ones — new design roles weekly, full-time and contract.
+        </p>
+        <span class="inline-block px-4 py-2 rounded-full border border-line dark:border-slate-700 font-mono text-[10px] uppercase tracking-[0.14em] text-muted dark:text-slate-400">
+          Coming soon
+        </span>
       </div>
       </div>
     </div>
