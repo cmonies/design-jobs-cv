@@ -315,28 +315,6 @@
     "_verifiedAt": "2026-07-09"
   },
   {
-    "id": "pogo-product-designer",
-    "title": "Product Designer",
-    "company": "Pogo Technologies",
-    "companyUrl": "https://joinpogo.com",
-    "url": "https://jobs.ashbyhq.com/joinpogo/a53ac6d5-9a51-4a35-bbb9-323fa44105b8",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "Remote (US / Canada)",
-    "postedAt": "2026-07-09",
-    "vertical": "Consumer",
-    "employmentType": "Full-time",
-    "tags": [
-      "product design",
-      "consumer app",
-      "mobile",
-      "consumer insights"
-    ],
-    "_sourceUrl": "site:jobs.ashbyhq.com \"product designer\" consumer app",
-    "_verificationNote": "Confirmed live via Ashby posting-api (job-board/joinpogo): isListed true, published 2026-07-09, FullTime, isRemote true (US/Canada). Live URL id differs from stale search-result id.",
-    "_verifiedAt": "2026-07-09"
-  },
-  {
     "id": "sydecar-staff-ux-designer",
     "title": "Staff User Experience Designer",
     "company": "Sydecar",
@@ -904,26 +882,6 @@
     "employmentType": "Full-time"
   },
   {
-    "id": "headway-design-director-provider-experience",
-    "title": "Design Director, Provider Experience",
-    "company": "Headway",
-    "companyUrl": "https://headway.co",
-    "url": "https://jobs.ashbyhq.com/headway/c9a3a3d3-d639-4c0b-9b62-850bf78e084b",
-    "level": "Director",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "tags": [
-      "mental health",
-      "insurance",
-      "provider tools"
-    ],
-    "postedAt": "2026-06-04",
-    "_sourceUrl": "https://jobs.ashbyhq.com/headway",
-    "_verifiedAt": "2026-06-23",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
     "id": "headway-principal-product-designer-payer",
     "title": "Principal Product Designer, Payer",
     "company": "Headway",
@@ -938,26 +896,6 @@
       "payer"
     ],
     "postedAt": "2026-05-13",
-    "_sourceUrl": "https://jobs.ashbyhq.com/headway",
-    "_verifiedAt": "2026-06-23",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
-    "id": "headway-design-director-core-insurance-design-systems",
-    "title": "Design Director, Core Insurance & Design Systems",
-    "company": "Headway",
-    "companyUrl": "https://headway.co",
-    "url": "https://jobs.ashbyhq.com/headway/04c87bce-78d4-497f-b77f-140253aa9592",
-    "level": "Director",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "tags": [
-      "mental health",
-      "insurance",
-      "design systems"
-    ],
-    "postedAt": "2025-10-07",
     "_sourceUrl": "https://jobs.ashbyhq.com/headway",
     "_verifiedAt": "2026-06-23",
     "vertical": "Healthcare",
@@ -1233,34 +1171,6 @@
       "startup"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/join9am",
-    "_verifiedAt": "2026-06-23",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
-    "id": "mochi-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Mochi Health",
-    "companyUrl": "https://www.mochihealth.com",
-    "url": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "San Francisco, CA (5 days/week)",
-    "postedAt": "2026-03-20",
-    "salary": "$180,000 - $225,000",
-    "tags": [
-      "healthcare marketplace",
-      "patient experience",
-      "pharmacy",
-      "medication management",
-      "AI",
-      "B2C",
-      "consumer",
-      "design systems",
-      "startup",
-      "founding-level"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
     "_verifiedAt": "2026-06-23",
     "vertical": "Healthcare",
     "employmentType": "Full-time"
@@ -1687,34 +1597,6 @@
     "employmentType": "Contract"
   },
   {
-    "id": "counsel-health-senior-product-designer-clinical",
-    "title": "Senior Product Designer (Clinical)",
-    "company": "Counsel Health",
-    "companyUrl": "https://counselhealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "NYC (hybrid) / Boston (hybrid) / Remote US",
-    "url": "https://jobs.ashbyhq.com/counsel/1101017a-9b92-4ce6-8b02-ee468a122c5b",
-    "postedAt": "2026-04-03",
-    "salary": null,
-    "tags": [
-      "clinical AI",
-      "primary care",
-      "clinical tools",
-      "B2B",
-      "workflow design",
-      "AI",
-      "startup",
-      "0-to-1"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/counsel/1101017a-9b92-4ce6-8b02-ee468a122c5b",
-    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health",
-    "_verifiedAt": "2026-04-18",
-    "_verificationNote": "Verified live via browse.py (200, full job description rendered). Published April 3, 2026. Counsel Health — AI-native medical group, $35M raised (a16z, Google Ventures, Pear VC), founded 2023. Senior Product Designer (Clinical) partners with clinical leaders to invent new paradigms for AI-enabled care delivery workflows. Owns clinical product end-to-end: advice/coaching, prescriptions, labs, referrals. 5+ years required; clinical product experience and early-stage startup background preferred. Competitive salary + equity. NYC hybrid, Boston hybrid, or Remote US. DISTINCT from existing entry counsel-health-senior-product-designer-consumer (ID: 385e95d2, patient-facing Consumer role) — this role is clinician-facing.",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
     "id": "amperos-health-product-designer",
     "title": "Product Designer",
     "company": "Amperos Health",
@@ -2055,5 +1937,91 @@
     "postedAt": "2026-04-14",
     "vertical": "Healthcare",
     "employmentType": "Full-time"
+  },
+  {
+    "id": "linktree-staff-product-designer-mobile",
+    "title": "Staff Product Designer, Mobile",
+    "company": "Linktree",
+    "companyUrl": "https://linktr.ee",
+    "url": "https://jobs.gem.com/linktree/am9icG9zdDpJgxk7m2CvuLCl1rrJICCz",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "Los Angeles, CA / San Francisco, CA",
+    "postedAt": "2026-07-09",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "mobile",
+      "iOS",
+      "Android",
+      "native",
+      "consumer"
+    ],
+    "_sourceUrl": "https://linktr.ee/s/about/careers",
+    "_verifiedAt": "2026-07-09T19:37:00Z"
+  },
+  {
+    "id": "linktree-staff-product-designer-ai",
+    "title": "Staff Product Designer, AI",
+    "company": "Linktree",
+    "companyUrl": "https://linktr.ee",
+    "url": "https://jobs.gem.com/linktree/am9icG9zdDr0vKZKlyMEzrJ_X8Y2UBYA",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "Los Angeles, CA / San Francisco, CA",
+    "postedAt": "2026-07-09",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI",
+      "agentic UX",
+      "design systems",
+      "consumer"
+    ],
+    "_sourceUrl": "https://linktr.ee/s/about/careers",
+    "_verifiedAt": "2026-07-09T19:37:00Z"
+  },
+  {
+    "id": "linktree-staff-product-designer-growth",
+    "title": "Staff Product Designer, Growth",
+    "company": "Linktree",
+    "companyUrl": "https://linktr.ee",
+    "url": "https://jobs.gem.com/linktree/am9icG9zdDqdOMaAYXPbLrEEogliu5sq",
+    "level": "Staff",
+    "locationType": "Remote",
+    "location": "Remote (US) / Los Angeles, CA / New York, NY / San Francisco, CA",
+    "postedAt": "2026-07-09",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "growth",
+      "experimentation",
+      "conversion",
+      "consumer"
+    ],
+    "_sourceUrl": "https://linktr.ee/s/about/careers",
+    "_verifiedAt": "2026-07-09T19:37:00Z"
+  },
+  {
+    "id": "linktree-contract-product-designer-staff",
+    "title": "Contract Product Designer (Staff-level), 6 months",
+    "company": "Linktree",
+    "companyUrl": "https://linktr.ee",
+    "url": "https://jobs.gem.com/linktree/am9icG9zdDpNMUvA5ZSYr7LATUgiIPXy",
+    "level": "Staff",
+    "locationType": "Remote",
+    "location": "Remote (US) / Los Angeles, CA / San Francisco, CA",
+    "postedAt": "2026-07-09",
+    "vertical": "Consumer",
+    "employmentType": "Contract",
+    "tags": [
+      "contract",
+      "generalist",
+      "design systems",
+      "consumer",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://linktr.ee/s/about/careers/am9icG9zdDpNMUvA5ZSYr7LATUgiIPXy",
+    "_verifiedAt": "2026-07-09T20:32:46Z"
   }
 ]
