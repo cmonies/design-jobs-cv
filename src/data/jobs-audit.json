@@ -5,956 +5,240 @@
   "failed": 0,
   "results": [
     {
-      "id": "handshake-founding-product-designer-contract",
-      "company": "Handshake",
-      "title": "Founding Product Designer (Contract), Handshake AI Enterprise",
-      "url": "https://jobs.ashbyhq.com/handshake/d2f94a5f-077f-4361-8f67-7bf65f10562f",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "unlearn-product-designer-contract",
-      "company": "Unlearn",
-      "title": "Product Designer (Contract)",
-      "url": "https://jobs.ashbyhq.com/Unlearn/e8426b1c-d7ae-4352-b065-b2b534594f6b",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "allara-health-contract-product-designer",
-      "company": "Allara Health",
-      "title": "Contract Product Designer",
-      "url": "https://jobs.ashbyhq.com/allarahealth/c061174e-bd6e-408b-a5eb-3b02622ecb4f",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "unifold-founding-ui-ux-designer-contract",
-      "company": "Unifold",
-      "title": "Founding UI/UX Designer",
-      "url": "https://www.ycombinator.com/companies/unifold/jobs/OdbpTom-founding-ui-ux-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "wayline-contract-product-designer",
-      "company": "Wayline",
-      "title": "Contract Product Designer",
-      "url": "https://www.ycombinator.com/companies/wayline/jobs/d6ugYvj-contract-product-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "vitvio-product-designer-ai-native-contract",
-      "company": "VitVio",
-      "title": "Product Designer - AI-Native Design (Contract, Part-Time)",
-      "url": "https://jobs.ashbyhq.com/vitvio/c82b8a6c-1625-42dd-bf5f-463cb095212e",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "samsara-senior-product-designer-design-systems-contract",
-      "company": "Samsara",
-      "title": "Senior Product Designer - Design Systems / Rebrand (Contract)",
-      "url": "https://jobs.lever.co/Academy/21696500-1257-472f-bdb9-3d77edb46107",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "superhuman-senior-interaction-designer-contract",
-      "company": "Superhuman",
-      "title": "Senior Interaction Designer (Contract)",
-      "url": "https://jobs.lever.co/Academy/0d412eb3-59a7-41da-bfdf-d9b864a539f8",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "citizen-product-design-engineer",
-      "company": "Citizen",
-      "title": "Product Design Engineer",
-      "url": "https://jobs.ashbyhq.com/Citizen/d556e827-a577-4122-a6c6-216ae937f45a",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "mural-lead-product-designer-ai-agentic-workflows",
-      "company": "Mural",
-      "title": "Lead Product Designer, AI & Agentic Workflows",
-      "url": "https://jobs.ashbyhq.com/mural/95841fa7-6ff1-4d29-848d-af545726ac7f",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "mural-lead-product-designer-growth-upper-funnel",
-      "company": "Mural",
-      "title": "Lead Product Designer, Growth (Upper Funnel)",
-      "url": "https://jobs.ashbyhq.com/mural/450cd3e0-f8db-4ea0-a946-9323d8890bbf",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "airtasker-associate-product-designer",
-      "company": "Airtasker",
-      "title": "Associate Product Designer",
-      "url": "https://jobs.ashbyhq.com/airtasker/682a1694-f66b-455b-b1cb-5aec62ccac44",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "ambrook-product-designer-builder",
-      "company": "Ambrook",
-      "title": "Product Designer & Builder",
-      "url": "https://jobs.ashbyhq.com/ambrook/4b5ec581-4ac0-4e14-a6ba-e1cc8840f4be",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "funxyz-staff-product-designer",
-      "company": "Fun (fun.xyz)",
+      "id": "eight-sleep-staff-product-designer",
+      "company": "Eight Sleep",
       "title": "Staff Product Designer",
-      "url": "https://jobs.lever.co/funxyz/dd38f633-0a53-40c2-9196-89c82833be72",
+      "url": "https://jobs.ashbyhq.com/eightsleep/5a2480c0-3d87-4c21-b8d2-00d593c95b89",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
+      "checkedAt": "2026-07-13T20:47:05.790Z"
     },
     {
-      "id": "pogo-product-designer",
-      "company": "Pogo Technologies",
+      "id": "ivo-senior-product-designer",
+      "company": "Ivo",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/ivo-inc/562bf1cd-c9a3-41f2-8c4e-ec25b27d7cf2",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "suno-senior-staff-product-designer",
+      "company": "Suno",
+      "title": "Senior / Staff Product Designer",
+      "url": "https://jobs.ashbyhq.com/suno/6b7837b7-72ec-46a3-9b21-74c1dfa997b6",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "suno-senior-staff-design-engineer-ios",
+      "company": "Suno",
+      "title": "Senior/Staff Design Engineer, iOS",
+      "url": "https://jobs.ashbyhq.com/suno/e7169fc2-c1c5-416a-a4aa-48190e1febfd",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "zocks-junior-product-designer",
+      "company": "Zocks",
+      "title": "Junior Product Designer",
+      "url": "https://jobs.lever.co/zocks/0d430e6f-7901-4c81-abd8-5f6b9794e39b",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "ramp-product-designer",
+      "company": "Ramp",
       "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/joinpogo/a53ac6d5-9a51-4a35-bbb9-323fa44105b8",
+      "url": "https://jobs.ashbyhq.com/ramp/eca54d0e-232a-4c3e-bfcc-d6c6add393f5",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "tomo-product-designer",
+      "company": "Tomo",
+      "title": "Product Designer",
+      "url": "https://jobs.ashbyhq.com/tomo.ai/f77a861f-acdc-4ae4-b88e-bde4e33ebc12",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "synthesia-product-designer-growth",
+      "company": "Synthesia",
+      "title": "Product Designer, Growth (Senior/Staff-Level)",
+      "url": "https://jobs.ashbyhq.com/synthesia/eb06b813-b691-45fa-884e-abc06c674390",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "standard-metrics-product-designer",
+      "company": "Standard Metrics",
+      "title": "Product Designer",
+      "url": "https://job-boards.greenhouse.io/standardmetrics/jobs/4130794005",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "owner-senior-product-designer",
+      "company": "Owner",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/owner/0ab7a1e4-0164-499e-9b2f-b10d8b2fae41",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "owner-staff-product-designer",
+      "company": "Owner",
+      "title": "Staff Product Designer",
+      "url": "https://jobs.ashbyhq.com/owner/14876095-0e3c-485b-871a-bc8d0e316e9a",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "overflow-senior-product-designer",
+      "company": "Overflow",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/overflow/a925ffca-219b-458f-94e5-9e4d97e8fcd5",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "universe-product-designer",
+      "company": "Universe",
+      "title": "Product Designer",
+      "url": "https://jobs.ashbyhq.com/universe/9ba9630d-6015-4ad6-a692-af4ecd115f08",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "parspec-senior-product-designer",
+      "company": "Parspec",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/parspec/182952d5-7219-4077-8ffb-b0ac88f157b2",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "juniper-square-senior-product-designer",
+      "company": "Juniper Square",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/junipersquare/a5aec213-81c1-4e72-a583-bb4789735b0d",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "bubble-senior-product-designer-core",
+      "company": "Bubble",
+      "title": "Senior Product Designer, Core",
+      "url": "https://jobs.ashbyhq.com/bubble/a268689d-8a0a-447e-b41a-593f5eb845cd",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "n8n-senior-staff-product-designer",
+      "company": "n8n",
+      "title": "Senior/Staff Product Designer",
+      "url": "https://jobs.ashbyhq.com/n8n/fe05c209-8069-4a88-aeba-8da23488cd30",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "forerunner-senior-product-designer",
+      "company": "Forerunner",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/forerunner/155d880b-e2c1-42da-94ef-4b16d18bbfa4",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "primer-product-designer",
+      "company": "Primer",
+      "title": "Product Designer",
+      "url": "https://jobs.ashbyhq.com/primer/af6ad413-6e2f-4cb4-9e11-582b2d2e6c42",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-13T20:47:05.790Z"
+    },
+    {
+      "id": "wefunder-visual-micro-interaction-designer",
+      "company": "Wefunder",
+      "title": "Visual & Micro-Interaction Designer",
+      "url": "https://wefunder.com/jobs/micro-interaction-designer",
       "pass": false,
       "reason": "No live job signals found on page",
       "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
+      "checkedAt": "2026-07-13T20:47:05.790Z"
     },
     {
-      "id": "sydecar-staff-ux-designer",
-      "company": "Sydecar",
-      "title": "Staff User Experience Designer",
-      "url": "https://jobs.ashbyhq.com/sydecar/4008e0a7-88c9-4218-ab30-791d5017c6a1",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "gusto-product-designer-contractors",
-      "company": "Gusto",
-      "title": "Product Designer, Contractors",
-      "url": "https://job-boards.greenhouse.io/gusto/jobs/7488373",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "fort-founding-designer",
-      "company": "Fort",
-      "title": "Founding Designer",
-      "url": "https://www.ycombinator.com/companies/fort/jobs/8SMt7qD-founding-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "cardboard-founding-designer",
-      "company": "Cardboard",
-      "title": "Founding Designer",
-      "url": "https://www.ycombinator.com/companies/cardboard/jobs/zrMDlho-founding-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "ditto-senior-product-designer",
-      "company": "Ditto",
-      "title": "Senior Product Designer",
-      "url": "https://www.ycombinator.com/companies/ditto/jobs/ZnYSN1L-senior-product-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "jinba-founding-design-engineer",
-      "company": "Jinba",
-      "title": "Founding Design Engineer",
-      "url": "https://www.ycombinator.com/companies/jinba/jobs/hKJ7YiB-founding-design-engineer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "pocket-senior-product-designer-ai-hardware",
-      "company": "Pocket",
-      "title": "Senior Product Designer, AI Hardware & User Interface",
-      "url": "https://www.ycombinator.com/companies/pocket/jobs/SCxFeFa-senior-product-designer-ai-hardware-user-interface",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "andco-product-design-engineer",
-      "company": "Andco",
-      "title": "Product Design Engineer",
-      "url": "https://www.ycombinator.com/companies/andco/jobs/zoWNTcb-product-design-engineer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "voicepanel-founding-designer",
-      "company": "Voicepanel",
-      "title": "Founding Designer",
-      "url": "https://www.ycombinator.com/companies/voicepanel/jobs/EWDHlpf-founding-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "cyble-product-designer",
-      "company": "Cyble",
+      "id": "krea-product-designer",
+      "company": "Krea",
       "title": "Product Designer",
-      "url": "https://www.ycombinator.com/companies/cyble/jobs/HCYiy6y-product-designer",
+      "url": "https://jobs.ashbyhq.com/krea/658fb41c-6cf8-49c7-bcd6-e68e0cc2a217",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
+      "checkedAt": "2026-07-13T20:47:05.790Z"
     },
     {
-      "id": "boldvoice-senior-product-designer-nyc",
-      "company": "BoldVoice",
-      "title": "Senior Product Designer (NYC)",
-      "url": "https://www.ycombinator.com/companies/boldvoice/jobs/vqMgV88-senior-product-designer-nyc",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "domu-ui-ux-product-designer",
-      "company": "Domu Technology",
-      "title": "UI/UX Product Designer",
-      "url": "https://www.ycombinator.com/companies/domu-technology-inc/jobs/68zCbM3-ui-ux-product-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "respan-designer-product-web",
-      "company": "Respan",
-      "title": "Designer, Product & Web",
-      "url": "https://www.ycombinator.com/companies/respan/jobs/0EkyqeY-designer-product-web",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "clearly-ai-founding-ui-ux-design-engineer",
-      "company": "Clearly AI",
-      "title": "Founding UI/UX Design Engineer",
-      "url": "https://www.ycombinator.com/companies/clearly-ai/jobs/F1QnTxg-founding-ui-ux-design-engineer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "slashy-founding-designer",
-      "company": "Slashy",
-      "title": "Founding Designer",
-      "url": "https://www.ycombinator.com/companies/slashy/jobs/wtEXNaB-founding-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "zello-product-designer-design-systems-contract",
-      "company": "Zello",
-      "title": "Product Designer - Design Systems (Contract)",
-      "url": "https://jobs.ashbyhq.com/Zello/36471a0a-9aa6-4fe2-b663-6e2f9c995757",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "sentra-founding-product-designer",
-      "company": "Sentra",
-      "title": "Founding Product Designer",
-      "url": "https://jobs.ashbyhq.com/sentra/9717d4c7-7500-47af-a5f5-964ae51c1258",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "assembled-product-designer-ai-agents",
-      "company": "Assembled",
-      "title": "Product Designer, AI Agents",
-      "url": "https://jobs.ashbyhq.com/assembledhq/1e6165e1-4274-4ed6-9410-5ebb05639486",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "read-ai-product-designer-growth",
-      "company": "Read AI",
-      "title": "Product Designer - Growth",
-      "url": "https://jobs.ashbyhq.com/read-ai/28f8d16a-949b-4523-b8e3-3ef57386ef2b",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "jobber-senior-product-designer-franchise",
-      "company": "Jobber",
-      "title": "Senior Product Designer, Franchise",
-      "url": "https://jobs.ashbyhq.com/jobber/e858c010-ee02-4090-aba0-b105bdb0d575",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "finix-senior-product-designer-contract",
-      "company": "Finix",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.lever.co/finix/37f01087-8ea0-4bc2-a699-a0023bffaa21",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "decoda-health-product-designer",
-      "company": "Decoda Health",
+      "id": "browserbase-product-designer",
+      "company": "Browserbase",
       "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/decodahealth/5d90f7ca-eae1-406e-a4cf-461e7a30886c",
+      "url": "https://jobs.ashbyhq.com/browserbase/b340041a-72ad-47f9-a419-b2c283548104",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
+      "checkedAt": "2026-07-13T20:47:05.790Z"
     },
     {
-      "id": "tava-health-senior-product-designer",
-      "company": "Tava Health",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/TavaHealth/7fecb520-3c13-4792-9a1d-3231620cb36d",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "hinge-health-senior-product-designer-new-programs",
-      "company": "Hinge Health",
-      "title": "Sr. Product Designer, New Programs",
-      "url": "https://jobs.ashbyhq.com/hinge-health/b7e7a706-2ac2-4ad1-adec-5c8550e2d01e",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "hinge-health-staff-product-designer-outcomes",
-      "company": "Hinge Health",
-      "title": "Staff Product Designer, Outcomes",
-      "url": "https://jobs.ashbyhq.com/hinge-health/ebb10992-73df-4efb-85b1-979aba7f046d",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "hinge-health-senior-product-designer-education",
-      "company": "Hinge Health",
-      "title": "Senior Product Designer, Education",
-      "url": "https://jobs.ashbyhq.com/hinge-health/1bef7f8c-cab6-4f58-bebb-329aaefb45fe",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "headway-design-director-provider-experience",
-      "company": "Headway",
-      "title": "Design Director, Provider Experience",
-      "url": "https://jobs.ashbyhq.com/headway/c9a3a3d3-d639-4c0b-9b62-850bf78e084b",
-      "pass": false,
-      "reason": "No live job signals found on page",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "headway-principal-product-designer-payer",
-      "company": "Headway",
-      "title": "Principal Product Designer, Payer",
-      "url": "https://jobs.ashbyhq.com/headway/32d338ce-32a5-477d-9adb-93e3b808cd7c",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "headway-design-director-core-insurance-design-systems",
-      "company": "Headway",
-      "title": "Design Director, Core Insurance & Design Systems",
-      "url": "https://jobs.ashbyhq.com/headway/04c87bce-78d4-497f-b77f-140253aa9592",
-      "pass": false,
-      "reason": "No live job signals found on page",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "headway-staff-product-designer-provider-onboarding",
-      "company": "Headway",
-      "title": "Staff Product Designer, Provider Onboarding",
-      "url": "https://jobs.ashbyhq.com/headway/8fdfdc44-e973-4dd4-8dfb-951a6280232b",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "maven-clinic-design-lead-consumer",
-      "company": "Maven Clinic",
-      "title": "Design Lead, Consumer",
-      "url": "https://job-boards.greenhouse.io/mavenclinic/jobs/8593006002",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "maven-clinic-head-of-design",
-      "company": "Maven Clinic",
-      "title": "VP of Design",
-      "url": "https://job-boards.greenhouse.io/mavenclinic/jobs/8594275002",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "maven-clinic-senior-staff-product-designer",
-      "company": "Maven Clinic",
-      "title": "Senior Staff Product Designer, Care Delivery",
-      "url": "https://job-boards.greenhouse.io/mavenclinic/jobs/8599242002",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "hone-health-product-designer-products-integrations",
-      "company": "Hone Health",
-      "title": "Product Designer, Products & Integrations",
-      "url": "https://job-boards.greenhouse.io/honehealth/jobs/5012059008",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "twin-health-staff-product-designer",
-      "company": "Twin Health",
-      "title": "Staff Product Designer",
-      "url": "https://job-boards.greenhouse.io/twinhealth/jobs/6020240004",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "whoop-product-designer-ii-health",
-      "company": "WHOOP",
-      "title": "Product Designer II (Health)",
-      "url": "https://jobs.lever.co/whoop/33719380-d753-4e33-afcf-93e971d56cd8",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "whoop-senior-product-designer-ai",
-      "company": "WHOOP",
-      "title": "Senior Product Designer, AI & Emerging Technology Focus",
-      "url": "https://jobs.lever.co/whoop/a7971d82-ef9c-4ba2-b249-97c0ae924c06",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "whoop-senior-human-factors-researcher",
-      "company": "WHOOP",
-      "title": "Senior Human Factors Researcher, Design Research",
-      "url": "https://jobs.lever.co/whoop/063a2c59-8327-4556-9dee-c0f69323357c",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "whoop-senior-research-manager-design-research",
-      "company": "WHOOP",
-      "title": "Senior Research Manager, Design Research",
-      "url": "https://jobs.lever.co/whoop/4624e401-1a9e-494d-b2f8-119e29071e12",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "blink-health-staff-design-systems-engineer-ny",
-      "company": "Blink Health",
-      "title": "Senior Design Systems Engineer II",
-      "url": "https://job-boards.greenhouse.io/blinkhealth/jobs/8603510002",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "blink-health-staff-design-systems-engineer-pittsburgh",
-      "company": "Blink Health",
-      "title": "Senior Design Systems Engineer II",
-      "url": "https://job-boards.greenhouse.io/blinkhealth/jobs/8603511002",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "9amhealth-senior-product-designer-member-app",
-      "company": "9amHealth",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/join9am/b3042574-12a3-46e7-a45d-5381d681b9ca",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "mochi-health-senior-product-designer",
-      "company": "Mochi Health",
-      "title": "Senior Product Designer",
-      "url": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
-      "pass": false,
-      "reason": "Redirected to error page: https://job-boards.greenhouse.io/mochihealth?error=true",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "omada-health-staff-product-designer",
-      "company": "Omada Health",
-      "title": "Product Designer, AI Experience",
-      "url": "https://job-boards.greenhouse.io/omadahealth/jobs/7821718",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "omada-health-senior-product-designer",
-      "company": "Omada Health",
-      "title": "Senior Product Designer",
-      "url": "https://job-boards.greenhouse.io/omadahealth/jobs/7800336",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "garner-health-product-designer-ii",
-      "company": "Garner Health",
-      "title": "Product Designer II",
-      "url": "https://job-boards.greenhouse.io/garnerhealth/jobs/6006458004",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "hinge-health-staff-product-designer-design-systems",
-      "company": "Hinge Health",
-      "title": "Staff Product Designer, Design Systems",
-      "url": "https://jobs.ashbyhq.com/hinge-health/a30e2a1e-c3cb-4717-a840-9c03305ffbd1",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "headway-staff-product-designer-group-practices",
-      "company": "Headway",
-      "title": "Staff Product Designer, Group Practices",
-      "url": "https://jobs.ashbyhq.com/headway/3e71f549-4318-48ff-9be6-57ffc5f3aece",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "headway-senior-product-designer-new-channels",
-      "company": "Headway",
-      "title": "Senior Product Designer, New Channels",
-      "url": "https://jobs.ashbyhq.com/headway/82499b57-f003-4804-b2b9-bed36825aee5",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "chorus-innovations-principal-product-designer-contract",
-      "company": "Chorus Innovations",
-      "title": "Principal Product Designer (Contract-to-Hire)",
-      "url": "https://job-boards.greenhouse.io/chorusinnovations/jobs/5126846007",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "alpaca-health-founding-product-designer",
-      "company": "Alpaca Health",
-      "title": "Founding Product Designer",
-      "url": "https://jobs.ashbyhq.com/alpacahealth/5c318642-c273-4955-b1d0-dd186b063d40",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "abridge-staff-product-designer",
-      "company": "Abridge",
-      "title": "Staff Product Designer",
-      "url": "https://jobs.ashbyhq.com/abridge/d48553c1-a360-4509-a1e0-9df6d8b480f6",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "abridge-senior-product-designer",
-      "company": "Abridge",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/abridge/6aab826b-a60a-434e-889d-e4648f289305",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "commure-product-designer",
-      "company": "Commure",
+      "id": "thunkable-product-designer",
+      "company": "Thunkable",
       "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/Commure/8134d3bd-9fcc-452a-96ed-4890a2de2e65",
+      "url": "https://jobs.lever.co/thunkable/9bbcc4b9-ee31-4921-b844-d8f1e0bc533f",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "company": "Oura",
-      "title": "Senior AI-Native Product Designer",
-      "url": "https://job-boards.greenhouse.io/oura/jobs/4207833009",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "company": "Oura",
-      "title": "Senior Product Designer - Mobile",
-      "url": "https://job-boards.greenhouse.io/oura/jobs/4227724009",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "company": "Oura",
-      "title": "Staff Product Designer",
-      "url": "https://job-boards.greenhouse.io/oura/jobs/4193678009",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "company": "Twin Health",
-      "title": "Principal Design System Designer",
-      "url": "https://job-boards.greenhouse.io/twinhealth/jobs/5849866004",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "betterhelp-product-designer-therapist-platform",
-      "company": "BetterHelp",
-      "title": "Product Designer",
-      "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5168402008",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "everlywell-visual-senior-product-designer-contract",
-      "company": "Everlywell",
-      "title": "Visual Senior Product Designer (Remote/Contract)",
-      "url": "https://jobs.lever.co/everlywell/7b7ac528-ec42-4480-b1fd-11ded686380e",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "counsel-health-senior-product-designer-clinical",
-      "company": "Counsel Health",
-      "title": "Senior Product Designer (Clinical)",
-      "url": "https://jobs.ashbyhq.com/counsel/1101017a-9b92-4ce6-8b02-ee468a122c5b",
-      "pass": false,
-      "reason": "No live job signals found on page",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "amperos-health-product-designer",
-      "company": "Amperos Health",
-      "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/amperos/7170a997-79ef-4988-869d-f3099e794c72",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "whoop-senior-product-designer-growth",
-      "company": "WHOOP",
-      "title": "Senior Product Designer (Growth)",
-      "url": "https://jobs.lever.co/whoop/76d39eda-4f33-4281-8fa0-947f9015f514",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "finch-care-product-designer",
-      "company": "Finch Care",
-      "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/finch/3ecb9486-04a5-4afc-82c0-44255ed441fd",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "future-senior-product-designer",
-      "company": "Future",
-      "title": "Senior Product Designer",
-      "url": "https://job-boards.greenhouse.io/future/jobs/4683185005",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "blink-health-lead-product-designer",
-      "company": "Blink Health",
-      "title": "Lead Product Designer",
-      "url": "https://job-boards.greenhouse.io/blinkhealth/jobs/8420880002",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "readily-founding-design-engineer",
-      "company": "Readily",
-      "title": "Founding Design Engineer",
-      "url": "https://www.ycombinator.com/companies/readily/jobs/eaFE5YB-founding-design-engineer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "tennr-senior-product-designer",
-      "company": "Tennr",
-      "title": "Senior Product Designer",
-      "url": "https://www.ycombinator.com/companies/tennr/jobs/81hidB8-senior-product-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "reframe-product-designer",
-      "company": "Reframe",
-      "title": "Product Designer",
-      "url": "https://www.ycombinator.com/companies/reframe/jobs/4PA8ThD-product-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "oura-staff-designer-womens-health",
-      "company": "Ōura",
-      "title": "Staff Designer, Women's Health",
-      "url": "https://job-boards.greenhouse.io/oura/jobs/4110516009",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "leona-health-lead-product-designer",
-      "company": "Leona Health",
-      "title": "Lead Product Designer",
-      "url": "https://jobs.ashbyhq.com/leona/3af3517b-deca-4eac-a6b8-48d6aa82f4a7",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "nourish-staff-product-designer",
-      "company": "Nourish",
-      "title": "Staff Product Designer",
-      "url": "https://job-boards.greenhouse.io/usenourish/jobs/4535318008",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "hone-health-senior-product-designer-clinical",
-      "company": "Hone Health",
-      "title": "Senior Product Designer, Clinical Experience",
-      "url": "https://job-boards.greenhouse.io/honehealth/jobs/5043164008",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "3y-health-ai-product-designer",
-      "company": "3Y Health",
-      "title": "AI Product Designer",
-      "url": "https://jobs.ashbyhq.com/3y-health/336909dc-704f-4653-9722-d8dfc99e98a8",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "flo-health-senior-product-designer-user-centric",
-      "company": "Flo Health",
-      "title": "Senior Product Designer (Virtual Clinics)",
-      "url": "https://job-boards.greenhouse.io/flohealth/jobs/7592507003",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "linktree-staff-product-designer-mobile",
-      "company": "Linktree",
-      "title": "Staff Product Designer, Mobile",
-      "url": "https://jobs.gem.com/linktree/am9icG9zdDpJgxk7m2CvuLCl1rrJICCz",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "linktree-staff-product-designer-ai",
-      "company": "Linktree",
-      "title": "Staff Product Designer, AI",
-      "url": "https://jobs.gem.com/linktree/am9icG9zdDr0vKZKlyMEzrJ_X8Y2UBYA",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "linktree-staff-product-designer-growth",
-      "company": "Linktree",
-      "title": "Staff Product Designer, Growth",
-      "url": "https://jobs.gem.com/linktree/am9icG9zdDqdOMaAYXPbLrEEogliu5sq",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "linktree-contract-product-designer-staff",
-      "company": "Linktree",
-      "title": "Contract Product Designer (Staff-level), 6 months",
-      "url": "https://jobs.gem.com/linktree/am9icG9zdDpNMUvA5ZSYr7LATUgiIPXy",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
-    },
-    {
-      "id": "pinterest-apprentice-product-designer",
-      "company": "Pinterest",
-      "title": "Apprentice Product Designer",
-      "url": "https://www.pinterestcareers.com/jobs/8016473/apprentice-product-designer/?gh_jid=8016473",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
-      "checkedAt": "2026-07-11T16:33:21.883Z"
+      "checkedAt": "2026-07-13T20:47:05.790Z"
     }
   ],
-  "lastRun": "2026-07-11T16:33:21.883Z",
+  "lastRun": "2026-07-13T20:47:05.790Z",
   "summary": {
-    "passed": 89,
-    "failed": 6,
-    "total": 95
+    "passed": 22,
+    "failed": 1,
+    "total": 23
   }
 }
