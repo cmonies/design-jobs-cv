@@ -1458,27 +1458,6 @@
     "employmentType": "Full-time"
   },
   {
-    "id": "twin-health-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Twin Health",
-    "companyUrl": "https://twinhealth.com",
-    "url": "https://job-boards.greenhouse.io/twinhealth/jobs/6020240004",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "Remote (US)",
-    "tags": [
-      "diabetes",
-      "chronic disease",
-      "AI",
-      "service design"
-    ],
-    "postedAt": "2026-06-23",
-    "_sourceUrl": "https://job-boards.greenhouse.io/twinhealth",
-    "_verifiedAt": "2026-06-23",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
     "id": "whoop-product-designer-ii-health",
     "title": "Product Designer II (Health)",
     "company": "WHOOP",
