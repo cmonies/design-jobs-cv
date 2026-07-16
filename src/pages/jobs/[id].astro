@@ -33,6 +33,17 @@ const roleLabel: Record<string, string> = {
   'design-leader': 'Design lead',
 };
 const sentence = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+type Anecdote = { text: string; source: string; date?: string };
+const MONTHS: Record<string, number> = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+const anecdoteKey = (a: Anecdote) => {
+  const m = /([a-z]{3})[a-z]*\s+(\d{4})/i.exec(a.date || '');
+  return m ? parseInt(m[2], 10) * 100 + (MONTHS[m[1].toLowerCase()] || 0) : 0;
+};
+// most recent first — recency is the ranking until we collect helpfulness votes
+const anecdotes: Anecdote[] = ((interviewProcess?.anecdotes as Anecdote[]) || [])
+  .slice()
+  .sort((a, b) => anecdoteKey(b) - anecdoteKey(a));
 const salaryDisplay = salary || details?.salaryText || null;
 
 const isContract = employmentType === 'Contract' || employmentType === 'Freelance';
@@ -363,12 +374,36 @@ const breadcrumbSchema = {
                     </div>
                   )}
 
+                  {anecdotes.length > 0 && (
+                    <div class="mt-5">
+                      <ul class="space-y-4">
+                        {anecdotes.slice(0, 2).map((a: Anecdote) => (
+                          <li class="border-l-2 border-line dark:border-slate-700 pl-3">
+                            <p class="text-[13px] text-ink-soft dark:text-slate-300 leading-relaxed">“{a.text}”</p>
+                            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-1.5">
+                              {a.source}{a.date ? ` · ${a.date}` : ''}
+                            </p>
+                          </li>
+                        ))}
+                      </ul>
+                      {anecdotes.length > 2 && (
+                        <button
+                          type="button"
+                          data-open-anecdotes-modal
+                          class="mt-4 text-xs font-mono uppercase tracking-[0.1em] text-ink dark:text-slate-300 hover:underline underline-offset-2 transition-colors"
+                        >
+                          Read all {anecdotes.length} reports →
+                        </button>
+                      )}
+                    </div>
+                  )}
+
                   <button
                     type="button"
                     data-open-process-modal
                     class="inline-flex items-center justify-center mt-5 px-4 py-1.5 rounded-full border border-ink/25 dark:border-slate-600 text-[13px] font-semibold text-ink dark:text-slate-200 hover:border-ink dark:hover:border-slate-300 hover:bg-ink/[0.03] dark:hover:bg-white/[0.04] transition-colors"
                   >
-                    Add or correct details
+                    Share what I know
                   </button>
                 </div>
               ) : (
@@ -395,6 +430,40 @@ const breadcrumbSchema = {
     </section>
 
     <ProcessModal jobId={id} company={company} jobTitle={title} />
+
+    {anecdotes.length > 2 && (
+      <dialog
+        id="anecdotes-modal"
+        class="process-modal w-full max-w-lg bg-paper dark:bg-[#1C1B18] text-ink dark:text-slate-100 border border-line dark:border-[#2E2C27] p-0"
+        aria-labelledby="anecdotes-modal-title"
+      >
+        <div class="px-6 md:px-8 pb-6 md:pb-8">
+          <div class="sticky top-0 z-10 -mx-6 md:-mx-8 px-6 md:px-8 pt-5 pb-4 mb-5 bg-paper dark:bg-[#1C1B18] border-b border-line dark:border-[#2E2C27]">
+            <div class="flex items-start justify-between gap-4">
+              <h2 id="anecdotes-modal-title" class="font-display font-semibold text-xl tracking-tight">Interview reports</h2>
+              <button type="button" data-close-anecdotes-modal class="shrink-0 -mt-1 -mr-2 p-2 text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors" aria-label="Close">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-muted dark:text-slate-400 mt-1">
+              {title} · {company} · {anecdotes.length} reports, newest first
+            </p>
+          </div>
+          <ul class="space-y-5">
+            {anecdotes.map((a: Anecdote) => (
+              <li class="border-l-2 border-line dark:border-slate-700 pl-3">
+                <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">“{a.text}”</p>
+                <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-1.5">
+                  {a.source}{a.date ? ` · ${a.date}` : ''}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </dialog>
+    )}
   </main>
 
   <Footer />
@@ -413,6 +482,18 @@ const breadcrumbSchema = {
   };
   applyRailState();
   railMq.addEventListener('change', applyRailState);
+
+  // "Read all N reports" dialog
+  const anecdotesModal = document.getElementById('anecdotes-modal') as HTMLDialogElement | null;
+  if (anecdotesModal) {
+    document.querySelectorAll('[data-open-anecdotes-modal]').forEach(b =>
+      b.addEventListener('click', () => anecdotesModal.showModal()));
+    document.querySelectorAll('[data-close-anecdotes-modal]').forEach(b =>
+      b.addEventListener('click', () => anecdotesModal.close()));
+    anecdotesModal.addEventListener('click', (e) => {
+      if (e.target === anecdotesModal) anecdotesModal.close();
+    });
+  }
 </script>
 
 <style is:global>
