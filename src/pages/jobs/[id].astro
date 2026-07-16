@@ -271,7 +271,7 @@ const breadcrumbSchema = {
               <details class="rail-section group animate-fade-up stagger-2" open data-default-open>
                 <summary class="rail-summary">
                   <span class="flex items-center gap-1.5">
-                    <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Who to contact</h2>
+                    <h2 class="font-mono text-[11px] leading-none uppercase tracking-[0.14em] text-muted dark:text-slate-500">Who to contact</h2>
                     <span class="rail-tip" tabindex="0" role="note" aria-label="Our best guess from public profiles — they look involved in hiring, but we could be wrong.">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                       <span class="tip-body">Our best guess from public profiles — they look involved in hiring, but we could be wrong.</span>
@@ -312,7 +312,7 @@ const breadcrumbSchema = {
             <details class="rail-section group animate-fade-up stagger-2" open data-default-open>
               <summary class="rail-summary">
                 <span class="flex items-center gap-1.5">
-                  <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Interview process</h2>
+                  <h2 class="font-mono text-[11px] leading-none uppercase tracking-[0.14em] text-muted dark:text-slate-500">Interview process</h2>
                   {interviewProcess && (
                     <span class="rail-tip" tabindex="0" role="note" aria-label="Gathered from community reports of past interviews — processes change and details may be off.">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
@@ -448,19 +448,32 @@ const breadcrumbSchema = {
               </button>
             </div>
             <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-muted dark:text-slate-400 mt-1">
-              {title} · {company} · {anecdotes.length} reports, newest first
+              {title} · {company} · {anecdotes.length} reports
             </p>
           </div>
-          <ul class="pm-body flex-1 min-h-0 overflow-y-auto px-6 md:px-8 py-5 space-y-5">
-            {anecdotes.map((a: Anecdote) => (
-              <li class="border-l-2 border-line dark:border-slate-700 pl-3">
-                <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">“{a.text}”</p>
-                <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-1.5">
-                  {a.source}{a.date ? ` · ${a.date}` : ''}
-                </p>
-              </li>
-            ))}
-          </ul>
+          <div class="pm-body flex-1 min-h-0 overflow-y-auto px-6 md:px-8 py-5">
+            {anecdotes.length > 5 && (
+              <button
+                type="button"
+                id="anecdote-sort"
+                aria-pressed="false"
+                class="inline-flex items-center gap-1.5 mb-5 px-3 py-1.5 rounded-full border border-line dark:border-slate-700 text-xs font-mono text-ink-soft dark:text-slate-300 hover:border-ink dark:hover:border-slate-400 transition-colors"
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="m21 8-4-4-4 4"/><path d="M17 4v16"/></svg>
+                <span>Newest first</span>
+              </button>
+            )}
+            <ul id="anecdotes-list" class="space-y-5">
+              {anecdotes.map((a: Anecdote) => (
+                <li class="border-l-2 border-line dark:border-slate-700 pl-3">
+                  <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">“{a.text}”</p>
+                  <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-1.5">
+                    {a.source}{a.date ? ` · ${a.date}` : ''}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
           <div class="shrink-0 px-6 md:px-8 pt-4 pb-5 border-t border-line dark:border-[#2E2C27]">
             <button
               type="button"
@@ -512,6 +525,17 @@ const breadcrumbSchema = {
       }));
     anecdotesModal.addEventListener('click', (e) => {
       if (e.target === anecdotesModal) anecdotesModal.close();
+    });
+    // Sort toggle (only rendered with 5+ reports): list is SSR'd newest
+    // first, so each click just reverses the DOM order.
+    const sortBtn = document.getElementById('anecdote-sort');
+    const list = document.getElementById('anecdotes-list');
+    sortBtn?.addEventListener('click', () => {
+      const newest = sortBtn.getAttribute('aria-pressed') === 'false';
+      [...list!.children].reverse().forEach(li => list!.appendChild(li));
+      sortBtn.setAttribute('aria-pressed', String(newest));
+      sortBtn.querySelector('span')!.textContent = newest ? 'Oldest first' : 'Newest first';
+      list!.parentElement!.scrollTop = 0;
     });
   }
 </script>
@@ -567,6 +591,9 @@ const breadcrumbSchema = {
   .rail-tip {
     position: relative;
     display: inline-flex;
+    align-items: center;
+    /* uppercase mono has no descenders — optically center the icon on cap height */
+    margin-top: -1px;
     color: #A8A69E;
     cursor: help;
     outline: none;
