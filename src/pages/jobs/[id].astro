@@ -211,21 +211,29 @@ const facts: Array<{ label: string; value: string }> = [
 
         <!-- Main column: the role itself -->
         <article class="min-w-0">
+          <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-5">About the role</h2>
+
+          {tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-7">
+              {tags.map(tag => (
+                <span class="px-3 py-1 rounded-full border border-line dark:border-slate-700 text-xs text-ink-soft dark:text-slate-300 font-mono">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
           {details ? (
             <>
-              <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-5">About the role</h2>
               <div class="job-desc" set:html={details.descriptionHtml} />
               <p class="mt-8 text-[11px] text-slate-400 dark:text-slate-500">
                 Pulled from {company}'s listing on {atsDomain} · last checked {details.fetchedAt}. The listing itself is the source of truth.
               </p>
             </>
           ) : (
-            <>
-              <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-5">About the role</h2>
-              <p class="text-[15px] text-ink-soft dark:text-slate-300 leading-relaxed max-w-prose">
-                {company}'s listing doesn't allow automated preview — the full description, requirements, and process live on their official posting.
-              </p>
-            </>
+            <p class="text-[15px] text-ink-soft dark:text-slate-300 leading-relaxed max-w-prose">
+              {company}'s listing doesn't allow automated preview — the full description, requirements, and process live on their official posting.
+            </p>
           )}
 
           <div class="border-t border-line dark:border-slate-700/50 mt-10 pt-8">
@@ -256,41 +264,8 @@ const facts: Array<{ label: string; value: string }> = [
         <aside class="-order-1 lg:order-none lg:pt-1">
           <div class="lg:sticky lg:top-24 lg:space-y-10 border-y lg:border-y-0 border-line dark:border-slate-700/50 divide-y lg:divide-y-0 divide-line dark:divide-slate-700/50">
 
-            <details class="rail-section group" open data-default-open>
-              <summary class="rail-summary">
-                <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">At a glance</h2>
-                <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="rail-content">
-              <dl class="space-y-2.5">
-                {facts.map(f => (
-                  <div class="flex items-baseline justify-between gap-4">
-                    <dt class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 shrink-0">{f.label}</dt>
-                    <dd class="text-sm text-ink dark:text-slate-100 text-right">{f.value}</dd>
-                  </div>
-                ))}
-              </dl>
-              </div>
-            </details>
-
-            {tags.length > 0 && (
-              <details class="rail-section group" open>
-                <summary class="rail-summary">
-                  <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Focus</h2>
-                  <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-                </summary>
-                <div class="rail-content flex flex-wrap gap-2">
-                  {tags.map(tag => (
-                    <span class="px-3 py-1 rounded-full border border-line dark:border-slate-700 text-xs text-ink-soft dark:text-slate-300 font-mono">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </details>
-            )}
-
             {contacts.length > 0 && (
-              <details class="rail-section group" open>
+              <details class="rail-section group" open data-default-open>
                 <summary class="rail-summary">
                   <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Who to contact</h2>
                   <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
@@ -400,6 +375,23 @@ const facts: Array<{ label: string; value: string }> = [
                   </button>
                 </div>
               )}
+              </div>
+            </details>
+
+            <details class="rail-section group" open {...(contacts.length === 0 ? { 'data-default-open': true } : {})}>
+              <summary class="rail-summary">
+                <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">At a glance</h2>
+                <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="rail-content">
+              <dl class="space-y-2.5">
+                {facts.map(f => (
+                  <div class="flex items-baseline justify-between gap-4">
+                    <dt class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 shrink-0">{f.label}</dt>
+                    <dd class="text-sm text-ink dark:text-slate-100 text-right">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
               </div>
             </details>
 
