@@ -175,9 +175,11 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           ['Take-home', body.hasAssessment || 'not reported'],
           ['Assessment type', body.assessmentType || 'n/a'],
           ['Heard back after interviewing', body.gotFeedback || 'not reported'],
+          ['Reported by', ({ 'interviewed': 'Someone who interviewed here', 'work-here': 'Someone who works here', 'secondhand': 'Secondhand' } as Record<string, string>)[body.relationship] || 'Not stated'],
+          ...(body.contactName?.trim() ? [['Recruiter contact', `${body.contactName.trim()}${body.contactUrl?.trim() ? ` — ${body.contactUrl.trim()}` : ''}`] as [string, string]] : []),
           ...(body.notes?.trim() ? [['Notes', body.notes.trim().slice(0, 500)] as [string, string]] : []),
         ];
-        const answered = ['rounds', 'roundTypes', 'timeline', 'hasAssessment', 'gotFeedback', 'notes']
+        const answered = ['rounds', 'roundTypes', 'timeline', 'hasAssessment', 'gotFeedback', 'notes', 'contactName']
           .some(k => (body[k] || '').toString().trim());
         if (!answered) {
           return new Response(JSON.stringify({ ok: false, error: 'Please fill in at least one field.' }), {
