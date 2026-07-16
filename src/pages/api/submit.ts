@@ -47,7 +47,7 @@ async function createGitHubIssue(
       Authorization: `Bearer ${token}`,
       Accept: 'application/vnd.github+json',
       'Content-Type': 'application/json',
-      'User-Agent': 'health.designjobs.cv',
+      'User-Agent': 'designjobs.cv',
     },
     body: JSON.stringify({
       title,
@@ -222,7 +222,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           '',
           '---',
           body.reporterName ? `**Reported by:** ${body.reporterName}${body.reporterEmail ? ` (${body.reporterEmail})` : ''}` : '**Reported by:** Anonymous',
-          '_Reported via health.designjobs.cv/report_',
+          '_Reported via designjobs.cv/report_',
         ].join('\n');
         labels = ['bug-report', issueTypeLabels[body.issueType] || 'other'];
       } else {
