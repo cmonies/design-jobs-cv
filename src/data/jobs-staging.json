@@ -1,1 +1,111 @@
-[]
+[
+  {
+    "id": "sleeper-product-designer-mid-level-contract",
+    "title": "Product Designer (Mid-Level)",
+    "company": "Sleeper",
+    "companyUrl": "https://www.sleeper.com",
+    "url": "https://jobs.ashbyhq.com/sleeper/4ddc246a-aaaa-4cb2-a8c9-54bb24c34021",
+    "level": "Mid",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA / Seattle, WA (Hybrid)",
+    "postedAt": "2026-07-16",
+    "vertical": "Consumer",
+    "employmentType": "Contract",
+    "tags": [
+      "mobile",
+      "iOS",
+      "Android",
+      "design systems",
+      "sports",
+      "contract-to-hire"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/sleeper/4ddc246a-aaaa-4cb2-a8c9-54bb24c34021"
+  },
+  {
+    "id": "notion-product-designer",
+    "title": "Product Designer",
+    "company": "Notion",
+    "companyUrl": "https://www.notion.com",
+    "url": "https://jobs.ashbyhq.com/notion/d177d052-ef57-4900-acf2-d58e9eded620",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA / New York, NY (Hybrid)",
+    "postedAt": "2026-07-16",
+    "vertical": "Enterprise/SaaS",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI",
+      "design systems",
+      "collaborative tools",
+      "B2B"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/notion/d177d052-ef57-4900-acf2-d58e9eded620"
+  },
+  {
+    "id": "wefunder-visual-micro-interaction-designer",
+    "title": "Visual & Micro-Interaction Designer",
+    "company": "Wefunder",
+    "companyUrl": "https://wefunder.com",
+    "url": "https://wefunder.com/jobs/micro-interaction-designer",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-07-16",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "micro-interactions",
+      "animation",
+      "design engineering",
+      "CSS",
+      "React",
+      "motion design"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer"
+  },
+  {
+    "id": "finta-founding-designer",
+    "title": "Founding Designer",
+    "company": "Finta",
+    "companyUrl": "https://www.finta.com",
+    "url": "https://www.workatastartup.com/jobs/66636",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "San Francisco, CA / Remote",
+    "postedAt": "2026-07-16",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "founding",
+      "0-to-1",
+      "product design",
+      "brand",
+      "accounting",
+      "YC W23"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer"
+  },
+  {
+    "id": "yarn-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Yarn",
+    "companyUrl": "https://www.yarn.so",
+    "url": "https://www.ycombinator.com/companies/yarn-2/jobs/knZEX3U-founding-product-designer",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "New York, NY",
+    "postedAt": "2026-07-16",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "founding",
+      "0-to-1",
+      "AI",
+      "video",
+      "motion graphics",
+      "WebGL",
+      "YC W24"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer"
+  }
+]
