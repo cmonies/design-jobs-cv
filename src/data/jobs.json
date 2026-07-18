@@ -1179,28 +1179,6 @@
     "_verifiedAt": "2026-07-09"
   },
   {
-    "id": "andco-product-design-engineer",
-    "title": "Product Design Engineer",
-    "company": "Andco",
-    "companyUrl": "https://www.ycombinator.com/companies/andco",
-    "url": "https://www.ycombinator.com/companies/andco/jobs/zoWNTcb-product-design-engineer",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "San Francisco, CA",
-    "postedAt": "2026-06-24",
-    "vertical": "Enterprise/SaaS",
-    "employmentType": "Full-time",
-    "tags": [
-      "design engineer",
-      "react",
-      "legal tech",
-      "design system"
-    ],
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $120-220K.",
-    "_verifiedAt": "2026-07-09"
-  },
-  {
     "id": "voicepanel-founding-designer",
     "title": "Founding Designer",
     "company": "Voicepanel",
