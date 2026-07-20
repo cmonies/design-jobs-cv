@@ -1,1 +1,145 @@
-[]
+[
+  {
+    "id": "worktrace-ai-product-designer",
+    "title": "Product Designer",
+    "company": "Worktrace AI",
+    "companyUrl": "https://worktrace.ai",
+    "url": "https://jobs.ashbyhq.com/worktrace%20ai/b763668b-2786-47c8-a669-e193dda7b0a7",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-07-20",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "enterprise",
+      "AI",
+      "automation",
+      "B2B",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/worktrace%20ai/b763668b-2786-47c8-a669-e193dda7b0a7"
+  },
+  {
+    "id": "vapi-product-designer-ai-ux",
+    "title": "Product Designer \u2014 AI UX / Product Experience",
+    "company": "Vapi",
+    "companyUrl": "https://vapi.ai",
+    "url": "https://jobs.ashbyhq.com/vapi/4fbfa699-a543-49da-857c-64a2c990fd06",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-07-20",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "voice AI",
+      "AI-native",
+      "developer tools",
+      "B2B"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/vapi/4fbfa699-a543-49da-857c-64a2c990fd06"
+  },
+  {
+    "id": "deel-lead-product-designer-fintech",
+    "title": "Lead Product Designer (Fintech)",
+    "company": "Deel",
+    "companyUrl": "https://www.deel.com",
+    "url": "https://jobs.ashbyhq.com/deel/2d8abd4e-6d47-4c0d-b022-f7f3c7fe6611",
+    "level": "Lead",
+    "locationType": "Remote",
+    "location": "Remote (Global)",
+    "postedAt": "2026-07-20",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "payroll",
+      "HR",
+      "global payments",
+      "B2B",
+      "B2C",
+      "mobile"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/deel/2d8abd4e-6d47-4c0d-b022-f7f3c7fe6611"
+  },
+  {
+    "id": "clutch-product-designer",
+    "title": "Product Designer",
+    "company": "Clutch",
+    "companyUrl": "https://www.withclutch.com",
+    "url": "https://jobs.ashbyhq.com/withclutch/af27eba4-5a51-46f6-bc35-7ff25095cd84",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-07-20",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "lending",
+      "credit unions",
+      "AI-assisted design",
+      "fintech"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/withclutch/af27eba4-5a51-46f6-bc35-7ff25095cd84"
+  },
+  {
+    "id": "highbeam-product-designer",
+    "title": "Product Designer",
+    "company": "Highbeam",
+    "companyUrl": "https://www.highbeam.co",
+    "url": "https://jobs.ashbyhq.com/highbeam/35cffce8-c092-479a-8747-f3d4d152b9b6",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "New York, NY",
+    "postedAt": "2026-07-20",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "business banking",
+      "AI",
+      "financial workflows",
+      "SMB"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/highbeam/35cffce8-c092-479a-8747-f3d4d152b9b6"
+  },
+  {
+    "id": "valence-principal-product-designer",
+    "title": "Principal Product Designer",
+    "company": "Valence",
+    "companyUrl": "https://www.valence.co",
+    "url": "https://jobs.ashbyhq.com/jobs-valence/bf637910-24ac-4314-ac04-f6950c2f7e07",
+    "level": "Principal",
+    "locationType": "Hybrid",
+    "location": "New York, NY",
+    "postedAt": "2026-07-20",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI coaching",
+      "enterprise",
+      "conversational AI",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/jobs-valence/bf637910-24ac-4314-ac04-f6950c2f7e07"
+  },
+  {
+    "id": "cloudwalk-product-designer",
+    "title": "Product Designer",
+    "company": "CloudWalk",
+    "companyUrl": "https://www.cloudwalk.io",
+    "url": "https://jobs.lever.co/cloudwalk/7660a1c8-ce19-417c-9e01-7f41bf393875",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "S\u00e3o Paulo, Brazil (Remote)",
+    "postedAt": "2026-07-20",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "payments",
+      "fintech",
+      "mobile",
+      "AI"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/cloudwalk/7660a1c8-ce19-417c-9e01-7f41bf393875"
+  }
+]
