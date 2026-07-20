@@ -1563,21 +1563,7 @@
       "startup"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/read-ai",
-    "_verifiedAt": "2026-07-09",
-    "interviewProcess": {
-      "rounds": 4,
-      "roundTypes": [
-        "recruiter screen",
-        "hiring manager",
-        "portfolio review",
-        "panel"
-      ],
-      "hasAssessment": true,
-      "assessmentType": "paid take-home",
-      "timeline": "2-4 weeks",
-      "gotFeedback": false,
-      "source": "community report"
-    }
+    "_verifiedAt": "2026-07-09"
   },
   {
     "id": "jobber-senior-product-designer-franchise",
