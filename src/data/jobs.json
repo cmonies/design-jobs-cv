@@ -1,5 +1,94 @@
 [
   {
+    "id": "stedi-product-designer",
+    "title": "Product Designer",
+    "company": "Stedi",
+    "companyUrl": "https://www.stedi.com",
+    "url": "https://jobs.ashbyhq.com/stedi/bacc5e48-0cd3-4abc-a9cc-a5b12863a804",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-07-21",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time",
+    "tags": [
+      "healthcare",
+      "clearinghouse",
+      "React",
+      "Next.js",
+      "design systems",
+      "complex systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/stedi/bacc5e48-0cd3-4abc-a9cc-a5b12863a804",
+    "_verifiedAt": "2026-07-21"
+  },
+  {
+    "id": "artisan-staff-product-designer",
+    "title": "Staff Product Designer",
+    "company": "Artisan",
+    "companyUrl": "https://www.artisan.co",
+    "url": "https://jobs.ashbyhq.com/artisan/93bca429-26b2-4cca-a8a1-26c024656ca4",
+    "level": "Staff",
+    "locationType": "On-site",
+    "location": "San Francisco, CA / New York, NY",
+    "postedAt": "2026-07-21",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI",
+      "SaaS",
+      "design systems",
+      "YC W24",
+      "AI employees"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/artisan/93bca429-26b2-4cca-a8a1-26c024656ca4",
+    "_verifiedAt": "2026-07-21"
+  },
+  {
+    "id": "render-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Render",
+    "companyUrl": "https://render.com",
+    "url": "https://jobs.ashbyhq.com/render/0f0ccf3e-4caf-4586-9a66-411dbf49fcc5",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-07-21",
+    "vertical": "Enterprise/SaaS",
+    "employmentType": "Full-time",
+    "tags": [
+      "developer tools",
+      "cloud infrastructure",
+      "design systems",
+      "information design",
+      "Series C"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/render/0f0ccf3e-4caf-4586-9a66-411dbf49fcc5",
+    "_verifiedAt": "2026-07-21"
+  },
+  {
+    "id": "euphoric-lead-product-designer",
+    "title": "Lead Product Designer",
+    "company": "Euphoric",
+    "companyUrl": "https://www.euphoric.global",
+    "url": "https://jobs.ashbyhq.com/euphoric/ce6bd6c1-229c-4568-83f8-0524b4bfb648",
+    "level": "Lead",
+    "locationType": "Remote",
+    "location": "Remote (UK)",
+    "postedAt": "2026-07-21",
+    "vertical": "Enterprise/SaaS",
+    "employmentType": "Full-time",
+    "tags": [
+      "B2B enterprise",
+      "benefits",
+      "AI-first",
+      "design systems",
+      "sole designer"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/euphoric/ce6bd6c1-229c-4568-83f8-0524b4bfb648",
+    "_verifiedAt": "2026-07-21"
+  },
+  {
     "id": "worktrace-ai-product-designer",
     "title": "Product Designer",
     "company": "Worktrace AI",
