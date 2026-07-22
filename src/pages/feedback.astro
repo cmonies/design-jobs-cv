@@ -1204,6 +1204,17 @@ const jobIndex = Object.fromEntries(
     continueBtn.textContent = 'Sending…';
     errorEl?.classList.add('hidden');
 
+    // The server now requires a Turnstile token. It usually resolves in well
+    // under a second, but a fast submitter can beat it — wait briefly rather
+    // than bouncing them off a bot-check error they did nothing to earn.
+    if (!turnstileToken) {
+      continueBtn.textContent = 'Verifying…';
+      for (let i = 0; i < 60 && !turnstileToken; i++) {
+        await new Promise(r => setTimeout(r, 100));
+      }
+      continueBtn.textContent = 'Sending…';
+    }
+
     const payload = {
       type: 'interview-feedback',
       jobId: answers.jobId || '',
