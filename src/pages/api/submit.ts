@@ -297,7 +297,11 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           ...(body.rounds ? { rounds: parseInt(body.rounds, 10) || null } : {}),
           ...(roundTypesRaw ? { roundTypes: roundTypesRaw.split(',').map((s: string) => s.trim()).filter(Boolean) } : {}),
           ...(body.timeline ? { timeline: body.timeline } : {}),
-          ...(body.hasAssessment !== undefined ? { hasAssessment: body.hasAssessment === 'yes' || body.hasAssessment === true } : {}),
+          // Must exclude '' too: the applied-only path never asks about a
+          // take-home, and an unanswered field was being recorded as a
+          // definite "no" — which handed companies free credit on the
+          // respect-for-time score.
+          ...(body.hasAssessment !== undefined && body.hasAssessment !== '' ? { hasAssessment: body.hasAssessment === 'yes' || body.hasAssessment === true } : {}),
           ...(body.assessmentType ? { assessmentType: body.assessmentType } : {}),
           ...(body.takeHomeHours ? { takeHomeHours: parseFloat(body.takeHomeHours) || null } : {}),
           ...(body.gotFeedback !== undefined && body.gotFeedback !== '' ? { gotFeedback: body.gotFeedback === 'yes' || body.gotFeedback === true } : {}),

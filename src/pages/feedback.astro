@@ -836,6 +836,10 @@ const jobIndex = Object.fromEntries(
     max-width: 100%;
     overflow: hidden;
   }
+  /* Astro scopes these rules with an attribute selector, which outranks
+     Tailwind's .hidden — without this the footer stays visible on success,
+     leaving a dead "Sending…" button and the Turnstile badge on screen. */
+  .fw-footer.hidden { display: none; }
   .fw-continue-btn {
     display: inline-flex;
     align-items: center;
