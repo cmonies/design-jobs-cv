@@ -816,6 +816,25 @@ const jobIndex = Object.fromEntries(
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    flex-wrap: wrap;
+  }
+  /* The Turnstile widget is a fixed ~300px iframe — it can't share a row with
+     the button on a phone, so stack them and let the button span the width. */
+  @media (max-width: 560px) {
+    .fw-footer {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1.25rem;
+    }
+    .fw-footer .fw-continue-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  /* Never let the widget push the page sideways on very narrow screens */
+  #fw-turnstile {
+    max-width: 100%;
+    overflow: hidden;
   }
   .fw-continue-btn {
     display: inline-flex;
