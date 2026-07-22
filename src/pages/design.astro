@@ -1,0 +1,535 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+export const prerender = true;
+
+// ── Token data (mirrors tailwind.config.mjs — keep in sync) ──────────────────
+type Swatch = { name: string; hex: string; note?: string; ok?: string };
+
+// Build-time hex → OKLCH so every swatch documents its perceptual coordinates
+function hexToOklch(hx: string): string {
+  const n = hx.replace('#', '');
+  const lin = [0, 1, 2].map(i => {
+    const v = parseInt(n.slice(i * 2, i * 2 + 2), 16) / 255;
+    return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  });
+  const [r, g, b] = lin;
+  const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
+  const m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
+  const s = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b);
+  const L = 0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s;
+  const A = 1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s;
+  const B = 0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s;
+  const C = Math.hypot(A, B);
+  const H = (Math.atan2(B, A) * 180 / Math.PI + 360) % 360;
+  return C < 0.005
+    ? `oklch(${(L * 100).toFixed(0)}% 0 0)`
+    : `oklch(${(L * 100).toFixed(0)}% ${C.toFixed(3)} ${H.toFixed(0)})`;
+}
+const withOk = (list: Swatch[]) => list.map(s => ({ ...s, ok: hexToOklch(s.hex) }));
+
+const LIGHT_CORE: Swatch[] = [
+  { name: 'paper', hex: '#FFFFFF', note: 'Page ground' },
+  { name: 'ink', hex: '#161512', note: 'Primary text & fills' },
+  { name: 'ink-soft', hex: '#3C3A34', note: 'Body text' },
+  { name: 'muted', hex: '#706F6A', note: 'Secondary text' },
+  { name: 'line', hex: '#E8E8E6', note: 'Hairlines & borders' },
+  { name: 'tile-cream', hex: '#F1F1EF', note: 'Tile ground' },
+];
+
+const DARK_CORE: Swatch[] = [
+  { name: 'surface-page', hex: '#111110', note: 'Page ground' },
+  { name: 'surface-card', hex: '#1C1B18', note: 'Cards & dialogs' },
+  { name: 'surface-card-hover', hex: '#23211C', note: 'Card hover' },
+  { name: 'surface-footer', hex: '#0C0C0B', note: 'Footer ground' },
+  { name: 'border-dark', hex: '#2E2C27', note: 'Hairlines & borders' },
+  { name: 'paper-dark', hex: '#EDEBE4', note: 'Inverted fills (buttons, meters)' },
+];
+
+const NEUTRALS: Swatch[] = [
+  { name: 'slate-50', hex: '#FAFAF9' },
+  { name: 'slate-100', hex: '#F2F2F1' },
+  { name: 'slate-200', hex: '#E8E8E6' },
+  { name: 'slate-300', hex: '#D6D6D3' },
+  { name: 'slate-400', hex: '#A3A099' },
+  { name: 'slate-500', hex: '#77746B' },
+  { name: 'slate-600', hex: '#55524B' },
+  { name: 'slate-700', hex: '#26251F' },
+  { name: 'slate-800', hex: '#161613' },
+  { name: 'slate-900', hex: '#0C0C0A' },
+];
+
+const CRUST: Swatch[] = [
+  { name: 'crust-100', hex: '#F6E4CE' },
+  { name: 'crust-300', hex: '#E0A96A' },
+  { name: 'crust-500', hex: '#C0722A', note: 'THE accent — logo + contract roles only' },
+  { name: 'crust-700', hex: '#7E4718' },
+  { name: 'crust-900', hex: '#3B200B' },
+];
+
+// Grade colors are derived in OKLCH and shipped as hex — uniform L/C per
+// theme so no tier is louder than another; hue alone carries the grade.
+const GRADE_LIGHT: Swatch[] = [
+  { name: 'grade-a', hex: '#027D4D', note: 'A+ / A · h158' },
+  { name: 'grade-b', hex: '#0070A6', note: 'B+ / B · h240' },
+  { name: 'grade-c', hex: '#8D5E02', note: 'C+ / C · h75' },
+  { name: 'grade-d', hex: '#A04F18', note: 'D · h50' },
+  { name: 'grade-f', hex: '#A54743', note: 'F · h25' },
+];
+
+const GRADE_DARK: Swatch[] = [
+  { name: 'grade-a', hex: '#72CE9B', note: 'A+ / A · h158' },
+  { name: 'grade-b', hex: '#6DC1F9', note: 'B+ / B · h240' },
+  { name: 'grade-c', hex: '#E2AC5E', note: 'C+ / C · h75' },
+  { name: 'grade-d', hex: '#F3A173', note: 'D · h50' },
+  { name: 'grade-f', hex: '#F89A92', note: 'F · h25' },
+];
+
+const EASINGS = [
+  { name: 'ease-out-quint', value: 'cubic-bezier(0.23, 1, 0.32, 1)', use: 'Entrances (survey steps, nav slide-in)' },
+  { name: 'ease-out-quart', value: 'cubic-bezier(0.165, 0.84, 0.44, 1)', use: 'Exits — ~30% faster than entrances' },
+  { name: 'ease', value: 'ease', use: 'Hover & color transitions, 120–150ms' },
+];
+
+const RADII = [
+  { name: 'rounded-lg', value: '0.5rem', use: 'Tooltips, small chips' },
+  { name: 'rounded-xl', value: '0.75rem', use: 'Inputs, choice cells, rating tiles' },
+  { name: 'rounded-2xl', value: '1rem', use: 'Cards, callouts' },
+  { name: 'rounded-[1.25rem]', value: '1.25rem', use: 'Dialogs (process-modal shell)' },
+  { name: 'rounded-full', value: '9999px', use: 'Buttons, pills, grade tiles, meters' },
+];
+
+const ROUND_TYPES = ['Recruiter screen', 'Portfolio review', 'Panel'];
+---
+
+<Layout title="Design system | designjobs.cv" description="The designjobs.cv design system — colors, typography, and components in both themes.">
+  <Header />
+
+  <main id="main-content" tabindex="-1">
+    <div class="w-full max-w-5xl mx-auto px-4 md:px-6 pt-10 pb-24">
+
+      <header class="pb-10 border-b border-line dark:border-slate-700/50">
+        <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-400">designjobs.cv</p>
+        <h1 class="font-display font-semibold text-4xl md:text-5xl tracking-tight mt-2">Design system</h1>
+        <p class="mt-4 text-[15px] text-ink-soft dark:text-slate-300 max-w-prose leading-relaxed">
+          Cosmos-style monochrome: white gallery ground, warm ink, one amber accent reserved for the
+          bread mark and contract roles. Dark mode is warm char — never blue. Everything below is the
+          live vocabulary the site is built from.
+        </p>
+        <nav aria-label="Sections" class="mt-6 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-400">
+          <a href="#colors" class="hover:text-ink dark:hover:text-white transition-colors">Colors</a>
+          <a href="#typography" class="hover:text-ink dark:hover:text-white transition-colors">Typography</a>
+          <a href="#buttons" class="hover:text-ink dark:hover:text-white transition-colors">Buttons</a>
+          <a href="#forms" class="hover:text-ink dark:hover:text-white transition-colors">Forms</a>
+          <a href="#chips" class="hover:text-ink dark:hover:text-white transition-colors">Chips & badges</a>
+          <a href="#grades" class="hover:text-ink dark:hover:text-white transition-colors">Grades</a>
+          <a href="#progress" class="hover:text-ink dark:hover:text-white transition-colors">Progress</a>
+          <a href="#shape" class="hover:text-ink dark:hover:text-white transition-colors">Shape</a>
+          <a href="#motion" class="hover:text-ink dark:hover:text-white transition-colors">Motion</a>
+        </nav>
+      </header>
+
+      <!-- ── Colors ─────────────────────────────────────────────────────────── -->
+      <section id="colors" class="ds-section">
+        <h2 class="ds-h2">Colors</h2>
+        <p class="ds-lede">One palette, two themes. Light is a white gallery with warm ink; dark is warm char — the neutral ramp is shared and never drifts cool.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+          <!-- Light theme panel -->
+          <div class="rounded-2xl border border-line dark:border-slate-700/50 overflow-hidden">
+            <div class="px-5 py-3 border-b border-line dark:border-slate-700/50 flex items-center justify-between">
+              <h3 class="text-sm font-semibold">Light</h3>
+              <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-400">default</span>
+            </div>
+            <div class="p-5 bg-white text-[#161512]">
+              <p class="ds-swatch-group-label !text-[#706F6A]">Core</p>
+              <ul class="space-y-2.5">
+                {withOk(LIGHT_CORE).map(s => (
+                  <li class="flex items-start gap-3">
+                    <span class="ds-chip mt-0.5" style={`background:${s.hex}; border-color:#E8E8E6`}></span>
+                    <span class="min-w-0 flex-1">
+                      <span class="block font-mono text-xs">{s.name}</span>
+                      {s.note && <span class="block text-[11px] text-[#706F6A] mt-0.5">{s.note}</span>}
+                    </span>
+                    <span class="text-right shrink-0">
+                      <span class="block font-mono text-[11px]">{s.hex}</span>
+                      <span class="block font-mono text-[10px] text-[#706F6A] mt-0.5">{s.ok}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p class="ds-swatch-group-label !text-[#706F6A] mt-6">Grade colors</p>
+              <ul class="space-y-2.5">
+                {withOk(GRADE_LIGHT).map(s => (
+                  <li class="flex items-start gap-3">
+                    <span class="ds-chip mt-0.5" style={`background:${s.hex}; border-color:#E8E8E6`}></span>
+                    <span class="min-w-0 flex-1">
+                      <span class="block font-mono text-xs">{s.name}</span>
+                      <span class="block text-[11px] text-[#706F6A] mt-0.5">{s.note}</span>
+                    </span>
+                    <span class="text-right shrink-0">
+                      <span class="block font-mono text-[11px]">{s.hex}</span>
+                      <span class="block font-mono text-[10px] text-[#706F6A] mt-0.5">{s.ok}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <!-- Dark theme panel -->
+          <div class="rounded-2xl border border-line dark:border-slate-700/50 overflow-hidden">
+            <div class="px-5 py-3 border-b border-line dark:border-slate-700/50 flex items-center justify-between">
+              <h3 class="text-sm font-semibold">Dark</h3>
+              <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-400">.dark</span>
+            </div>
+            <div class="p-5 bg-[#111110] text-[#F2F1EC]">
+              <p class="ds-swatch-group-label !text-[#A3A099]">Core</p>
+              <ul class="space-y-2.5">
+                {withOk(DARK_CORE).map(s => (
+                  <li class="flex items-start gap-3">
+                    <span class="ds-chip mt-0.5" style={`background:${s.hex}; border-color:#2E2C27`}></span>
+                    <span class="min-w-0 flex-1">
+                      <span class="block font-mono text-xs">{s.name}</span>
+                      {s.note && <span class="block text-[11px] text-[#A3A099] mt-0.5">{s.note}</span>}
+                    </span>
+                    <span class="text-right shrink-0">
+                      <span class="block font-mono text-[11px]">{s.hex}</span>
+                      <span class="block font-mono text-[10px] text-[#A3A099] mt-0.5">{s.ok}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p class="ds-swatch-group-label !text-[#A3A099] mt-6">Grade colors</p>
+              <ul class="space-y-2.5">
+                {withOk(GRADE_DARK).map(s => (
+                  <li class="flex items-start gap-3">
+                    <span class="ds-chip mt-0.5" style={`background:${s.hex}; border-color:#2E2C27`}></span>
+                    <span class="min-w-0 flex-1">
+                      <span class="block font-mono text-xs">{s.name}</span>
+                      <span class="block text-[11px] text-[#A3A099] mt-0.5">{s.note}</span>
+                    </span>
+                    <span class="text-right shrink-0">
+                      <span class="block font-mono text-[11px]">{s.hex}</span>
+                      <span class="block font-mono text-[10px] text-[#A3A099] mt-0.5">{s.ok}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shared ramps -->
+        <div class="mt-8">
+          <p class="ds-swatch-group-label">Warm neutral ramp <span class="normal-case tracking-normal">— `slate-*` and `gray-*` are remapped to these; nothing in the UI is a cool gray</span></p>
+          <div class="flex rounded-xl overflow-hidden border border-line dark:border-slate-700/50">
+            {NEUTRALS.map(s => (
+              <div class="flex-1 h-16 relative group" style={`background:${s.hex}`} title={`${s.name} ${s.hex} ${hexToOklch(s.hex)}`}>
+                <span class={`absolute bottom-1 left-1/2 -translate-x-1/2 font-mono text-[9px] ${parseInt(s.hex.slice(1,3),16) > 128 ? 'text-[#706F6A]' : 'text-[#A3A099]'}`}>{s.name.replace('slate-','')}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <p class="ds-swatch-group-label">Crust amber <span class="normal-case tracking-normal">— the single accent: the bread mark and contract roles. Never decoration.</span></p>
+          <div class="flex rounded-xl overflow-hidden border border-line dark:border-slate-700/50 max-w-md">
+            {CRUST.map(s => (
+              <div class="flex-1 h-16" style={`background:${s.hex}`} title={`${s.name} ${s.hex} ${hexToOklch(s.hex)}`}></div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Typography ─────────────────────────────────────────────────────── -->
+      <section id="typography" class="ds-section">
+        <h2 class="ds-h2">Typography</h2>
+        <p class="ds-lede">Bricolage Grotesque for display, Be Vietnam Pro for everything else, system mono for labels and data. Pairing on a contrast axis — one voice for posters, one for product.</p>
+
+        <div class="mt-8 space-y-8">
+          <div class="ds-spec-row">
+            <div class="ds-spec-meta">
+              <p class="font-mono text-[11px]">font-display</p>
+              <p class="font-mono text-[11px] text-muted dark:text-slate-400">Bricolage Grotesque · 600–700</p>
+            </div>
+            <p class="font-display font-semibold text-4xl tracking-tight leading-tight" style="text-wrap: balance">Design jobs with real links, by the community</p>
+          </div>
+          <div class="ds-spec-row">
+            <div class="ds-spec-meta">
+              <p class="font-mono text-[11px]">font-sans</p>
+              <p class="font-mono text-[11px] text-muted dark:text-slate-400">Be Vietnam Pro · 400–600 · 15px body</p>
+            </div>
+            <p class="text-[15px] text-ink-soft dark:text-slate-300 leading-relaxed max-w-prose">Body copy runs at 15px with relaxed leading, capped at a comfortable measure. Semibold carries emphasis — never color, never italics.</p>
+          </div>
+          <div class="ds-spec-row">
+            <div class="ds-spec-meta">
+              <p class="font-mono text-[11px]">font-mono</p>
+              <p class="font-mono text-[11px] text-muted dark:text-slate-400">ui-monospace · 10–11px · tracked caps</p>
+            </div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-400">Section labels · Meta rows · 90/100 · 3 reports</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Buttons ────────────────────────────────────────────────────────── -->
+      <section id="buttons" class="ds-section">
+        <h2 class="ds-h2">Buttons</h2>
+        <p class="ds-lede">Every action is a full-round pill. Primary is inverted ink; secondary is a hairline. One primary per view.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <button type="button" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-[15px] font-semibold hover:opacity-85 transition-opacity">Primary</button>
+          <button type="button" class="inline-flex items-center px-5 py-2.5 rounded-full border border-ink/25 dark:border-slate-600 text-sm font-semibold text-ink dark:text-slate-200 hover:border-ink dark:hover:border-slate-300 hover:bg-ink/[0.03] dark:hover:bg-white/[0.04] transition-colors">Secondary</button>
+          <button type="button" class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-[13px] font-semibold hover:opacity-85 transition-opacity">Compact</button>
+          <button type="button" disabled class="inline-flex items-center px-7 py-3.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-[15px] font-semibold opacity-50 cursor-not-allowed">Disabled</button>
+          <button type="button" class="text-xs font-mono uppercase tracking-[0.1em] text-ink dark:text-slate-300 hover:underline underline-offset-2">Ghost action →</button>
+        </div>
+      </section>
+
+      <!-- ── Forms ──────────────────────────────────────────────────────────── -->
+      <section id="forms" class="ds-section">
+        <h2 class="ds-h2">Form controls</h2>
+        <p class="ds-lede">Survey-scale controls: equal-cell answer rows, number tiles, ordered checklists. Selected state is always full ink inversion.</p>
+
+        <div class="mt-8 space-y-8 max-w-2xl">
+          <div>
+            <p class="ds-demo-label">Text input</p>
+            <input type="text" placeholder="e.g. Figma" class="w-full max-w-md px-4 py-3.5 rounded-xl border border-line dark:border-slate-700 bg-white dark:bg-[#131211] text-[15px] text-ink dark:text-slate-100 outline-none focus:border-ink dark:focus:border-slate-400 transition-colors" />
+          </div>
+
+          <div>
+            <p class="ds-demo-label">Answer row — equal cells, fills the column</p>
+            <div class="grid gap-2" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr))">
+              {['Applied directly', 'Through a referral', 'A recruiter reached out'].map((lbl, i) => (
+                <label class="ds-cell-label">
+                  <input type="radio" name="ds-demo-source" class="sr-only" checked={i === 1} />
+                  <span>{lbl}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p class="ds-demo-label">Rating scale — five equal tiles</p>
+            <div class="grid grid-cols-5 gap-2 max-w-md">
+              {[1, 2, 3, 4, 5].map(n => (
+                <label class="ds-cell-label">
+                  <input type="radio" name="ds-demo-rating" class="sr-only" checked={n === 4} />
+                  <span class="!min-h-[3.25rem]">{n}</span>
+                </label>
+              ))}
+            </div>
+            <div class="flex justify-between max-w-md mt-1.5 font-mono text-[10px] text-muted dark:text-slate-500">
+              <span>Poor</span><span>Excellent</span>
+            </div>
+          </div>
+
+          <div>
+            <p class="ds-demo-label">Ordered checklist — numbers appear in tap order</p>
+            <div class="grid grid-cols-2 gap-x-4 gap-y-0.5 max-w-md">
+              {ROUND_TYPES.map((rt, i) => (
+                <label class="flex items-center gap-2.5 cursor-pointer py-2">
+                  <span class={`w-5 h-5 rounded border-[1.5px] shrink-0 inline-flex items-center justify-center text-[10px] font-bold ${i < 2 ? 'bg-ink border-ink text-paper dark:bg-slate-100 dark:border-slate-100 dark:text-ink' : 'border-[#D6D3D1] dark:border-slate-700'}`}>{i < 2 ? i + 1 : ''}</span>
+                  <span class="text-[15px] text-ink dark:text-slate-100">{rt}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Chips & badges ─────────────────────────────────────────────────── -->
+      <section id="chips" class="ds-section">
+        <h2 class="ds-h2">Chips & badges</h2>
+        <p class="ds-lede">Informational chips are hairline pills in mono. Amber is semantic: contract roles and warnings only.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-2">
+          <span class="px-3 py-1 rounded-full border border-line dark:border-slate-700 text-xs text-ink-soft dark:text-slate-300 font-mono">design systems</span>
+          <span class="px-3 py-1 rounded-full border border-line dark:border-slate-700 text-xs text-ink-soft dark:text-slate-300 font-mono">healthtech</span>
+          <span class="px-3 py-1 rounded-full bg-crust-500 text-white text-xs font-mono font-semibold">Contract</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-amber-300 dark:border-amber-700/60 text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30 text-xs font-mono">Ghosting reported</span>
+          <span class="px-3 py-1 rounded-full border border-line dark:border-slate-700 text-xs text-muted dark:text-slate-400 font-mono">3d</span>
+        </div>
+      </section>
+
+      <!-- ── Grades ─────────────────────────────────────────────────────────── -->
+      <section id="grades" class="ds-section">
+        <h2 class="ds-h2">Grade tiles</h2>
+        <p class="ds-lede">Candidate-experience grades. Tinted tile + letter; the only place semantic color fills a surface. Derived in OKLCH — light text at L 0.52 / C 0.125, dark at L 0.78 / C 0.115 — so every tier carries equal weight and hue alone signals the grade. Detail lives in the nutrition-facts breakdown dialog.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <span class="ds-grade" style="color:#027d4d; background:#ecfbf2; border-color:#b4e5c7">A</span>
+          <span class="ds-grade" style="color:#0070a6; background:#f0f8fe; border-color:#b1deff">B</span>
+          <span class="ds-grade" style="color:#8d5e02; background:#fff5e8; border-color:#f1d2a8">C</span>
+          <span class="ds-grade" style="color:#a04f18; background:#fef5f0; border-color:#fcccb2">D</span>
+          <span class="ds-grade" style="color:#a54743; background:#fff4f3; border-color:#ffc8c3">F</span>
+          <span class="font-mono text-[11px] text-muted dark:text-slate-400 ml-2">grade appears at 3+ reports · ghosting caps the grade</span>
+        </div>
+      </section>
+
+      <!-- ── Progress ───────────────────────────────────────────────────────── -->
+      <section id="progress" class="ds-section">
+        <h2 class="ds-h2">Progress</h2>
+        <p class="ds-lede">Segmented meters — one segment per step, 2px bars, warm fills. Segments are buttons: tooltip on hover, completed ones jump back.</p>
+        <div class="mt-8 max-w-md">
+          <div class="flex items-center gap-4">
+            <div class="flex gap-1.5 flex-1">
+              {[1, 2, 3, 4, 5, 6, 7].map(n => (
+                <div class={`flex-1 h-[2px] rounded-full ${n <= 3 ? 'bg-ink dark:bg-[#C9C6BC]' : 'bg-line dark:bg-[#2E2C27]'}`}></div>
+              ))}
+            </div>
+            <span class="font-mono text-[11px] text-muted dark:text-slate-400">3 of 7</span>
+          </div>
+          <div class="mt-6 h-[5px] bg-line dark:bg-slate-700/60 rounded-full overflow-hidden">
+            <div class="h-full w-[90%] rounded-full bg-ink dark:bg-slate-100"></div>
+          </div>
+          <p class="font-mono text-[10px] text-muted dark:text-slate-500 mt-1.5">score meter — 5px, used in the grade breakdown</p>
+        </div>
+      </section>
+
+      <!-- ── Shape ──────────────────────────────────────────────────────────── -->
+      <section id="shape" class="ds-section">
+        <h2 class="ds-h2">Shape & radius</h2>
+        <p class="ds-lede">Radii step with component scale; actions are always full-round. Dialogs share one shell: 1.25rem radius, hairline border, blurred ink backdrop, bottom-sheet on mobile.</p>
+        <div class="mt-8 overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-line dark:border-slate-700/50 text-left">
+                <th class="py-2 pr-6 font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-400 font-normal">Token</th>
+                <th class="py-2 pr-6 font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-400 font-normal">Value</th>
+                <th class="py-2 font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-400 font-normal">Used for</th>
+              </tr>
+            </thead>
+            <tbody>
+              {RADII.map(r => (
+                <tr class="border-b border-line dark:border-slate-700/40 last:border-b-0">
+                  <td class="py-2.5 pr-6 font-mono text-xs">{r.name}</td>
+                  <td class="py-2.5 pr-6 font-mono text-xs text-muted dark:text-slate-400">{r.value}</td>
+                  <td class="py-2.5 text-[13px] text-ink-soft dark:text-slate-300">{r.use}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ── Motion ─────────────────────────────────────────────────────────── -->
+      <section id="motion" class="ds-section">
+        <h2 class="ds-h2">Motion</h2>
+        <p class="ds-lede">Fast and purposeful: entrances ease-out under 250ms, exits ~30% faster, hovers at 120–150ms. Everything respects reduced-motion.</p>
+        <div class="mt-8 overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-line dark:border-slate-700/50 text-left">
+                <th class="py-2 pr-6 font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-400 font-normal">Curve</th>
+                <th class="py-2 pr-6 font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-400 font-normal">Value</th>
+                <th class="py-2 font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-400 font-normal">Used for</th>
+              </tr>
+            </thead>
+            <tbody>
+              {EASINGS.map(e => (
+                <tr class="border-b border-line dark:border-slate-700/40 last:border-b-0">
+                  <td class="py-2.5 pr-6 font-mono text-xs whitespace-nowrap">{e.name}</td>
+                  <td class="py-2.5 pr-6 font-mono text-xs text-muted dark:text-slate-400 whitespace-nowrap">{e.value}</td>
+                  <td class="py-2.5 text-[13px] text-ink-soft dark:text-slate-300">{e.use}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .ds-section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid #E8E8E6;
+  }
+  :root.dark .ds-section { border-bottom-color: rgb(38 37 31 / 0.5); }
+  .ds-section:last-child { border-bottom: 0; }
+  .ds-h2 {
+    font-family: 'Bricolage Grotesque', 'Be Vietnam Pro', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    letter-spacing: -0.02em;
+  }
+  .ds-lede {
+    margin-top: 0.6rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #3C3A34;
+    max-width: 60ch;
+  }
+  :root.dark .ds-lede { color: #D6D6D3; }
+  .ds-swatch-group-label {
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #706F6A;
+    margin-bottom: 0.75rem;
+  }
+  :root.dark .ds-swatch-group-label { color: #A3A099; }
+  .ds-chip {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    flex-shrink: 0;
+    display: inline-block;
+  }
+  .ds-spec-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  @media (max-width: 640px) {
+    .ds-spec-row { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+  .ds-demo-label {
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #706F6A;
+    margin-bottom: 0.75rem;
+  }
+  :root.dark .ds-demo-label { color: #A3A099; }
+  .ds-cell-label { display: block; cursor: pointer; }
+  .ds-cell-label span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 3.25rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid #E8E8E6;
+    font-size: 0.9375rem;
+    color: #3C3A34;
+    line-height: 1.3;
+    transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+    user-select: none;
+  }
+  .ds-cell-label span:hover { border-color: #161512; }
+  .ds-cell-label input:checked + span { background: #161512; border-color: #161512; color: #F2F1EC; }
+  :root.dark .ds-cell-label span { border-color: #2E2C27; color: #D6D6D3; }
+  :root.dark .ds-cell-label span:hover { border-color: #A3A099; }
+  :root.dark .ds-cell-label input:checked + span { background: #EDEBE4; border-color: #EDEBE4; color: #161512; }
+  .ds-grade {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    border: 1px solid;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+</style>

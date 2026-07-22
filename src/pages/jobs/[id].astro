@@ -2,10 +2,11 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import ProcessModal from '../../components/ProcessModal.astro';
 import jobs from '../../data/jobs.json';
 import jobDetails from '../../data/job-details.json';
 import jobContacts from '../../data/job-contacts.json';
+import jobFeedbackData from '../../data/job-feedback.json';
+import { computeGrade, gradeColorKey, MIN_REPORTS_FOR_GRADE } from '../../lib/grades';
 
 export function getStaticPaths() {
   return jobs
@@ -45,6 +46,18 @@ const anecdotes: Anecdote[] = ((interviewProcess?.anecdotes as Anecdote[]) || []
   .slice()
   .sort((a, b) => anecdoteKey(b) - anecdoteKey(a));
 const salaryDisplay = salary || details?.salaryText || null;
+
+const feedbackEntry = (jobFeedbackData as Record<string, { reports: any[] }>)[id] ?? null;
+const gradeResult = feedbackEntry?.reports?.length ? computeGrade(feedbackEntry.reports) : null;
+const gradeColorClass = gradeResult?.hasEnoughData ? gradeColorKey(gradeResult.grade) : null;
+const feedbackUrl = `/feedback?job=${encodeURIComponent(id)}&company=${encodeURIComponent(company)}&title=${encodeURIComponent(title)}`;
+const gradeRows = gradeResult?.hasEnoughData ? [
+  { label: 'Communication', pts: gradeResult.breakdown.communication, max: 30 },
+  { label: 'Respect for time', pts: gradeResult.breakdown.respectForTime, max: 25 },
+  { label: 'Transparency', pts: gradeResult.breakdown.transparency, max: 20 },
+  { label: 'Interviewer quality', pts: gradeResult.breakdown.interviewerQuality, max: 15 },
+  { label: 'Community rating', pts: gradeResult.breakdown.overall, max: 10 },
+] : [];
 
 const isContract = employmentType === 'Contract' || employmentType === 'Freelance';
 const locationStr = locationType === 'Remote'
@@ -128,6 +141,39 @@ const breadcrumbSchema = {
   <Header />
 
   <main id="main-content" tabindex="-1">
+
+    <!-- Sticky section nav — slides in after scrolling past the page header -->
+    <nav
+      id="section-nav"
+      aria-label="Page sections"
+      class="fixed inset-x-0 top-0 z-[60] bg-paper/95 dark:bg-surface-header/95 backdrop-blur-xl border-b border-line dark:border-slate-700/50 -translate-y-full opacity-0 pointer-events-none transition-[transform,opacity] duration-200 ease-out motion-reduce:transition-none"
+    >
+      <div class="w-full max-w-6xl mx-auto px-4 md:px-6 h-14 flex items-center justify-between gap-4">
+        <div class="flex items-center self-stretch overflow-x-auto no-scrollbar">
+          <a href="#overview" data-section-link="overview" class="section-link" aria-current="true">Overview</a>
+          <a href="#about" data-section-link="about" class="section-link" aria-current="false">About the role</a>
+          <a href="#s-process" data-section-link="s-process" class="section-link" aria-current="false">Candidate experience</a>
+          {contacts.length > 0 && (
+            <a href="#s-contact" data-section-link="s-contact" class="section-link" aria-current="false">Contacts</a>
+          )}
+        </div>
+        <div class="flex items-center gap-4 shrink-0">
+          {salaryDisplay && (
+            <span class="hidden md:block font-mono text-[11px] text-muted dark:text-slate-400 whitespace-nowrap">{salaryDisplay}</span>
+          )}
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-apply-tracking={id}
+            class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-[13px] font-semibold hover:opacity-85 transition-opacity whitespace-nowrap"
+          >
+            Apply
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
     <script type="application/ld+json" set:html={JSON.stringify(jobPostingSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
@@ -145,7 +191,7 @@ const breadcrumbSchema = {
     <section class="w-full max-w-6xl mx-auto px-4 md:px-6 pt-6 pb-28">
 
       <!-- Page header: title block left, apply action right -->
-      <header class="animate-fade-up stagger-1 flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-0 lg:pb-8 border-b-0 lg:border-b border-line dark:border-slate-700/50">
+      <header id="overview" class="scroll-mt-20 animate-fade-up stagger-1 flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-0 lg:pb-8 border-b-0 lg:border-b border-line dark:border-slate-700/50">
         <div class="min-w-0">
           <div class="flex items-center gap-3 mb-4">
             <a href={companyUrl} target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors">
@@ -198,6 +244,7 @@ const breadcrumbSchema = {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
+            data-apply-tracking={id}
             class="inline-flex items-center justify-center gap-2.5 w-full md:w-auto px-7 py-3.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-[15px] font-semibold hover:opacity-85 transition-opacity whitespace-nowrap"
           >
             Apply at {company}
@@ -225,7 +272,7 @@ const breadcrumbSchema = {
       <div class="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-12 lg:gap-16 pt-10">
 
         <!-- Main column: the role itself -->
-        <article class="animate-fade-up stagger-2 min-w-0">
+        <article id="about" class="scroll-mt-20 animate-fade-up stagger-2 min-w-0">
           {details ? (
             <>
               <div class="job-desc" set:html={details.descriptionHtml} />
@@ -244,6 +291,7 @@ const breadcrumbSchema = {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
+              data-apply-tracking={id}
               class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-base font-semibold hover:opacity-85 transition-opacity"
             >
               Apply at {company}
@@ -260,6 +308,24 @@ const breadcrumbSchema = {
               </svg>
               Looks like this job is closed? Flag it.
             </a>
+
+            <!-- Feedback prompt: shown by JS after 14+ days from first apply click -->
+            <div id="feedback-prompt" class="hidden mt-8 p-4 rounded-xl border border-line dark:border-slate-700 bg-[#FAFAF9] dark:bg-surface-card">
+              <p class="text-sm font-semibold text-ink dark:text-slate-100 mb-1">How's the process at {company}?</p>
+              <p class="text-xs text-muted dark:text-slate-400 mb-3 leading-relaxed">Looks like you applied a while back. Your experience helps other designers know what to expect.</p>
+              <div class="flex items-center gap-3 flex-wrap">
+                <a
+                  href={feedbackUrl}
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-semibold hover:opacity-85 transition-opacity"
+                >
+                  Share your experience
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                </a>
+                <button type="button" id="dismiss-feedback-prompt" class="text-xs text-muted dark:text-slate-400 hover:text-ink dark:hover:text-slate-300 transition-colors">
+                  Not now
+                </button>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -268,7 +334,7 @@ const breadcrumbSchema = {
           <div class="lg:sticky lg:top-24 space-y-3 lg:space-y-0 lg:divide-y lg:divide-line lg:dark:divide-slate-700/50">
 
             {contacts.length > 0 && (
-              <details class="rail-section group animate-fade-up stagger-2" open data-default-open>
+              <details id="s-contact" class="scroll-mt-20 rail-section group animate-fade-up stagger-2" open data-default-open>
                 <summary class="rail-summary">
                   <span class="flex items-center gap-1.5">
                     <h2 class="font-mono text-[11px] leading-none uppercase tracking-[0.14em] text-muted dark:text-slate-500">Who to contact</h2>
@@ -309,10 +375,10 @@ const breadcrumbSchema = {
               </details>
             )}
 
-            <details class="rail-section group animate-fade-up stagger-2" open data-default-open>
+            <details id="s-process" class="scroll-mt-20 rail-section group animate-fade-up stagger-2" open data-default-open>
               <summary class="rail-summary">
                 <span class="flex items-center gap-1.5">
-                  <h2 class="font-mono text-[11px] leading-none uppercase tracking-[0.14em] text-muted dark:text-slate-500">Interview process</h2>
+                  <h2 class="font-mono text-[11px] leading-none uppercase tracking-[0.14em] text-muted dark:text-slate-500">Candidate experience</h2>
                   {interviewProcess && (
                     <span class="rail-tip" tabindex="0" role="note" aria-label="Gathered from community reports of past interviews — processes change and details may be off.">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
@@ -323,6 +389,27 @@ const breadcrumbSchema = {
                 <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </summary>
               <div class="rail-content">
+              {gradeResult && !gradeResult.hasEnoughData && gradeResult.reportCount > 0 && (
+                <p class="text-[11px] font-mono text-muted dark:text-slate-500 mb-3">
+                  {gradeResult.reportCount} report{gradeResult.reportCount !== 1 ? 's' : ''} — grade appears at {MIN_REPORTS_FOR_GRADE}
+                </p>
+              )}
+              {gradeResult?.hasEnoughData && (
+                <button
+                  type="button"
+                  data-open-grade-modal
+                  aria-haspopup="dialog"
+                  aria-label={`Candidate experience grade ${gradeResult.grade}, ${gradeResult.score} out of 100 from ${gradeResult.reportCount} reports — see breakdown`}
+                  class="group/grade w-full flex items-center gap-3 mb-6 pb-5 border-b border-line dark:border-slate-700/50 text-left cursor-pointer"
+                >
+                  <span class={`grade-chip-lg grade-chip-${gradeColorClass}`} aria-hidden="true">{gradeResult.grade}</span>
+                  <span class="flex-1 min-w-0 text-sm text-ink dark:text-slate-100">
+                    {gradeResult.score}/100
+                    <span class="text-muted dark:text-slate-500"> · {gradeResult.reportCount} reports</span>
+                  </span>
+                  <svg class="shrink-0 text-muted dark:text-slate-500 group-hover/grade:text-ink dark:group-hover/grade:text-slate-200 transition-colors" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+              )}
               {interviewProcess ? (
                 <div>
                   {(interviewProcess.rounds || interviewProcess.timeline) && (
@@ -398,26 +485,24 @@ const breadcrumbSchema = {
                     </div>
                   )}
 
-                  <button
-                    type="button"
-                    data-open-process-modal
+                  <a
+                    href={feedbackUrl}
                     class="inline-flex items-center justify-center mt-5 px-4 py-1.5 rounded-full border border-ink/25 dark:border-slate-600 text-[13px] font-semibold text-ink dark:text-slate-200 hover:border-ink dark:hover:border-slate-300 hover:bg-ink/[0.03] dark:hover:bg-white/[0.04] transition-colors"
                   >
                     Share what I know
-                  </button>
+                  </a>
                 </div>
               ) : (
                 <div>
                   <p class="text-sm text-ink-soft dark:text-slate-400 leading-relaxed">
                     No process details yet — rounds, timeline, take-home. Be the first to share what it's like to apply here.
                   </p>
-                  <button
-                    type="button"
-                    data-open-process-modal
+                  <a
+                    href={feedbackUrl}
                     class="inline-flex items-center justify-center mt-4 px-5 py-2.5 rounded-full border border-ink/25 dark:border-slate-600 text-sm font-semibold text-ink dark:text-slate-200 hover:border-ink dark:hover:border-slate-300 hover:bg-ink/[0.03] dark:hover:bg-white/[0.04] transition-colors"
                   >
                     Share what I know
-                  </button>
+                  </a>
                 </div>
               )}
               </div>
@@ -429,7 +514,36 @@ const breadcrumbSchema = {
       </div>
     </section>
 
-    <ProcessModal jobId={id} company={company} jobTitle={title} />
+
+  <script define:vars={{ jobId: id }}>
+    // Apply tracking: record first click date in localStorage
+    const applyKey = `dj-apply-${jobId}`;
+    const applyData = JSON.parse(localStorage.getItem(applyKey) || 'null');
+
+    document.querySelectorAll('[data-apply-tracking]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const now = Date.now();
+        const existing = JSON.parse(localStorage.getItem(applyKey) || 'null');
+        localStorage.setItem(applyKey, JSON.stringify({
+          firstAt: existing?.firstAt ?? now,
+          count: (existing?.count ?? 0) + 1,
+          dismissed: existing?.dismissed ?? false,
+        }));
+      });
+    });
+
+    // Show feedback prompt if applied 14+ days ago and not dismissed
+    const FOURTEEN_DAYS_MS = 14 * 24 * 60 * 60 * 1000;
+    if (applyData?.firstAt && !applyData?.dismissed && Date.now() - applyData.firstAt >= FOURTEEN_DAYS_MS) {
+      document.getElementById('feedback-prompt')?.classList.remove('hidden');
+    }
+
+    document.getElementById('dismiss-feedback-prompt')?.addEventListener('click', () => {
+      document.getElementById('feedback-prompt')?.classList.add('hidden');
+      const existing = JSON.parse(localStorage.getItem(applyKey) || 'null');
+      localStorage.setItem(applyKey, JSON.stringify({ ...existing, dismissed: true }));
+    });
+  </script>
 
     {anecdotes.length > 2 && (
       <dialog
@@ -475,17 +589,82 @@ const breadcrumbSchema = {
             </ul>
           </div>
           <div class="shrink-0 px-6 md:px-8 pt-4 pb-5 border-t border-line dark:border-[#2E2C27]">
-            <button
-              type="button"
-              data-anecdotes-to-process
+            <a
+              href={feedbackUrl}
               class="w-full inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-[15px] font-semibold hover:opacity-85 transition-opacity"
             >
               Share what I know
-            </button>
+            </a>
             <p class="mt-2.5 text-[11px] text-center text-slate-400 dark:text-slate-500">
               Interviewed here too? Anonymous &amp; reviewed before publishing.
             </p>
           </div>
+        </div>
+      </dialog>
+    )}
+
+    {gradeResult?.hasEnoughData && (
+      <dialog
+        id="grade-modal"
+        class="process-modal w-full max-w-sm bg-paper dark:bg-[#1C1B18] text-ink dark:text-slate-100 border border-line dark:border-[#2E2C27] p-0"
+        aria-labelledby="grade-modal-title"
+      >
+        <div class="p-6 md:p-7">
+          <div class="flex items-start justify-between gap-4">
+            <h2 id="grade-modal-title" class="font-display font-semibold text-xl tracking-tight leading-tight">Candidate experience</h2>
+            <button type="button" data-close-grade-modal class="shrink-0 -mt-1 -mr-2 p-2 text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors" aria-label="Close">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-muted dark:text-slate-400 mt-1">
+            {company} · {gradeResult.reportCount} community reports
+          </p>
+
+          <div class="mt-6 flex items-center gap-3.5">
+            <span class={`grade-chip-lg grade-chip-${gradeColorClass}`} aria-hidden="true">{gradeResult.grade}</span>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-baseline justify-between gap-3">
+                <span class="text-sm font-semibold text-ink dark:text-slate-100">Overall grade {gradeResult.grade}</span>
+                <span class="font-mono text-sm tabular-nums text-ink dark:text-slate-100">{gradeResult.score}<span class="text-muted dark:text-slate-400">/100</span></span>
+              </div>
+              <div class="mt-2 h-[5px] bg-line dark:bg-slate-700/60 rounded-full overflow-hidden">
+                <div class="h-full rounded-full bg-ink dark:bg-slate-100" style={`width: ${gradeResult.score}%`}></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 border-t border-line dark:border-slate-700/60">
+            {gradeRows.map(r => (
+              <div class="py-3 border-b border-line dark:border-slate-700/60 last:border-b-0">
+                <div class="flex items-baseline justify-between gap-3">
+                  <span class="text-[13px] font-medium text-ink dark:text-slate-100">{r.label}</span>
+                  <span class="font-mono text-xs tabular-nums text-ink dark:text-slate-100">{r.pts}<span class="text-muted dark:text-slate-500">/{r.max}</span></span>
+                </div>
+                <div class="mt-2 h-[3px] bg-line dark:bg-slate-700/60 rounded-full overflow-hidden">
+                  <div class="h-full rounded-full bg-ink dark:bg-slate-100" style={`width: ${Math.max(2, Math.round((r.pts / r.max) * 100))}%`}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {gradeResult.ghostingCount >= 2 && (
+            <p class="mt-4 flex items-start gap-1.5 text-[11px] leading-relaxed text-amber-700 dark:text-amber-400">
+              <svg class="shrink-0 mt-px" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8Z"/></svg>
+              {gradeResult.ghostingCount} ghosting reports — grade capped at {gradeResult.ghostingCount >= 4 ? 'D' : 'C+'}.
+            </p>
+          )}
+
+          <p class="mt-5 pt-3 border-t border-line dark:border-slate-700/60 text-[11px] text-muted dark:text-slate-400 leading-relaxed">
+            Scored from structured reports by designers who interviewed here. Community-sourced, not company-provided.
+          </p>
+          <a
+            href={feedbackUrl}
+            class="mt-5 w-full inline-flex items-center justify-center px-6 py-3 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-semibold hover:opacity-85 transition-opacity"
+          >
+            Share your experience
+          </a>
         </div>
       </dialog>
     )}
@@ -495,6 +674,65 @@ const breadcrumbSchema = {
 </Layout>
 
 <script>
+  // Sticky section nav: slides in once the page header scrolls out of view.
+  const sectionNav = document.getElementById('section-nav');
+  const overviewEl = document.getElementById('overview');
+  if (sectionNav && overviewEl) {
+    const links = [...sectionNav.querySelectorAll<HTMLAnchorElement>('[data-section-link]')];
+    const setActive = (id: string) =>
+      links.forEach(l => l.setAttribute('aria-current', l.dataset.sectionLink === id ? 'true' : 'false'));
+
+    new IntersectionObserver(([entry]) => {
+      const show = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+      sectionNav.classList.toggle('section-nav--visible', show);
+    }, { threshold: 0 }).observe(overviewEl);
+
+    // Scroll spy: the section whose top most recently crossed the reading
+    // line (just under the bar) is active. Position-based rather than an
+    // IntersectionObserver so it tracks the VISUAL order — the rail is
+    // reordered above the article on mobile.
+    const targets = links
+      .map(l => document.getElementById(l.dataset.sectionLink || ''))
+      .filter((el): el is HTMLElement => !!el);
+    let spyTick = false;
+    const updateSpy = () => {
+      spyTick = false;
+      let current: { id: string; top: number } | null = null;
+      for (const t of targets) {
+        const top = t.getBoundingClientRect().top;
+        if (top <= 96 && (!current || top > current.top)) current = { id: t.id, top };
+      }
+      setActive(current ? current.id : targets[0]?.id || '');
+    };
+    window.addEventListener('scroll', () => {
+      if (!spyTick) { spyTick = true; requestAnimationFrame(updateSpy); }
+    }, { passive: true });
+    updateSpy();
+
+    links.forEach(l => l.addEventListener('click', e => {
+      const target = document.getElementById(l.dataset.sectionLink || '');
+      if (!target) return;
+      e.preventDefault();
+      if (target instanceof HTMLDetailsElement) target.open = true;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      setActive(l.dataset.sectionLink || '');
+      history.replaceState(null, '', `#${l.dataset.sectionLink}`);
+    }));
+  }
+
+  // Grade breakdown dialog
+  const gradeModal = document.getElementById('grade-modal') as HTMLDialogElement | null;
+  if (gradeModal) {
+    document.querySelectorAll('[data-open-grade-modal]').forEach(b =>
+      b.addEventListener('click', () => gradeModal.showModal()));
+    document.querySelectorAll('[data-close-grade-modal]').forEach(b =>
+      b.addEventListener('click', () => gradeModal.close()));
+    gradeModal.addEventListener('click', e => {
+      if (e.target === gradeModal) gradeModal.close();
+    });
+  }
+
   // Rail sections: open panel on desktop, accordions on mobile.
   // SSR renders everything open (desktop-first, no-JS safe); on mobile we
   // collapse all but the data-default-open section.
@@ -560,7 +798,7 @@ const breadcrumbSchema = {
   }
   .rail-summary::-webkit-details-marker { display: none; }
   .rail-chevron { color: #706F6A; transition: transform 0.15s ease; flex-shrink: 0; }
-  :root.dark .rail-chevron { color: #64748B; }
+  :root.dark .rail-chevron { color: #77746B; }
   details[open] > .rail-summary .rail-chevron { transform: rotate(180deg); }
   .rail-content { padding-bottom: 1.25rem; }
   /* Mobile: sections are accordion cards, not divider rows */
@@ -628,6 +866,62 @@ const breadcrumbSchema = {
     .rail-tip .tip-body { left: auto; right: -10px; transform: none; }
   }
 
+  /* Sticky section nav */
+  #section-nav.section-nav--visible {
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .section-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: stretch;
+    padding: 0 0.75rem;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #706F6A;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.12s ease;
+  }
+  .section-link:first-child { padding-left: 0.25rem; }
+  .section-link:hover { color: #1A1917; }
+  .section-link[aria-current="true"] { color: #1A1917; border-bottom-color: #1A1917; }
+  :root.dark .section-link { color: #A3A099; }
+  :root.dark .section-link:hover { color: #F2F1EC; }
+  :root.dark .section-link[aria-current="true"] { color: #F2F1EC; border-bottom-color: #F2F1EC; }
+
+  /* Candidate experience grade tile */
+  .grade-chip-lg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    border: 1px solid;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  /* Grade tiers — derived in OKLCH so every tier carries equal visual weight:
+     light text L.52 C.125, dark text L.78 C.115; hue alone signals the grade
+     (a 158° · b 240° · c 75° · d 50° · f 25°) */
+  .grade-chip-a { color: #027d4d; background: #ecfbf2; border-color: #b4e5c7; }
+  .grade-chip-b { color: #0070a6; background: #f0f8fe; border-color: #b1deff; }
+  .grade-chip-c { color: #8d5e02; background: #fff5e8; border-color: #f1d2a8; }
+  .grade-chip-d { color: #a04f18; background: #fef5f0; border-color: #fcccb2; }
+  .grade-chip-f { color: #a54743; background: #fff4f3; border-color: #ffc8c3; }
+  :root.dark .grade-chip-a { color: #72ce9b; background: rgba(114,206,155,0.1); border-color: rgba(114,206,155,0.25); }
+  :root.dark .grade-chip-b { color: #6dc1f9; background: rgba(109,193,249,0.1); border-color: rgba(109,193,249,0.25); }
+  :root.dark .grade-chip-c { color: #e2ac5e; background: rgba(226,172,94,0.1); border-color: rgba(226,172,94,0.25); }
+  :root.dark .grade-chip-d { color: #f3a173; background: rgba(243,161,115,0.1); border-color: rgba(243,161,115,0.25); }
+  :root.dark .grade-chip-f { color: #f89a92; background: rgba(248,154,146,0.1); border-color: rgba(248,154,146,0.25); }
+
   /* Scraped ATS description — typographic defaults for whitelisted tags only */
   .job-desc {
     font-size: 15px;
@@ -635,7 +929,7 @@ const breadcrumbSchema = {
     color: #3B3A36;
     max-width: 72ch;
   }
-  :root.dark .job-desc { color: #CBD5E1; }
+  :root.dark .job-desc { color: #D6D6D3; }
   .job-desc p { margin: 0 0 1em; }
   .job-desc h3, .job-desc h4, .job-desc h5 {
     font-family: 'Bricolage Grotesque', 'Be Vietnam Pro', system-ui, sans-serif;
@@ -644,7 +938,7 @@ const breadcrumbSchema = {
     color: #1A1917;
     margin: 2em 0 0.65em;
   }
-  :root.dark .job-desc h3, :root.dark .job-desc h4, :root.dark .job-desc h5 { color: #F1F5F9; }
+  :root.dark .job-desc h3, :root.dark .job-desc h4, :root.dark .job-desc h5 { color: #F2F1EC; }
   .job-desc h3 { font-size: 1.2em; }
   .job-desc h4 { font-size: 1.05em; }
   .job-desc h5 { font-size: 1em; }
@@ -655,12 +949,12 @@ const breadcrumbSchema = {
   .job-desc li { margin: 0.35em 0; padding-left: 0.15em; }
   .job-desc li p { margin: 0; }
   .job-desc li::marker { color: #A8A69E; }
-  :root.dark .job-desc li::marker { color: #64748B; }
+  :root.dark .job-desc li::marker { color: #77746B; }
   .job-desc strong, .job-desc b { font-weight: 600; color: #1A1917; }
-  :root.dark .job-desc strong, :root.dark .job-desc b { color: #F1F5F9; }
+  :root.dark .job-desc strong, :root.dark .job-desc b { color: #F2F1EC; }
   .job-desc a { text-decoration: underline; text-underline-offset: 2px; }
   .job-desc hr { border: 0; border-top: 1px solid #E8E8E6; margin: 2em 0; }
   :root.dark .job-desc hr { border-top-color: rgb(51 65 85 / 0.5); }
   .job-desc blockquote { border-left: 2px solid #E8E8E6; padding-left: 1em; color: #706F6A; margin: 0 0 1.25em; }
-  :root.dark .job-desc blockquote { border-left-color: rgb(51 65 85 / 0.5); color: #94A3B8; }
+  :root.dark .job-desc blockquote { border-left-color: rgb(51 65 85 / 0.5); color: #A3A099; }
 </style>

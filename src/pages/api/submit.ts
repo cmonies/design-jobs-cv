@@ -86,10 +86,13 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
 
     const isBugReport = body.type === 'bug-report';
     const isProcess = isBugReport && body.issueType === 'process';
+    const isFeedback = body.type === 'interview-feedback';
 
     // 2. Required fields validation
     // Job submissions only require what we can't scrape from the posting URL
-    const required = isProcess
+    const required = isFeedback
+      ? ['company', 'stage']
+      : isProcess
       ? ['company']
       : isBugReport
       ? ['issueType', 'description']
@@ -103,8 +106,9 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
       }
     }
 
-    // 3. Email format validation (only required for job submissions)
-    if (!isBugReport) {
+    // 3. Email format validation (only required for job submissions —
+    // bug reports and feedback surveys are anonymous)
+    if (!isBugReport && !isFeedback) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(body.submitterEmail)) {
         return new Response(JSON.stringify({ ok: false, error: 'Invalid email address' }), {
@@ -143,7 +147,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
     }
 
     // 6. Rate limiting (server-side via KV, job submissions only)
-    if (KV && !isBugReport) {
+    if (KV && !isBugReport && !isFeedback) {
       const { allowed, count } = await checkRateLimit(KV, body.submitterEmail);
       if (!allowed) {
         return new Response(JSON.stringify({
@@ -179,7 +183,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           ...(body.contactName?.trim() ? [['Recruiter contact', `${body.contactName.trim()}${body.contactUrl?.trim() ? ` — ${body.contactUrl.trim()}` : ''}`] as [string, string]] : []),
           ...(body.notes?.trim() ? [['Notes', body.notes.trim().slice(0, 500)] as [string, string]] : []),
         ];
-        const answered = ['rounds', 'roundTypes', 'timeline', 'hasAssessment', 'gotFeedback', 'notes', 'contactName']
+        const answered = ['rounds', 'roundTypes', 'timeline', 'hasAssessment', 'gotFeedback', 'stage', 'compDisclosure', 'overallRating', 'wouldRecommend', 'notes', 'contactName']
           .some(k => (body[k] || '').toString().trim());
         if (!answered) {
           return new Response(JSON.stringify({ ok: false, error: 'Please fill in at least one field.' }), {
@@ -195,13 +199,18 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           JSON.stringify({
             jobId: body.jobId || null,
             company: body.company,
+            ...(body.stage ? { stage: body.stage } : {}),
             interviewProcess: {
               ...(body.rounds ? { rounds: parseInt(body.rounds, 10) || body.rounds } : {}),
               ...(roundTypes ? { roundTypes: roundTypes.split(',').map(s => s.trim()).filter(Boolean) } : {}),
               ...(body.timeline ? { timeline: body.timeline } : {}),
               ...(body.hasAssessment ? { hasAssessment: body.hasAssessment === 'yes' } : {}),
               ...(body.assessmentType ? { assessmentType: body.assessmentType } : {}),
+              ...(body.takeHomeHours ? { takeHomeHours: parseFloat(body.takeHomeHours) || null } : {}),
               ...(body.gotFeedback ? { gotFeedback: body.gotFeedback === 'yes' } : {}),
+              ...(body.compDisclosure && body.compDisclosure !== '' ? { compDisclosure: body.compDisclosure } : {}),
+              ...(body.overallRating ? { overallRating: parseInt(body.overallRating, 10) } : {}),
+              ...(body.wouldRecommend ? { wouldRecommend: body.wouldRecommend === 'yes' ? true : body.wouldRecommend === 'no' ? false : null } : {}),
               source: 'community report',
             },
           }, null, 2),
@@ -211,6 +220,59 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           '_Community process report via designjobs.cv — review before merging into jobs.json_',
         ].join('\n');
         labels = ['community-data', 'interview-process'];
+      } else if (isFeedback) {
+        // Full candidate experience report from /feedback form.
+        // These are processed by scripts/process-feedback.mjs into job-feedback.json.
+        const roundTypesRaw = (body.roundTypes || '').toString().trim();
+        issueTitle = `Candidate experience: ${body.company}${body.jobTitle ? ` — ${body.jobTitle}` : ''}`;
+        const report: Record<string, unknown> = {
+          stage: body.stage,
+          ...(body.rounds ? { rounds: parseInt(body.rounds, 10) || null } : {}),
+          ...(roundTypesRaw ? { roundTypes: roundTypesRaw.split(',').map((s: string) => s.trim()).filter(Boolean) } : {}),
+          ...(body.timeline ? { timeline: body.timeline } : {}),
+          ...(body.hasAssessment !== undefined ? { hasAssessment: body.hasAssessment === 'yes' || body.hasAssessment === true } : {}),
+          ...(body.assessmentType ? { assessmentType: body.assessmentType } : {}),
+          ...(body.takeHomeHours ? { takeHomeHours: parseFloat(body.takeHomeHours) || null } : {}),
+          ...(body.gotFeedback !== undefined && body.gotFeedback !== '' ? { gotFeedback: body.gotFeedback === 'yes' || body.gotFeedback === true } : {}),
+          ...(body.rejectionReason !== undefined && body.rejectionReason !== '' ? { rejectionReason: body.rejectionReason === 'yes' || body.rejectionReason === true } : {}),
+          ...(body.compDisclosure && body.compDisclosure !== 'na' ? { compDisclosure: body.compDisclosure } : {}),
+          ...(body.interviewerPrep ? { interviewerPrep: parseInt(body.interviewerPrep, 10) } : {}),
+          ...(body.processRelevance ? { processRelevance: parseInt(body.processRelevance, 10) } : {}),
+          ...(body.overallRating ? { overallRating: parseInt(body.overallRating, 10) } : {}),
+          ...(body.wouldRecommend !== undefined && body.wouldRecommend !== '' ? { wouldRecommend: body.wouldRecommend === 'yes' ? true : body.wouldRecommend === 'no' ? false : null } : {}),
+          ...(body.timelineMatch !== undefined && body.timelineMatch !== '' && body.timelineMatch !== 'na' ? { timelineMatch: body.timelineMatch === 'yes' || body.timelineMatch === true } : {}),
+          ...(body.applicationSource ? { applicationSource: body.applicationSource } : {}),
+          ...(body.didOutreach ? { didOutreach: body.didOutreach === 'yes' } : {}),
+          ...(body.appliedAgo ? { appliedAgo: body.appliedAgo } : {}),
+          ...(body.withdrewReason ? { withdrewReason: body.withdrewReason } : {}),
+          ...(body.notes?.trim() ? { notes: body.notes.trim().slice(0, 500) } : {}),
+          submittedAt: new Date().toISOString().split('T')[0],
+        };
+        const summaryFields: [string, string][] = [
+          ['Company', body.company],
+          ...(body.jobTitle ? [['Role', body.jobTitle] as [string, string]] : []),
+          ...(body.jobId ? [['Job ID', body.jobId] as [string, string]] : []),
+          ['Stage', body.stage],
+          ...(body.overallRating ? [['Overall rating', `${body.overallRating}/5`] as [string, string]] : []),
+          ...(body.wouldRecommend ? [['Would recommend', body.wouldRecommend] as [string, string]] : []),
+        ];
+        issueBody = [
+          ...summaryFields.map(([k, v]) => `**${k}:** ${v}`),
+          '',
+          '```json',
+          JSON.stringify({
+            type: 'interview-feedback',
+            jobId: body.jobId || null,
+            company: body.company,
+            jobTitle: body.jobTitle || null,
+            report,
+          }, null, 2),
+          '```',
+          '',
+          '---',
+          '_Candidate experience report via designjobs.cv/feedback — review before processing into job-feedback.json_',
+        ].join('\n');
+        labels = ['community-data', 'interview-feedback'];
       } else if (isBugReport) {
         const issueTypeLabels: Record<string, string> = {
           'dead-link': 'dead-link',
@@ -308,7 +370,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
       }
 
       // Record successful submission for rate limiting (job submissions only)
-      if (KV && !isBugReport) {
+      if (KV && !isBugReport && !isFeedback) {
         await incrementRateLimit(KV, body.submitterEmail);
       }
 

@@ -13,11 +13,7 @@
     "employmentType": "Full-time",
     "tags": [
       "healthcare",
-      "clearinghouse",
-      "React",
-      "Next.js",
-      "design systems",
-      "complex systems"
+      "design systems"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/stedi/bacc5e48-0cd3-4abc-a9cc-a5b12863a804",
     "_verifiedAt": "2026-07-21"
@@ -38,8 +34,7 @@
       "AI",
       "SaaS",
       "design systems",
-      "YC W24",
-      "AI employees"
+      "AI agents"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/artisan/93bca429-26b2-4cca-a8a1-26c024656ca4",
     "_verifiedAt": "2026-07-21",
@@ -59,7 +54,6 @@
     "employmentType": "Full-time",
     "tags": [
       "developer tools",
-      "cloud infrastructure",
       "design systems",
       "information design"
     ],
@@ -80,9 +74,8 @@
     "vertical": "Enterprise/SaaS",
     "employmentType": "Full-time",
     "tags": [
-      "B2B enterprise",
+      "B2B",
       "benefits",
-      "AI-first",
       "design systems",
       "sole designer"
     ],
@@ -124,8 +117,6 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "voice AI",
-      "AI-native",
       "developer tools",
       "B2B"
     ],
@@ -147,8 +138,6 @@
     "employmentType": "Full-time",
     "tags": [
       "lending",
-      "credit unions",
-      "AI-assisted design",
       "fintech"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/withclutch/af27eba4-5a51-46f6-bc35-7ff25095cd84",
@@ -167,10 +156,9 @@
     "vertical": "Fintech",
     "employmentType": "Full-time",
     "tags": [
-      "business banking",
+      "banking",
       "AI",
-      "financial workflows",
-      "SMB"
+      "fintech"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/highbeam/35cffce8-c092-479a-8747-f3d4d152b9b6",
     "_verifiedAt": "2026-07-20",
@@ -189,9 +177,8 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "AI coaching",
+      "AI",
       "enterprise",
-      "conversational AI",
       "design systems"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/jobs-valence/bf637910-24ac-4314-ac04-f6950c2f7e07",
@@ -210,11 +197,10 @@
     "vertical": "Fintech",
     "employmentType": "Full-time",
     "tags": [
-      "payroll",
       "HR",
-      "global payments",
+      "payments",
       "B2B",
-      "B2C",
+      "consumer",
       "mobile"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/deel/2d8abd4e-6d47-4c0d-b022-f7f3c7fe6611",
@@ -236,7 +222,7 @@
       "visual design",
       "design systems",
       "web",
-      "healthtech",
+      "healthcare",
       "AI tools"
     ],
     "_sourceUrl": "https://jobs.lever.co/everlywell/7b7ac528-ec42-4480-b1fd-11ded686380e",
@@ -256,9 +242,7 @@
     "employmentType": "Contract",
     "tags": [
       "AI",
-      "agentic workflows",
       "IoT",
-      "connected operations",
       "0-to-1"
     ],
     "_sourceUrl": "https://jobs.lever.co/Academy/0b68460b-280f-41d1-aeb2-b7e2d0c234b1",
@@ -278,10 +262,9 @@
     "employmentType": "Full-time",
     "tags": [
       "AI agents",
-      "agentic UX",
       "enterprise",
       "0-to-1",
-      "local business"
+      "consumer"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-07-18"
@@ -301,9 +284,7 @@
     "tags": [
       "healthcare",
       "AI",
-      "mobile",
-      "clinical software",
-      "EU"
+      "mobile"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-07-18"
@@ -322,10 +303,7 @@
     "employmentType": "Full-time",
     "tags": [
       "nonprofit",
-      "design leadership",
-      "AI-native",
-      "CRM",
-      "fundraising"
+      "sales"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/givebutter/ea7b5e5d-972e-4f8a-a9d9-71542d60177e",
     "_verifiedAt": "2026-07-18",
@@ -344,12 +322,10 @@
     "vertical": "Consumer",
     "employmentType": "Full-time",
     "tags": [
-      "consumer social",
+      "social",
       "mobile",
       "AI",
-      "mini apps",
-      "founding",
-      "Mandarin required"
+      "founding"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-07-18"
@@ -368,11 +344,8 @@
     "employmentType": "Full-time",
     "tags": [
       "mobile",
-      "iOS",
-      "Android",
       "design systems",
-      "sports",
-      "contract-to-hire"
+      "sports"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/sleeper/4ddc246a-aaaa-4cb2-a8c9-54bb24c34021",
     "_verifiedAt": "2026-07-16"
@@ -392,7 +365,7 @@
     "tags": [
       "AI",
       "design systems",
-      "collaborative tools",
+      "collaboration",
       "B2B"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/notion/d177d052-ef57-4900-acf2-d58e9eded620",
@@ -415,9 +388,7 @@
       "0-to-1",
       "AI",
       "video",
-      "motion graphics",
-      "WebGL",
-      "YC W24"
+      "motion"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-07-16",
@@ -437,11 +408,9 @@
     "employmentType": "Contract",
     "salary": "$125,000 - $175,000",
     "tags": [
-      "motion technology",
+      "motion",
       "fitness",
-      "gaming",
-      "active entertainment",
-      "contract-to-hire"
+      "gaming"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/nex/jobs/5289200008",
     "_verifiedAt": "2026-07-14"
@@ -460,11 +429,9 @@
     "employmentType": "Full-time",
     "tags": [
       "0-to-1",
-      "enterprise sales",
-      "relationship intelligence",
+      "sales",
       "brand",
-      "design systems",
-      "YC"
+      "design systems"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/Centralize/8debce91-6f36-482a-91be-e5c91ffe79e2",
     "_verifiedAt": "2026-07-14"
@@ -482,11 +449,9 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "AI audio",
-      "voice AI",
-      "generative audio",
-      "creator tools",
-      "agents"
+      "AI",
+      "audio",
+      "AI agents"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/elevenlabs/89da00ec-11b0-4359-913b-c3a89c1013bc",
     "_verifiedAt": "2026-07-14"
@@ -506,11 +471,9 @@
     "salary": "$90,000 - $125,000 (FTE conversion)",
     "tags": [
       "sports",
-      "fantasy sports",
       "mobile",
       "social",
-      "gaming",
-      "contract-to-hire"
+      "gaming"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/sleeper/71eca74a-98e7-449c-936e-8aadbf723673",
     "_verifiedAt": "2026-07-14"
@@ -529,9 +492,6 @@
     "employmentType": "Full-time",
     "salary": "$150,000 - $170,000",
     "tags": [
-      "healthcare AI",
-      "pharma",
-      "audience intelligence",
       "B2B",
       "data visualization",
       "design systems"
@@ -553,11 +513,9 @@
     "employmentType": "Full-time",
     "salary": "$75,000 - $160,000",
     "tags": [
-      "civic tech",
-      "public interest tech",
+      "govtech",
       "accessibility",
-      "content design",
-      "government"
+      "content design"
     ],
     "_sourceUrl": "https://cityjobs.nyc.gov/job/senior-product-designer-in-brooklyn-jid-44505",
     "_verifiedAt": "2026-07-14"
@@ -575,9 +533,9 @@
     "vertical": "Consumer",
     "employmentType": "Full-time",
     "tags": [
-      "consumer hardware",
+      "hardware",
       "sleep",
-      "mobile app",
+      "mobile",
       "0-to-1"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/eightsleep",
@@ -596,9 +554,8 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "legal AI",
-      "contract review",
-      "B2B SaaS"
+      "legal",
+      "SaaS"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/ivo-inc",
     "_verifiedAt": "2026-07-13"
@@ -616,9 +573,7 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "generative AI",
-      "music",
-      "consumer AI"
+      "music"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/suno",
     "_verifiedAt": "2026-07-13",
@@ -637,10 +592,7 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "design engineering",
-      "iOS",
-      "generative AI",
-      "Swift"
+      "design engineering"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/suno",
     "_verifiedAt": "2026-07-13",
@@ -660,9 +612,7 @@
     "employmentType": "Full-time",
     "tags": [
       "fintech",
-      "spend management",
-      "AI-first",
-      "B2B SaaS"
+      "SaaS"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/ramp",
     "_verifiedAt": "2026-07-13",
@@ -681,8 +631,7 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "consumer AI",
-      "personal agent",
+      "AI agents",
       "0-to-1"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/tomo.ai",
@@ -701,10 +650,9 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "AI video",
-      "generative AI",
-      "growth",
-      "B2B SaaS"
+      "AI",
+      "growth design",
+      "SaaS"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/synthesia",
     "_verifiedAt": "2026-07-13"
@@ -722,9 +670,9 @@
     "vertical": "Enterprise/SaaS",
     "employmentType": "Full-time",
     "tags": [
-      "B2B SaaS",
-      "fintech-adjacent",
-      "investor tools"
+      "SaaS",
+      "fintech",
+      "investing"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/standardmetrics",
     "_verifiedAt": "2026-07-13"
@@ -742,10 +690,7 @@
     "vertical": "Other",
     "employmentType": "Full-time",
     "tags": [
-      "restaurant tech",
-      "SMB",
-      "B2B SaaS",
-      "commerce"
+      "SaaS"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/owner",
     "_verifiedAt": "2026-07-13"
@@ -763,10 +708,7 @@
     "vertical": "Other",
     "employmentType": "Full-time",
     "tags": [
-      "restaurant tech",
-      "SMB",
-      "B2B SaaS",
-      "commerce"
+      "SaaS"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/owner",
     "_verifiedAt": "2026-07-13"
@@ -786,8 +728,7 @@
     "tags": [
       "fintech",
       "payments",
-      "giving",
-      "dashboards"
+      "nonprofit"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/overflow",
     "_verifiedAt": "2026-07-13"
@@ -805,8 +746,7 @@
     "vertical": "Consumer",
     "employmentType": "Full-time",
     "tags": [
-      "website builder",
-      "creator tools",
+      "creative tools",
       "mobile",
       "e-commerce"
     ],
@@ -826,10 +766,8 @@
     "vertical": "Trades",
     "employmentType": "Full-time",
     "tags": [
-      "construction tech",
-      "electrical",
-      "B2B SaaS",
-      "product data"
+      "trades",
+      "SaaS"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/parspec",
     "_verifiedAt": "2026-07-13"
@@ -848,9 +786,8 @@
     "employmentType": "Full-time",
     "tags": [
       "fintech",
-      "private markets",
       "real estate",
-      "B2B SaaS"
+      "SaaS"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/junipersquare",
     "_verifiedAt": "2026-07-13"
@@ -868,10 +805,9 @@
     "vertical": "Enterprise/SaaS",
     "employmentType": "Full-time",
     "tags": [
-      "no-code",
       "AI",
       "developer tools",
-      "B2B SaaS"
+      "SaaS"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/bubble",
     "_verifiedAt": "2026-07-13",
@@ -890,7 +826,7 @@
     "vertical": "Enterprise/SaaS",
     "employmentType": "Full-time",
     "tags": [
-      "workflow automation",
+      "automation",
       "AI agents",
       "developer tools"
     ],
@@ -911,8 +847,7 @@
     "employmentType": "Full-time",
     "tags": [
       "govtech",
-      "climate resilience",
-      "public sector",
+      "climate",
       "accessibility"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/forerunner",
@@ -932,9 +867,7 @@
     "employmentType": "Full-time",
     "tags": [
       "edtech",
-      "microschools",
-      "K-12",
-      "families"
+      "consumer"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/primer",
     "_verifiedAt": "2026-07-13"
@@ -952,10 +885,7 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "generative AI",
-      "creative tools",
-      "image generation",
-      "consumer AI"
+      "creative tools"
     ],
     "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=product%20designer%20startup",
     "_verifiedAt": "2026-07-13"
@@ -974,7 +904,6 @@
     "employmentType": "Full-time",
     "tags": [
       "AI agents",
-      "browser infrastructure",
       "developer tools"
     ],
     "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=product%20designer%20startup",
@@ -993,9 +922,8 @@
     "vertical": "Enterprise/SaaS",
     "employmentType": "Full-time",
     "tags": [
-      "no-code",
-      "mobile app builder",
-      "B2B SaaS"
+      "developer tools",
+      "SaaS"
     ],
     "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=product%20designer%20startup",
     "_verifiedAt": "2026-07-13",
@@ -1016,9 +944,7 @@
     "tags": [
       "founding",
       "enterprise",
-      "AI",
-      "product design",
-      "contract"
+      "AI"
     ],
     "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=contract%20product%20designer&f_JT=C",
     "_verificationNote": "LinkedIn discovery lead resolved to company Ashby board; found on live board + WebFetch confirmed title/company. No linkedin URL published.",
@@ -1038,10 +964,7 @@
     "vertical": "Healthcare",
     "employmentType": "Contract",
     "tags": [
-      "clinical trials",
-      "AI",
-      "product design",
-      "contract"
+      "AI"
     ],
     "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=contract%20product%20designer&f_JT=C",
     "_verificationNote": "LinkedIn discovery lead resolved via unlearn.ai/careers to Ashby; WebFetch confirmed title + company. No linkedin URL published.",
@@ -1060,10 +983,7 @@
     "vertical": "AI",
     "employmentType": "Contract",
     "tags": [
-      "AI voice",
-      "product design",
-      "figma",
-      "contract"
+      "AI"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $75-125K",
@@ -1083,12 +1003,9 @@
     "vertical": "Healthcare",
     "employmentType": "Contract",
     "tags": [
-      "product design",
       "AI",
       "part-time",
-      "remote",
-      "healthcare",
-      "contract"
+      "healthcare"
     ],
     "_sourceUrl": "site:jobs.ashbyhq.com \"product designer\" contract",
     "_verificationNote": "Confirmed live via Ashby posting API (job-board/vitvio): role present, employmentType part-time contractor, isRemote true, publishedAt 2026-05-29.",
@@ -1107,11 +1024,8 @@
     "vertical": "Enterprise/SaaS",
     "employmentType": "Contract",
     "tags": [
-      "product design",
       "design systems",
-      "rebrand",
-      "contract",
-      "remote"
+      "brand"
     ],
     "_sourceUrl": "site:jobs.lever.co \"senior product designer\" contract remote",
     "_verificationNote": "Confirmed live via Lever posting API (api.lever.co/v0/postings/Academy): title returned, commitment Freelance/Contract, 6-month, $90-110/hr, remote, createdAt 2026-04-14. Placed by Academy staffing for client Samsara. FLAG: >30 days old but confirmed still-open in Lever active feed.",
@@ -1131,9 +1045,7 @@
     "employmentType": "Full-time",
     "tags": [
       "design engineering",
-      "AI-native",
-      "prototyping",
-      "product design"
+      "prototyping"
     ],
     "_sourceUrl": "site:jobs.ashbyhq.com \"product designer\" AI",
     "_verificationNote": "Confirmed live via Ashby posting-api (job-board/Citizen): role open, NYC hybrid, $155k-$215k + equity, published 2026-05-21, AI-native design/prototyping focus.",
@@ -1152,10 +1064,7 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "AI",
-      "agentic workflows",
-      "design leadership",
-      "product design"
+      "AI"
     ],
     "_sourceUrl": "site:jobs.ashbyhq.com \"product designer\" AI",
     "_verificationNote": "Confirmed live via Ashby posting-api (job-board/mural): US Remote, FullTime, published 2026-03-27. FLAG: >30 days old but confirmed still-open in Ashby active feed.",
@@ -1174,9 +1083,7 @@
     "vertical": "Enterprise/SaaS",
     "employmentType": "Full-time",
     "tags": [
-      "growth design",
-      "design leadership",
-      "product design"
+      "growth design"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/mural",
     "_verificationNote": "Confirmed live via Ashby posting-api (job-board/mural): Canada Remote, FullTime, published 2026-06-29 (within 30-day window).",
@@ -1195,10 +1102,8 @@
     "vertical": "Consumer",
     "employmentType": "Full-time",
     "tags": [
-      "associate",
       "entry level",
-      "product design",
-      "consumer marketplace"
+      "marketplace"
     ],
     "_sourceUrl": "site:jobs.ashbyhq.com \"associate product designer\"",
     "_verificationNote": "Confirmed live via Ashby posting-api (job-board/airtasker): Sydney hybrid, FullTime, published 2026-05-31, entry-level role on Organic Acquisition team.",
@@ -1217,12 +1122,10 @@
     "vertical": "Climate",
     "employmentType": "Full-time",
     "tags": [
-      "product design",
       "climate",
       "agriculture",
       "fintech",
-      "design engineering",
-      "figma"
+      "design engineering"
     ],
     "_sourceUrl": "site:jobs.ashbyhq.com designer climate",
     "_verificationNote": "Confirmed live via Ashby posting-api (job-board/ambrook): isListed true, publishedAt 2026-06-09, FullTime, isRemote true, comp $140K-$210K + equity.",
@@ -1242,11 +1145,9 @@
     "vertical": "Fintech",
     "employmentType": "Full-time",
     "tags": [
-      "product design",
       "fintech",
       "crypto",
-      "payments",
-      "onboarding"
+      "payments"
     ],
     "_sourceUrl": "site:jobs.ashbyhq.com designer fintech",
     "_verificationNote": "Confirmed live via Lever v0 postings API (funxyz): HTTP 200, title 'Staff Product Designer', NY hybrid, createdAt 2026-06-25.",
@@ -1265,11 +1166,7 @@
     "vertical": "Fintech",
     "employmentType": "Full-time",
     "tags": [
-      "ux design",
-      "user research",
-      "fintech",
-      "private markets",
-      "design leadership"
+      "fintech"
     ],
     "_sourceUrl": "site:jobs.ashbyhq.com designer fintech",
     "_verificationNote": "Confirmed live via Ashby posting-api (job-board/sydecar): isListed true, publishedDate 2026-06-22, SF hybrid, FullTime, comp $200K-$250K + equity.",
@@ -1288,12 +1185,7 @@
     "postedAt": "2026-07-09",
     "vertical": "Fintech",
     "employmentType": "Full-time",
-    "tags": [
-      "product design",
-      "payroll",
-      "design system",
-      "AI fluency"
-    ],
+    "tags": [],
     "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=contract%20product%20designer&f_JT=C",
     "_verificationNote": "LinkedIn discovery lead resolved to Greenhouse; WebFetch confirmed live listing + Apply form, $177-222K. No linkedin URL published.",
     "_verifiedAt": "2026-07-09"
@@ -1312,9 +1204,7 @@
     "employmentType": "Full-time",
     "tags": [
       "founding",
-      "wearable",
-      "brand",
-      "product design"
+      "brand"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply-to-role button, $150-260K.",
@@ -1335,8 +1225,7 @@
     "employmentType": "Full-time",
     "tags": [
       "founding",
-      "video",
-      "product design"
+      "video"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button.",
@@ -1355,7 +1244,6 @@
     "vertical": "Enterprise/SaaS",
     "employmentType": "Full-time",
     "tags": [
-      "product design",
       "design ops",
       "developer tools"
     ],
@@ -1377,9 +1265,7 @@
     "vertical": "Enterprise/SaaS",
     "employmentType": "Full-time",
     "tags": [
-      "design engineer",
-      "react",
-      "design system",
+      "design engineering",
       "founding"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
@@ -1401,7 +1287,6 @@
     "employmentType": "Full-time",
     "tags": [
       "hardware",
-      "product design",
       "AI"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
@@ -1423,9 +1308,7 @@
     "employmentType": "Full-time",
     "tags": [
       "founding",
-      "b2b-saas",
-      "react",
-      "user research"
+      "SaaS"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $125-175K.",
@@ -1445,10 +1328,7 @@
     "vertical": "Enterprise/SaaS",
     "employmentType": "Full-time",
     "tags": [
-      "security",
-      "product design",
-      "figma",
-      "dashboards"
+      "security"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button.",
@@ -1469,8 +1349,7 @@
     "employmentType": "Full-time",
     "tags": [
       "mobile",
-      "consumer",
-      "product design"
+      "consumer"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, apply via portfolio, $150-200K.",
@@ -1490,9 +1369,7 @@
     "vertical": "Fintech",
     "employmentType": "Full-time",
     "tags": [
-      "ui-ux",
-      "AI agents",
-      "collections"
+      "AI agents"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button.",
@@ -1512,10 +1389,7 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "product design",
-      "web",
-      "figma",
-      "AI tooling"
+      "web"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $100K.",
@@ -1535,10 +1409,7 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "founding",
-      "react",
-      "product design",
-      "email"
+      "founding"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $140-200K.",
@@ -1559,9 +1430,7 @@
     "employmentType": "Contract",
     "tags": [
       "design systems",
-      "frontline communication",
-      "B2B",
-      "contract"
+      "B2B"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/zello",
     "_verifiedAt": "2026-07-09"
@@ -1579,10 +1448,7 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "0-to-1",
-      "founding role",
-      "company memory",
-      "startup"
+      "0-to-1"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/sentra",
     "_verifiedAt": "2026-07-09",
@@ -1603,8 +1469,7 @@
     "tags": [
       "AI agents",
       "customer support",
-      "B2B",
-      "startup"
+      "B2B"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/assembledhq",
     "_verifiedAt": "2026-07-09",
@@ -1623,10 +1488,8 @@
     "vertical": "AI",
     "employmentType": "Full-time",
     "tags": [
-      "growth",
-      "meeting intelligence",
-      "consumer",
-      "startup"
+      "growth design",
+      "consumer"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/read-ai",
     "_verifiedAt": "2026-07-09"
@@ -1644,8 +1507,7 @@
     "vertical": "Trades",
     "employmentType": "Full-time",
     "tags": [
-      "home services",
-      "small business",
+      "trades",
       "B2B"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/jobber",
@@ -1667,8 +1529,7 @@
     "tags": [
       "payments",
       "fintech",
-      "B2B",
-      "contract"
+      "B2B"
     ],
     "_sourceUrl": "https://api.lever.co/v0/postings/finix",
     "_verifiedAt": "2026-07-09"
@@ -1685,13 +1546,8 @@
     "postedAt": "2026-06-04",
     "salary": "CA$140,000 - CA$180,000",
     "tags": [
-      "EMR",
-      "medical practice management",
-      "elective care",
       "design systems",
-      "B2B",
-      "startup",
-      "YC"
+      "B2B"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/decodahealth",
     "_verifiedAt": "2026-07-04",
@@ -1714,11 +1570,8 @@
       "mental health",
       "behavioral health",
       "telehealth",
-      "patient experience",
-      "employee benefits",
-      "B2B2C",
+      "benefits",
       "AI",
-      "startup",
       "consumer"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/TavaHealth",
@@ -1736,11 +1589,7 @@
     "level": "Senior",
     "locationType": "Remote",
     "location": "San Francisco, CA",
-    "tags": [
-      "musculoskeletal",
-      "digital therapeutics",
-      "consumer health"
-    ],
+    "tags": [],
     "postedAt": "2026-06-08",
     "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
     "_verifiedAt": "2026-06-23",
@@ -1757,11 +1606,7 @@
     "level": "Staff",
     "locationType": "Remote",
     "location": "San Francisco, CA",
-    "tags": [
-      "musculoskeletal",
-      "digital therapeutics",
-      "outcomes"
-    ],
+    "tags": [],
     "postedAt": "2026-06-05",
     "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
     "_verifiedAt": "2026-06-23",
@@ -1778,11 +1623,7 @@
     "level": "Senior",
     "locationType": "Remote",
     "location": "San Francisco, CA",
-    "tags": [
-      "musculoskeletal",
-      "patient education",
-      "digital therapeutics"
-    ],
+    "tags": [],
     "postedAt": "2026-05-05",
     "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
     "_verifiedAt": "2026-06-23",
@@ -1801,8 +1642,7 @@
     "location": "New York, NY",
     "tags": [
       "mental health",
-      "insurance",
-      "provider tools"
+      "insurance"
     ],
     "postedAt": "2025-12-09",
     "_sourceUrl": "https://jobs.ashbyhq.com/headway",
@@ -1821,10 +1661,7 @@
     "locationType": "Remote",
     "location": "Remote US (SF preferred)",
     "tags": [
-      "women's health",
-      "maternity",
-      "DTC",
-      "consumer health"
+      "women's health"
     ],
     "postedAt": "2026-06-23",
     "_sourceUrl": "https://job-boards.greenhouse.io/mavenclinic",
@@ -1843,8 +1680,7 @@
     "location": "New York, NY",
     "tags": [
       "women's health",
-      "maternity",
-      "enterprise benefits"
+      "benefits"
     ],
     "postedAt": "2026-06-23",
     "_sourceUrl": "https://job-boards.greenhouse.io/mavenclinic",
@@ -1863,7 +1699,6 @@
     "location": "New York, NY / Remote US",
     "tags": [
       "women's health",
-      "maternity",
       "AI"
     ],
     "postedAt": "2026-06-23",
@@ -1902,9 +1737,7 @@
     "locationType": "On-site",
     "location": "Boston, MA",
     "tags": [
-      "wearables",
-      "health tracking",
-      "consumer health"
+      "hardware"
     ],
     "postedAt": "2026-04-16",
     "_sourceUrl": "https://jobs.lever.co/whoop",
@@ -1922,10 +1755,8 @@
     "locationType": "On-site",
     "location": "Boston, MA",
     "tags": [
-      "wearables",
-      "AI",
-      "health tracking",
-      "consumer health"
+      "hardware",
+      "AI"
     ],
     "postedAt": "2026-05-04",
     "_sourceUrl": "https://jobs.lever.co/whoop",
@@ -1943,9 +1774,7 @@
     "locationType": "On-site",
     "location": "Boston, MA",
     "tags": [
-      "wearables",
-      "user research",
-      "health tracking"
+      "hardware"
     ],
     "postedAt": "2026-05-21",
     "_sourceUrl": "https://jobs.lever.co/whoop",
@@ -1963,8 +1792,6 @@
     "locationType": "On-site",
     "location": "New York, NY",
     "tags": [
-      "pharmacy",
-      "drug pricing",
       "design systems",
       "design engineering"
     ],
@@ -1984,8 +1811,6 @@
     "locationType": "On-site",
     "location": "Pittsburgh, PA",
     "tags": [
-      "pharmacy",
-      "drug pricing",
       "design systems",
       "design engineering"
     ],
@@ -2007,15 +1832,8 @@
     "postedAt": "2026-06-23",
     "salary": "Up to $175,000",
     "tags": [
-      "chronic disease",
       "chronic care",
-      "consumer health",
-      "B2B2C",
-      "EMR",
-      "clinician tools",
-      "AI",
-      "remote",
-      "startup"
+      "AI"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/join9am",
     "_verifiedAt": "2026-06-23",
@@ -2034,14 +1852,9 @@
     "postedAt": "2026-06-09",
     "salary": "$174,800 - $218,500",
     "tags": [
-      "chronic disease",
       "AI",
-      "care ecosystem",
-      "clinician tools",
-      "B2C",
       "consumer",
-      "behavioral health",
-      "startup"
+      "behavioral health"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/omadahealth/jobs/7821718",
     "_verifiedAt": "2026-06-16",
@@ -2061,15 +1874,12 @@
     "postedAt": "2026-06-08",
     "salary": "$156,400 - $195,500",
     "tags": [
-      "chronic disease",
       "0-to-1",
       "mobile",
       "healthcare",
-      "behavioral psychology",
-      "B2C",
+      "behavioral health",
       "consumer",
-      "AI",
-      "startup"
+      "AI"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/omadahealth/jobs/7800336",
     "_verifiedAt": "2026-06-16",
@@ -2089,14 +1899,10 @@
     "postedAt": "2026-05-26",
     "salary": "$143,000 - $160,000",
     "tags": [
-      "employer health",
-      "value-based care",
-      "health benefits",
-      "claims",
+      "benefits",
       "payments",
       "B2B",
-      "design systems",
-      "data-driven"
+      "design systems"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/garnerhealth/jobs/6006458004",
     "_verifiedAt": "2026-06-16",
@@ -2117,12 +1923,9 @@
     "salary": "$195,000 - $275,000",
     "tags": [
       "physical therapy",
-      "musculoskeletal",
       "design systems",
-      "component architecture",
-      "tokens",
       "B2B",
-      "B2C",
+      "consumer",
       "AI",
       "enterprise"
     ],
@@ -2145,11 +1948,7 @@
     "salary": "$212,000 - $265,000",
     "tags": [
       "mental health",
-      "therapist tools",
       "B2B",
-      "B2B2C",
-      "group practices",
-      "AI-native",
       "design systems"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/headway/3e71f549-4318-48ff-9be6-57ffc5f3aece",
@@ -2171,13 +1970,8 @@
     "salary": "$180,000 - $225,000",
     "tags": [
       "mental health",
-      "patient experience",
-      "B2B2C",
-      "partnerships",
-      "health systems",
-      "consumer",
-      "AI-native",
-      "experimentation"
+      "healthcare",
+      "consumer"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/headway/82499b57-f003-4804-b2b9-bed36825aee5",
     "_verifiedAt": "2026-06-16",
@@ -2197,13 +1991,8 @@
     "postedAt": "2026-05-18",
     "salary": "$165,000 - $190,000",
     "tags": [
-      "healthcare PaaS",
-      "mobile health",
-      "public health",
-      "community health",
-      "design leadership",
-      "design systems",
-      "contract-to-hire"
+      "healthcare",
+      "design systems"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/chorusinnovations/jobs/5126846007",
     "_verifiedAt": "2026-05-18",
@@ -2223,14 +2012,6 @@
     "postedAt": "2026-05-09",
     "salary": "$100,000 - $200,000",
     "tags": [
-      "autism care",
-      "pediatric",
-      "EHR",
-      "clinician tools",
-      "parent-facing",
-      "B2B2C",
-      "startup",
-      "founding role",
       "0-to-1",
       "AI"
     ],
@@ -2253,9 +2034,6 @@
     "salary": "$216,750 - $255,000",
     "tags": [
       "AI",
-      "ambient scribe",
-      "clinical documentation",
-      "startup",
       "B2B"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/abridge",
@@ -2276,9 +2054,6 @@
     "salary": "$181,900 - $214,000",
     "tags": [
       "AI",
-      "ambient scribe",
-      "clinical documentation",
-      "startup",
       "B2B"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/abridge",
@@ -2297,11 +2072,8 @@
     "url": "https://jobs.ashbyhq.com/Commure/8134d3bd-9fcc-452a-96ed-4890a2de2e65",
     "postedAt": "2026-05-04",
     "tags": [
-      "EHR",
-      "clinical workflow",
-      "healthcare operations",
-      "B2B",
-      "startup"
+      "healthcare",
+      "B2B"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/Commure",
     "_verifiedAt": "2026-05-04",
@@ -2321,11 +2093,7 @@
     "tags": [
       "mental health",
       "telehealth",
-      "therapist tools",
-      "B2B",
-      "clinician-facing",
-      "online therapy",
-      "startup"
+      "B2B"
     ],
     "postedAt": "2026-04-08",
     "salary": "$130,000 - $140,000",
@@ -2348,13 +2116,10 @@
     "postedAt": "2026-02-13",
     "salary": "$200,000 - $250,000",
     "tags": [
-      "healthcare AI",
-      "revenue cycle",
       "B2B",
       "enterprise",
       "AI agents",
-      "startup",
-      "first PD hire",
+      "first design hire",
       "design systems"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/amperos/7170a997-79ef-4988-869d-f3099e794c72",
@@ -2374,11 +2139,9 @@
     "locationType": "On-site",
     "location": "Boston, MA",
     "tags": [
-      "wearable",
-      "healthtech",
-      "B2C",
+      "healthcare",
+      "consumer",
       "mobile",
-      "consumer health",
       "fitness"
     ],
     "postedAt": "2026-04-04",
@@ -2403,12 +2166,10 @@
     "salary": null,
     "tags": [
       "mental health",
-      "self-care",
-      "B2C",
+      "wellness",
       "consumer",
       "mobile",
-      "gaming",
-      "startup"
+      "gaming"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/finch/3ecb9486-04a5-4afc-82c0-44255ed441fd",
     "_searchQuery": "site:jobs.ashbyhq.com designer health",
@@ -2430,12 +2191,9 @@
     "salary": "$155,000 - $200,000",
     "tags": [
       "fitness",
-      "personal training",
       "wellness",
-      "B2C",
       "consumer",
       "AI",
-      "coaching",
       "mobile"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/future/jobs/4683185005",
@@ -2457,13 +2215,9 @@
     "postedAt": "2026-02-12",
     "salary": null,
     "tags": [
-      "health tech",
-      "pharmacy",
-      "prescription access",
-      "B2C",
+      "healthcare",
       "consumer",
-      "design systems",
-      "user research"
+      "design systems"
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/blinkhealth/jobs/8420880002",
     "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health telehealth April 2026",
@@ -2484,14 +2238,10 @@
     "postedAt": "2026-03-27",
     "salary": "$150,000 - $210,000",
     "tags": [
-      "healthcare compliance",
-      "health admin",
+      "healthcare",
       "B2B",
       "enterprise",
-      "startup",
-      "YC",
       "design engineering",
-      "React",
       "AI"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
@@ -2512,12 +2262,7 @@
     "postedAt": "2026-02-25",
     "salary": "$180K - $215K",
     "tags": [
-      "healthcare AI",
-      "patient experience",
-      "referral management",
-      "B2B",
-      "startup",
-      "YC"
+      "B2B"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-03-23",
@@ -2539,11 +2284,7 @@
     "tags": [
       "mental health",
       "behavioral health",
-      "behavior change",
-      "B2C",
       "consumer",
-      "startup",
-      "YC",
       "mobile"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
@@ -2564,10 +2305,8 @@
     "postedDate": "2026-02-23",
     "tags": [
       "women's health",
-      "reproductive health",
-      "wearables",
-      "consumer",
-      "B2C"
+      "hardware",
+      "consumer"
     ],
     "_verifiedAt": "2026-02-23",
     "postedAt": "2026-04-06",
@@ -2585,10 +2324,8 @@
     "url": "https://jobs.ashbyhq.com/leona/3af3517b-deca-4eac-a6b8-48d6aa82f4a7",
     "postedDate": "2026-02-23",
     "tags": [
-      "healthcare access",
-      "health tech",
-      "B2C",
-      "startup"
+      "healthcare",
+      "consumer"
     ],
     "_verifiedAt": "2026-02-23",
     "postedAt": "2024-11-22",
@@ -2606,9 +2343,7 @@
     "url": "https://job-boards.greenhouse.io/usenourish/jobs/4535318008",
     "postedDate": "2026-02-16",
     "tags": [
-      "B2C",
       "consumer",
-      "startup",
       "AI"
     ],
     "_verifiedAt": "2026-02-16",
@@ -2628,9 +2363,7 @@
     "postedDate": "2026-02-15",
     "tags": [
       "telehealth",
-      "B2C",
-      "consumer",
-      "startup"
+      "consumer"
     ],
     "_verifiedAt": "2026-02-15",
     "postedAt": "2026-02-10",
@@ -2649,8 +2382,7 @@
     "postedDate": "2026-02-15",
     "tags": [
       "AI",
-      "B2B",
-      "startup"
+      "B2B"
     ],
     "_verifiedAt": "2026-02-15",
     "postedAt": "2025-09-08",
@@ -2668,9 +2400,7 @@
     "url": "https://job-boards.greenhouse.io/flohealth/jobs/7592507003",
     "postedDate": "2026-02-14",
     "tags": [
-      "B2C",
-      "consumer",
-      "startup"
+      "consumer"
     ],
     "_verifiedAt": "2026-02-14",
     "postedAt": "2026-04-14",

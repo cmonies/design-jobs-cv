@@ -54,6 +54,21 @@ export default {
           400: '#D18C43',
           500: '#C0722A',
         },
+        // gray mirrors slate so nothing cool leaks in — Tailwind's preflight
+        // uses gray-400 for ::placeholder, which is a blue-gray by default
+        gray: {
+          50: '#FAFAF9',
+          100: '#F2F2F1',
+          200: '#E8E8E6',
+          300: '#D6D6D3',
+          400: '#A3A099',
+          500: '#77746B',
+          600: '#55524B',
+          700: '#26251F',
+          800: '#161613',
+          900: '#0C0C0A',
+          950: '#000000',
+        },
         // Warm grays (light) / cool neutrals (dark) — hairlines warmed
         slate: {
           50: '#FAFAF9',

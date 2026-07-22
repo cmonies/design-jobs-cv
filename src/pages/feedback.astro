@@ -1,0 +1,1430 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import jobs from '../data/jobs.json';
+
+export const prerender = true;
+
+const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
+const ROUND_TYPES = ['recruiter screen', 'hiring manager', 'portfolio review', 'design exercise', 'take-home assessment', 'panel', 'executive screen', 'reference check'];
+
+// Minimal client-side lookup index
+const jobIndex = Object.fromEntries(
+  (jobs as any[]).filter(j => j.id).map(j => [j.id as string, { company: j.company as string, title: j.title as string }])
+) as Record<string, { company: string; title: string }>;
+---
+
+<Layout title="Share your interview experience | designjobs.cv" description="Help other designers know what to expect. Share what the interview process was actually like.">
+  <Header />
+
+  <main id="main-content" tabindex="-1" class="fw-outer">
+    <div class="fw-container">
+
+      <!-- Progress header: segments go back on click, counter rides the row -->
+      <div class="fw-header">
+        <div class="flex items-center gap-4">
+          <div class="fw-meter flex-1" id="fw-meter" role="progressbar" aria-label="Form progress"></div>
+          <span class="fw-count font-mono text-[11px] text-muted dark:text-slate-500" id="fw-count" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <!-- Steps (only one visible at a time) -->
+      <div class="fw-body">
+
+        <!-- Step: company -->
+        <section class="fw-step" data-step="company" aria-hidden="true">
+          <p class="fw-step-label">Getting started</p>
+          <h2 class="fw-question">Which company are you reporting on?</h2>
+          <div class="space-y-3 max-w-md">
+            <div>
+              <label for="fw-company" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Company name <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                id="fw-company"
+                class="fw-text-input"
+                placeholder="e.g. Figma"
+                autocomplete="organization"
+                required
+              />
+            </div>
+            <div>
+              <label for="fw-jobtitle" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Job title <span class="text-muted dark:text-slate-500">(optional)</span></label>
+              <input
+                type="text"
+                id="fw-jobtitle"
+                class="fw-text-input"
+                placeholder="e.g. Senior Product Designer"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Step: stage -->
+        <section class="fw-step" data-step="stage" aria-hidden="true">
+          <p class="fw-step-label">Your situation</p>
+          <h2 class="fw-question" id="fw-stage-q">Where are you with this company?</h2>
+          <div class="fw-option-grid" role="radiogroup" aria-labelledby="fw-stage-q">
+            {([
+              ['applied',      'Applied'],
+              ['phone-screen', 'Phone screen'],
+              ['interviews',   'In interviews'],
+              ['offer',        'Got an offer'],
+              ['rejected',     'Rejected'],
+              ['withdrew',     'Withdrew'],
+            ] as [string, string][]).map(([val, lbl]) => (
+              <label class="fw-option">
+                <input type="radio" name="fw-stage" value={val} class="sr-only" />
+                <span>{lbl}</span>
+              </label>
+            ))}
+          </div>
+        </section>
+
+        <!-- Step: application (applied-only — nothing else has happened yet) -->
+        <section class="fw-step" data-step="application" aria-hidden="true">
+          <p class="fw-step-label">The application</p>
+          <h2 class="fw-question">How did you apply?</h2>
+          <div class="space-y-8 mt-6">
+            <div class="fw-row-fill" role="radiogroup" aria-label="How you applied">
+              {([
+                ['direct',             'Applied directly'],
+                ['referral',           'Through a referral'],
+                ['recruiter-outreach', 'A recruiter reached out'],
+                ['cold-outreach',      'Cold-emailed the team'],
+              ] as [string, string][]).map(([val, lbl]) => (
+                <label class="fw-pill">
+                  <input type="radio" name="fw-appSource" value={val} class="sr-only" />
+                  <span>{lbl}</span>
+                </label>
+              ))}
+            </div>
+            <div>
+              <p class="fw-sub-q" id="fw-outreach-q">Did you follow up with anyone after applying? <span class="fw-opt-note">(hiring manager, recruiter…)</span></p>
+              <div class="fw-row-fill" role="radiogroup" aria-labelledby="fw-outreach-q">
+                {([['yes', 'Yes, I reached out'], ['no', 'No']] as [string, string][]).map(([val, lbl]) => (
+                  <label class="fw-pill">
+                    <input type="radio" name="fw-didOutreach" value={val} class="sr-only" />
+                    <span>{lbl}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p class="fw-sub-q" id="fw-appliedago-q">When did you apply?</p>
+              <div class="fw-row-fill" role="radiogroup" aria-labelledby="fw-appliedago-q">
+                {([
+                  ['this week',     'This week'],
+                  ['1-2 weeks ago', '1–2 weeks ago'],
+                  ['3+ weeks ago',  '3+ weeks ago'],
+                ] as [string, string][]).map(([val, lbl]) => (
+                  <label class="fw-pill">
+                    <input type="radio" name="fw-appliedAgo" value={val} class="sr-only" />
+                    <span>{lbl}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step: rounds -->
+        <section class="fw-step" data-step="rounds" aria-hidden="true">
+          <p class="fw-step-label">The process</p>
+          <h2 class="fw-question" id="fw-process-q">How did the process go?</h2>
+          <div class="space-y-8 mt-6">
+            <div>
+              <p class="fw-sub-q">Which rounds, in order? <span class="fw-opt-note">(optional — tap in the order they happened)</span></p>
+              <div class="grid grid-cols-2 gap-x-4 gap-y-0.5">
+                {ROUND_TYPES.map(rt => (
+                  <label class="flex items-center gap-2.5 cursor-pointer py-2">
+                    <input type="checkbox" class="fw-check pm-check" data-round-type={rt} />
+                    <span class="text-[15px] text-ink dark:text-slate-100">{rt.charAt(0).toUpperCase() + rt.slice(1)}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+            <div id="fw-duration-group">
+              <p class="fw-sub-q" id="fw-timeline-len-q">Start to decision, about how long? <span class="fw-opt-note">(optional)</span></p>
+              <div class="fw-row-fill fw-row-fill--sm" role="radiogroup" aria-labelledby="fw-timeline-len-q">
+                {(['under 1 week', '1-2 weeks', '2-4 weeks', '4-6 weeks', '6+ weeks'] as string[]).map(val => (
+                  <label class="fw-pill">
+                    <input type="radio" name="fw-timeline" value={val} class="sr-only" />
+                    <span>{val.replace('under', 'Under').replace('-', '–')}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p class="fw-sub-q" id="fw-rounds-q">How many rounds total?</p>
+              <div class="fw-rating-row" role="radiogroup" aria-labelledby="fw-rounds-q">
+                {([['1','1'],['2','2'],['3','3'],['4','4'],['5','5+']] as [string, string][]).map(([val, lbl]) => (
+                  <label class="fw-rating-pill">
+                    <input type="radio" name="fw-rounds" value={val} class="sr-only" />
+                    <span>{lbl}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step: takehome -->
+        <section class="fw-step" data-step="takehome" aria-hidden="true">
+          <p class="fw-step-label">Take-home</p>
+          <h2 class="fw-question" id="fw-takehome-q">Was there a take-home or design exercise?</h2>
+          <div class="fw-row-fill mt-6" role="radiogroup" aria-labelledby="fw-takehome-q">
+            {([
+              ['none',            'No take-home'],
+              ['paid take-home',  'Yes — paid'],
+              ['unpaid take-home','Yes — unpaid'],
+              ['timed exercise',  'Yes — timed live'],
+            ] as [string, string][]).map(([val, lbl]) => (
+              <label class="fw-pill" data-assessment-opt={val}>
+                <input type="radio" name="fw-assessmentType" value={val} class="sr-only" />
+                <span>{lbl}</span>
+              </label>
+            ))}
+          </div>
+          <div id="fw-hours-group" class="hidden mt-8">
+            <p class="fw-sub-q" id="fw-hours-q">About how many hours did it really take?</p>
+            <div class="fw-row-fill fw-row-fill--xs" role="radiogroup" aria-labelledby="fw-hours-q">
+              {([['1','≤1h'],['2','~2h'],['3','~3h'],['4','~4h'],['6','5–6h'],['8','7–8h'],['12','10h+']] as [string, string][]).map(([val, lbl]) => (
+                <label class="fw-pill">
+                  <input type="radio" name="fw-takeHomeHours" value={val} class="sr-only" />
+                  <span>{lbl}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <!-- Step: feedback -->
+        <section class="fw-step" data-step="feedback" aria-hidden="true">
+          <p class="fw-step-label">Communication</p>
+          <h2 class="fw-question" id="fw-feedback-q">Did they get back to you either way?</h2>
+          <div class="fw-row-fill mt-6" role="radiogroup" aria-labelledby="fw-feedback-q">
+            {([
+              ['yes', 'Yes, they did'],
+              ['no',  'No — ghosted'],
+              ['',    "Didn't get that far"],
+            ] as [string, string][]).map(([val, lbl]) => (
+              <label class="fw-pill" data-fb-opt={val}>
+                <input type="radio" name="fw-gotFeedback" value={val} class="sr-only" />
+                <span>{lbl}</span>
+              </label>
+            ))}
+          </div>
+          <div id="fw-rejection-reason-group" class="hidden mt-8">
+            <p class="fw-sub-q" id="fw-rejreason-q">Did they give you a reason for the rejection?</p>
+            <div class="fw-row-fill" role="radiogroup" aria-labelledby="fw-rejreason-q">
+              {([['yes', 'Yes'], ['no', 'No']] as [string, string][]).map(([val, lbl]) => (
+                <label class="fw-pill">
+                  <input type="radio" name="fw-rejectionReason" value={val} class="sr-only" />
+                  <span>{lbl}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+          <div id="fw-withdrew-group" class="hidden mt-8">
+            <p class="fw-sub-q" id="fw-withdrew-q">What made you withdraw?</p>
+            <div class="fw-row-fill fw-row-fill--sm" role="radiogroup" aria-labelledby="fw-withdrew-q">
+              {([
+                ['other-offer',  'Took another offer'],
+                ['too-slow',     'Process too slow'],
+                ['compensation', 'Compensation'],
+                ['red-flags',    'Red flags'],
+                ['other',        'Other'],
+              ] as [string, string][]).map(([val, lbl]) => (
+                <label class="fw-pill">
+                  <input type="radio" name="fw-withdrewReason" value={val} class="sr-only" />
+                  <span>{lbl}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+          <div id="fw-timelinematch-group" class="mt-8">
+            <p class="fw-sub-q" id="fw-timeline-q">Did the actual timeline match what they told you?</p>
+            <div class="fw-row-fill" role="radiogroup" aria-labelledby="fw-timeline-q">
+              {([
+                ['yes', 'Yes, pretty much'],
+                ['no',  'Not really'],
+                ['na',  "They didn't give one"],
+              ] as [string, string][]).map(([val, lbl]) => (
+                <label class="fw-pill">
+                  <input type="radio" name="fw-timelineMatch" value={val} class="sr-only" />
+                  <span>{lbl}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <!-- Step: comp -->
+        <section class="fw-step" data-step="comp" aria-hidden="true">
+          <p class="fw-step-label">Transparency</p>
+          <h2 class="fw-question" id="fw-comp-q">When did they first bring up compensation?</h2>
+          <div class="flex flex-wrap gap-2 mt-6" role="radiogroup" aria-labelledby="fw-comp-q">
+            {([
+              ['upfront',     'Upfront'],
+              ['mid-process', 'Mid-process'],
+              ['at-offer',    'At the offer'],
+              ['never',       'Never came up'],
+              ['na',          "N/A — still early"],
+            ] as [string, string][]).map(([val, lbl]) => (
+              <label class="fw-pill">
+                <input type="radio" name="fw-compDisclosure" value={val} class="sr-only" />
+                <span>{lbl}</span>
+              </label>
+            ))}
+          </div>
+        </section>
+
+        <!-- Step: ratings (prep/relevance rows hide for early stages) -->
+        <section class="fw-step" data-step="ratings" aria-hidden="true">
+          <p class="fw-step-label">Rate it</p>
+          <h2 class="fw-question">Rate your experience</h2>
+          <div class="space-y-8 mt-6">
+            <div class="fw-deep-only">
+              <p class="fw-sub-q" id="fw-prep-q">How prepared were the interviewers?</p>
+              <div class="fw-rating-row" role="radiogroup" aria-labelledby="fw-prep-q">
+                {([1,2,3,4,5] as number[]).map(n => (
+                  <label class="fw-rating-pill">
+                    <input type="radio" name="fw-interviewerPrep" value={String(n)} class="sr-only" />
+                    <span>{n}</span>
+                  </label>
+                ))}
+              </div>
+              <div class="flex justify-between mt-1.5 font-mono text-[10px] text-muted dark:text-slate-500">
+                <span>Not at all</span><span>Very</span>
+              </div>
+            </div>
+            <div class="fw-deep-only">
+              <p class="fw-sub-q" id="fw-rel-q">Did the process feel relevant to the actual role?</p>
+              <div class="fw-rating-row" role="radiogroup" aria-labelledby="fw-rel-q">
+                {([1,2,3,4,5] as number[]).map(n => (
+                  <label class="fw-rating-pill">
+                    <input type="radio" name="fw-processRelevance" value={String(n)} class="sr-only" />
+                    <span>{n}</span>
+                  </label>
+                ))}
+              </div>
+              <div class="flex justify-between mt-1.5 font-mono text-[10px] text-muted dark:text-slate-500">
+                <span>Not at all</span><span>Very</span>
+              </div>
+            </div>
+            <div>
+              <p class="fw-sub-q" id="fw-overall-q">The overall experience?</p>
+              <div class="fw-rating-row" role="radiogroup" aria-labelledby="fw-overall-q">
+                {([1,2,3,4,5] as number[]).map(n => (
+                  <label class="fw-rating-pill">
+                    <input type="radio" name="fw-overallRating" value={String(n)} class="sr-only" />
+                    <span>{n}</span>
+                  </label>
+                ))}
+              </div>
+              <div class="flex justify-between mt-1.5 font-mono text-[10px] text-muted dark:text-slate-500">
+                <span>Poor</span><span>Excellent</span>
+              </div>
+            </div>
+            <div>
+              <p class="fw-sub-q" id="fw-recommend-q">Would you recommend applying here?</p>
+              <div class="fw-row-fill" role="radiogroup" aria-labelledby="fw-recommend-q">
+                {([
+                  ['yes',   'Yes, definitely'],
+                  ['no',    "No, I wouldn't"],
+                  ['maybe', 'It depends'],
+                ] as [string, string][]).map(([val, lbl]) => (
+                  <label class="fw-pill">
+                    <input type="radio" name="fw-wouldRecommend" value={val} class="sr-only" />
+                    <span>{lbl}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step: notes (last — includes turnstile + submit) -->
+        <section class="fw-step" data-step="notes" aria-hidden="true">
+          <p class="fw-step-label">Last step</p>
+          <h2 class="fw-question">Anything you'd want another designer to know?</h2>
+          <p class="fw-subtext">Optional. Keep it factual — panel format, how prepared they were, anything that surprised you.</p>
+          <div class="mt-4">
+            <div class="fw-notes-wrap">
+              <div id="fw-notes-backdrop" class="fw-textarea fw-notes-backdrop" aria-hidden="true"><span id="fw-notes-ok"></span><span id="fw-notes-over" class="fw-notes-over"></span></div>
+              <textarea
+                id="fw-notes"
+                name="fw-notes"
+                rows="4"
+                class="fw-textarea fw-notes-input"
+                aria-describedby="fw-notes-counter"
+                placeholder="e.g. The final panel had 7 people — felt excessive for a mid-level role."
+              ></textarea>
+            </div>
+            <p id="fw-notes-counter" class="fw-notes-counter text-[10px] text-slate-400 dark:text-slate-500 text-right mt-1" aria-live="polite"><span id="fw-notes-count">0</span>/280</p>
+          </div>
+          <div id="fw-error" class="hidden mt-3 text-sm text-red-600 dark:text-red-400"></div>
+        </section>
+
+        <!-- Success state -->
+        <section class="fw-step" data-step="success" aria-hidden="true">
+          <div class="text-center py-8">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-full border border-line dark:border-slate-700 mb-6">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+            </div>
+            <h2 class="font-display font-semibold text-2xl tracking-tight mb-3">Thank you</h2>
+            <p class="text-sm text-ink-soft dark:text-slate-400 max-w-xs mx-auto leading-relaxed mb-6">
+              Your experience is in the review queue. Once verified, it'll help other designers know what to expect here.
+            </p>
+            <a href="/jobs" class="inline-flex items-center justify-center px-7 py-3 rounded-full border border-line dark:border-slate-700 text-sm font-semibold hover:border-ink dark:hover:border-slate-400 transition-colors">
+              Back to jobs
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Navigation footer -->
+      <div class="fw-footer" id="fw-footer">
+        <div id="fw-turnstile" class="[&_iframe]:rounded-xl"></div>
+        <button type="button" id="fw-continue" class="fw-continue-btn">
+          Continue
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .fw-outer {
+    min-height: calc(100dvh - 4rem);
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+  }
+  .fw-container {
+    width: 100%;
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  /* Stepper anchors under the site header; question group centers below it */
+  .fw-header {
+    padding-top: 1.75rem;
+  }
+  .fw-meter {
+    display: flex;
+    gap: 5px;
+  }
+  /* :global — segments are created in JS, so they never get Astro's scope attr.
+     Each segment is a tall invisible button (hover/click target) drawing its
+     own 2px bar, with a custom tooltip naming the step. */
+  .fw-meter { gap: 6px; }
+  .fw-meter :global(.fw-seg) {
+    position: relative;
+    flex: 1;
+    height: 18px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: default;
+  }
+  .fw-meter :global(.fw-seg)::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    top: 50%;
+    margin-top: -1px;
+    height: 2px;
+    border-radius: 9999px;
+    background: #E8E8E6;
+    transition: background 0.3s ease, height 0.12s ease, margin-top 0.12s ease;
+  }
+  .fw-meter :global(.fw-seg--done)::before { background: #1A1917; }
+  :root.dark .fw-meter :global(.fw-seg)::before { background: #2E2C27; }
+  :root.dark .fw-meter :global(.fw-seg--done)::before { background: #C9C6BC; }
+  .fw-meter :global(.fw-seg--link) { cursor: pointer; }
+  .fw-meter :global(.fw-seg--link:hover)::before,
+  .fw-meter :global(.fw-seg--link:focus-visible)::before {
+    height: 4px;
+    margin-top: -2px;
+  }
+  .fw-meter :global(.fw-seg[data-tip])::after {
+    content: attr(data-tip);
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    border-radius: 0.5rem;
+    background: #1A1917;
+    color: #F2F1EC;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    font-size: 11px;
+    line-height: 1.2;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.12s ease;
+    z-index: 20;
+  }
+  .fw-meter :global(.fw-seg:hover)::after,
+  .fw-meter :global(.fw-seg:focus-visible)::after { opacity: 1; }
+  :root.dark .fw-meter :global(.fw-seg[data-tip])::after {
+    background: #EDEBE4;
+    color: #1A1917;
+  }
+  .fw-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    color: #706F6A;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.35rem 0;
+    white-space: nowrap;
+    transition: color 0.12s ease;
+    visibility: hidden;
+  }
+  :root.dark .fw-back-btn { color: #8E8B82; }
+  .fw-back-btn:hover { color: #1A1917; }
+  :root.dark .fw-back-btn:hover { color: #D6D3CA; }
+  .fw-count { white-space: nowrap; }
+  .fw-body {
+    margin-top: auto;
+    padding: 2.5rem 0 0;
+    position: relative;
+  }
+  .fw-step {
+    display: none;
+  }
+  .fw-step--active {
+    display: block;
+    animation: fw-step-in 260ms cubic-bezier(0.23, 1, 0.32, 1) both; /* ease-out-quint */
+    will-change: transform;
+  }
+  /* Container height animates between differently-sized steps so the footer
+     glides instead of snapping */
+  /* Paired with the step fade: same ease-out curve and clock, so the height
+     starts collapsing the instant the fade starts — no dead first frames */
+  .fw-body--morph {
+    transition: height 260ms cubic-bezier(0.23, 1, 0.32, 1); /* ease-out-quint */
+    will-change: height;
+  }
+  /* Outgoing step overlays the incoming one for a crossfade — exit runs
+     ~30% faster than the entrance, both ease-out */
+  .fw-step--leaving {
+    display: block;
+    position: absolute;
+    top: 2.5rem; /* mirror .fw-body's top padding */
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    animation: fw-step-out 150ms cubic-bezier(0.165, 0.84, 0.44, 1) both; /* ease-out-quart */
+  }
+  @keyframes fw-step-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fw-step-out {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-5px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fw-step--active { animation: none; }
+    .fw-step--leaving { display: none; animation: none; }
+  }
+  /* Reserve the Turnstile widget's space so the last step doesn't reflow
+     when it loads in */
+  #fw-turnstile { min-height: 65px; }
+  .fw-step-label {
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #A8A69E;
+    margin-bottom: 0.6rem;
+  }
+  :root.dark .fw-step-label { color: #8E8B82; }
+  .fw-question {
+    font-family: 'Bricolage Grotesque', 'Be Vietnam Pro', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: #1A1917;
+    margin-bottom: 1.25rem;
+    text-wrap: balance;
+  }
+  :root.dark .fw-question { color: #F2F1EC; }
+  .fw-subtext {
+    font-size: 0.875rem;
+    color: #706F6A;
+    line-height: 1.55;
+    margin-bottom: 0.5rem;
+    margin-top: -0.5rem;
+  }
+  :root.dark .fw-subtext { color: #A8A69E; }
+
+  /* Sub-question label — plain language, not another mono eyebrow */
+  .fw-sub-q {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    color: #1A1917;
+    margin-bottom: 0.75rem;
+  }
+  :root.dark .fw-sub-q { color: #F2F1EC; }
+  .fw-sub-q .fw-opt-note { font-weight: 400; font-size: 0.8125rem; color: #A8A69E; }
+  :root.dark .fw-sub-q .fw-opt-note { color: #8E8B82; }
+
+  /* Stage option grid */
+  .fw-option-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .fw-option {
+    cursor: pointer;
+  }
+  .fw-option span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.05rem 1.25rem;
+    border-radius: 0.875rem;
+    border: 1px solid #E8E8E6;
+    font-size: 0.9375rem;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    color: #3B3A36;
+    text-align: center;
+    transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+  .fw-option span:hover { border-color: #1A1917; }
+  .fw-option input:checked + span {
+    background: #1A1917;
+    border-color: #1A1917;
+    color: #F2F1EC;
+  }
+  :root.dark .fw-option span { border-color: #2E2C27; color: #D6D3CA; }
+  :root.dark .fw-option span:hover { border-color: #A8A69E; }
+  :root.dark .fw-option input:checked + span { background: #EDEBE4; border-color: #EDEBE4; color: #1A1917; }
+
+  /* Pill buttons (same as ProcessModal .pm-pill) */
+  .fw-pill span {
+    display: inline-block;
+    padding: 0.7rem 1.15rem;
+    border-radius: 0.75rem;
+    border: 1px solid #E8E8E6;
+    font-size: 0.9375rem;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    color: #3B3A36;
+    cursor: pointer;
+    transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+    user-select: none;
+  }
+  .fw-pill span:hover { border-color: #1A1917; }
+  .fw-pill input:checked + span { background: #1A1917; border-color: #1A1917; color: #F2F1EC; }
+  :root.dark .fw-pill span { border-color: #2E2C27; color: #D6D3CA; }
+  :root.dark .fw-pill span:hover { border-color: #A8A69E; }
+  :root.dark .fw-pill input:checked + span { background: #EDEBE4; border-color: #EDEBE4; color: #1A1917; }
+
+  /* Answer rows fill the column: equal cells, uniform height. Size variants
+     keep 5- and 7-option rows on a single line instead of wrapping into a
+     lone stretched cell. */
+  .fw-row-fill {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  .fw-row-fill--sm { grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); }
+  .fw-row-fill--xs { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); }
+  .fw-row-fill .fw-pill span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    min-height: 3.25rem;
+    line-height: 1.3;
+    padding: 0.5rem 0.75rem;
+  }
+  .fw-row-fill .fw-pill { display: block; }
+
+  /* 1–5 rating rows span the column as five equal cells */
+  .fw-rating-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+  }
+  .fw-rating-row .fw-rating-pill span {
+    width: 100%;
+    height: 3.25rem;
+  }
+
+  /* Rating pills (larger squares) */
+  .fw-rating-pill {
+    cursor: pointer;
+  }
+  .fw-rating-pill span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    border: 1px solid #E8E8E6;
+    font-size: 1rem;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    font-weight: 500;
+    color: #3B3A36;
+    cursor: pointer;
+    transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+    user-select: none;
+  }
+  .fw-rating-pill span:hover { border-color: #1A1917; }
+  .fw-rating-pill input:checked + span { background: #1A1917; border-color: #1A1917; color: #F2F1EC; }
+  :root.dark .fw-rating-pill span { border-color: #2E2C27; color: #D6D3CA; }
+  :root.dark .fw-rating-pill span:hover { border-color: #A8A69E; }
+  :root.dark .fw-rating-pill input:checked + span { background: #EDEBE4; border-color: #EDEBE4; color: #1A1917; }
+
+  /* Text inputs */
+  .fw-text-input,
+  .fw-select,
+  .fw-textarea {
+    width: 100%;
+    padding: 0.85rem 1.05rem;
+    border-radius: 0.75rem;
+    border: 1px solid #E8E8E6;
+    background: #FFFFFF;
+    font-size: 0.9375rem;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    color: #1A1917;
+    outline: none;
+    transition: border-color 0.12s ease;
+  }
+  .fw-select {
+    padding-right: 2.25rem;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23706F6A' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+  }
+  .fw-textarea { resize: none; line-height: 1.55; }
+
+  /* Over-limit highlighting: a backdrop renders the text (overflow span in
+     red) behind a transparent-text textarea — caret and selection stay live */
+  .fw-notes-wrap { position: relative; }
+  .fw-notes-backdrop {
+    position: absolute;
+    inset: 0;
+    border-color: transparent;
+    background: transparent;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .fw-notes-backdrop::after { content: '\200B'; }
+  .fw-notes-input {
+    position: relative;
+    background: transparent;
+    color: transparent;
+    caret-color: #161512;
+  }
+  :root.dark .fw-notes-input { caret-color: #F2F1EC; }
+  .fw-notes-input::selection { background: rgb(22 21 18 / 0.15); }
+  :root.dark .fw-notes-input::selection { background: rgb(242 241 236 / 0.2); }
+  .fw-notes-over {
+    color: #A54743;
+    background: rgb(165 71 67 / 0.12);
+    border-radius: 2px;
+  }
+  :root.dark .fw-notes-over {
+    color: #F89A92;
+    background: rgb(248 154 146 / 0.14);
+  }
+  .fw-notes-counter.fw-notes-counter--over {
+    color: #A54743;
+    font-weight: 600;
+  }
+  :root.dark .fw-notes-counter.fw-notes-counter--over { color: #F89A92; }
+  .fw-text-input:focus,
+  .fw-select:focus,
+  .fw-textarea:focus { border-color: #1A1917; }
+  :root.dark .fw-text-input,
+  :root.dark .fw-select,
+  :root.dark .fw-textarea { background: #131211; border-color: #2E2C27; color: #F2F1EC; }
+  :root.dark .fw-text-input:focus,
+  :root.dark .fw-select:focus,
+  :root.dark .fw-textarea:focus { border-color: #A8A69E; }
+
+  /* Ordered round-type checkboxes (reuse ProcessModal style) */
+  .fw-check {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.25rem;
+    border: 1.5px solid #D6D3D1;
+    background: #FFFFFF;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .fw-check:checked { background: #1A1917; border-color: #1A1917; }
+  .fw-check:checked::after {
+    content: attr(data-ord);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F2F1EC;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  :root.dark .fw-check { background: #131211; border-color: #2E2C27; }
+  :root.dark .fw-check:checked { background: #EDEBE4; border-color: #EDEBE4; }
+  :root.dark .fw-check:checked::after { color: #1A1917; }
+
+  /* Nav footer — directly under the question, not pinned to the viewport */
+  /* Turnstile rides the left of the row on the last step; Continue/Submit
+     stays anchored right */
+  .fw-footer {
+    margin-bottom: auto;
+    padding: 2.25rem 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .fw-continue-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 9999px;
+    background: #1A1917;
+    color: #F2F1EC;
+    font-size: 0.9375rem;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.12s ease;
+  }
+  .fw-continue-btn:hover { opacity: 0.85; }
+  .fw-continue-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  :root.dark .fw-continue-btn { background: #EDEBE4; color: #1A1917; }
+</style>
+
+<script define:vars={{ jobIndex, ROUND_TYPES, TURNSTILE_SITEKEY }}>
+  // ── State ──────────────────────────────────────────────────────────────────
+  const answers = {};
+  const roundOrder = [];
+  let prefilledJob = null;
+  let stepHistory = [];
+  let turnstileLoaded = false;
+  let turnstileToken = '';
+  let submitted = false;
+
+  // ── Step order ─────────────────────────────────────────────────────────────
+  const ALL_STEPS = ['company', 'stage', 'application', 'rounds', 'takehome', 'feedback', 'comp', 'ratings', 'notes'];
+  const DEEP_STAGES = ['interviews', 'offer', 'rejected', 'withdrew'];
+
+  // stageOverride lets the header count steps for an ASSUMED path before the
+  // user has picked a stage — otherwise the first screen reads "1 / 1" and the
+  // button says Submit even though more questions follow.
+  function getVisibleSteps(stageOverride) {
+    const stage = stageOverride ?? (answers.stage || '');
+    // Per-stage question map. "Applied" gets application-source questions
+    // and heard-back only — no rounds, comp, or ratings: none of it has happened.
+    const conditions = {
+      company:     () => !prefilledJob,
+      stage:       () => true,
+      application: () => stage === 'applied',
+      rounds:      () => !!stage && stage !== 'applied',
+      takehome:    () => !!stage && stage !== 'applied',
+      feedback:    () => !!stage,
+      comp:        () => !!stage && stage !== 'applied',
+      ratings:     () => !!stage && stage !== 'applied',
+      notes:       () => !!stage,
+    };
+    return ALL_STEPS.filter(id => conditions[id]?.() ?? false);
+  }
+
+  // ── DOM helpers ─────────────────────────────────────────────────────────────
+  function currentStep() { return stepHistory[stepHistory.length - 1] || null; }
+
+  // Visible names for the meter tooltips — mirror the on-screen step labels
+  const STEP_TITLES = {
+    company: 'Getting started', stage: 'Your situation', application: 'The application',
+    rounds: 'The process', takehome: 'Take-home', feedback: 'Communication',
+    comp: 'Transparency', ratings: 'Rate it', notes: 'Last step',
+  };
+
+  function jumpBackTo(stepId) {
+    if (submitted) return;
+    const pos = stepHistory.indexOf(stepId);
+    if (pos === -1) return;
+    stepHistory = stepHistory.slice(0, pos + 1);
+    showStep(stepId);
+  }
+
+  // Segmented meter: one button per planned step, filled through the current
+  // one. Completed segments are clickable (jump back) and every segment names
+  // its step in a tooltip.
+  function renderMeter(idx, planned) {
+    const meter = document.getElementById('fw-meter');
+    if (!meter) return;
+    meter.setAttribute('aria-valuemin', '1');
+    meter.setAttribute('aria-valuemax', String(planned.length));
+    meter.setAttribute('aria-valuenow', String(idx + 1));
+    meter.innerHTML = '';
+    planned.forEach((stepId, i) => {
+      const seg = document.createElement('button');
+      seg.type = 'button';
+      const past = i < idx && stepHistory.includes(stepId);
+      seg.className = 'fw-seg' + (i <= idx ? ' fw-seg--done' : '') + (past ? ' fw-seg--link' : '');
+      const title = STEP_TITLES[stepId] || stepId;
+      seg.dataset.tip = past ? `${title} — go back` : title;
+      seg.setAttribute('aria-label', past ? `Go back to ${title}` : title);
+      if (i === idx) seg.setAttribute('aria-current', 'step');
+      if (past) seg.addEventListener('click', () => jumpBackTo(stepId));
+      else seg.tabIndex = -1;
+      meter.appendChild(seg);
+    });
+  }
+
+  function showStep(stepId) {
+    const target = document.querySelector(`[data-step="${stepId}"]`);
+    if (!target) return;
+    const body = document.querySelector('.fw-body');
+    const prev = document.querySelector('.fw-step--active');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Crossfade + height morph: the outgoing step overlays absolutely while
+    // the next fades in, and the container animates between the two heights
+    // (a 4-question page and a 1-question page can differ a lot).
+    const morphing = !!(prev && prev !== target && body && !reduce);
+    const prevH = morphing ? body.offsetHeight : null;
+    if (prev && prev !== target) {
+      prev.classList.remove('fw-step--active');
+      prev.classList.add('fw-step--leaving');
+      setTimeout(() => prev.classList.remove('fw-step--leaving'), 170);
+    }
+    document.querySelectorAll('.fw-step').forEach(el => {
+      if (el !== prev) el.classList.remove('fw-step--active');
+      el.setAttribute('aria-hidden', 'true');
+    });
+    target.classList.add('fw-step--active');
+    target.setAttribute('aria-hidden', 'false');
+    // stage-aware visibility MUST land before the height measurement below,
+    // or the morph animates toward a height that includes hidden questions
+    applyStageCopy(stepId);
+    if (morphing) {
+      body.style.height = 'auto';
+      const nextH = body.offsetHeight;
+      body.style.height = `${prevH}px`;
+      body.style.overflow = 'hidden';
+      void body.offsetHeight; // commit the start height
+      body.classList.add('fw-body--morph');
+      requestAnimationFrame(() => { body.style.height = `${nextH}px`; });
+      setTimeout(() => {
+        body.classList.remove('fw-body--morph');
+        body.style.height = '';
+        body.style.overflow = '';
+      }, 280);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const first = target.querySelector('input:not([type=hidden]), select, textarea, button');
+    if (first) setTimeout(() => first.focus({ preventScroll: true }), 50);
+    updateHeader();
+  }
+
+  function updateHeader() {
+    // Count against the assumed-deepest path until a stage is chosen, so the
+    // total never collapses to the current position.
+    const planned = getVisibleSteps(answers.stage || 'interviews');
+    const cur = currentStep();
+    const idx = Math.max(0, planned.indexOf(cur));
+    const total = planned.length;
+
+    renderMeter(idx, planned);
+    document.getElementById('fw-count').textContent = `${idx + 1} of ${total}`;
+
+    // Submit belongs to the final step only — notes is always last.
+    const continueBtn = document.getElementById('fw-continue');
+    const isLast = cur === 'notes';
+    continueBtn.textContent = '';
+    continueBtn.insertAdjacentText('beforeend', isLast ? 'Submit' : 'Continue');
+    const svg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>`;
+    continueBtn.insertAdjacentHTML('beforeend', svg);
+    continueBtn.dataset.isSubmit = String(isLast);
+    refreshContinueState();
+  }
+
+  // ── Prefill from URL ────────────────────────────────────────────────────────
+  function initPrefill() {
+    const params = new URLSearchParams(window.location.search);
+    const jobId = params.get('job');
+    const company = params.get('company');
+    const title = params.get('title');
+
+    if (jobId && jobIndex[jobId]) {
+      prefilledJob = { jobId, ...jobIndex[jobId] };
+    } else if (company) {
+      prefilledJob = { jobId: null, company, title: title || '' };
+    }
+
+    if (prefilledJob) {
+      answers.jobId = prefilledJob.jobId;
+      answers.company = prefilledJob.company;
+      answers.jobTitle = prefilledJob.title || '';
+      // Update the stage question to show the company name
+      const stageQ = document.getElementById('fw-stage-q');
+      if (stageQ) stageQ.textContent = `Where are you with ${prefilledJob.company}?`;
+    }
+  }
+
+  // ── Stage-aware questions ───────────────────────────────────────────────────
+  // Someone mid-process can't answer "start to decision" or be "ghosted";
+  // someone who listed a take-home in the round order shouldn't be asked
+  // whether there was one. Copy and visibility adapt when a step shows.
+  const inFlight = () => ['phone-screen', 'interviews'].includes(answers.stage);
+  const setText = (id, text) => { const el = document.getElementById(id); if (el) el.childNodes[0].textContent = text; };
+  const optSpan = (sel) => document.querySelector(`${sel} span`);
+
+  function applyStageCopy(stepId) {
+    if (stepId === 'rounds') {
+      setText('fw-process-q', inFlight() ? "How's the process going so far?" : 'How did the process go?');
+      setText('fw-rounds-q', inFlight() ? 'How many rounds so far?' : 'How many rounds total?');
+      // no decision yet → "start to decision" is unanswerable
+      document.getElementById('fw-duration-group')?.classList.toggle('hidden', inFlight());
+    }
+
+    if (stepId === 'takehome') {
+      const toldUs = roundOrder.includes('take-home assessment') || roundOrder.includes('design exercise');
+      const q = document.getElementById('fw-takehome-q');
+      if (q) q.textContent = toldUs
+        ? 'That take-home exercise — what kind?'
+        : (inFlight() ? 'Any take-home or design exercise so far?' : 'Was there a take-home or design exercise?');
+      // they already listed one in the round order — don't offer "No take-home"
+      const noOpt = document.querySelector('[data-assessment-opt="none"]');
+      if (noOpt) {
+        noOpt.classList.toggle('hidden', toldUs);
+        const noInput = noOpt.querySelector('input');
+        if (toldUs && noInput?.checked) noInput.checked = false;
+      }
+    }
+
+    if (stepId === 'feedback') {
+      const q = document.getElementById('fw-feedback-q');
+      const yes = optSpan('[data-fb-opt="yes"]'), no = optSpan('[data-fb-opt="no"]');
+      const na = document.querySelector('[data-fb-opt=""]');
+      document.getElementById('fw-withdrew-group')?.classList.toggle('hidden', answers.stage !== 'withdrew');
+      if (answers.stage === 'applied') {
+        if (q) q.textContent = 'Heard anything back yet?';
+        if (yes) yes.textContent = 'Yes, a real response';
+        if (no) no.textContent = 'Nothing yet';
+        if (na) { na.classList.remove('hidden'); optSpan('[data-fb-opt=""]').textContent = 'Only the auto-confirmation'; }
+      } else if (answers.stage === 'offer') {
+        if (q) q.textContent = 'Did they keep you updated throughout?';
+        if (yes) yes.textContent = 'Yes, consistently';
+        if (no) no.textContent = 'Not really';
+        na?.classList.add('hidden'); // they got an offer — "didn't get that far" is impossible
+      } else if (inFlight()) {
+        if (q) q.textContent = 'Are they keeping you updated?';
+        if (yes) yes.textContent = 'Yes, consistently';
+        if (no) no.textContent = 'No — long silences';
+        if (na) { na.classList.remove('hidden'); optSpan('[data-fb-opt=""]').textContent = 'Too early to say'; }
+      } else {
+        if (q) q.textContent = 'Did they get back to you either way?';
+        if (yes) yes.textContent = 'Yes, they did';
+        if (no) no.textContent = 'No — ghosted';
+        if (na) { na.classList.remove('hidden'); optSpan('[data-fb-opt=""]').textContent = "Didn't get that far"; }
+      }
+      document.getElementById('fw-timelinematch-group')?.classList.toggle('hidden', answers.stage === 'applied');
+    }
+
+    if (stepId === 'ratings') {
+      const deep = DEEP_STAGES.includes(answers.stage);
+      document.querySelectorAll('.fw-deep-only').forEach(el => el.classList.toggle('hidden', !deep));
+    }
+  }
+
+  // ── Answer gating ───────────────────────────────────────────────────────────
+  // Each screen's primary question must be answered before Continue enables.
+  // Secondary details (timeline, round order, hours, follow-ups, notes) stay optional.
+  function stepAnswered(stepId) {
+    switch (stepId) {
+      case 'company':     return !!document.getElementById('fw-company')?.value.trim();
+      case 'stage':       return !!document.querySelector('input[name="fw-stage"]:checked');
+      case 'application': return !!document.querySelector('input[name="fw-appSource"]:checked');
+      case 'rounds':   return !!document.querySelector('input[name="fw-rounds"]:checked');
+      case 'takehome': return !!document.querySelector('input[name="fw-assessmentType"]:checked');
+      case 'feedback': return !!document.querySelector('input[name="fw-gotFeedback"]:checked');
+      case 'comp':     return !!document.querySelector('input[name="fw-compDisclosure"]:checked');
+      case 'ratings':  return !!document.querySelector('input[name="fw-overallRating"]:checked')
+                        && !!document.querySelector('input[name="fw-wouldRecommend"]:checked');
+      // notes is optional, but an over-limit draft can't submit
+      case 'notes':       return (document.getElementById('fw-notes')?.value.length || 0) <= NOTES_MAX;
+      default:            return true;
+    }
+  }
+
+  function refreshContinueState() {
+    document.getElementById('fw-continue').disabled = !stepAnswered(currentStep());
+  }
+
+  // ── Validation per step ─────────────────────────────────────────────────────
+  function validateAndSave(stepId) {
+    switch (stepId) {
+      case 'company': {
+        const inp = document.getElementById('fw-company');
+        if (!inp.value.trim()) {
+          inp.focus();
+          inp.setCustomValidity('Please enter a company name');
+          inp.reportValidity();
+          inp.setCustomValidity('');
+          return false;
+        }
+        answers.company = inp.value.trim();
+        answers.jobTitle = document.getElementById('fw-jobtitle')?.value.trim() || '';
+        answers.jobId = null;
+        return true;
+      }
+      case 'stage': {
+        const sel = document.querySelector('input[name="fw-stage"]:checked');
+        if (!sel) return false;
+        answers.stage = sel.value;
+        return true;
+      }
+      case 'rounds': {
+        answers.rounds = document.querySelector('input[name="fw-rounds"]:checked')?.value || '';
+        // duration is hidden mid-process — never save a stale selection
+        answers.timeline = inFlight() ? '' : (document.querySelector('input[name="fw-timeline"]:checked')?.value || '');
+        answers.roundTypes = roundOrder.slice();
+        return true;
+      }
+      case 'takehome': {
+        const sel = document.querySelector('input[name="fw-assessmentType"]:checked');
+        answers.assessmentType = sel?.value || '';
+        answers.hasAssessment = sel ? (sel.value !== 'none' ? 'yes' : 'no') : '';
+        answers.takeHomeHours = document.querySelector('input[name="fw-takeHomeHours"]:checked')?.value || '';
+        return true; // optional
+      }
+      case 'application': {
+        answers.applicationSource = document.querySelector('input[name="fw-appSource"]:checked')?.value || '';
+        answers.didOutreach = document.querySelector('input[name="fw-didOutreach"]:checked')?.value || '';
+        answers.appliedAgo = document.querySelector('input[name="fw-appliedAgo"]:checked')?.value || '';
+        return true;
+      }
+      case 'feedback': {
+        const sel = document.querySelector('input[name="fw-gotFeedback"]:checked');
+        answers.gotFeedback = sel?.value || '';
+        const rr = document.querySelector('input[name="fw-rejectionReason"]:checked');
+        answers.rejectionReason = rr?.value || '';
+        const tm = document.querySelector('input[name="fw-timelineMatch"]:checked');
+        answers.timelineMatch = answers.stage === 'applied' ? '' : (tm?.value || '');
+        const wr = document.querySelector('input[name="fw-withdrewReason"]:checked');
+        answers.withdrewReason = answers.stage === 'withdrew' ? (wr?.value || '') : '';
+        return true; // optional
+      }
+      case 'comp': {
+        const sel = document.querySelector('input[name="fw-compDisclosure"]:checked');
+        answers.compDisclosure = sel?.value || '';
+        return true; // optional
+      }
+      case 'ratings': {
+        const deep = DEEP_STAGES.includes(answers.stage);
+        const prep = document.querySelector('input[name="fw-interviewerPrep"]:checked');
+        const rel = document.querySelector('input[name="fw-processRelevance"]:checked');
+        const rating = document.querySelector('input[name="fw-overallRating"]:checked');
+        const rec = document.querySelector('input[name="fw-wouldRecommend"]:checked');
+        answers.interviewerPrep = deep ? (prep?.value || '') : '';
+        answers.processRelevance = deep ? (rel?.value || '') : '';
+        answers.overallRating = rating?.value || '';
+        answers.wouldRecommend = rec?.value || '';
+        return true; // optional
+      }
+      case 'notes': {
+        answers.notes = document.getElementById('fw-notes')?.value.trim() || '';
+        return true;
+      }
+      default:
+        return true;
+    }
+  }
+
+  // ── Navigation ──────────────────────────────────────────────────────────────
+  function advance() {
+    const cur = currentStep();
+    if (!stepAnswered(cur)) return; // Enter shouldn't bypass the disabled button
+    if (!validateAndSave(cur)) return;
+
+    const visible = getVisibleSteps();
+    const idx = visible.indexOf(cur);
+
+    if (document.getElementById('fw-continue').dataset.isSubmit === 'true') {
+      submitForm();
+      return;
+    }
+
+    if (idx < visible.length - 1) {
+      const next = visible[idx + 1];
+      stepHistory.push(next);
+      showStep(next);
+    }
+  }
+
+  // ── Submit ──────────────────────────────────────────────────────────────────
+  async function submitForm() {
+    const continueBtn = document.getElementById('fw-continue');
+    const errorEl = document.getElementById('fw-error');
+    continueBtn.disabled = true;
+    continueBtn.textContent = 'Sending…';
+    errorEl?.classList.add('hidden');
+
+    const payload = {
+      type: 'interview-feedback',
+      jobId: answers.jobId || '',
+      company: answers.company || '',
+      jobTitle: answers.jobTitle || '',
+      stage: answers.stage || '',
+      rounds: answers.rounds || '',
+      roundTypes: (answers.roundTypes || []).join(', '),
+      timeline: answers.timeline || '',
+      hasAssessment: answers.hasAssessment || '',
+      assessmentType: answers.assessmentType || '',
+      takeHomeHours: answers.takeHomeHours || '',
+      gotFeedback: answers.gotFeedback || '',
+      rejectionReason: answers.rejectionReason || '',
+      compDisclosure: answers.compDisclosure || '',
+      interviewerPrep: answers.interviewerPrep || '',
+      processRelevance: answers.processRelevance || '',
+      overallRating: answers.overallRating || '',
+      wouldRecommend: answers.wouldRecommend || '',
+      timelineMatch: answers.timelineMatch || '',
+      applicationSource: answers.applicationSource || '',
+      didOutreach: answers.didOutreach || '',
+      appliedAgo: answers.appliedAgo || '',
+      withdrewReason: answers.withdrewReason || '',
+      notes: answers.notes || '',
+      website_url: '',
+      turnstileToken,
+    };
+
+    try {
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await res.json();
+      if (result.ok) {
+        // Show success step
+        submitted = true;
+        document.getElementById('fw-footer').classList.add('hidden');
+        document.querySelectorAll('.fw-seg').forEach(s => {
+          s.classList.add('fw-seg--done');
+          s.classList.remove('fw-seg--link');
+          s.removeAttribute('data-tip');
+        });
+        document.getElementById('fw-count').textContent = '';
+        document.querySelectorAll('.fw-step').forEach(el => {
+          el.classList.remove('fw-step--active');
+          el.setAttribute('aria-hidden', 'true');
+        });
+        const success = document.querySelector('[data-step="success"]');
+        success?.classList.add('fw-step--active');
+        success?.setAttribute('aria-hidden', 'false');
+      } else {
+        if (errorEl) {
+          errorEl.textContent = result.error || 'Something went wrong. Please try again.';
+          errorEl.classList.remove('hidden');
+        }
+        if (window.turnstile) window.turnstile.reset();
+        continueBtn.disabled = false;
+        continueBtn.textContent = 'Submit';
+      }
+    } catch {
+      if (errorEl) {
+        errorEl.textContent = 'Network error. Please check your connection.';
+        errorEl.classList.remove('hidden');
+      }
+      continueBtn.disabled = false;
+      continueBtn.textContent = 'Submit';
+    }
+  }
+
+  // ── Turnstile ───────────────────────────────────────────────────────────────
+  function loadTurnstile() {
+    if (turnstileLoaded) return;
+    turnstileLoaded = true;
+    window.__fwTurnstileReady = () => {
+      window.turnstile.render('#fw-turnstile', {
+        sitekey: TURNSTILE_SITEKEY,
+        theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+        callback: (token) => { turnstileToken = token; },
+      });
+    };
+    const s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=__fwTurnstileReady';
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+
+  // ── Round type ordering ─────────────────────────────────────────────────────
+  function initRoundTypeOrdering() {
+    const checks = [...document.querySelectorAll('.fw-check')];
+    checks.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const rt = cb.dataset.roundType;
+        if (!rt) return;
+        if (cb.checked) roundOrder.push(rt);
+        else roundOrder.splice(roundOrder.indexOf(rt), 1);
+        checks.forEach(c => {
+          const i = roundOrder.indexOf(c.dataset.roundType || '');
+          if (i >= 0) c.dataset.ord = String(i + 1);
+          else delete c.dataset.ord;
+        });
+      });
+    });
+  }
+
+  // ── Conditional fields ──────────────────────────────────────────────────────
+  function initConditionalFields() {
+    // Take-home hours visibility
+    document.querySelectorAll('input[name="fw-assessmentType"]').forEach(r => {
+      r.addEventListener('change', () => {
+        const hasTakeHome = r.value && r.value !== 'none';
+        document.getElementById('fw-hours-group')?.classList.toggle('hidden', !hasTakeHome);
+      });
+    });
+
+    // Rejection reason visibility
+    document.querySelectorAll('input[name="fw-gotFeedback"]').forEach(r => {
+      r.addEventListener('change', () => {
+        const isRejected = answers.stage === 'rejected' && r.value === 'yes';
+        document.getElementById('fw-rejection-reason-group')?.classList.toggle('hidden', !isRejected);
+      });
+    });
+  }
+
+  // ── Auto-advance ────────────────────────────────────────────────────────────
+  // One consistent rule: when every VISIBLE radio question on the current
+  // screen is answered, the form advances by itself. Continue exists only to
+  // skip unanswered optional questions; Submit is the one mandatory press.
+  let autoTimer = null;
+  function maybeAutoAdvance() {
+    const cur = currentStep();
+    if (!cur || cur === 'notes' || submitted) return; // Submit is explicit
+    const section = document.querySelector(`[data-step="${cur}"]`);
+    if (!section) return;
+    const visibleNames = () => [...new Set(
+      [...section.querySelectorAll('input[type="radio"]')]
+        .filter(r => !r.closest('.hidden'))
+        .map(r => r.name)
+    )];
+    const allAnswered = (names) => names.length > 0 &&
+      names.every(n => section.querySelector(`input[name="${n}"]:checked`));
+    if (!allAnswered(visibleNames())) return;
+    clearTimeout(autoTimer);
+    autoTimer = setTimeout(() => {
+      // re-check — the answer may have revealed a follow-up (hours, rejection reason)
+      if (currentStep() === cur && allAnswered(visibleNames())) advance();
+    }, 220);
+  }
+
+  // ── Notes char count + over-limit highlighting ──────────────────────────────
+  const NOTES_MAX = 280;
+  function initNotesCount() {
+    const notes = document.getElementById('fw-notes');
+    const count = document.getElementById('fw-notes-count');
+    const counter = document.getElementById('fw-notes-counter');
+    const ok = document.getElementById('fw-notes-ok');
+    const over = document.getElementById('fw-notes-over');
+    const backdrop = document.getElementById('fw-notes-backdrop');
+    if (!notes) return;
+    const sync = () => {
+      const v = notes.value;
+      if (count) count.textContent = String(v.length);
+      counter?.classList.toggle('fw-notes-counter--over', v.length > NOTES_MAX);
+      if (ok) ok.textContent = v.slice(0, NOTES_MAX);
+      if (over) over.textContent = v.slice(NOTES_MAX);
+      if (backdrop) backdrop.scrollTop = notes.scrollTop;
+    };
+    notes.addEventListener('input', sync);
+    notes.addEventListener('scroll', () => { if (backdrop) backdrop.scrollTop = notes.scrollTop; });
+    sync();
+  }
+
+  // ── Keyboard: Enter to advance ──────────────────────────────────────────────
+  function initKeyboard() {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && e.target?.tagName !== 'TEXTAREA' && e.target?.tagName !== 'BUTTON') {
+        e.preventDefault();
+        advance();
+      }
+    });
+  }
+
+  // ── Event bindings ──────────────────────────────────────────────────────────
+  document.getElementById('fw-continue')?.addEventListener('click', advance);
+  ['change', 'input'].forEach(ev =>
+    document.querySelector('.fw-body')?.addEventListener(ev, (e) => {
+      refreshContinueState();
+      if (e.target?.type === 'radio') maybeAutoAdvance();
+    }));
+
+  // Load Turnstile lazily when the user reaches the notes step
+  const observer = new MutationObserver(() => {
+    const notesStep = document.querySelector('[data-step="notes"]');
+    if (notesStep?.classList.contains('fw-step--active')) {
+      loadTurnstile();
+    }
+  });
+  observer.observe(document.querySelector('.fw-body'), { childList: false, subtree: false, attributes: true, attributeFilter: ['class'] });
+
+  // Also observe individual step visibility changes
+  document.querySelectorAll('.fw-step').forEach(step => {
+    new MutationObserver(() => {
+      if (step.dataset.step === 'notes' && step.classList.contains('fw-step--active')) {
+        loadTurnstile();
+      }
+    }).observe(step, { attributes: true, attributeFilter: ['class'] });
+  });
+
+  // ── Init ────────────────────────────────────────────────────────────────────
+  initPrefill();
+  initRoundTypeOrdering();
+  initConditionalFields();
+  initNotesCount();
+  initKeyboard();
+
+  const firstStep = getVisibleSteps()[0];
+  if (firstStep) {
+    stepHistory.push(firstStep);
+    showStep(firstStep);
+  }
+</script>

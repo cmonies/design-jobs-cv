@@ -84,6 +84,52 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designjobs.cv');
     flex: 1 1 auto;
   }
 
+  /* main is a skip-link target (tabindex="-1") — don't ring the whole page
+     when a stray click programmatically focuses it */
+  #main-content:focus {
+    outline: none;
+  }
+
+  /* Placeholders stay on the warm ramp — preflight's default is a blue-gray */
+  ::placeholder {
+    color: #77746B;
+    opacity: 1;
+  }
+  .dark ::placeholder {
+    color: #8E8B82;
+  }
+
+  /* Shared dialog shell — every <dialog class="process-modal"> on the site.
+     The box itself never scrolls; scrollable content lives in .pm-body. */
+  .process-modal {
+    border-radius: 1.25rem;
+    margin: auto;
+    max-height: 90dvh;
+    overflow: hidden;
+  }
+  .process-modal[open] {
+    display: flex;
+    flex-direction: column;
+  }
+  .process-modal .pm-body {
+    overscroll-behavior: contain;
+  }
+  .process-modal::backdrop {
+    background: rgb(26 25 23 / 0.45);
+    backdrop-filter: blur(2px);
+  }
+  @media (max-width: 640px) {
+    .process-modal {
+      margin: auto 0 0;
+      max-width: 100%;
+      border-radius: 1.25rem 1.25rem 0 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 0;
+      max-height: 92dvh;
+    }
+  }
+
   /* Custom easing curves (stronger than defaults) */
   :root {
     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
