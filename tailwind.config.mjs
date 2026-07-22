@@ -85,12 +85,12 @@ export default {
         },
         // Dark mode surfaces
         surface: {
-          page: '#111110',
-          header: '#111110',
+          page: '#11110F',
+          header: '#11110F',
           footer: '#0C0C0B',
-          card: '#1C1B18',
+          card: '#1B1B19',
           newsletter: '#181816',
-          'card-hover': '#23211C',
+          'card-hover': '#222120',
         },
       },
       fontFamily: {

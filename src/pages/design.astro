@@ -40,11 +40,11 @@ const LIGHT_CORE: Swatch[] = [
 ];
 
 const DARK_CORE: Swatch[] = [
-  { name: 'surface-page', hex: '#111110', note: 'Page ground' },
-  { name: 'surface-card', hex: '#1C1B18', note: 'Cards & dialogs' },
-  { name: 'surface-card-hover', hex: '#23211C', note: 'Card hover' },
+  { name: 'surface-page', hex: '#11110F', note: 'Page ground' },
+  { name: 'surface-card', hex: '#1B1B19', note: 'Cards & dialogs' },
+  { name: 'surface-card-hover', hex: '#222120', note: 'Card hover' },
   { name: 'surface-footer', hex: '#0C0C0B', note: 'Footer ground' },
-  { name: 'border-dark', hex: '#2E2C27', note: 'Hairlines & borders' },
+  { name: 'border-dark', hex: '#2C2C2A', note: 'Hairlines & borders' },
   { name: 'paper-dark', hex: '#EDEBE4', note: 'Inverted fills (buttons, meters)' },
 ];
 
@@ -102,6 +102,18 @@ const RADII = [
 ];
 
 const ROUND_TYPES = ['Recruiter screen', 'Portfolio review', 'Panel'];
+
+// Job tile grounds — must mirror JobCard.astro's TREATMENTS / contractTreatment
+const TILES = [
+  { name: 'Light — mid & below', rule: 'Entry, Junior, Mid', company: 'Stedi', role: 'Product Designer', level: 'Mid · Remote',
+    tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-[#2C2C2A]', meta: 'text-muted dark:text-slate-400' },
+  { name: 'Cream — senior', rule: 'Senior, Mid-Senior', company: 'Render', role: 'Senior Product Designer', level: 'Senior · Remote',
+    tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#232321] dark:text-slate-100', meta: 'text-[#54534E] dark:text-slate-400' },
+  { name: 'Stone — staff & above', rule: 'Staff, Lead, Principal, Director', company: 'Artisan', role: 'Staff Product Designer', level: 'Staff · On-site',
+    tile: 'bg-[#E3E1DA] text-ink border border-transparent dark:bg-[#323230] dark:text-slate-100', meta: 'text-[#5C5A53] dark:text-slate-400' },
+  { name: 'Inverted — contract', rule: 'Any contract or freelance role, at any level', company: 'Zello', role: 'Product Designer, Design Systems', level: 'Contract · Remote',
+    tile: 'bg-tile-ink text-[#F2F1EC] border border-transparent dark:bg-[#EDEBE4] dark:text-ink', meta: 'text-[#A3A099] dark:text-[#54534E]' },
+];
 ---
 
 <Layout title="Crumb — the designjobs.cv design system" description="Crumb, the designjobs.cv design system — colors, typography, and components in both themes.">
@@ -174,12 +186,12 @@ const ROUND_TYPES = ['Recruiter screen', 'Portfolio review', 'Panel'];
               <h3 class="text-sm font-semibold">Dark</h3>
               <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-400">.dark</span>
             </div>
-            <div class="p-5 bg-[#111110] text-[#F2F1EC]">
+            <div class="p-5 bg-[#11110F] text-[#F2F1EC]">
               <p class="ds-swatch-group-label !text-[#A3A099]">Core</p>
               <ul class="space-y-2.5">
                 {withOk(DARK_CORE).map(s => (
                   <li class="flex items-start gap-3">
-                    <span class="ds-chip mt-0.5" style={`background:${s.hex}; border-color:#2E2C27`}></span>
+                    <span class="ds-chip mt-0.5" style={`background:${s.hex}; border-color:#2C2C2A`}></span>
                     <span class="min-w-0 flex-1">
                       <span class="block font-mono text-xs">{s.name}</span>
                       {s.note && <span class="block text-[11px] text-[#A3A099] mt-0.5">{s.note}</span>}
@@ -195,7 +207,7 @@ const ROUND_TYPES = ['Recruiter screen', 'Portfolio review', 'Panel'];
               <ul class="space-y-2.5">
                 {withOk(GRADE_DARK).map(s => (
                   <li class="flex items-start gap-3">
-                    <span class="ds-chip mt-0.5" style={`background:${s.hex}; border-color:#2E2C27`}></span>
+                    <span class="ds-chip mt-0.5" style={`background:${s.hex}; border-color:#2C2C2A`}></span>
                     <span class="min-w-0 flex-1">
                       <span class="block font-mono text-xs">{s.name}</span>
                       <span class="block text-[11px] text-[#A3A099] mt-0.5">{s.note}</span>
@@ -341,6 +353,58 @@ const ROUND_TYPES = ['Recruiter screen', 'Portfolio review', 'Panel'];
         </div>
       </section>
 
+      <!-- ── Job tiles ──────────────────────────────────────────────────────── -->
+      <section id="tiles" class="ds-section">
+        <h2 class="ds-h2">Job tiles</h2>
+        <p class="ds-lede">
+          The board is a masonry wall of typographic posters. Tile ground is never decorative
+          and never random — it encodes two things, in this order of priority.
+        </p>
+
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {TILES.map(t => (
+            <div>
+              <div class={`rounded-xl p-5 min-h-[132px] flex flex-col justify-between ${t.tile}`}>
+                <span class={`font-mono text-[10px] uppercase tracking-[0.14em] ${t.meta}`}>{t.company}</span>
+                <span class="font-display font-semibold text-lg leading-tight tracking-tight">{t.role}</span>
+                <span class={`font-mono text-[10px] uppercase tracking-[0.1em] ${t.meta}`}>{t.level}</span>
+              </div>
+              <p class="ds-demo-label mt-2.5 mb-0">{t.name}</p>
+              <p class="text-[13px] text-ink-soft dark:text-slate-300 mt-1 leading-snug">{t.rule}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <div>
+            <p class="ds-demo-label">Rule 1 — contract owns true dark</p>
+            <p class="text-[13px] text-ink-soft dark:text-slate-300 leading-relaxed">
+              Contract and freelance roles always take the inverted tile, whatever their level.
+              Contract work is the board's reason to exist, so it gets the highest-contrast
+              treatment on the wall and nothing else is allowed to compete. This is the same
+              discipline as crust amber: one signal, one meaning, never decoration.
+            </p>
+          </div>
+          <div>
+            <p class="ds-demo-label">Rule 2 — everything else ramps by seniority</p>
+            <p class="text-[13px] text-ink-soft dark:text-slate-300 leading-relaxed">
+              Heavier ground, more senior role. It's the fastest disqualifier when scanning,
+              and it splits the board into three balanced groups. Vertical was the obvious
+              alternative and is a trap — Healthcare is ~40% of listings while Climate and
+              Education have one or two each, so most colors would appear exactly once.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-6 text-[13px] text-muted dark:text-slate-400 leading-relaxed max-w-prose">
+          <strong class="text-ink dark:text-slate-100">Not encoded in color:</strong> vertical,
+          salary, recency, location. Those live in the text. Title size is uniform for the same
+          reason — the masonry gets its variety from tile grounds and natural title length, not
+          from invented hierarchy. Source of truth: <code class="font-mono text-[12px]">treatmentForLevel()</code>
+          in <code class="font-mono text-[12px]">src/components/JobCard.astro</code>.
+        </p>
+      </section>
+
       <!-- ── Grades ─────────────────────────────────────────────────────────── -->
       <section id="grades" class="ds-section">
         <h2 class="ds-h2">Grade tiles</h2>
@@ -363,7 +427,7 @@ const ROUND_TYPES = ['Recruiter screen', 'Portfolio review', 'Panel'];
           <div class="flex items-center gap-4">
             <div class="flex gap-1.5 flex-1">
               {[1, 2, 3, 4, 5, 6, 7].map(n => (
-                <div class={`flex-1 h-[2px] rounded-full ${n <= 3 ? 'bg-ink dark:bg-[#C9C6BC]' : 'bg-line dark:bg-[#2E2C27]'}`}></div>
+                <div class={`flex-1 h-[2px] rounded-full ${n <= 3 ? 'bg-ink dark:bg-[#C9C6BC]' : 'bg-line dark:bg-[#2C2C2A]'}`}></div>
               ))}
             </div>
             <span class="font-mono text-[11px] text-muted dark:text-slate-400">3 of 7</span>
@@ -507,7 +571,7 @@ const ROUND_TYPES = ['Recruiter screen', 'Portfolio review', 'Panel'];
   }
   .ds-cell-label span:hover { border-color: #161512; }
   .ds-cell-label input:checked + span { background: #161512; border-color: #161512; color: #F2F1EC; }
-  :root.dark .ds-cell-label span { border-color: #2E2C27; color: #D6D6D3; }
+  :root.dark .ds-cell-label span { border-color: #2C2C2A; color: #D6D6D3; }
   :root.dark .ds-cell-label span:hover { border-color: #A3A099; }
   :root.dark .ds-cell-label input:checked + span { background: #EDEBE4; border-color: #EDEBE4; color: #161512; }
   .ds-grade {

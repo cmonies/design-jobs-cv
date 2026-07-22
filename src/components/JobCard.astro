@@ -48,12 +48,12 @@ const isContract = employmentType === 'Contract' || employmentType === 'Freelanc
 // ~40% of the board while Climate/Trades/Education have 1-2 jobs each —
 // that's confetti, not a system.)
 const TREATMENTS = {
-  light:    { key: 'plain',    tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-[#2E2C27]', meta: 'text-muted dark:text-slate-400',     titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
-  mid:      { key: 'cream',    tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#232322] dark:text-slate-100',              meta: 'text-[#54534E] dark:text-slate-400', titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  light:    { key: 'plain',    tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-[#2C2C2A]', meta: 'text-muted dark:text-slate-400',     titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  mid:      { key: 'cream',    tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#232321] dark:text-slate-100',              meta: 'text-[#54534E] dark:text-slate-400', titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
   // Stone, not graphite: in light mode a near-black ground would compete with
   // the contract tile and blunt the one signal we most want people to catch.
   // Contract keeps sole ownership of true dark.
-  heavy:    { key: 'stone',    tile: 'bg-[#E3E1DA] text-ink border border-transparent dark:bg-[#33322E] dark:text-slate-100',              meta: 'text-[#5C5A53] dark:text-slate-400', titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  heavy:    { key: 'stone',    tile: 'bg-[#E3E1DA] text-ink border border-transparent dark:bg-[#323230] dark:text-slate-100',              meta: 'text-[#5C5A53] dark:text-slate-400', titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
 };
 
 // Entry/Junior/Mid → light · Senior → cream · Staff and above → graphite
