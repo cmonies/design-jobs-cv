@@ -47,13 +47,18 @@ const isContract = employmentType === 'Contract' || employmentType === 'Freelanc
 // thing on the wall. (Vertical was the obvious alternative but Healthcare is
 // ~40% of the board while Climate/Trades/Education have 1-2 jobs each —
 // that's confetti, not a system.)
+// Every tile carries a hairline. Each border is derived one consistent
+// lightness step off its own ground (OKLCH, same chroma and hue), so the
+// outline reads as the same structural element everywhere instead of an
+// exception on the white tile — which is what it looked like when only the
+// white ground had one.
 const TREATMENTS = {
-  light:    { key: 'plain',    tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-[#2C2C2A]', meta: 'text-muted dark:text-slate-400',     titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
-  mid:      { key: 'cream',    tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#232321] dark:text-slate-100',              meta: 'text-[#54534E] dark:text-slate-400', titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  light:    { key: 'plain',    tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-[#2C2C2A]',       meta: 'text-muted dark:text-slate-400',     titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  mid:      { key: 'cream',    tile: 'bg-tile-cream text-ink border border-[#DDDDDB] dark:bg-[#232321] dark:text-slate-100 dark:border-[#323230]', meta: 'text-[#54534E] dark:text-slate-400', titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
   // Stone, not graphite: in light mode a near-black ground would compete with
   // the contract tile and blunt the one signal we most want people to catch.
   // Contract keeps sole ownership of true dark.
-  heavy:    { key: 'stone',    tile: 'bg-[#E3E1DA] text-ink border border-transparent dark:bg-[#323230] dark:text-slate-100',              meta: 'text-[#5C5A53] dark:text-slate-400', titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  heavy:    { key: 'stone',    tile: 'bg-[#E3E1DA] text-ink border border-[#CCCAC3] dark:bg-[#323230] dark:text-slate-100 dark:border-[#444442]', meta: 'text-[#5C5A53] dark:text-slate-400', titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
 };
 
 // Entry/Junior/Mid → light · Senior → cream · Staff and above → graphite
@@ -69,7 +74,7 @@ function treatmentForLevel(lvl: string) {
 // pure ink on the light canvas, paper-white on the dark one. No extra color needed.
 const contractTreatment = {
   key: 'contract',
-  tile: 'bg-tile-ink text-[#F2F1EC] border border-transparent dark:bg-[#EDEBE4] dark:text-ink',
+  tile: 'bg-tile-ink text-[#F2F1EC] border border-[#2D2C2A] dark:bg-[#EDEBE4] dark:text-ink dark:border-[#D6D4CD]',
   meta: 'text-[#A3A099] dark:text-[#54534E]',
   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6',
 };
