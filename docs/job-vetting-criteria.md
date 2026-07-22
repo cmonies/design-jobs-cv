@@ -119,6 +119,12 @@ Each staged job in `jobs-staging.json` — ALL of these fields are required
   they're underrepresented on the board and valuable to early-career designers.
 - `locationType`: `Remote`, `Hybrid`, or `On-site` (with the hyphen)
 - `postedAt`: YYYY-MM-DD; extract from the page, else today. The site sorts by it.
+- `tags`: 3–6 HIGH-LEVEL tags a designer would actually filter by — design disciplines
+  (design systems, mobile, growth design, 0-to-1) and broad domains (healthtech, fintech,
+  AI, climate). NEVER use: drug/condition names (GLP-1, diabetes), clinical or insurance
+  acronyms (MSK, EAP, RCM), funding stage or investor names (Series C, a16z), internal
+  program names, or job-perk trivia. Test: if it wouldn't make sense as a filter chip on
+  the board, it's too narrow for a tag — that detail belongs in the description.
 - `_verifiedAt` is set by the validator at promotion — never set it manually.
 
 ## Golden rules
