@@ -1,7 +1,7 @@
 [
   {
     "id": "superhuman-senior-visual-designer-contract",
-    "title": "Senior Visual Designer (Contract)",
+    "title": "Senior Visual Designer @ Superhuman (Remote US, Contract)",
     "company": "Superhuman",
     "companyUrl": "https://superhuman.com",
     "url": "https://jobs.lever.co/Academy/f5ac9ee7-5513-4ef2-9c79-e151c9ac6601",
@@ -39,7 +39,8 @@
       "brand"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/clarion",
-    "_verifiedAt": "2026-07-22"
+    "_verifiedAt": "2026-07-22",
+    "salary": "$120,000 - $160,000"
   },
   {
     "id": "patch-product-designer",
@@ -60,7 +61,8 @@
       "data visualization"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/patch.io",
-    "_verifiedAt": "2026-07-22"
+    "_verifiedAt": "2026-07-22",
+    "salary": "$170,000 - $240,000"
   },
   {
     "id": "credal-founding-design-engineer",
@@ -860,27 +862,6 @@
     "_verifiedAt": "2026-07-13"
   },
   {
-    "id": "overflow-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Overflow",
-    "companyUrl": "https://www.overflow.co",
-    "url": "https://jobs.ashbyhq.com/overflow/a925ffca-219b-458f-94e5-9e4d97e8fcd5",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "Remote",
-    "postedAt": "2026-06-10",
-    "vertical": "Fintech",
-    "employmentType": "Full-time",
-    "tags": [
-      "fintech",
-      "payments",
-      "giving",
-      "dashboards"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/overflow",
-    "_verifiedAt": "2026-07-13"
-  },
-  {
     "id": "universe-product-designer",
     "title": "Product Designer",
     "company": "Universe",
@@ -1212,27 +1193,6 @@
     "_verifiedAt": "2026-07-09"
   },
   {
-    "id": "mural-lead-product-designer-ai-agentic-workflows",
-    "title": "Lead Product Designer, AI & Agentic Workflows",
-    "company": "Mural",
-    "companyUrl": "https://www.mural.co",
-    "url": "https://jobs.ashbyhq.com/mural/95841fa7-6ff1-4d29-848d-af545726ac7f",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "United States (Remote)",
-    "postedAt": "2026-03-27",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "AI",
-      "agentic workflows",
-      "design leadership"
-    ],
-    "_sourceUrl": "site:jobs.ashbyhq.com \"product designer\" AI",
-    "_verificationNote": "Confirmed live via Ashby posting-api (job-board/mural): US Remote, FullTime, published 2026-03-27. FLAG: >30 days old but confirmed still-open in Ashby active feed.",
-    "_verifiedAt": "2026-07-09"
-  },
-  {
     "id": "mural-lead-product-designer-growth-upper-funnel",
     "title": "Lead Product Designer, Growth (Upper Funnel)",
     "company": "Mural",
@@ -1250,27 +1210,6 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/mural",
     "_verificationNote": "Confirmed live via Ashby posting-api (job-board/mural): Canada Remote, FullTime, published 2026-06-29 (within 30-day window).",
-    "_verifiedAt": "2026-07-09"
-  },
-  {
-    "id": "airtasker-associate-product-designer",
-    "title": "Associate Product Designer",
-    "company": "Airtasker",
-    "companyUrl": "https://www.airtasker.com",
-    "url": "https://jobs.ashbyhq.com/airtasker/682a1694-f66b-455b-b1cb-5aec62ccac44",
-    "level": "Entry",
-    "locationType": "Hybrid",
-    "location": "Sydney, Australia",
-    "postedAt": "2026-05-31",
-    "vertical": "Consumer",
-    "employmentType": "Full-time",
-    "tags": [
-      "associate",
-      "entry level",
-      "consumer marketplace"
-    ],
-    "_sourceUrl": "site:jobs.ashbyhq.com \"associate product designer\"",
-    "_verificationNote": "Confirmed live via Ashby posting-api (job-board/airtasker): Sydney hybrid, FullTime, published 2026-05-31, entry-level role on Organic Acquisition team.",
     "_verifiedAt": "2026-07-09"
   },
   {
@@ -1294,7 +1233,7 @@
     "_sourceUrl": "site:jobs.ashbyhq.com designer climate",
     "_verificationNote": "Confirmed live via Ashby posting-api (job-board/ambrook): isListed true, publishedAt 2026-06-09, FullTime, isRemote true, comp $140K-$210K + equity.",
     "_verifiedAt": "2026-07-09",
-    "salary": "$140,000 - $210,000"
+    "salary": "$100,000 - $260,000"
   },
   {
     "id": "funxyz-staff-product-designer",
@@ -1319,7 +1258,7 @@
   },
   {
     "id": "sydecar-staff-ux-designer",
-    "title": "Staff User Experience Designer",
+    "title": "Senior/Staff Product Designer",
     "company": "Sydecar",
     "companyUrl": "https://sydecar.io",
     "url": "https://jobs.ashbyhq.com/sydecar/4008e0a7-88c9-4218-ab30-791d5017c6a1",
@@ -1591,25 +1530,6 @@
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $140-200K.",
     "_verifiedAt": "2026-07-09",
     "salary": "$140,000 - $200,000"
-  },
-  {
-    "id": "zello-product-designer-design-systems-contract",
-    "title": "Product Designer - Design Systems (Contract)",
-    "company": "Zello",
-    "companyUrl": "https://zello.com",
-    "url": "https://jobs.ashbyhq.com/Zello/36471a0a-9aa6-4fe2-b663-6e2f9c995757",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "Austin, TX (Remote OK)",
-    "postedAt": "2026-05-08",
-    "vertical": "Enterprise/SaaS",
-    "employmentType": "Contract",
-    "tags": [
-      "design systems",
-      "B2B"
-    ],
-    "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/zello",
-    "_verifiedAt": "2026-07-09"
   },
   {
     "id": "sentra-founding-product-designer",
@@ -1961,26 +1881,6 @@
       "consumer health"
     ],
     "postedAt": "2026-05-04",
-    "_sourceUrl": "https://jobs.lever.co/whoop",
-    "_verifiedAt": "2026-06-23",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
-    "id": "whoop-senior-human-factors-researcher",
-    "title": "Senior Human Factors Researcher, Design Research",
-    "company": "WHOOP",
-    "companyUrl": "https://www.whoop.com",
-    "url": "https://jobs.lever.co/whoop/063a2c59-8327-4556-9dee-c0f69323357c",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "Boston, MA",
-    "tags": [
-      "wearables",
-      "user research",
-      "health tracking"
-    ],
-    "postedAt": "2026-05-21",
     "_sourceUrl": "https://jobs.lever.co/whoop",
     "_verifiedAt": "2026-06-23",
     "vertical": "Healthcare",
