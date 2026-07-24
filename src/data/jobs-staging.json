@@ -1,1 +1,163 @@
-[]
+[
+  {
+    "id": "rho-staff-product-designer-contract",
+    "title": "Staff Product Designer",
+    "company": "Rho",
+    "companyUrl": "https://www.rho.co",
+    "url": "https://jobs.ashbyhq.com/rho/41526afa-4a57-4c09-a743-9b88276ffced",
+    "level": "Staff",
+    "locationType": "Remote",
+    "location": "Remote (Poland)",
+    "postedAt": "2026-07-24",
+    "vertical": "Fintech",
+    "employmentType": "Contract",
+    "tags": [
+      "design systems",
+      "B2B",
+      "banking",
+      "expense management"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/rho/41526afa-4a57-4c09-a743-9b88276ffced"
+  },
+  {
+    "id": "tavus-product-designer",
+    "title": "Product Designer",
+    "company": "Tavus",
+    "companyUrl": "https://www.tavus.io",
+    "url": "https://jobs.ashbyhq.com/tavus/45fdebdf-c3e1-480f-bbfb-ab4deee35db7",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-07-24",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "design systems",
+      "AI-native",
+      "conversational AI",
+      "motion design"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/tavus/45fdebdf-c3e1-480f-bbfb-ab4deee35db7"
+  },
+  {
+    "id": "rarecandy-lead-product-builder",
+    "title": "Lead Product Builder, Product & Design",
+    "company": "Rare Candy",
+    "companyUrl": "https://rarecandy.com",
+    "url": "https://jobs.ashbyhq.com/rarecandy/33f3d497-7660-4ceb-a8ba-21f5511f27be",
+    "level": "Lead",
+    "locationType": "On-site",
+    "location": "New York, NY",
+    "postedAt": "2026-07-24",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "0-to-1",
+      "consumer marketplace",
+      "prototyping",
+      "collectibles"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/rarecandy/33f3d497-7660-4ceb-a8ba-21f5511f27be"
+  },
+  {
+    "id": "clasp-principal-product-designer",
+    "title": "Principal Product Designer",
+    "company": "Clasp",
+    "companyUrl": "https://www.clasp.com",
+    "url": "https://jobs.ashbyhq.com/clasp-group/e2e81be3-eacb-45e2-86b1-e776ac98f168",
+    "level": "Principal",
+    "locationType": "Remote",
+    "location": "Remote (US, ET/CT)",
+    "postedAt": "2026-07-24",
+    "vertical": "Education",
+    "employmentType": "Full-time",
+    "tags": [
+      "0-to-1",
+      "education financing",
+      "brand design",
+      "design leadership"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/clasp-group/e2e81be3-eacb-45e2-86b1-e776ac98f168"
+  },
+  {
+    "id": "simplestudy-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "SimpleStudy",
+    "companyUrl": "https://simplestudy.com",
+    "url": "https://jobs.ashbyhq.com/hirehire/b731acb8-bb64-41e0-8f8c-3ff07d2c74e9",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (Europe)",
+    "postedAt": "2026-07-24",
+    "vertical": "Education",
+    "employmentType": "Full-time",
+    "tags": [
+      "consumer",
+      "growth",
+      "A/B testing",
+      "mobile",
+      "exam prep"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/hirehire/b731acb8-bb64-41e0-8f8c-3ff07d2c74e9"
+  },
+  {
+    "id": "promise-product-designer-ai",
+    "title": "Product Designer - AI",
+    "company": "Promise",
+    "companyUrl": "https://www.joinpromise.com",
+    "url": "https://jobs.ashbyhq.com/promise/8ca35784-e670-40ef-927f-d5578c678de0",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-07-24",
+    "vertical": "Gov/Civic",
+    "employmentType": "Full-time",
+    "tags": [
+      "govtech",
+      "AI-native",
+      "payments",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/promise/8ca35784-e670-40ef-927f-d5578c678de0"
+  },
+  {
+    "id": "wave-product-designer",
+    "title": "Product Designer",
+    "company": "Wave",
+    "companyUrl": "https://www.waveapps.com",
+    "url": "https://jobs.lever.co/waveapps/73d905de-2333-490b-9d9e-e3f2359961d0",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Remote (Canada)",
+    "postedAt": "2026-07-24",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "small business",
+      "financial management",
+      "design systems",
+      "mobile"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/waveapps/73d905de-2333-490b-9d9e-e3f2359961d0"
+  },
+  {
+    "id": "teamsnap-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "TeamSnap",
+    "companyUrl": "https://www.teamsnap.com",
+    "url": "https://jobs.lever.co/teamsnap/ca40b841-cace-4c79-a032-bcb51b41004d",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-07-24",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "sports tech",
+      "B2C",
+      "design systems",
+      "mobile"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/teamsnap/ca40b841-cace-4c79-a032-bcb51b41004d"
+  }
+]
