@@ -10,7 +10,7 @@
     "location": "Remote (Poland)",
     "postedAt": "2026-07-24",
     "vertical": "Fintech",
-    "employmentType": "Contract",
+    "employmentType": "Full-time",
     "tags": [
       "design systems",
       "B2B",
@@ -27,7 +27,7 @@
     "companyUrl": "https://www.tavus.io",
     "url": "https://jobs.ashbyhq.com/tavus/45fdebdf-c3e1-480f-bbfb-ab4deee35db7",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA",
     "postedAt": "2026-07-24",
     "vertical": "AI",
@@ -85,7 +85,7 @@
   },
   {
     "id": "simplestudy-founding-product-designer",
-    "title": "Founding Product Designer",
+    "title": "Founding Product Designer SimpleStudy",
     "company": "SimpleStudy",
     "companyUrl": "https://simplestudy.com",
     "url": "https://jobs.ashbyhq.com/hirehire/b731acb8-bb64-41e0-8f8c-3ff07d2c74e9",
@@ -112,7 +112,7 @@
     "companyUrl": "https://www.joinpromise.com",
     "url": "https://jobs.ashbyhq.com/promise/8ca35784-e670-40ef-927f-d5578c678de0",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA",
     "postedAt": "2026-07-24",
     "vertical": "Gov/Civic",
@@ -124,7 +124,8 @@
       "design systems"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/promise/8ca35784-e670-40ef-927f-d5578c678de0",
-    "_verifiedAt": "2026-07-24"
+    "_verifiedAt": "2026-07-24",
+    "salary": "$160,000 - $220,000"
   },
   {
     "id": "wave-product-designer",
@@ -145,7 +146,8 @@
       "mobile"
     ],
     "_sourceUrl": "https://jobs.lever.co/waveapps/73d905de-2333-490b-9d9e-e3f2359961d0",
-    "_verifiedAt": "2026-07-24"
+    "_verifiedAt": "2026-07-24",
+    "salary": "$95,000 - $107,000"
   },
   {
     "id": "teamsnap-senior-product-designer",
@@ -559,7 +561,7 @@
   },
   {
     "id": "aios-product-designer",
-    "title": "Product Designer",
+    "title": "Product DesignerProduct Designer at Aios Medical - Remote, 90k-150k/yr inc equity",
     "company": "AIOS",
     "companyUrl": "https://www.aiosmedical.com",
     "url": "https://jobs.ashbyhq.com/Aios/781c4075-21bc-4c06-ba74-9c8f2a7a3cfc",
