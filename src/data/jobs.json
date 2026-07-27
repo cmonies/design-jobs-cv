@@ -61,7 +61,8 @@
       "0-to-1"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verifiedAt": "2026-07-27"
+    "_verifiedAt": "2026-07-27",
+    "salary": "$160,000 - $190,000"
   },
   {
     "id": "aside-founding-designer",
@@ -82,7 +83,8 @@
       "interaction design"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verifiedAt": "2026-07-27"
+    "_verifiedAt": "2026-07-27",
+    "salary": "$150,000 - $230,000"
   },
   {
     "id": "numen-visual-designer",
@@ -103,7 +105,8 @@
       "biotech"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verifiedAt": "2026-07-27"
+    "_verifiedAt": "2026-07-27",
+    "salary": "$90,000 - $140,000"
   },
   {
     "id": "rho-staff-product-designer-contract",
@@ -1910,30 +1913,6 @@
     "_verifiedAt": "2026-07-09"
   },
   {
-    "id": "decoda-health-product-designer",
-    "title": "Product Designer",
-    "company": "Decoda Health",
-    "companyUrl": "https://www.decodahealth.com",
-    "url": "https://jobs.ashbyhq.com/decodahealth/5d90f7ca-eae1-406e-a4cf-461e7a30886c",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "Toronto, ON (onsite)",
-    "postedAt": "2026-06-04",
-    "salary": "CA$140,000 - CA$180,000",
-    "tags": [
-      "EMR",
-      "medical practice management",
-      "elective care",
-      "design systems",
-      "B2B"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/decodahealth",
-    "_verifiedAt": "2026-07-04",
-    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/decodahealth, isListed: true, publishedAt: 2026-06-04). Company confirmed: AI-powered EMR and practice management platform for elective care clinics (med spas, wellness centers, weight loss practices). YC-backed. Product Designer owns full-stack features, design systems, and consults with engineers on layout/typography. 3+ years desktop/web SaaS design required. CA$140K-CA$180K + equity. Toronto onsite. ⚠️ NOTE: Toronto onsite; Canadian company — flag for Carmen.",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
     "id": "tava-health-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Tava Health",
@@ -2144,7 +2123,7 @@
   },
   {
     "id": "whoop-senior-product-designer-ai",
-    "title": "Senior Product Designer, AI & Emerging Technology Focus",
+    "title": "Senior Product Designer, AI &amp Emerging Technology Focus",
     "company": "WHOOP",
     "companyUrl": "https://www.whoop.com",
     "url": "https://jobs.lever.co/whoop/a7971d82-ef9c-4ba2-b249-97c0ae924c06",
@@ -2494,32 +2473,6 @@
     "vertical": "Healthcare",
     "employmentType": "Full-time",
     "salary": "$170,000 - $200,000"
-  },
-  {
-    "id": "betterhelp-product-designer-therapist-platform",
-    "title": "Product Designer",
-    "company": "BetterHelp",
-    "companyUrl": "https://www.betterhelp.com",
-    "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5168402008",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "tags": [
-      "mental health",
-      "telehealth",
-      "therapist tools",
-      "B2B",
-      "clinician-facing",
-      "online therapy"
-    ],
-    "postedAt": "2026-04-08",
-    "salary": "$130,000 - $140,000",
-    "_sourceUrl": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5168402008",
-    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health 2026 April",
-    "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/betterhelpcom/jobs/5168402008, 200, full job details confirmed). Published April 8, 2026, updated April 24, 2026 (yesterday). BetterHelp — world's largest online therapy service, 30,000+ licensed therapists. Product Designer, Therapist Platform owns end-to-end design for therapist-facing product: scheduling, session management, notes, billing. $130K-$140K + performance bonus. Remote USA. DISTINCT from existing betterhelp-product-designer-client-growth (5082314008, $95K-$105K, Client Growth/patient-facing) — this role is therapist-facing. Not in existing jobs.json.",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
   },
   {
     "id": "amperos-health-product-designer",
