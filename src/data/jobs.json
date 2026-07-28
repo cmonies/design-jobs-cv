@@ -2579,32 +2579,6 @@
     "employmentType": "Full-time"
   },
   {
-    "id": "blink-health-lead-product-designer",
-    "title": "Lead Product Designer",
-    "company": "Blink Health",
-    "companyUrl": "https://www.blinkhealth.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/blinkhealth/jobs/8420880002",
-    "postedAt": "2026-02-12",
-    "salary": null,
-    "tags": [
-      "health tech",
-      "pharmacy",
-      "prescription access",
-      "B2C",
-      "consumer",
-      "design systems"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/blinkhealth/jobs/8420880002",
-    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health telehealth April 2026",
-    "_verifiedAt": "2026-04-11",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/blinkhealth/jobs/8420880002, 200, full job description). Posted February 12, 2026, updated February 25, 2026. ⚠️ FRESHNESS: 45 days since last update — validator should confirm currency. Blink Health — healthcare tech company making prescriptions accessible and affordable (BlinkRx + Quick Save). Lead PD manages design for cross-functional product team: UX for prescription supply chain, user research, design systems, wireframes/prototypes. 7+ years required, Figma + Adobe CC. Remote USA. No salary listed.",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
     "id": "readily-founding-design-engineer",
     "title": "Founding Design Engineer",
     "company": "Readily",
