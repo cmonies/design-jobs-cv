@@ -49,7 +49,7 @@
     "companyUrl": "https://www.midstream.health",
     "url": "https://jobs.ashbyhq.com/midstream/b89999ca-564f-4c13-b89a-54f3daeeb140",
     "level": "Mid",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA",
     "postedAt": "2026-07-31",
     "vertical": "Healthcare",
@@ -65,12 +65,12 @@
   },
   {
     "id": "plaud-product-designer-contract",
-    "title": "Product Designer (Contract)",
+    "title": "Product Designer (Contract)- San Francisco",
     "company": "Plaud",
     "companyUrl": "https://www.plaud.ai",
     "url": "https://jobs.ashbyhq.com/Plaud/3f58500a-2f40-40c3-bf0e-cbf714f05ee4",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA",
     "postedAt": "2026-07-29",
     "vertical": "AI",
@@ -124,7 +124,8 @@
       "sustainability"
     ],
     "_sourceUrl": "https://jobs.lever.co/zerohomes/1fa85e39-9f95-40da-ae1b-60d9b9810934",
-    "_verifiedAt": "2026-07-29"
+    "_verifiedAt": "2026-07-29",
+    "salary": "$115,000 - $205,000"
   },
   {
     "id": "assemble-lead-product-designer",
@@ -361,28 +362,6 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/hirehire/b731acb8-bb64-41e0-8f8c-3ff07d2c74e9",
     "_verifiedAt": "2026-07-24"
-  },
-  {
-    "id": "promise-product-designer-ai",
-    "title": "Product Designer - AI",
-    "company": "Promise",
-    "companyUrl": "https://www.joinpromise.com",
-    "url": "https://jobs.ashbyhq.com/promise/8ca35784-e670-40ef-927f-d5578c678de0",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "San Francisco, CA",
-    "postedAt": "2026-07-24",
-    "vertical": "Gov/Civic",
-    "employmentType": "Full-time",
-    "tags": [
-      "govtech",
-      "AI-native",
-      "payments",
-      "design systems"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/promise/8ca35784-e670-40ef-927f-d5578c678de0",
-    "_verifiedAt": "2026-07-24",
-    "salary": "$160,000 - $220,000"
   },
   {
     "id": "wave-product-designer",
@@ -1099,7 +1078,8 @@
       "B2B SaaS"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/ivo-inc",
-    "_verifiedAt": "2026-07-13"
+    "_verifiedAt": "2026-07-13",
+    "salary": "$220,000 - $280,000"
   },
   {
     "id": "suno-senior-staff-product-designer",
@@ -1265,27 +1245,6 @@
       "commerce"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/owner",
-    "_verifiedAt": "2026-07-13"
-  },
-  {
-    "id": "universe-product-designer",
-    "title": "Product Designer",
-    "company": "Universe",
-    "companyUrl": "https://www.onuniverse.com",
-    "url": "https://jobs.ashbyhq.com/universe/9ba9630d-6015-4ad6-a692-af4ecd115f08",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "Remote (Europe)",
-    "postedAt": "2026-06-11",
-    "vertical": "Consumer",
-    "employmentType": "Full-time",
-    "tags": [
-      "website builder",
-      "creator tools",
-      "mobile",
-      "e-commerce"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/universe",
     "_verifiedAt": "2026-07-13"
   },
   {
@@ -1473,28 +1432,6 @@
     "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=product%20designer%20startup",
     "_verifiedAt": "2026-07-13",
     "salary": "$100,000 - $150,000"
-  },
-  {
-    "id": "handshake-founding-product-designer-contract",
-    "title": "Founding Staff Product Designer, Handshake AI Enterprise",
-    "company": "Handshake",
-    "companyUrl": "https://joinhandshake.com",
-    "url": "https://jobs.ashbyhq.com/handshake/d2f94a5f-077f-4361-8f67-7bf65f10562f",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "San Francisco, CA / New York, NY",
-    "postedAt": "2026-07-09",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "founding",
-      "enterprise",
-      "AI"
-    ],
-    "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=contract%20product%20designer&f_JT=C",
-    "_verificationNote": "LinkedIn discovery lead resolved to company Ashby board; found on live board + WebFetch confirmed title/company. No linkedin URL published.",
-    "_verifiedAt": "2026-07-09",
-    "salary": "$190,000 - $240,000"
   },
   {
     "id": "unlearn-product-designer-contract",
@@ -1998,26 +1935,6 @@
     "_verifiedAt": "2026-07-09"
   },
   {
-    "id": "jobber-senior-product-designer-franchise",
-    "title": "Senior Product Designer, Franchise",
-    "company": "Jobber",
-    "companyUrl": "https://getjobber.com",
-    "url": "https://jobs.ashbyhq.com/jobber/e858c010-ee02-4090-aba0-b105bdb0d575",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "Toronto, ON (Remote, Canada)",
-    "postedAt": "2026-06-26",
-    "vertical": "Trades",
-    "employmentType": "Full-time",
-    "tags": [
-      "home services",
-      "small business",
-      "B2B"
-    ],
-    "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/jobber",
-    "_verifiedAt": "2026-07-09"
-  },
-  {
     "id": "finix-senior-product-designer-contract",
     "title": "Senior Product Designer",
     "company": "Finix",
@@ -2086,7 +2003,7 @@
   },
   {
     "id": "hinge-health-staff-product-designer-outcomes",
-    "title": "Staff Product Designer, Outcomes",
+    "title": "Staff Product Designer, Design Systems",
     "company": "Hinge Health",
     "companyUrl": "https://www.hingehealth.com",
     "url": "https://jobs.ashbyhq.com/hinge-health/ebb10992-73df-4efb-85b1-979aba7f046d",
