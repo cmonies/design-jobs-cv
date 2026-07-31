@@ -1,5 +1,26 @@
 [
   {
+    "id": "midstream-health-product-designer",
+    "title": "Product Designer",
+    "company": "Midstream Health",
+    "companyUrl": "https://www.midstream.health",
+    "url": "https://jobs.ashbyhq.com/midstream/b89999ca-564f-4c13-b89a-54f3daeeb140",
+    "level": "Mid",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-07-31",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time",
+    "tags": [
+      "healthcare finance",
+      "AI-native",
+      "enterprise SaaS",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/midstream/b89999ca-564f-4c13-b89a-54f3daeeb140",
+    "_verifiedAt": "2026-07-31"
+  },
+  {
     "id": "plaud-product-designer-contract",
     "title": "Product Designer (Contract)",
     "company": "Plaud",
@@ -728,28 +749,6 @@
       "0-to-1"
     ],
     "_sourceUrl": "https://jobs.lever.co/Academy/0b68460b-280f-41d1-aeb2-b7e2d0c234b1",
-    "_verifiedAt": "2026-07-18"
-  },
-  {
-    "id": "podium-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Podium",
-    "companyUrl": "https://www.podium.com",
-    "url": "https://job-boards.greenhouse.io/podium81/jobs/8016435",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "Lehi, Utah",
-    "postedAt": "2026-06-18",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "AI agents",
-      "agentic UX",
-      "enterprise",
-      "0-to-1",
-      "local business"
-    ],
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-07-18"
   },
   {
@@ -2364,31 +2363,6 @@
     "_sourceUrl": "https://job-boards.greenhouse.io/garnerhealth/jobs/6006458004",
     "_verifiedAt": "2026-06-16",
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io, 200, full job details). Posted May 26, 2026. Garner Health — reimagines healthcare benefits using data-driven insights to guide employees to higher-quality, lower-cost care. Product Designer II on Financial Incentives team: designs user-facing features and internal tools for claims, payments, and eligibility workflows. End-to-end ownership, user research, design system contributions. 2-3+ years required. $143K-$160K. NYC hybrid Tue-Thu. DISTINCT from existing garner-health-staff-product-designer-visual-systems (job 5985995004, Staff level) — this is a mid-level role on a different team.",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
-    "id": "hinge-health-staff-product-designer-design-systems",
-    "title": "Staff Product Designer, Design Systems",
-    "company": "Hinge Health",
-    "companyUrl": "https://www.hingehealth.com",
-    "url": "https://jobs.ashbyhq.com/hinge-health/a30e2a1e-c3cb-4717-a840-9c03305ffbd1",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "San Francisco, CA (3 days/week)",
-    "postedAt": "2026-06-16",
-    "salary": "$195,000 - $275,000",
-    "tags": [
-      "physical therapy",
-      "design systems",
-      "component architecture",
-      "tokens",
-      "B2B",
-      "B2C"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
-    "_verifiedAt": "2026-06-16",
-    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Hinge Health — leverages software + AI to automate MSK care (51% YoY revenue growth, 47% member growth). Staff PD, Design Systems leads vision/strategy/roadmap for Hinge's design system: core components, patterns, tokens, interaction standards. Shapes how system evolves across member UI, Agent flows, enterprise templates. Claude Code / agentic coding tool fluency required. 4-6+ years with deep design system ownership. $195K-$275K + equity. SF hybrid 3 days/week. DISTINCT from existing hinge-health-senior-manager-product-design (management role) — this is an IC design systems specialist role.",
     "vertical": "Healthcare",
     "employmentType": "Full-time"
   },

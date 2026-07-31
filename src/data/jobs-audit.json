@@ -5,50 +5,20 @@
   "failed": 0,
   "results": [
     {
-      "id": "plaud-product-designer-contract",
-      "company": "Plaud",
-      "title": "Product Designer (Contract)",
-      "url": "https://jobs.ashbyhq.com/Plaud/3f58500a-2f40-40c3-bf0e-cbf714f05ee4",
+      "id": "midstream-health-product-designer",
+      "company": "Midstream Health",
+      "title": "Product Designer",
+      "url": "https://jobs.ashbyhq.com/midstream/b89999ca-564f-4c13-b89a-54f3daeeb140",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-29T16:15:25.590Z"
-    },
-    {
-      "id": "ambience-healthcare-staff-product-designer",
-      "company": "Ambience Healthcare",
-      "title": "Staff Product Designer",
-      "url": "https://jobs.ashbyhq.com/ambiencehealthcare/1def8c60-e448-422e-bc25-02ac950a2a87",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-29T16:15:25.590Z"
-    },
-    {
-      "id": "zero-homes-senior-product-designer",
-      "company": "Zero Homes",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.lever.co/zerohomes/1fa85e39-9f95-40da-ae1b-60d9b9810934",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-29T16:15:25.590Z"
-    },
-    {
-      "id": "assemble-lead-product-designer",
-      "company": "Assemble",
-      "title": "Lead Product Designer",
-      "url": "https://jobs.ashbyhq.com/assemble/8b561cfd-ffc7-4128-99a0-94b0d9cfe26e",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-29T16:15:25.590Z"
+      "checkedAt": "2026-07-31T13:54:49.989Z"
     }
   ],
-  "lastRun": "2026-07-29T16:15:25.590Z",
+  "lastRun": "2026-07-31T13:54:49.989Z",
   "summary": {
-    "passed": 4,
+    "passed": 1,
     "failed": 0,
-    "total": 4
+    "total": 1
   }
 }
