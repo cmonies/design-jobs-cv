@@ -1,1 +1,43 @@
-[]
+[
+  {
+    "id": "scale-ai-platform-designer",
+    "title": "Platform Designer",
+    "company": "Scale AI",
+    "companyUrl": "https://scale.com",
+    "url": "https://boards.greenhouse.io/scaleai/jobs/4718917005",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA / New York, NY",
+    "postedAt": "2026-07-29",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "enterprise AI",
+      "B2B",
+      "0-to-1",
+      "data visualization",
+      "document processing"
+    ],
+    "_sourceUrl": "https://boards.greenhouse.io/scaleai/jobs/4718917005"
+  },
+  {
+    "id": "runpod-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Runpod",
+    "companyUrl": "https://www.runpod.io",
+    "url": "https://jobs.ashbyhq.com/runpod/94029301-60be-479d-963f-c97c2ba31906",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-07-31",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI infrastructure",
+      "developer tools",
+      "cloud platform",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/runpod/94029301-60be-479d-963f-c97c2ba31906"
+  }
+]
