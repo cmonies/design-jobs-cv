@@ -5,20 +5,30 @@
   "failed": 0,
   "results": [
     {
-      "id": "midstream-health-product-designer",
-      "company": "Midstream Health",
-      "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/midstream/b89999ca-564f-4c13-b89a-54f3daeeb140",
+      "id": "scale-ai-platform-designer",
+      "company": "Scale AI",
+      "title": "Platform Designer",
+      "url": "https://boards.greenhouse.io/scaleai/jobs/4718917005",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T13:54:49.989Z"
+      "checkedAt": "2026-07-31T16:15:28.050Z"
+    },
+    {
+      "id": "runpod-senior-product-designer",
+      "company": "Runpod",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/runpod/94029301-60be-479d-963f-c97c2ba31906",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-07-31T16:15:28.050Z"
     }
   ],
-  "lastRun": "2026-07-31T13:54:49.989Z",
+  "lastRun": "2026-07-31T16:15:28.050Z",
   "summary": {
-    "passed": 1,
+    "passed": 2,
     "failed": 0,
-    "total": 1
+    "total": 2
   }
 }
