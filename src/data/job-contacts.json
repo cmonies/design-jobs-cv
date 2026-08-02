@@ -685,24 +685,6 @@
       "verifiedAt": "2026-07-16"
     }
   ],
-  "slashy-founding-designer": [
-    {
-      "name": "Harsha Gaddipati",
-      "title": "Co-Founder/CEO",
-      "linkedinUrl": "https://www.linkedin.com/in/harsha-gaddipati-032bb820a/",
-      "role": "founder",
-      "source": "YC company page",
-      "verifiedAt": "2026-07-16"
-    },
-    {
-      "name": "Dhruv Roongta",
-      "title": "Founder",
-      "linkedinUrl": "https://www.linkedin.com/in/dhruv-roongta-421a7b214/",
-      "role": "founder",
-      "source": "YC company page",
-      "verifiedAt": "2026-07-16"
-    }
-  ],
   "standard-metrics-product-designer": [
     {
       "name": "Devin Gribbons",
@@ -832,36 +814,6 @@
       "linkedinUrl": "https://www.linkedin.com/in/errowell/",
       "role": "founder",
       "source": "YC company page",
-      "verifiedAt": "2026-07-16"
-    }
-  ],
-  "whoop-product-designer-ii-health": [
-    {
-      "name": "Ashley Green",
-      "title": "Senior Recruiter at WHOOP",
-      "linkedinUrl": "https://www.linkedin.com/in/ashley-green-45504b45/",
-      "role": "recruiter",
-      "source": "LinkedIn people search",
-      "verifiedAt": "2026-07-16"
-    }
-  ],
-  "whoop-senior-product-designer-ai": [
-    {
-      "name": "Ashley Green",
-      "title": "Senior Recruiter at WHOOP",
-      "linkedinUrl": "https://www.linkedin.com/in/ashley-green-45504b45/",
-      "role": "recruiter",
-      "source": "LinkedIn people search",
-      "verifiedAt": "2026-07-16"
-    }
-  ],
-  "whoop-senior-product-designer-growth": [
-    {
-      "name": "Ashley Green",
-      "title": "Senior Recruiter at WHOOP",
-      "linkedinUrl": "https://www.linkedin.com/in/ashley-green-45504b45/",
-      "role": "recruiter",
-      "source": "LinkedIn people search",
       "verifiedAt": "2026-07-16"
     }
   ]

@@ -1855,26 +1855,6 @@
     "salary": "$100,000"
   },
   {
-    "id": "slashy-founding-designer",
-    "title": "Founding Designer",
-    "company": "Slashy",
-    "companyUrl": "https://www.ycombinator.com/companies/slashy",
-    "url": "https://www.ycombinator.com/companies/slashy/jobs/wtEXNaB-founding-designer",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "San Francisco, CA",
-    "postedAt": "2026-06-09",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "founding"
-    ],
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $140-200K.",
-    "_verifiedAt": "2026-07-09",
-    "salary": "$140,000 - $200,000"
-  },
-  {
     "id": "sentra-founding-product-designer",
     "title": "Founding Product Designer",
     "company": "Sentra",
@@ -2140,47 +2120,6 @@
     ],
     "postedAt": "2026-06-23",
     "_sourceUrl": "https://job-boards.greenhouse.io/honehealth",
-    "_verifiedAt": "2026-06-23",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
-    "id": "whoop-product-designer-ii-health",
-    "title": "Product Designer II (Health)",
-    "company": "WHOOP",
-    "companyUrl": "https://www.whoop.com",
-    "url": "https://jobs.lever.co/whoop/33719380-d753-4e33-afcf-93e971d56cd8",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "Boston, MA",
-    "tags": [
-      "wearables",
-      "health tracking",
-      "consumer health"
-    ],
-    "postedAt": "2026-04-16",
-    "_sourceUrl": "https://jobs.lever.co/whoop",
-    "_verifiedAt": "2026-06-23",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
-    "id": "whoop-senior-product-designer-ai",
-    "title": "Senior Product Designer, AI &amp Emerging Technology Focus",
-    "company": "WHOOP",
-    "companyUrl": "https://www.whoop.com",
-    "url": "https://jobs.lever.co/whoop/a7971d82-ef9c-4ba2-b249-97c0ae924c06",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "Boston, MA",
-    "tags": [
-      "wearables",
-      "AI",
-      "health tracking",
-      "consumer health"
-    ],
-    "postedAt": "2026-05-04",
-    "_sourceUrl": "https://jobs.lever.co/whoop",
     "_verifiedAt": "2026-06-23",
     "vertical": "Healthcare",
     "employmentType": "Full-time"
@@ -2515,32 +2454,6 @@
     "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health",
     "_verifiedAt": "2026-04-18",
     "_verificationNote": "Verified live via browse.py (200, full job description rendered). Published February 13, 2026 per Ashby API (isListed: true). ⚠️ FRESHNESS: 64 days since posting — validator should reconfirm liveness. Amperos Health — leading provider of multi-modal RCM agents for healthcare clinics; founded 2023, backed by Uncork, Neo, Nebular.vc, plus angels from OpenAI/Stripe/Twilio. First full-time PD hire. Designs workqueue software for claim tracking, internal service team tools, analytics dashboards, AI agent workflow UX. Strong B2B/healthcare product discovery skills required; design system 0-1 experience; AI-native design tools (Figma Make, Claude Code, Cursor). $200K–$250K + equity. Onsite NYC (WFH Fridays). Not a duplicate — Amperos Health not in existing jobs.json.",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
-    "id": "whoop-senior-product-designer-growth",
-    "title": "Senior Product Designer (Growth)",
-    "company": "WHOOP",
-    "companyUrl": "https://www.whoop.com",
-    "url": "https://jobs.lever.co/whoop/76d39eda-4f33-4281-8fa0-947f9015f514",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "Boston, MA",
-    "tags": [
-      "wearables",
-      "healthtech",
-      "B2C",
-      "mobile",
-      "consumer health",
-      "fitness"
-    ],
-    "postedAt": "2026-04-04",
-    "salary": "$155,000 - $215,000",
-    "_sourceUrl": "https://jobs.lever.co/whoop/76d39eda-4f33-4281-8fa0-947f9015f514",
-    "_searchQuery": "site:jobs.lever.co whoop designer 2026",
-    "_verifiedAt": "2026-04-18",
-    "_verificationNote": "Live — confirmed on designproject.io (14 days old as of April 18, posted April 4 2026). Boston onsite required. $155K-$215K. Designs ecommerce and core purchase journeys. WHOOP scaling with 600+ new hires in 2026. ⚠️ Lever direct fetch returns 403; verified via aggregator — validator should confirm via direct browse.",
     "vertical": "Healthcare",
     "employmentType": "Full-time"
   },

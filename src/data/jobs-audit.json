@@ -12,7 +12,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "runpod-senior-product-designer",
@@ -22,7 +22,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "midstream-health-product-designer",
@@ -32,17 +32,17 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "plaud-product-designer-contract",
       "company": "Plaud",
-      "title": "Product Designer (Contract)",
+      "title": "Product Designer (Contract)- San Francisco",
       "url": "https://jobs.ashbyhq.com/Plaud/3f58500a-2f40-40c3-bf0e-cbf714f05ee4",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "ambience-healthcare-staff-product-designer",
@@ -52,7 +52,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "zero-homes-senior-product-designer",
@@ -62,7 +62,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "assemble-lead-product-designer",
@@ -72,7 +72,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "thorin-ai-product-designer",
@@ -82,7 +82,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "rogo-product-designer",
@@ -92,7 +92,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "flint-product-designer",
@@ -102,7 +102,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "aside-founding-designer",
@@ -112,7 +112,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "numen-visual-designer",
@@ -122,7 +122,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "rho-staff-product-designer-contract",
@@ -132,7 +132,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "tavus-product-designer",
@@ -142,7 +142,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "rarecandy-lead-product-builder",
@@ -152,7 +152,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "clasp-principal-product-designer",
@@ -162,7 +162,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "simplestudy-founding-product-designer",
@@ -172,17 +172,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
-    },
-    {
-      "id": "promise-product-designer-ai",
-      "company": "Promise",
-      "title": "Product Designer - AI",
-      "url": "https://jobs.ashbyhq.com/promise/8ca35784-e670-40ef-927f-d5578c678de0",
-      "pass": false,
-      "reason": "No live job signals found on page",
-      "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "wave-product-designer",
@@ -192,7 +182,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "teamsnap-senior-product-designer",
@@ -202,7 +192,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "superhuman-senior-visual-designer-contract",
@@ -212,7 +202,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "clarion-founding-product-designer",
@@ -222,7 +212,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "patch-product-designer",
@@ -232,7 +222,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "credal-founding-design-engineer",
@@ -242,7 +232,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "amber-electric-staff-product-designer",
@@ -252,7 +242,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "stedi-product-designer",
@@ -262,7 +252,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "artisan-staff-product-designer",
@@ -272,7 +262,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "render-senior-product-designer",
@@ -282,7 +272,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "euphoric-lead-product-designer",
@@ -292,7 +282,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "worktrace-ai-product-designer",
@@ -302,7 +292,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "vapi-product-designer-ai-ux",
@@ -312,7 +302,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "clutch-product-designer",
@@ -322,7 +312,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "highbeam-product-designer",
@@ -332,7 +322,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "valence-principal-product-designer",
@@ -342,7 +332,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "deel-lead-product-designer-fintech",
@@ -352,7 +342,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "everlywell-visual-senior-product-designer-contract",
@@ -362,7 +352,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "samsara-senior-product-designer-ai-agentic-workflows-contract",
@@ -372,7 +362,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "aios-product-designer",
@@ -382,7 +372,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "givebutter-director-product-design",
@@ -392,7 +382,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "sekai-founding-product-designer",
@@ -402,7 +392,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "sleeper-product-designer-mid-level-contract",
@@ -412,7 +402,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "notion-product-designer",
@@ -422,7 +412,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "yarn-founding-product-designer",
@@ -432,7 +422,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "nex-product-designer-contract",
@@ -442,7 +432,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "centralize-founding-designer",
@@ -452,7 +442,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "elevenlabs-product-designer",
@@ -462,7 +452,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "sleeper-sr-product-designer-contract",
@@ -472,7 +462,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "branchlab-sr-product-designer",
@@ -482,7 +472,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "nyc-oti-senior-product-designer",
@@ -492,7 +482,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "eight-sleep-staff-product-designer",
@@ -502,7 +492,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "ivo-senior-product-designer",
@@ -512,7 +502,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "suno-senior-staff-product-designer",
@@ -522,7 +512,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "suno-senior-staff-design-engineer-ios",
@@ -532,7 +522,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "ramp-product-designer",
@@ -542,7 +532,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "tomo-product-designer",
@@ -552,7 +542,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "synthesia-product-designer-growth",
@@ -562,7 +552,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "standard-metrics-product-designer",
@@ -572,7 +562,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "owner-senior-product-designer",
@@ -582,7 +572,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "owner-staff-product-designer",
@@ -592,17 +582,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
-    },
-    {
-      "id": "universe-product-designer",
-      "company": "Universe",
-      "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/universe/9ba9630d-6015-4ad6-a692-af4ecd115f08",
-      "pass": false,
-      "reason": "No live job signals found on page",
-      "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "parspec-senior-product-designer",
@@ -612,7 +592,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "juniper-square-senior-product-designer",
@@ -622,7 +602,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "bubble-senior-product-designer-core",
@@ -632,7 +612,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "n8n-senior-staff-product-designer",
@@ -642,7 +622,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "forerunner-senior-product-designer",
@@ -652,7 +632,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "primer-product-designer",
@@ -662,7 +642,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "krea-product-designer",
@@ -672,7 +652,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "browserbase-product-designer",
@@ -682,7 +662,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "thunkable-product-designer",
@@ -692,17 +672,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
-    },
-    {
-      "id": "handshake-founding-product-designer-contract",
-      "company": "Handshake",
-      "title": "Founding Staff Product Designer, Handshake AI Enterprise",
-      "url": "https://jobs.ashbyhq.com/handshake/d2f94a5f-077f-4361-8f67-7bf65f10562f",
-      "pass": false,
-      "reason": "No live job signals found on page",
-      "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "unlearn-product-designer-contract",
@@ -712,7 +682,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "wayline-contract-product-designer",
@@ -722,7 +692,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "vitvio-product-designer-ai-native-contract",
@@ -732,7 +702,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "samsara-senior-product-designer-design-systems-contract",
@@ -742,7 +712,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "citizen-product-design-engineer",
@@ -752,7 +722,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "mural-lead-product-designer-growth-upper-funnel",
@@ -762,7 +732,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "ambrook-product-designer-builder",
@@ -772,7 +742,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "funxyz-staff-product-designer",
@@ -782,7 +752,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "sydecar-staff-ux-designer",
@@ -792,7 +762,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "gusto-product-designer-contractors",
@@ -802,7 +772,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "fort-founding-designer",
@@ -812,7 +782,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "cardboard-founding-designer",
@@ -822,7 +792,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "ditto-senior-product-designer",
@@ -832,7 +802,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "jinba-founding-design-engineer",
@@ -842,7 +812,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "pocket-senior-product-designer-ai-hardware",
@@ -852,7 +822,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "voicepanel-founding-designer",
@@ -862,7 +832,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "cyble-product-designer",
@@ -872,7 +842,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "boldvoice-senior-product-designer-nyc",
@@ -882,7 +852,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "domu-ui-ux-product-designer",
@@ -892,7 +862,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "respan-designer-product-web",
@@ -902,17 +872,17 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "slashy-founding-designer",
       "company": "Slashy",
       "title": "Founding Designer",
       "url": "https://www.ycombinator.com/companies/slashy/jobs/wtEXNaB-founding-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "pass": false,
+      "reason": "HTTP 404",
+      "status": 404,
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "sentra-founding-product-designer",
@@ -922,7 +892,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "assembled-product-designer-ai-agents",
@@ -932,7 +902,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "read-ai-product-designer-growth",
@@ -942,17 +912,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
-    },
-    {
-      "id": "jobber-senior-product-designer-franchise",
-      "company": "Jobber",
-      "title": "Senior Product Designer, Franchise",
-      "url": "https://jobs.ashbyhq.com/jobber/e858c010-ee02-4090-aba0-b105bdb0d575",
-      "pass": false,
-      "reason": "No live job signals found on page",
-      "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "finix-senior-product-designer-contract",
@@ -962,7 +922,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "tava-health-senior-product-designer",
@@ -972,7 +932,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "hinge-health-senior-product-designer-new-programs",
@@ -982,17 +942,17 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "hinge-health-staff-product-designer-outcomes",
       "company": "Hinge Health",
-      "title": "Staff Product Designer, Outcomes",
+      "title": "Staff Product Designer, Design Systems",
       "url": "https://jobs.ashbyhq.com/hinge-health/ebb10992-73df-4efb-85b1-979aba7f046d",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "hinge-health-senior-product-designer-education",
@@ -1002,7 +962,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "headway-staff-product-designer-provider-onboarding",
@@ -1012,7 +972,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "maven-clinic-design-lead-consumer",
@@ -1022,7 +982,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "maven-clinic-head-of-design",
@@ -1032,7 +992,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "maven-clinic-senior-staff-product-designer",
@@ -1042,7 +1002,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "hone-health-product-designer-products-integrations",
@@ -1052,27 +1012,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
-    },
-    {
-      "id": "whoop-product-designer-ii-health",
-      "company": "WHOOP",
-      "title": "Product Designer II (Health)",
-      "url": "https://jobs.lever.co/whoop/33719380-d753-4e33-afcf-93e971d56cd8",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
-    },
-    {
-      "id": "whoop-senior-product-designer-ai",
-      "company": "WHOOP",
-      "title": "Senior Product Designer, AI &amp Emerging Technology Focus",
-      "url": "https://jobs.lever.co/whoop/a7971d82-ef9c-4ba2-b249-97c0ae924c06",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "blink-health-staff-design-systems-engineer-ny",
@@ -1082,7 +1022,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "blink-health-staff-design-systems-engineer-pittsburgh",
@@ -1092,7 +1032,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "9amhealth-senior-product-designer-member-app",
@@ -1102,7 +1042,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "omada-health-staff-product-designer",
@@ -1112,7 +1052,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "omada-health-senior-product-designer",
@@ -1122,7 +1062,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "garner-health-product-designer-ii",
@@ -1132,7 +1072,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "headway-staff-product-designer-group-practices",
@@ -1142,7 +1082,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "headway-senior-product-designer-new-channels",
@@ -1152,7 +1092,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "chorus-innovations-principal-product-designer-contract",
@@ -1162,7 +1102,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "alpaca-health-founding-product-designer",
@@ -1172,7 +1112,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "abridge-staff-product-designer",
@@ -1182,7 +1122,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "abridge-senior-product-designer",
@@ -1192,7 +1132,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "commure-product-designer",
@@ -1202,7 +1142,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "amperos-health-product-designer",
@@ -1212,17 +1152,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
-    },
-    {
-      "id": "whoop-senior-product-designer-growth",
-      "company": "WHOOP",
-      "title": "Senior Product Designer (Growth)",
-      "url": "https://jobs.lever.co/whoop/76d39eda-4f33-4281-8fa0-947f9015f514",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "finch-care-product-designer",
@@ -1232,7 +1162,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "future-senior-product-designer",
@@ -1242,7 +1172,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "readily-founding-design-engineer",
@@ -1252,7 +1182,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "tennr-senior-product-designer",
@@ -1262,7 +1192,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "reframe-product-designer",
@@ -1272,7 +1202,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "oura-staff-designer-womens-health",
@@ -1282,7 +1212,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "leona-health-lead-product-designer",
@@ -1292,7 +1222,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "nourish-staff-product-designer",
@@ -1302,7 +1232,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "hone-health-senior-product-designer-clinical",
@@ -1312,7 +1242,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "3y-health-ai-product-designer",
@@ -1322,7 +1252,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     },
     {
       "id": "flo-health-senior-product-designer-user-centric",
@@ -1332,13 +1262,13 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-31T16:36:04.174Z"
+      "checkedAt": "2026-08-02T16:35:42.020Z"
     }
   ],
-  "lastRun": "2026-07-31T16:36:04.174Z",
+  "lastRun": "2026-08-02T16:35:42.020Z",
   "summary": {
-    "passed": 129,
-    "failed": 4,
-    "total": 133
+    "passed": 125,
+    "failed": 1,
+    "total": 126
   }
 }
