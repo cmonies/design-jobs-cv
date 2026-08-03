@@ -1,1 +1,107 @@
-[]
+[
+  {
+    "id": "resq-ai-product-designer",
+    "title": "AI Product Designer",
+    "company": "ResQ",
+    "companyUrl": "https://www.getresq.com",
+    "url": "https://jobs.ashbyhq.com/resq/21301f5e-fea1-4d10-8cc3-6f7ab021dfaf",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "Miami, FL",
+    "postedAt": "2026-08-03",
+    "vertical": "Trades",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI-native",
+      "facilities management",
+      "B2B",
+      "0-to-1",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/resq/21301f5e-fea1-4d10-8cc3-6f7ab021dfaf"
+  },
+  {
+    "id": "wispr-flow-product-designer",
+    "title": "Product Designer",
+    "company": "Wispr Flow",
+    "companyUrl": "https://www.wisprflow.com",
+    "url": "https://jobs.ashbyhq.com/wispr-flow/2cfc837d-a99e-4b5c-8e7e-bc14b3aad7aa",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "San Francisco, CA / Remote (US)",
+    "postedAt": "2026-08-03",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "voice AI",
+      "consumer",
+      "0-to-1",
+      "design systems",
+      "interaction design"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/wispr-flow/2cfc837d-a99e-4b5c-8e7e-bc14b3aad7aa"
+  },
+  {
+    "id": "jeeves-senior-designer",
+    "title": "Senior Designer",
+    "company": "Jeeves",
+    "companyUrl": "https://www.tryjeeves.com",
+    "url": "https://jobs.lever.co/tryjeeves/cb04166d-b849-43b3-a69c-98813ad321a7",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Mexico (Remote)",
+    "postedAt": "2026-08-03",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "payments",
+      "cross-border",
+      "B2B",
+      "design systems",
+      "spend management"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/tryjeeves/cb04166d-b849-43b3-a69c-98813ad321a7"
+  },
+  {
+    "id": "middesk-product-designer",
+    "title": "Product Designer",
+    "company": "Middesk",
+    "companyUrl": "https://www.middesk.com",
+    "url": "https://jobs.ashbyhq.com/middesk/c7f766eb-2824-4096-ba8f-67feeb9c0d90",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-03",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "business identity",
+      "compliance",
+      "B2B",
+      "design systems",
+      "risk management"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/middesk/c7f766eb-2824-4096-ba8f-67feeb9c0d90"
+  },
+  {
+    "id": "kittl-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Kittl",
+    "companyUrl": "https://www.kittl.com",
+    "url": "https://jobs.ashbyhq.com/kittl/45197457-adef-44f1-9818-bec0c4c72315",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Europe (Remote)",
+    "postedAt": "2026-08-03",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "design tools",
+      "generative AI",
+      "consumer",
+      "0-to-1",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/kittl/45197457-adef-44f1-9818-bec0c4c72315"
+  }
+]
