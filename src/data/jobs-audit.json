@@ -5,60 +5,30 @@
   "failed": 0,
   "results": [
     {
-      "id": "resq-ai-product-designer",
-      "company": "ResQ",
-      "title": "AI Product Designer",
-      "url": "https://jobs.ashbyhq.com/resq/21301f5e-fea1-4d10-8cc3-6f7ab021dfaf",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-03T16:15:32.114Z"
-    },
-    {
-      "id": "wispr-flow-product-designer",
-      "company": "Wispr Flow",
+      "id": "permitflow-product-designer",
+      "company": "PermitFlow",
       "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/wispr-flow/2cfc837d-a99e-4b5c-8e7e-bc14b3aad7aa",
+      "url": "https://jobs.ashbyhq.com/permitflow/b060c722-898c-4a89-a27a-6b469f4957ec",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-03T16:15:32.114Z"
+      "checkedAt": "2026-08-05T16:15:28.194Z"
     },
     {
-      "id": "jeeves-senior-designer",
-      "company": "Jeeves",
-      "title": "Senior Designer",
-      "url": "https://jobs.lever.co/tryjeeves/cb04166d-b849-43b3-a69c-98813ad321a7",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-03T16:15:32.114Z"
-    },
-    {
-      "id": "middesk-product-designer",
-      "company": "Middesk",
-      "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/middesk/c7f766eb-2824-4096-ba8f-67feeb9c0d90",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-03T16:15:32.114Z"
-    },
-    {
-      "id": "kittl-senior-product-designer",
-      "company": "Kittl",
+      "id": "canals-senior-product-designer",
+      "company": "Canals",
       "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/kittl/45197457-adef-44f1-9818-bec0c4c72315",
+      "url": "https://jobs.ashbyhq.com/canals/4df5d8a8-6579-4418-9386-933601a50af0",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-03T16:15:32.114Z"
+      "checkedAt": "2026-08-05T16:15:28.194Z"
     }
   ],
-  "lastRun": "2026-08-03T16:15:32.114Z",
+  "lastRun": "2026-08-05T16:15:28.194Z",
   "summary": {
-    "passed": 5,
+    "passed": 2,
     "failed": 0,
-    "total": 5
+    "total": 2
   }
 }

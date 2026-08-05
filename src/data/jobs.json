@@ -1,5 +1,49 @@
 [
   {
+    "id": "permitflow-product-designer",
+    "title": "Product Designer",
+    "company": "PermitFlow",
+    "companyUrl": "https://www.permitflow.com",
+    "url": "https://jobs.ashbyhq.com/permitflow/b060c722-898c-4a89-a27a-6b469f4957ec",
+    "level": "Mid",
+    "locationType": "Hybrid",
+    "location": "New York, NY",
+    "postedAt": "2026-08-05",
+    "vertical": "Trades",
+    "employmentType": "Full-time",
+    "tags": [
+      "construction tech",
+      "AI-powered",
+      "B2B",
+      "complex workflows",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/permitflow",
+    "_verifiedAt": "2026-08-05"
+  },
+  {
+    "id": "canals-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Canals",
+    "companyUrl": "https://www.canals.ai",
+    "url": "https://jobs.ashbyhq.com/canals/4df5d8a8-6579-4418-9386-933601a50af0",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-08-05",
+    "vertical": "Trades",
+    "employmentType": "Full-time",
+    "tags": [
+      "wholesale distribution",
+      "AI-powered",
+      "B2B SaaS",
+      "complex workflows",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/canals",
+    "_verifiedAt": "2026-08-05"
+  },
+  {
     "id": "resq-ai-product-designer",
     "title": "AI Product Designer",
     "company": "ResQ",
