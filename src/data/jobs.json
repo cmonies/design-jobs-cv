@@ -6,7 +6,7 @@
     "companyUrl": "https://www.permitflow.com",
     "url": "https://jobs.ashbyhq.com/permitflow/b060c722-898c-4a89-a27a-6b469f4957ec",
     "level": "Mid",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "New York, NY",
     "postedAt": "2026-08-05",
     "vertical": "Trades",
@@ -19,7 +19,8 @@
       "0-to-1"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/permitflow",
-    "_verifiedAt": "2026-08-05"
+    "_verifiedAt": "2026-08-05",
+    "salary": "$140,000 - $250,000"
   },
   {
     "id": "canals-senior-product-designer",
@@ -50,7 +51,7 @@
     "companyUrl": "https://www.getresq.com",
     "url": "https://jobs.ashbyhq.com/resq/21301f5e-fea1-4d10-8cc3-6f7ab021dfaf",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "Miami, FL",
     "postedAt": "2026-08-03",
     "vertical": "Trades",
@@ -85,7 +86,8 @@
       "interaction design"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/wispr-flow/2cfc837d-a99e-4b5c-8e7e-bc14b3aad7aa",
-    "_verifiedAt": "2026-08-03"
+    "_verifiedAt": "2026-08-03",
+    "salary": "$160,000 - $250,000"
   },
   {
     "id": "jeeves-senior-designer",
@@ -116,7 +118,7 @@
     "companyUrl": "https://www.middesk.com",
     "url": "https://jobs.ashbyhq.com/middesk/c7f766eb-2824-4096-ba8f-67feeb9c0d90",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA",
     "postedAt": "2026-08-03",
     "vertical": "Fintech",
@@ -129,11 +131,12 @@
       "risk management"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/middesk/c7f766eb-2824-4096-ba8f-67feeb9c0d90",
-    "_verifiedAt": "2026-08-03"
+    "_verifiedAt": "2026-08-03",
+    "salary": "$200,000 - $225,000"
   },
   {
     "id": "kittl-senior-product-designer",
-    "title": "Senior Product Designer",
+    "title": "Senior Product Designer (Europe, remote)",
     "company": "Kittl",
     "companyUrl": "https://www.kittl.com",
     "url": "https://jobs.ashbyhq.com/kittl/45197457-adef-44f1-9818-bec0c4c72315",
@@ -343,7 +346,8 @@
       "design systems"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/rogo/0fde5cb5-3c42-4395-b9f6-8912080d533a",
-    "_verifiedAt": "2026-07-27"
+    "_verifiedAt": "2026-07-27",
+    "salary": "$165,000 - $315,000"
   },
   {
     "id": "flint-product-designer",
@@ -493,28 +497,6 @@
       "design leadership"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/clasp-group/e2e81be3-eacb-45e2-86b1-e776ac98f168",
-    "_verifiedAt": "2026-07-24"
-  },
-  {
-    "id": "simplestudy-founding-product-designer",
-    "title": "Founding Product Designer SimpleStudy",
-    "company": "SimpleStudy",
-    "companyUrl": "https://simplestudy.com",
-    "url": "https://jobs.ashbyhq.com/hirehire/b731acb8-bb64-41e0-8f8c-3ff07d2c74e9",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "Remote (Europe)",
-    "postedAt": "2026-07-24",
-    "vertical": "Education",
-    "employmentType": "Full-time",
-    "tags": [
-      "consumer",
-      "growth",
-      "A/B testing",
-      "mobile",
-      "exam prep"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/hirehire/b731acb8-bb64-41e0-8f8c-3ff07d2c74e9",
     "_verifiedAt": "2026-07-24"
   },
   {
@@ -689,28 +671,6 @@
     "_verifiedAt": "2026-07-21"
   },
   {
-    "id": "artisan-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Artisan",
-    "companyUrl": "https://www.artisan.co",
-    "url": "https://jobs.ashbyhq.com/artisan/93bca429-26b2-4cca-a8a1-26c024656ca4",
-    "level": "Staff",
-    "locationType": "On-site",
-    "location": "San Francisco, CA / New York, NY",
-    "postedAt": "2026-07-21",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "AI",
-      "SaaS",
-      "design systems",
-      "AI employees"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/artisan/93bca429-26b2-4cca-a8a1-26c024656ca4",
-    "_verifiedAt": "2026-07-21",
-    "salary": "$175,000 - $275,000"
-  },
-  {
     "id": "render-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Render",
@@ -817,28 +777,6 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/withclutch/af27eba4-5a51-46f6-bc35-7ff25095cd84",
     "_verifiedAt": "2026-07-20"
-  },
-  {
-    "id": "highbeam-product-designer",
-    "title": "Product Designer",
-    "company": "Highbeam",
-    "companyUrl": "https://www.highbeam.co",
-    "url": "https://jobs.ashbyhq.com/highbeam/35cffce8-c092-479a-8747-f3d4d152b9b6",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "New York, NY",
-    "postedAt": "2026-07-20",
-    "vertical": "Fintech",
-    "employmentType": "Full-time",
-    "tags": [
-      "business banking",
-      "AI",
-      "financial workflows",
-      "SMB"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/highbeam/35cffce8-c092-479a-8747-f3d4d152b9b6",
-    "_verifiedAt": "2026-07-20",
-    "salary": "$200,000 - $250,000"
   },
   {
     "id": "valence-principal-product-designer",
@@ -1319,27 +1257,6 @@
     "_verifiedAt": "2026-07-13"
   },
   {
-    "id": "synthesia-product-designer-growth",
-    "title": "Product Designer, Growth (Senior/Staff-Level)",
-    "company": "Synthesia",
-    "companyUrl": "https://www.synthesia.io",
-    "url": "https://jobs.ashbyhq.com/synthesia/eb06b813-b691-45fa-884e-abc06c674390",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "Remote (Europe)",
-    "postedAt": "2026-03-17",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "AI video",
-      "generative AI",
-      "growth",
-      "B2B SaaS"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/synthesia",
-    "_verifiedAt": "2026-07-13"
-  },
-  {
     "id": "standard-metrics-product-designer",
     "title": "Product Designer",
     "company": "Standard Metrics",
@@ -1629,7 +1546,7 @@
   },
   {
     "id": "vitvio-product-designer-ai-native-contract",
-    "title": "Product Designer - AI-Native Design (Contract, Part-Time)",
+    "title": "Product Designer - AI-Native Design",
     "company": "VitVio",
     "companyUrl": "https://www.vitvio.com",
     "url": "https://jobs.ashbyhq.com/vitvio/c82b8a6c-1625-42dd-bf5f-463cb095212e",
@@ -1638,7 +1555,7 @@
     "location": "Remote (European time zones preferred)",
     "postedAt": "2026-05-29",
     "vertical": "Healthcare",
-    "employmentType": "Contract",
+    "employmentType": "Part-time",
     "tags": [
       "AI",
       "part-time",
@@ -2420,31 +2337,6 @@
     "employmentType": "Full-time"
   },
   {
-    "id": "headway-staff-product-designer-group-practices",
-    "title": "Staff Product Designer, Group Practices",
-    "company": "Headway",
-    "companyUrl": "https://headway.co",
-    "url": "https://jobs.ashbyhq.com/headway/3e71f549-4318-48ff-9be6-57ffc5f3aece",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "New York, NY / San Francisco, CA / Seattle, WA",
-    "postedAt": "2026-06-16",
-    "salary": "$212,000 - $265,000",
-    "tags": [
-      "mental health",
-      "therapist tools",
-      "B2B",
-      "B2B2C",
-      "group practices",
-      "AI-native"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/headway/3e71f549-4318-48ff-9be6-57ffc5f3aece",
-    "_verifiedAt": "2026-06-16",
-    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Headway — mental health platform, Series D $325M+ (a16z, Accel, Spark Capital), 75K+ therapists, 1M+ patients. Staff PD, Group Practices owns design anchor for segment: group practice onboarding, supervisory billing (250K new provider TAM, $100M+ revenue potential), admin/owner tooling, packaging tiers, practice analytics. 8+ years required, multi-user/permissions systems experience, AI-native design workflow (Claude Code, Cursor, MagicPatterns). $212K-$265K + equity. NY/SF/Seattle hybrid. Not in existing jobs.json.",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
     "id": "headway-senior-product-designer-new-channels",
     "title": "Senior Product Designer, New Channels",
     "company": "Headway",
@@ -2562,28 +2454,6 @@
     "_verifiedAt": "2026-05-04",
     "vertical": "Healthcare",
     "employmentType": "Full-time"
-  },
-  {
-    "id": "commure-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Commure",
-    "companyUrl": "https://www.commure.com",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "Mountain View, CA",
-    "url": "https://jobs.ashbyhq.com/Commure/8134d3bd-9fcc-452a-96ed-4890a2de2e65",
-    "postedAt": "2026-05-04",
-    "tags": [
-      "EHR",
-      "clinical workflow",
-      "healthcare operations",
-      "B2B"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/Commure",
-    "_verifiedAt": "2026-05-04",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time",
-    "salary": "$170,000 - $200,000"
   },
   {
     "id": "amperos-health-product-designer",
