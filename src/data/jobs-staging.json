@@ -1,1 +1,125 @@
-[]
+[
+  {
+    "id": "clariti-product-designer-contract",
+    "title": "Product Designer (Contract)",
+    "company": "Clariti",
+    "companyUrl": "https://www.claritisoftware.com",
+    "url": "https://job-boards.greenhouse.io/clariticloudinc/jobs/7830081003",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Remote (Canada)",
+    "postedAt": "2026-08-05",
+    "vertical": "Gov/Civic",
+    "employmentType": "Contract",
+    "tags": [
+      "civic tech",
+      "municipal government",
+      "design systems",
+      "AI-native",
+      "accessibility"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/clariticloudinc/jobs/7830081003"
+  },
+  {
+    "id": "town-product-designer",
+    "title": "Product Designer",
+    "company": "Town",
+    "companyUrl": "https://www.town.com",
+    "url": "https://jobs.ashbyhq.com/town/ba604c97-c848-44a0-8845-7bb229b75e15",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "San Francisco, CA / New York, NY",
+    "postedAt": "2026-08-07",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI-native",
+      "0-to-1",
+      "design engineering",
+      "consumer",
+      "high-craft"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/town/ba604c97-c848-44a0-8845-7bb229b75e15"
+  },
+  {
+    "id": "supabase-product-designer",
+    "title": "Product Designer",
+    "company": "Supabase",
+    "companyUrl": "https://supabase.com",
+    "url": "https://jobs.ashbyhq.com/supabase/97fe8e68-28c5-42db-a763-60113f0b31fd",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (Global)",
+    "postedAt": "2026-08-07",
+    "vertical": "Enterprise/SaaS",
+    "employmentType": "Full-time",
+    "tags": [
+      "developer tools",
+      "open source",
+      "design systems",
+      "B2B"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/supabase/97fe8e68-28c5-42db-a763-60113f0b31fd"
+  },
+  {
+    "id": "betterup-staff-product-designer-design-systems",
+    "title": "Staff Product Designer, Design Systems",
+    "company": "BetterUp",
+    "companyUrl": "https://www.betterup.com",
+    "url": "https://jobs.ashbyhq.com/betterup/faa62bc5-cee2-4514-aab2-e656cf40b88c",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "Austin, TX / New York, NY / San Francisco, CA / Arlington, VA",
+    "postedAt": "2026-08-07",
+    "vertical": "Enterprise/SaaS",
+    "employmentType": "Full-time",
+    "tags": [
+      "design systems",
+      "coaching platform",
+      "AI-augmented",
+      "mobile"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/betterup/faa62bc5-cee2-4514-aab2-e656cf40b88c"
+  },
+  {
+    "id": "npr-staff-product-designer-mobile",
+    "title": "Staff Product Designer, Mobile",
+    "company": "NPR",
+    "companyUrl": "https://www.npr.org",
+    "url": "https://job-boards.greenhouse.io/nationalpublicradioinc/jobs/4716901005",
+    "level": "Staff",
+    "locationType": "Remote",
+    "location": "Remote (Washington, DC)",
+    "postedAt": "2026-07-28",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "public media",
+      "mobile",
+      "accessibility",
+      "design leadership"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/nationalpublicradioinc/jobs/4716901005"
+  },
+  {
+    "id": "seesaw-product-designer",
+    "title": "Product Designer",
+    "company": "Seesaw",
+    "companyUrl": "https://web.seesaw.me",
+    "url": "https://job-boards.greenhouse.io/seesaw/jobs/4693673006",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-07-01",
+    "vertical": "Education",
+    "employmentType": "Full-time",
+    "tags": [
+      "edtech",
+      "K-12",
+      "family engagement",
+      "global markets",
+      "design systems"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/seesaw/jobs/4693673006"
+  }
+]
