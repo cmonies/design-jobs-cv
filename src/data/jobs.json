@@ -41,7 +41,8 @@
       "high-craft"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/town/ba604c97-c848-44a0-8845-7bb229b75e15",
-    "_verifiedAt": "2026-08-07"
+    "_verifiedAt": "2026-08-07",
+    "salary": "$225,000 - $300,000"
   },
   {
     "id": "supabase-product-designer",
@@ -71,7 +72,7 @@
     "companyUrl": "https://www.betterup.com",
     "url": "https://jobs.ashbyhq.com/betterup/faa62bc5-cee2-4514-aab2-e656cf40b88c",
     "level": "Staff",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "Austin, TX / New York, NY / San Francisco, CA / Arlington, VA",
     "postedAt": "2026-08-07",
     "vertical": "Enterprise/SaaS",
@@ -83,7 +84,8 @@
       "mobile"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/betterup/faa62bc5-cee2-4514-aab2-e656cf40b88c",
-    "_verifiedAt": "2026-08-07"
+    "_verifiedAt": "2026-08-07",
+    "salary": "$198,000 - $276,000"
   },
   {
     "id": "npr-staff-product-designer-mobile",
@@ -284,28 +286,6 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/kittl/45197457-adef-44f1-9818-bec0c4c72315",
     "_verifiedAt": "2026-08-03"
-  },
-  {
-    "id": "scale-ai-platform-designer",
-    "title": "Platform Designer",
-    "company": "Scale AI",
-    "companyUrl": "https://scale.com",
-    "url": "https://boards.greenhouse.io/scaleai/jobs/4718917005",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA / New York, NY",
-    "postedAt": "2026-07-29",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "enterprise AI",
-      "B2B",
-      "0-to-1",
-      "data visualization",
-      "document processing"
-    ],
-    "_sourceUrl": "https://boards.greenhouse.io/scaleai/jobs/4718917005",
-    "_verifiedAt": "2026-07-31"
   },
   {
     "id": "runpod-senior-product-designer",
@@ -1675,7 +1655,7 @@
   },
   {
     "id": "vitvio-product-designer-ai-native-contract",
-    "title": "Product Designer - AI-Native Design",
+    "title": "Lead Product Designer - AI-Native Design",
     "company": "VitVio",
     "companyUrl": "https://www.vitvio.com",
     "url": "https://jobs.ashbyhq.com/vitvio/c82b8a6c-1625-42dd-bf5f-463cb095212e",
@@ -2305,26 +2285,6 @@
     "employmentType": "Full-time"
   },
   {
-    "id": "hone-health-product-designer-products-integrations",
-    "title": "Product Designer, Products & Integrations",
-    "company": "Hone Health",
-    "companyUrl": "https://honehealth.com",
-    "url": "https://job-boards.greenhouse.io/honehealth/jobs/5012059008",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "Remote (US)",
-    "tags": [
-      "men's health",
-      "chronic care",
-      "telehealth"
-    ],
-    "postedAt": "2026-06-23",
-    "_sourceUrl": "https://job-boards.greenhouse.io/honehealth",
-    "_verifiedAt": "2026-06-23",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
     "id": "blink-health-staff-design-systems-engineer-ny",
     "title": "Senior Design Systems Engineer II",
     "company": "Blink Health",
@@ -2794,26 +2754,6 @@
     ],
     "_verifiedAt": "2026-02-16",
     "postedAt": "2026-04-03",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
-    "id": "hone-health-senior-product-designer-clinical",
-    "title": "Senior Product Designer, Clinical Experience",
-    "company": "Hone Health",
-    "companyUrl": "https://www.honehealth.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/honehealth/jobs/5043164008",
-    "postedDate": "2026-02-15",
-    "tags": [
-      "telehealth",
-      "B2C",
-      "consumer"
-    ],
-    "_verifiedAt": "2026-02-15",
-    "postedAt": "2026-02-10",
     "vertical": "Healthcare",
     "employmentType": "Full-time"
   },
