@@ -1,5 +1,158 @@
 [
   {
+    "id": "factory-product-designer",
+    "title": "Product Designer",
+    "company": "Factory",
+    "companyUrl": "https://www.factory.ai",
+    "url": "https://jobs.ashbyhq.com/factory/7a1dde6b-0d7c-45c8-a374-66e9f8aa0d1a",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-10",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "developer tools",
+      "autonomous agents",
+      "design systems",
+      "CLI UX",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/factory/7a1dde6b-0d7c-45c8-a374-66e9f8aa0d1a",
+    "_verifiedAt": "2026-08-10"
+  },
+  {
+    "id": "jito-foundation-product-designer",
+    "title": "Product Designer",
+    "company": "Jito Foundation",
+    "companyUrl": "https://jito.network",
+    "url": "https://jobs.lever.co/jito/97151aba-e3eb-483d-b56c-34711b873760",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Remote (Worldwide, EST)",
+    "postedAt": "2026-08-10",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "trading UX",
+      "DeFi",
+      "crypto",
+      "self-custodial",
+      "mobile"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/jito/97151aba-e3eb-483d-b56c-34711b873760",
+    "_verifiedAt": "2026-08-10"
+  },
+  {
+    "id": "stealth-startup-staff-product-designer",
+    "title": "Staff Product Designer",
+    "company": "Stealth Startup",
+    "companyUrl": "https://jobs.ashbyhq.com/stealth-startup",
+    "url": "https://jobs.ashbyhq.com/stealth-startup/c4f79136-dc15-4480-97e7-906224718428",
+    "level": "Staff",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-08-10",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "B2B SaaS",
+      "0-to-1",
+      "design systems",
+      "AI-native"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/stealth-startup/c4f79136-dc15-4480-97e7-906224718428",
+    "_verifiedAt": "2026-08-10"
+  },
+  {
+    "id": "dryft-founding-design-engineer",
+    "title": "Founding Design Engineer",
+    "company": "Dryft",
+    "companyUrl": "https://www.dryft.ai",
+    "url": "https://jobs.ashbyhq.com/dryft/572fe2dc-1f15-476e-9e1b-df60ddd3205d",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-10",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "manufacturing",
+      "industrial AI",
+      "agentic UX",
+      "data-dense interfaces",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/dryft/572fe2dc-1f15-476e-9e1b-df60ddd3205d",
+    "_verifiedAt": "2026-08-10"
+  },
+  {
+    "id": "probook-founding-design-engineer",
+    "title": "Founding Design Engineer",
+    "company": "Probook",
+    "companyUrl": "https://www.probook.ai",
+    "url": "https://jobs.ashbyhq.com/probook/a03afa74-a8ad-4f2c-ae3b-87cef88b4c34",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "Manhattan, NY",
+    "postedAt": "2026-08-10",
+    "vertical": "Trades",
+    "employmentType": "Full-time",
+    "tags": [
+      "home services",
+      "dispatch",
+      "B2B SaaS",
+      "0-to-1",
+      "AI-native"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/probook/a03afa74-a8ad-4f2c-ae3b-87cef88b4c34",
+    "_verifiedAt": "2026-08-10"
+  },
+  {
+    "id": "lunon-founding-design-engineer",
+    "title": "Founding Design Engineer",
+    "company": "Lunon",
+    "companyUrl": "https://www.lunon.ai",
+    "url": "https://jobs.ashbyhq.com/Lunon/8512e524-8577-4507-aee8-df75ab8f6bb4",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-08-10",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "consulting",
+      "data visualization",
+      "private equity",
+      "0-to-1",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/Lunon/8512e524-8577-4507-aee8-df75ab8f6bb4",
+    "_verifiedAt": "2026-08-10"
+  },
+  {
+    "id": "garage-founding-design-engineer",
+    "title": "Founding Design Engineer",
+    "company": "Garage",
+    "companyUrl": "https://www.withgarage.com",
+    "url": "https://jobs.ashbyhq.com/garage/c8aced60-6abf-46a2-8a00-59c2996305d0",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "New York City, NY",
+    "postedAt": "2026-08-10",
+    "vertical": "Gov/Civic",
+    "employmentType": "Full-time",
+    "tags": [
+      "B2B marketplace",
+      "essential services",
+      "0-to-1",
+      "mobile",
+      "agentic platform"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/garage/c8aced60-6abf-46a2-8a00-59c2996305d0",
+    "_verifiedAt": "2026-08-10"
+  },
+  {
     "id": "clariti-product-designer-contract",
     "title": "Product Designer (Contract)",
     "company": "Clariti",
