@@ -5,80 +5,70 @@
   "failed": 0,
   "results": [
     {
-      "id": "factory-product-designer",
-      "company": "Factory",
+      "id": "conductor-founding-product-designer",
+      "company": "Conductor",
+      "title": "Founding Product Designer",
+      "url": "https://jobs.ashbyhq.com/Conductor/cde83c73-5eab-46e8-acc9-fc339aa89e17",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-12T16:15:33.851Z"
+    },
+    {
+      "id": "conduct-product-designer",
+      "company": "Conduct",
       "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/factory/7a1dde6b-0d7c-45c8-a374-66e9f8aa0d1a",
+      "url": "https://jobs.ashbyhq.com/conduct/4b9179a9-b0f6-46bb-bff1-82d6391d0ecb",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-10T16:15:41.002Z"
+      "checkedAt": "2026-08-12T16:15:33.851Z"
     },
     {
-      "id": "jito-foundation-product-designer",
-      "company": "Jito Foundation",
-      "title": "Product Designer",
-      "url": "https://jobs.lever.co/jito/97151aba-e3eb-483d-b56c-34711b873760",
+      "id": "mirage-product-designer-early-career",
+      "company": "Mirage",
+      "title": "Product Designer, Early Career",
+      "url": "https://jobs.ashbyhq.com/mirage/177a1d5a-8d0e-409c-bb7f-556fdf2324b3",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-10T16:15:41.002Z"
+      "checkedAt": "2026-08-12T16:15:33.851Z"
     },
     {
-      "id": "stealth-startup-staff-product-designer",
-      "company": "Stealth Startup",
-      "title": "Staff Product Designer",
-      "url": "https://jobs.ashbyhq.com/stealth-startup/c4f79136-dc15-4480-97e7-906224718428",
+      "id": "tandem-health-senior-product-designer",
+      "company": "Tandem Health",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/tandem-health/5fcf6818-d5fa-4d2d-80b7-cc374482b3e3",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-10T16:15:41.002Z"
+      "checkedAt": "2026-08-12T16:15:33.851Z"
     },
     {
-      "id": "dryft-founding-design-engineer",
-      "company": "Dryft",
+      "id": "amber-electric-mid-ux-ui-designer",
+      "company": "Amber Electric",
+      "title": "Mid-Level UX/UI Designer (Product & Brand)",
+      "url": "https://jobs.lever.co/amberelectric/9b915150-c318-406d-8188-71a5438ca0f2",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-12T16:15:33.851Z"
+    },
+    {
+      "id": "moritz-founding-design-engineer",
+      "company": "Moritz",
       "title": "Founding Design Engineer",
-      "url": "https://jobs.ashbyhq.com/dryft/572fe2dc-1f15-476e-9e1b-df60ddd3205d",
+      "url": "https://www.ycombinator.com/companies/moritz/jobs/kuwGk5Q-founding-design-engineer",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-10T16:15:41.002Z"
-    },
-    {
-      "id": "probook-founding-design-engineer",
-      "company": "Probook",
-      "title": "Founding Design Engineer",
-      "url": "https://jobs.ashbyhq.com/probook/a03afa74-a8ad-4f2c-ae3b-87cef88b4c34",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-10T16:15:41.002Z"
-    },
-    {
-      "id": "lunon-founding-design-engineer",
-      "company": "Lunon",
-      "title": "Founding Design Engineer",
-      "url": "https://jobs.ashbyhq.com/Lunon/8512e524-8577-4507-aee8-df75ab8f6bb4",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-10T16:15:41.002Z"
-    },
-    {
-      "id": "garage-founding-design-engineer",
-      "company": "Garage",
-      "title": "Founding Design Engineer",
-      "url": "https://jobs.ashbyhq.com/garage/c8aced60-6abf-46a2-8a00-59c2996305d0",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-10T16:15:41.002Z"
+      "checkedAt": "2026-08-12T16:15:33.851Z"
     }
   ],
-  "lastRun": "2026-08-10T16:15:41.002Z",
+  "lastRun": "2026-08-12T16:15:33.851Z",
   "summary": {
-    "passed": 7,
+    "passed": 6,
     "failed": 0,
-    "total": 7
+    "total": 6
   }
 }
