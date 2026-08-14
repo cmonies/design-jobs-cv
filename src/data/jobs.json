@@ -28,7 +28,7 @@
     "companyUrl": "https://www.obviant.com",
     "url": "https://jobs.ashbyhq.com/obviant/cbefe7f0-56b5-4b9f-9786-4b5112d03aae",
     "level": "Mid",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "Arlington, VA (Hybrid)",
     "postedAt": "2026-08-14",
     "vertical": "Gov/Civic",
@@ -41,11 +41,12 @@
       "B2G"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/obviant/cbefe7f0-56b5-4b9f-9786-4b5112d03aae",
-    "_verifiedAt": "2026-08-14"
+    "_verifiedAt": "2026-08-14",
+    "salary": "$160,000 - $225,000"
   },
   {
     "id": "zoe-lead-product-designer-app",
-    "title": "Lead Product Designer, App Experience",
+    "title": "Lead Product Designer - App Experience",
     "company": "ZOE",
     "companyUrl": "https://zoe.com",
     "url": "https://jobs.ashbyhq.com/zoe/d47248a9-4420-4307-bf77-9c7cbd5032e1",
@@ -128,7 +129,8 @@
       "engineering analytics"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/workweave/972e68e8-e60c-4f63-a23a-a50cb9e9e4fc",
-    "_verifiedAt": "2026-08-14"
+    "_verifiedAt": "2026-08-14",
+    "salary": "$140,000 - $200,000"
   },
   {
     "id": "conductor-founding-product-designer",
@@ -194,7 +196,8 @@
       "mobile"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/mirage",
-    "_verifiedAt": "2026-08-12"
+    "_verifiedAt": "2026-08-12",
+    "salary": "$100,000 - $150,000"
   },
   {
     "id": "tandem-health-senior-product-designer",
@@ -236,7 +239,8 @@
       "mobile"
     ],
     "_sourceUrl": "https://jobs.lever.co/amberelectric",
-    "_verifiedAt": "2026-08-12"
+    "_verifiedAt": "2026-08-12",
+    "salary": "$120,000 - $140,000"
   },
   {
     "id": "moritz-founding-design-engineer",
@@ -257,7 +261,8 @@
       "agentic AI"
     ],
     "_sourceUrl": "https://www.workatastartup.com/jobs?role=designer",
-    "_verifiedAt": "2026-08-12"
+    "_verifiedAt": "2026-08-12",
+    "salary": "$120,000 - $180,000"
   },
   {
     "id": "factory-product-designer",
@@ -388,7 +393,8 @@
       "design systems"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/Lunon/8512e524-8577-4507-aee8-df75ab8f6bb4",
-    "_verifiedAt": "2026-08-10"
+    "_verifiedAt": "2026-08-10",
+    "salary": "$160,000 - $200,000"
   },
   {
     "id": "garage-founding-design-engineer",
@@ -410,7 +416,8 @@
       "agentic platform"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/garage/c8aced60-6abf-46a2-8a00-59c2996305d0",
-    "_verifiedAt": "2026-08-10"
+    "_verifiedAt": "2026-08-10",
+    "salary": "$150,000 - $250,000"
   },
   {
     "id": "clariti-product-designer-contract",
@@ -1301,7 +1308,7 @@
   },
   {
     "id": "aios-product-designer",
-    "title": "Product DesignerProduct Designer at Aios Medical - Remote, 90k-150k/yr inc equity",
+    "title": "Product Designer at AIOS Medical - Remote, 90k-150k/yr inc equity",
     "company": "AIOS",
     "companyUrl": "https://www.aiosmedical.com",
     "url": "https://jobs.ashbyhq.com/Aios/781c4075-21bc-4c06-ba74-9c8f2a7a3cfc",
@@ -1580,7 +1587,7 @@
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/suno",
     "_verifiedAt": "2026-07-13",
-    "salary": "$200,000 - $250,000"
+    "salary": "$215,000 - $324,000"
   },
   {
     "id": "suno-senior-staff-design-engineer-ios",
@@ -2271,46 +2278,6 @@
     "salary": "$150,000 - $170,000"
   },
   {
-    "id": "assembled-product-designer-ai-agents",
-    "title": "Product Designer, AI Agents",
-    "company": "Assembled",
-    "companyUrl": "https://www.assembled.com",
-    "url": "https://jobs.ashbyhq.com/assembledhq/1e6165e1-4274-4ed6-9410-5ebb05639486",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "San Francisco, CA",
-    "postedAt": "2026-06-26",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "AI agents",
-      "customer support",
-      "B2B"
-    ],
-    "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/assembledhq",
-    "_verifiedAt": "2026-07-09",
-    "salary": "$130,000 - $180,000"
-  },
-  {
-    "id": "read-ai-product-designer-growth",
-    "title": "Product Designer - Growth",
-    "company": "Read AI",
-    "companyUrl": "https://www.read.ai",
-    "url": "https://jobs.ashbyhq.com/read-ai/28f8d16a-949b-4523-b8e3-3ef57386ef2b",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "Seattle, WA (Remote OK)",
-    "postedAt": "2026-06-16",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "growth",
-      "consumer"
-    ],
-    "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/read-ai",
-    "_verifiedAt": "2026-07-09"
-  },
-  {
     "id": "finix-senior-product-designer-contract",
     "title": "Senior Product Designer",
     "company": "Finix",
@@ -2726,7 +2693,7 @@
     "location": "San Francisco, CA / New York, NY",
     "url": "https://jobs.ashbyhq.com/abridge/d48553c1-a360-4509-a1e0-9df6d8b480f6",
     "postedAt": "2026-05-04",
-    "salary": "$216,750 - $255,000",
+    "salary": "$240,000 - $299,000",
     "tags": [
       "AI",
       "ambient scribe",
@@ -2748,7 +2715,7 @@
     "location": "San Francisco, CA / New York, NY",
     "url": "https://jobs.ashbyhq.com/abridge/6aab826b-a60a-434e-889d-e4648f289305",
     "postedAt": "2026-05-04",
-    "salary": "$181,900 - $214,000",
+    "salary": "$218,000 - $246,000",
     "tags": [
       "AI",
       "ambient scribe",
@@ -2994,7 +2961,7 @@
   },
   {
     "id": "flo-health-senior-product-designer-user-centric",
-    "title": "Senior Product Designer (Virtual Clinics)",
+    "title": "Senior/Staff Product Designer (Virtual Clinics)",
     "company": "Flo Health",
     "companyUrl": "https://flo.health",
     "level": "Senior",
