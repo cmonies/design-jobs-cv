@@ -1,5 +1,136 @@
 [
   {
+    "id": "futurefit-ai-lead-product-designer",
+    "title": "Lead Product Designer — Platform & Experience",
+    "company": "FutureFit AI",
+    "companyUrl": "https://www.futurefitai.com",
+    "url": "https://jobs.ashbyhq.com/futurefitai/a60ba7fe-27e8-4a42-b661-954d3ef67202",
+    "level": "Lead",
+    "locationType": "Remote",
+    "location": "Remote (US/Canada)",
+    "postedAt": "2026-08-14",
+    "vertical": "Gov/Civic",
+    "employmentType": "Full-time",
+    "tags": [
+      "design systems",
+      "accessibility",
+      "workforce development",
+      "B2G",
+      "multi-persona"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/futurefitai/a60ba7fe-27e8-4a42-b661-954d3ef67202",
+    "_verifiedAt": "2026-08-14"
+  },
+  {
+    "id": "obviant-product-designer",
+    "title": "Product Designer (UI/UX)",
+    "company": "Obviant",
+    "companyUrl": "https://www.obviant.com",
+    "url": "https://jobs.ashbyhq.com/obviant/cbefe7f0-56b5-4b9f-9786-4b5112d03aae",
+    "level": "Mid",
+    "locationType": "Hybrid",
+    "location": "Arlington, VA (Hybrid)",
+    "postedAt": "2026-08-14",
+    "vertical": "Gov/Civic",
+    "employmentType": "Full-time",
+    "tags": [
+      "0-to-1",
+      "defense",
+      "data visualization",
+      "first design hire",
+      "B2G"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/obviant/cbefe7f0-56b5-4b9f-9786-4b5112d03aae",
+    "_verifiedAt": "2026-08-14"
+  },
+  {
+    "id": "zoe-lead-product-designer-app",
+    "title": "Lead Product Designer, App Experience",
+    "company": "ZOE",
+    "companyUrl": "https://zoe.com",
+    "url": "https://jobs.ashbyhq.com/zoe/d47248a9-4420-4307-bf77-9c7cbd5032e1",
+    "level": "Lead",
+    "locationType": "Remote",
+    "location": "Remote (UK/EU)",
+    "postedAt": "2026-08-14",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "mobile design",
+      "consumer health",
+      "nutrition",
+      "native app",
+      "behavior change"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/zoe/d47248a9-4420-4307-bf77-9c7cbd5032e1",
+    "_verifiedAt": "2026-08-14"
+  },
+  {
+    "id": "kalshi-product-designer",
+    "title": "Product Designer",
+    "company": "Kalshi",
+    "companyUrl": "https://kalshi.com",
+    "url": "https://jobs.ashbyhq.com/kalshi/25718664-54b7-454b-9a2c-bde0b1deb76c",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "New York, NY",
+    "postedAt": "2026-08-14",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "consumer fintech",
+      "prediction markets",
+      "trading",
+      "consumer"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/kalshi/25718664-54b7-454b-9a2c-bde0b1deb76c",
+    "_verifiedAt": "2026-08-14"
+  },
+  {
+    "id": "sable-founding-designer",
+    "title": "Founding Designer",
+    "company": "Sable",
+    "companyUrl": "https://sable.ai",
+    "url": "https://jobs.ashbyhq.com/sable/89c85cb1-2fc1-422e-9130-66af57fd8274",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-14",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "0-to-1",
+      "AI agents",
+      "voice AI",
+      "first design hire",
+      "brand"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/sable/89c85cb1-2fc1-422e-9130-66af57fd8274",
+    "_verifiedAt": "2026-08-14"
+  },
+  {
+    "id": "weave-founding-design-engineer",
+    "title": "Founding Design Engineer",
+    "company": "Weave",
+    "companyUrl": "https://weaveos.com",
+    "url": "https://jobs.ashbyhq.com/workweave/972e68e8-e60c-4f63-a23a-a50cb9e9e4fc",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-14",
+    "vertical": "Enterprise/SaaS",
+    "employmentType": "Full-time",
+    "tags": [
+      "data visualization",
+      "design systems",
+      "developer tools",
+      "0-to-1",
+      "engineering analytics"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/workweave/972e68e8-e60c-4f63-a23a-a50cb9e9e4fc",
+    "_verifiedAt": "2026-08-14"
+  },
+  {
     "id": "conductor-founding-product-designer",
     "title": "Founding Product Designer",
     "company": "Conductor",
@@ -304,29 +435,6 @@
     "_verifiedAt": "2026-08-07"
   },
   {
-    "id": "town-product-designer",
-    "title": "Product Designer",
-    "company": "Town",
-    "companyUrl": "https://www.town.com",
-    "url": "https://jobs.ashbyhq.com/town/ba604c97-c848-44a0-8845-7bb229b75e15",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "San Francisco, CA / New York, NY",
-    "postedAt": "2026-08-07",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "AI-native",
-      "0-to-1",
-      "design engineering",
-      "consumer",
-      "high-craft"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/town/ba604c97-c848-44a0-8845-7bb229b75e15",
-    "_verifiedAt": "2026-08-07",
-    "salary": "$225,000 - $300,000"
-  },
-  {
     "id": "supabase-product-designer",
     "title": "Product Designer",
     "company": "Supabase",
@@ -548,28 +656,6 @@
     "salary": "$200,000 - $225,000"
   },
   {
-    "id": "kittl-senior-product-designer",
-    "title": "Senior Product Designer (Europe, remote)",
-    "company": "Kittl",
-    "companyUrl": "https://www.kittl.com",
-    "url": "https://jobs.ashbyhq.com/kittl/45197457-adef-44f1-9818-bec0c4c72315",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "Europe (Remote)",
-    "postedAt": "2026-08-03",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "design tools",
-      "generative AI",
-      "consumer",
-      "0-to-1",
-      "design systems"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/kittl/45197457-adef-44f1-9818-bec0c4c72315",
-    "_verifiedAt": "2026-08-03"
-  },
-  {
     "id": "runpod-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Runpod",
@@ -739,28 +825,6 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/rogo/0fde5cb5-3c42-4395-b9f6-8912080d533a",
     "_verifiedAt": "2026-07-27",
     "salary": "$165,000 - $315,000"
-  },
-  {
-    "id": "flint-product-designer",
-    "title": "Product Designer",
-    "company": "Flint",
-    "companyUrl": "https://flintk12.com",
-    "url": "https://www.ycombinator.com/companies/flint-2/jobs/oxG6Cbm-product-designer",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "Remote (US)",
-    "postedAt": "2026-07-27",
-    "vertical": "Education",
-    "employmentType": "Full-time",
-    "tags": [
-      "edtech",
-      "AI-native",
-      "K-12",
-      "0-to-1"
-    ],
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verifiedAt": "2026-07-27",
-    "salary": "$160,000 - $190,000"
   },
   {
     "id": "aside-founding-designer",
@@ -1170,27 +1234,6 @@
     "_verifiedAt": "2026-07-20"
   },
   {
-    "id": "valence-principal-product-designer",
-    "title": "Principal Product Designer",
-    "company": "Valence",
-    "companyUrl": "https://www.valence.co",
-    "url": "https://jobs.ashbyhq.com/jobs-valence/bf637910-24ac-4314-ac04-f6950c2f7e07",
-    "level": "Principal",
-    "locationType": "Remote",
-    "location": "New York, NY",
-    "postedAt": "2026-07-20",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "AI coaching",
-      "enterprise",
-      "conversational AI",
-      "design systems"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/jobs-valence/bf637910-24ac-4314-ac04-f6950c2f7e07",
-    "_verifiedAt": "2026-07-20"
-  },
-  {
     "id": "deel-lead-product-designer-fintech",
     "title": "Lead Product Designer (Fintech)",
     "company": "Deel",
@@ -1276,29 +1319,6 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-07-18"
-  },
-  {
-    "id": "givebutter-director-product-design",
-    "title": "Director, Product Design",
-    "company": "Givebutter",
-    "companyUrl": "https://www.givebutter.com",
-    "url": "https://jobs.ashbyhq.com/givebutter/ea7b5e5d-972e-4f8a-a9d9-71542d60177e",
-    "level": "Director",
-    "locationType": "Remote",
-    "location": "Remote (US)",
-    "postedAt": "2026-07-18",
-    "vertical": "Gov/Civic",
-    "employmentType": "Full-time",
-    "tags": [
-      "nonprofit",
-      "design leadership",
-      "AI-native",
-      "CRM",
-      "fundraising"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/givebutter/ea7b5e5d-972e-4f8a-a9d9-71542d60177e",
-    "_verifiedAt": "2026-07-18",
-    "salary": "$200,000 - $225,000"
   },
   {
     "id": "sekai-founding-product-designer",
@@ -1474,29 +1494,6 @@
       "contract-to-hire"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/sleeper/71eca74a-98e7-449c-936e-8aadbf723673",
-    "_verifiedAt": "2026-07-14"
-  },
-  {
-    "id": "branchlab-sr-product-designer",
-    "title": "Sr. Product Designer",
-    "company": "BranchLab",
-    "companyUrl": "https://branchlab.com",
-    "url": "https://jobs.ashbyhq.com/BranchLab/bf367c84-6420-439a-b3b9-aaaa9804ff09",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "Boulder, CO",
-    "postedAt": "2026-07-14",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time",
-    "salary": "$150,000 - $170,000",
-    "tags": [
-      "healthcare AI",
-      "pharma",
-      "B2B",
-      "data visualization",
-      "design systems"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/BranchLab/bf367c84-6420-439a-b3b9-aaaa9804ff09",
     "_verifiedAt": "2026-07-14"
   },
   {
@@ -1751,28 +1748,6 @@
     "_verifiedAt": "2026-07-13"
   },
   {
-    "id": "bubble-senior-product-designer-core",
-    "title": "Senior Product Designer, Core",
-    "company": "Bubble",
-    "companyUrl": "https://bubble.io",
-    "url": "https://jobs.ashbyhq.com/bubble/a268689d-8a0a-447e-b41a-593f5eb845cd",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "Remote / New York, NY",
-    "postedAt": "2026-04-08",
-    "vertical": "Enterprise/SaaS",
-    "employmentType": "Full-time",
-    "tags": [
-      "no-code",
-      "AI",
-      "developer tools",
-      "B2B SaaS"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/bubble",
-    "_verifiedAt": "2026-07-13",
-    "salary": "$162,000 - $209,000"
-  },
-  {
     "id": "n8n-senior-staff-product-designer",
     "title": "Senior/Staff Product Designer",
     "company": "n8n",
@@ -1998,26 +1973,6 @@
     "_verifiedAt": "2026-07-09"
   },
   {
-    "id": "mural-lead-product-designer-growth-upper-funnel",
-    "title": "Lead Product Designer, Growth (Upper Funnel)",
-    "company": "Mural",
-    "companyUrl": "https://www.mural.co",
-    "url": "https://jobs.ashbyhq.com/mural/450cd3e0-f8db-4ea0-a946-9323d8890bbf",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "Canada (Remote)",
-    "postedAt": "2026-06-29",
-    "vertical": "Enterprise/SaaS",
-    "employmentType": "Full-time",
-    "tags": [
-      "growth design",
-      "design leadership"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/mural",
-    "_verificationNote": "Confirmed live via Ashby posting-api (job-board/mural): Canada Remote, FullTime, published 2026-06-29 (within 30-day window).",
-    "_verifiedAt": "2026-07-09"
-  },
-  {
     "id": "ambrook-product-designer-builder",
     "title": "Product Designer & Builder",
     "company": "Ambrook",
@@ -2231,27 +2186,6 @@
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $125-175K.",
     "_verifiedAt": "2026-07-09",
     "salary": "$125,000 - $175,000"
-  },
-  {
-    "id": "cyble-product-designer",
-    "title": "Product Designer",
-    "company": "Cyble",
-    "companyUrl": "https://www.ycombinator.com/companies/cyble",
-    "url": "https://www.ycombinator.com/companies/cyble/jobs/HCYiy6y-product-designer",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "Bengaluru, KA, IN",
-    "postedAt": "2026-07-03",
-    "vertical": "Enterprise/SaaS",
-    "employmentType": "Full-time",
-    "tags": [
-      "security",
-      "dashboards"
-    ],
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verificationNote": "WebFetch confirmed live: title, company, Apply button.",
-    "_verifiedAt": "2026-07-09",
-    "salary": "$20,000 - $30,000"
   },
   {
     "id": "boldvoice-senior-product-designer-nyc",

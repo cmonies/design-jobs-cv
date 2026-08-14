@@ -5,67 +5,67 @@
   "failed": 0,
   "results": [
     {
-      "id": "conductor-founding-product-designer",
-      "company": "Conductor",
-      "title": "Founding Product Designer",
-      "url": "https://jobs.ashbyhq.com/Conductor/cde83c73-5eab-46e8-acc9-fc339aa89e17",
+      "id": "futurefit-ai-lead-product-designer",
+      "company": "FutureFit AI",
+      "title": "Lead Product Designer — Platform & Experience",
+      "url": "https://jobs.ashbyhq.com/futurefitai/a60ba7fe-27e8-4a42-b661-954d3ef67202",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-12T16:15:33.851Z"
+      "checkedAt": "2026-08-14T16:15:40.098Z"
     },
     {
-      "id": "conduct-product-designer",
-      "company": "Conduct",
+      "id": "obviant-product-designer",
+      "company": "Obviant",
+      "title": "Product Designer (UI/UX)",
+      "url": "https://jobs.ashbyhq.com/obviant/cbefe7f0-56b5-4b9f-9786-4b5112d03aae",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-14T16:15:40.098Z"
+    },
+    {
+      "id": "zoe-lead-product-designer-app",
+      "company": "ZOE",
+      "title": "Lead Product Designer, App Experience",
+      "url": "https://jobs.ashbyhq.com/zoe/d47248a9-4420-4307-bf77-9c7cbd5032e1",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-14T16:15:40.098Z"
+    },
+    {
+      "id": "kalshi-product-designer",
+      "company": "Kalshi",
       "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/conduct/4b9179a9-b0f6-46bb-bff1-82d6391d0ecb",
+      "url": "https://jobs.ashbyhq.com/kalshi/25718664-54b7-454b-9a2c-bde0b1deb76c",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-12T16:15:33.851Z"
+      "checkedAt": "2026-08-14T16:15:40.098Z"
     },
     {
-      "id": "mirage-product-designer-early-career",
-      "company": "Mirage",
-      "title": "Product Designer, Early Career",
-      "url": "https://jobs.ashbyhq.com/mirage/177a1d5a-8d0e-409c-bb7f-556fdf2324b3",
+      "id": "sable-founding-designer",
+      "company": "Sable",
+      "title": "Founding Designer",
+      "url": "https://jobs.ashbyhq.com/sable/89c85cb1-2fc1-422e-9130-66af57fd8274",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-12T16:15:33.851Z"
+      "checkedAt": "2026-08-14T16:15:40.098Z"
     },
     {
-      "id": "tandem-health-senior-product-designer",
-      "company": "Tandem Health",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/tandem-health/5fcf6818-d5fa-4d2d-80b7-cc374482b3e3",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-12T16:15:33.851Z"
-    },
-    {
-      "id": "amber-electric-mid-ux-ui-designer",
-      "company": "Amber Electric",
-      "title": "Mid-Level UX/UI Designer (Product & Brand)",
-      "url": "https://jobs.lever.co/amberelectric/9b915150-c318-406d-8188-71a5438ca0f2",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-12T16:15:33.851Z"
-    },
-    {
-      "id": "moritz-founding-design-engineer",
-      "company": "Moritz",
+      "id": "weave-founding-design-engineer",
+      "company": "Weave",
       "title": "Founding Design Engineer",
-      "url": "https://www.ycombinator.com/companies/moritz/jobs/kuwGk5Q-founding-design-engineer",
+      "url": "https://jobs.ashbyhq.com/workweave/972e68e8-e60c-4f63-a23a-a50cb9e9e4fc",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-12T16:15:33.851Z"
+      "checkedAt": "2026-08-14T16:15:40.098Z"
     }
   ],
-  "lastRun": "2026-08-12T16:15:33.851Z",
+  "lastRun": "2026-08-14T16:15:40.098Z",
   "summary": {
     "passed": 6,
     "failed": 0,
