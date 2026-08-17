@@ -84,5 +84,64 @@
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/durable/jobs/5156296008",
     "_needsEnrichment": true
+  },
+  {
+    "id": "flex-staff-product-designer-contract",
+    "title": "Staff Product Designer (Contract)",
+    "company": "Flex",
+    "companyUrl": "https://getflex.com",
+    "url": "https://job-boards.greenhouse.io/flex/jobs/4722531005",
+    "level": "Staff",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-08-17",
+    "vertical": "Fintech",
+    "employmentType": "Contract",
+    "tags": [
+      "rent payments",
+      "consumer fintech",
+      "design systems"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/flex/jobs/4722531005"
+  },
+  {
+    "id": "airwallex-staff-product-designer-agentic-finance",
+    "title": "Staff Product Designer, T0 (Agentic) Finance",
+    "company": "Airwallex",
+    "companyUrl": "https://www.airwallex.com",
+    "url": "https://jobs.ashbyhq.com/airwallex/552c4ab2-f483-4ecf-a631-f28880db7df5",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-17",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "agentic AI",
+      "payments",
+      "global fintech",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/airwallex/552c4ab2-f483-4ecf-a631-f28880db7df5"
+  },
+  {
+    "id": "sim-design-engineer",
+    "title": "Design Engineer",
+    "company": "Sim",
+    "companyUrl": "https://sim.ai",
+    "url": "https://jobs.ashbyhq.com/sim/2aae9d88-23ae-4381-9591-8fe58574f86c",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-17",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI agents",
+      "canvas editor",
+      "open-source",
+      "developer tools"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/sim/2aae9d88-23ae-4381-9591-8fe58574f86c"
   }
 ]
