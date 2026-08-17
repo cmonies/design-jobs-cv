@@ -1,1 +1,88 @@
-[]
+[
+  {
+    "id": "tremendous-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Tremendous",
+    "companyUrl": "https://www.tremendous.com",
+    "url": "https://jobs.ashbyhq.com/tremendous/61534849-aa96-450b-b3a6-0ea9d14d8753",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US / Americas)",
+    "postedAt": "2026-08-12",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "payouts",
+      "design systems",
+      "B2B",
+      "content design",
+      "accessibility"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/tremendous/61534849-aa96-450b-b3a6-0ea9d14d8753",
+    "_needsEnrichment": true
+  },
+  {
+    "id": "mastra-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Mastra",
+    "companyUrl": "https://mastra.ai",
+    "url": "https://jobs.ashbyhq.com/mastra/2b50b79c-588b-4983-bed5-7748a46e5ca2",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US / Europe)",
+    "postedAt": "2026-08-17",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI agents",
+      "developer tools",
+      "open source",
+      "design systems",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/mastra/2b50b79c-588b-4983-bed5-7748a46e5ca2",
+    "_needsEnrichment": true
+  },
+  {
+    "id": "resend-product-designer",
+    "title": "Product Designer",
+    "company": "Resend",
+    "companyUrl": "https://resend.com",
+    "url": "https://jobs.ashbyhq.com/resend/b4d679e8-f41b-4c59-b091-dc5581345fcb",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Remote (Americas / Europe)",
+    "postedAt": "2026-08-17",
+    "vertical": "Enterprise/SaaS",
+    "employmentType": "Full-time",
+    "tags": [
+      "developer tools",
+      "email API",
+      "design craft",
+      "prototyping"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/resend/b4d679e8-f41b-4c59-b091-dc5581345fcb",
+    "_needsEnrichment": true
+  },
+  {
+    "id": "durable-senior-product-designer-ai",
+    "title": "Senior Product Designer, AI",
+    "company": "Durable",
+    "companyUrl": "https://durable.co",
+    "url": "https://job-boards.greenhouse.io/durable/jobs/5156296008",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "Vancouver, BC (Hybrid)",
+    "postedAt": "2026-08-17",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI-native UX",
+      "agentic workflows",
+      "website builder",
+      "B2C"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/durable/jobs/5156296008",
+    "_needsEnrichment": true
+  }
+]
