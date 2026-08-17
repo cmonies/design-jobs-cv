@@ -1,5 +1,28 @@
 [
   {
+    "id": "watershed-product-designer",
+    "title": "Product Designer",
+    "company": "Watershed",
+    "companyUrl": "https://watershed.com",
+    "url": "https://jobs.ashbyhq.com/watershed/bb7b1da5-1e38-48e8-a4d0-e3c8e32a8970",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-17",
+    "vertical": "Climate",
+    "employmentType": "Full-time",
+    "salary": "$183,750 - $241,500",
+    "tags": [
+      "AI products",
+      "enterprise",
+      "climate tech",
+      "carbon accounting",
+      "B2B"
+    ],
+    "_sourceUrl": "https://watershed.com/en-GB/careers/e32a8970-product-designer",
+    "_verifiedAt": "2026-08-17"
+  },
+  {
     "id": "futurefit-ai-lead-product-designer",
     "title": "Lead Product Designer — Platform & Experience",
     "company": "FutureFit AI",
@@ -2580,31 +2603,6 @@
     "_sourceUrl": "https://job-boards.greenhouse.io/omadahealth/jobs/7800336",
     "_verifiedAt": "2026-06-16",
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io, 200, full job details). Posted June 8, 2026, updated June 10, 2026. Omada Health care innovation team. Senior PD develops human-centered solutions for chronic disease management: 0-to-1 product design, rapid prototyping, mobile experience (iOS/Android). 6+ years required, healthcare domain expertise preferred, strong AI tool proficiency expected. Salary: $156,400-$195,500 (CA/NY/WA), $149,600-$187,000 (CO) plus equity + bonus. Remote USA. DISTINCT from Staff PD role (7821718) — different level, different scope. Not in existing jobs.json.",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time"
-  },
-  {
-    "id": "garner-health-product-designer-ii",
-    "title": "Product Designer II",
-    "company": "Garner Health",
-    "companyUrl": "https://www.garnerhealth.com",
-    "url": "https://job-boards.greenhouse.io/garnerhealth/jobs/6006458004",
-    "level": "Mid",
-    "locationType": "Hybrid",
-    "location": "New York, NY (3 days/week Tue-Thu on-site)",
-    "postedAt": "2026-05-26",
-    "salary": "$143,000 - $160,000",
-    "tags": [
-      "employer health",
-      "value-based care",
-      "health benefits",
-      "claims",
-      "payments",
-      "B2B"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/garnerhealth/jobs/6006458004",
-    "_verifiedAt": "2026-06-16",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io, 200, full job details). Posted May 26, 2026. Garner Health — reimagines healthcare benefits using data-driven insights to guide employees to higher-quality, lower-cost care. Product Designer II on Financial Incentives team: designs user-facing features and internal tools for claims, payments, and eligibility workflows. End-to-end ownership, user research, design system contributions. 2-3+ years required. $143K-$160K. NYC hybrid Tue-Thu. DISTINCT from existing garner-health-staff-product-designer-visual-systems (job 5985995004, Staff level) — this is a mid-level role on a different team.",
     "vertical": "Healthcare",
     "employmentType": "Full-time"
   },
