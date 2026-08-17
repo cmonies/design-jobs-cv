@@ -5,20 +5,80 @@
   "failed": 0,
   "results": [
     {
-      "id": "watershed-product-designer",
-      "company": "Watershed",
-      "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/watershed/bb7b1da5-1e38-48e8-a4d0-e3c8e32a8970",
+      "id": "tremendous-senior-product-designer",
+      "company": "Tremendous",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/tremendous/61534849-aa96-450b-b3a6-0ea9d14d8753",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-17T19:07:43.048Z"
+      "checkedAt": "2026-08-17T19:31:15.959Z"
+    },
+    {
+      "id": "mastra-founding-product-designer",
+      "company": "Mastra",
+      "title": "Founding Product Designer",
+      "url": "https://jobs.ashbyhq.com/mastra/2b50b79c-588b-4983-bed5-7748a46e5ca2",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-17T19:31:15.959Z"
+    },
+    {
+      "id": "resend-product-designer",
+      "company": "Resend",
+      "title": "Product Designer",
+      "url": "https://jobs.ashbyhq.com/resend/b4d679e8-f41b-4c59-b091-dc5581345fcb",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-17T19:31:15.959Z"
+    },
+    {
+      "id": "durable-senior-product-designer-ai",
+      "company": "Durable",
+      "title": "Senior Product Designer, AI",
+      "url": "https://job-boards.greenhouse.io/durable/jobs/5156296008",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-17T19:31:15.959Z"
+    },
+    {
+      "id": "flex-staff-product-designer-contract",
+      "company": "Flex",
+      "title": "Staff Product Designer (Contract)",
+      "url": "https://job-boards.greenhouse.io/flex/jobs/4722531005",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-17T19:31:15.959Z"
+    },
+    {
+      "id": "airwallex-staff-product-designer-agentic-finance",
+      "company": "Airwallex",
+      "title": "Staff Product Designer, T0 (Agentic) Finance",
+      "url": "https://jobs.ashbyhq.com/airwallex/552c4ab2-f483-4ecf-a631-f28880db7df5",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-17T19:31:15.959Z"
+    },
+    {
+      "id": "sim-design-engineer",
+      "company": "Sim",
+      "title": "Design Engineer",
+      "url": "https://jobs.ashbyhq.com/sim/2aae9d88-23ae-4381-9591-8fe58574f86c",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-17T19:31:15.959Z"
     }
   ],
-  "lastRun": "2026-08-17T19:07:43.047Z",
+  "lastRun": "2026-08-17T19:31:15.959Z",
   "summary": {
-    "passed": 1,
+    "passed": 7,
     "failed": 0,
-    "total": 1
+    "total": 7
   }
 }
