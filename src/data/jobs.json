@@ -1,5 +1,114 @@
 [
   {
+    "id": "usul-product-designer",
+    "title": "Product Designer",
+    "company": "Usul",
+    "companyUrl": "https://usul.com",
+    "url": "https://jobs.ashbyhq.com/usul/3cd132a8-dc09-499f-9a33-a380cc58420e",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-18",
+    "vertical": "Gov/Civic",
+    "employmentType": "Full-time",
+    "tags": [
+      "defense tech",
+      "government procurement",
+      "B2G",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
+    "_verifiedAt": "2026-08-19"
+  },
+  {
+    "id": "kinetic-founding-design-engineer",
+    "title": "Founding Design Engineer",
+    "company": "Kinetic",
+    "companyUrl": "https://www.getpayme.com",
+    "url": "https://jobs.ashbyhq.com/kinetic/1be6c97d-152b-43c6-bb71-7cdb7fed8dab",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "New York, NY",
+    "postedAt": "2026-08-19",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "consumer finance",
+      "conversion design",
+      "0-to-1",
+      "mobile app"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/kinetic",
+    "_verifiedAt": "2026-08-19"
+  },
+  {
+    "id": "automat-founding-designer",
+    "title": "Founding Designer",
+    "company": "Automat",
+    "companyUrl": "https://runautomat.com",
+    "url": "https://jobs.ashbyhq.com/automat/5c9a8eae-0705-48b6-9b7a-8d752146feb0",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-19",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI agents",
+      "automation",
+      "brand design",
+      "0-to-1",
+      "B2B"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/companies/automat/jobs",
+    "_verifiedAt": "2026-08-19"
+  },
+  {
+    "id": "hinge-health-staff-product-designer-design-systems",
+    "title": "Staff Product Designer, Design Systems",
+    "company": "Hinge Health",
+    "companyUrl": "https://www.hingehealth.com",
+    "url": "https://jobs.ashbyhq.com/hinge-health/ebb10992-73df-4efb-85b1-979aba7f046d",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-19",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time",
+    "tags": [
+      "design systems",
+      "digital health",
+      "data visualization",
+      "clinical data"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
+    "_verifiedAt": "2026-08-19"
+  },
+  {
+    "id": "rula-sr-product-designer",
+    "title": "Sr. Product Designer",
+    "company": "Rula",
+    "companyUrl": "https://www.rula.com",
+    "url": "https://jobs.ashbyhq.com/rula/30f6551a-c008-407c-a8c4-ac0369e82098",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-08-17",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time",
+    "salary": "$180,000 - $221,000",
+    "tags": [
+      "mental health",
+      "provider tools",
+      "AI",
+      "workflow design",
+      "design systems",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/rula/30f6551a-c008-407c-a8c4-ac0369e82098",
+    "_verifiedAt": "2026-08-17"
+  },
+  {
     "id": "tremendous-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Tremendous",
@@ -347,29 +456,6 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/conduct",
     "_verifiedAt": "2026-08-12"
-  },
-  {
-    "id": "mirage-product-designer-early-career",
-    "title": "Product Designer, Early Career",
-    "company": "Mirage",
-    "companyUrl": "https://mirage.app",
-    "url": "https://jobs.ashbyhq.com/mirage/177a1d5a-8d0e-409c-bb7f-556fdf2324b3",
-    "level": "Entry",
-    "locationType": "On-site",
-    "location": "New York, NY",
-    "postedAt": "2026-08-12",
-    "vertical": "Consumer",
-    "employmentType": "Full-time",
-    "tags": [
-      "generative media",
-      "video",
-      "early-career",
-      "AI-native",
-      "mobile"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/mirage",
-    "_verifiedAt": "2026-08-12",
-    "salary": "$100,000 - $150,000"
   },
   {
     "id": "tandem-health-senior-product-designer",
@@ -898,27 +984,6 @@
     "_verifiedAt": "2026-07-29"
   },
   {
-    "id": "ambience-healthcare-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Ambience Healthcare",
-    "companyUrl": "https://www.ambiencehealthcare.com",
-    "url": "https://jobs.ashbyhq.com/ambiencehealthcare/1def8c60-e448-422e-bc25-02ac950a2a87",
-    "level": "Staff",
-    "locationType": "On-site",
-    "location": "San Francisco, CA",
-    "postedAt": "2026-07-29",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time",
-    "tags": [
-      "clinical AI",
-      "enterprise health",
-      "design systems",
-      "documentation"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/ambiencehealthcare/1def8c60-e448-422e-bc25-02ac950a2a87",
-    "_verifiedAt": "2026-07-29"
-  },
-  {
     "id": "zero-homes-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Zero Homes",
@@ -960,28 +1025,6 @@
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/assemble/8b561cfd-ffc7-4128-99a0-94b0d9cfe26e",
     "_verifiedAt": "2026-07-29"
-  },
-  {
-    "id": "thorin-ai-product-designer",
-    "title": "AI Product Designer",
-    "company": "Thorin",
-    "companyUrl": "https://thorin.com",
-    "url": "https://jobs.ashbyhq.com/thorin/5f3478c8-6f6c-4bbe-98bb-e570e00a8597",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "San Francisco",
-    "postedAt": "2026-07-27",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "enterprise AI",
-      "AI agents",
-      "0-to-1",
-      "design systems",
-      "B2B"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/thorin/5f3478c8-6f6c-4bbe-98bb-e570e00a8597",
-    "_verifiedAt": "2026-07-27"
   },
   {
     "id": "rogo-product-designer",

@@ -5,80 +5,50 @@
   "failed": 0,
   "results": [
     {
-      "id": "tremendous-senior-product-designer",
-      "company": "Tremendous",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/tremendous/61534849-aa96-450b-b3a6-0ea9d14d8753",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-17T19:31:15.959Z"
-    },
-    {
-      "id": "mastra-founding-product-designer",
-      "company": "Mastra",
-      "title": "Founding Product Designer",
-      "url": "https://jobs.ashbyhq.com/mastra/2b50b79c-588b-4983-bed5-7748a46e5ca2",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-17T19:31:15.959Z"
-    },
-    {
-      "id": "resend-product-designer",
-      "company": "Resend",
+      "id": "usul-product-designer",
+      "company": "Usul",
       "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/resend/b4d679e8-f41b-4c59-b091-dc5581345fcb",
+      "url": "https://jobs.ashbyhq.com/usul/3cd132a8-dc09-499f-9a33-a380cc58420e",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-17T19:31:15.959Z"
+      "checkedAt": "2026-08-19T16:15:34.653Z"
     },
     {
-      "id": "durable-senior-product-designer-ai",
-      "company": "Durable",
-      "title": "Senior Product Designer, AI",
-      "url": "https://job-boards.greenhouse.io/durable/jobs/5156296008",
+      "id": "kinetic-founding-design-engineer",
+      "company": "Kinetic",
+      "title": "Founding Design Engineer",
+      "url": "https://jobs.ashbyhq.com/kinetic/1be6c97d-152b-43c6-bb71-7cdb7fed8dab",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-17T19:31:15.959Z"
+      "checkedAt": "2026-08-19T16:15:34.653Z"
     },
     {
-      "id": "flex-staff-product-designer-contract",
-      "company": "Flex",
-      "title": "Staff Product Designer (Contract)",
-      "url": "https://job-boards.greenhouse.io/flex/jobs/4722531005",
+      "id": "automat-founding-designer",
+      "company": "Automat",
+      "title": "Founding Designer",
+      "url": "https://jobs.ashbyhq.com/automat/5c9a8eae-0705-48b6-9b7a-8d752146feb0",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-17T19:31:15.959Z"
+      "checkedAt": "2026-08-19T16:15:34.653Z"
     },
     {
-      "id": "airwallex-staff-product-designer-agentic-finance",
-      "company": "Airwallex",
-      "title": "Staff Product Designer, T0 (Agentic) Finance",
-      "url": "https://jobs.ashbyhq.com/airwallex/552c4ab2-f483-4ecf-a631-f28880db7df5",
+      "id": "hinge-health-staff-product-designer-design-systems",
+      "company": "Hinge Health",
+      "title": "Staff Product Designer, Design Systems",
+      "url": "https://jobs.ashbyhq.com/hinge-health/ebb10992-73df-4efb-85b1-979aba7f046d",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-17T19:31:15.959Z"
-    },
-    {
-      "id": "sim-design-engineer",
-      "company": "Sim",
-      "title": "Design Engineer",
-      "url": "https://jobs.ashbyhq.com/sim/2aae9d88-23ae-4381-9591-8fe58574f86c",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-17T19:31:15.959Z"
+      "checkedAt": "2026-08-19T16:15:34.653Z"
     }
   ],
-  "lastRun": "2026-08-17T19:31:15.959Z",
+  "lastRun": "2026-08-19T16:15:34.653Z",
   "summary": {
-    "passed": 7,
+    "passed": 4,
     "failed": 0,
-    "total": 7
+    "total": 4
   }
 }
