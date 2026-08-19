@@ -1,1 +1,83 @@
-[]
+[
+  {
+    "id": "usul-product-designer",
+    "title": "Product Designer",
+    "company": "Usul",
+    "companyUrl": "https://usul.com",
+    "url": "https://jobs.ashbyhq.com/usul/3cd132a8-dc09-499f-9a33-a380cc58420e",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-18",
+    "vertical": "Gov/Civic",
+    "employmentType": "Full-time",
+    "tags": [
+      "defense tech",
+      "government procurement",
+      "B2G",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer"
+  },
+  {
+    "id": "kinetic-founding-design-engineer",
+    "title": "Founding Design Engineer",
+    "company": "Kinetic",
+    "companyUrl": "https://www.getpayme.com",
+    "url": "https://jobs.ashbyhq.com/kinetic/1be6c97d-152b-43c6-bb71-7cdb7fed8dab",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "New York, NY",
+    "postedAt": "2026-08-19",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "consumer finance",
+      "conversion design",
+      "0-to-1",
+      "mobile app"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/kinetic"
+  },
+  {
+    "id": "automat-founding-designer",
+    "title": "Founding Designer",
+    "company": "Automat",
+    "companyUrl": "https://runautomat.com",
+    "url": "https://jobs.ashbyhq.com/automat/5c9a8eae-0705-48b6-9b7a-8d752146feb0",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-19",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI agents",
+      "automation",
+      "brand design",
+      "0-to-1",
+      "B2B"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/companies/automat/jobs"
+  },
+  {
+    "id": "hinge-health-staff-product-designer-design-systems",
+    "title": "Staff Product Designer, Design Systems",
+    "company": "Hinge Health",
+    "companyUrl": "https://www.hingehealth.com",
+    "url": "https://jobs.ashbyhq.com/hinge-health/ebb10992-73df-4efb-85b1-979aba7f046d",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-19",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time",
+    "tags": [
+      "design systems",
+      "digital health",
+      "data visualization",
+      "clinical data"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health"
+  }
+]
