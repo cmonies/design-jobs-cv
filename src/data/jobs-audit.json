@@ -5,50 +5,20 @@
   "failed": 0,
   "results": [
     {
-      "id": "usul-product-designer",
-      "company": "Usul",
-      "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/usul/3cd132a8-dc09-499f-9a33-a380cc58420e",
+      "id": "obama-foundation-associate-digital-designer",
+      "company": "Obama Foundation",
+      "title": "Associate Digital Designer",
+      "url": "https://obama.wd5.myworkdayjobs.com/en-US/Careers/job/Obama-Presidential-Center/Associate-Digital-Designer_JR10220",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-19T16:15:34.653Z"
-    },
-    {
-      "id": "kinetic-founding-design-engineer",
-      "company": "Kinetic",
-      "title": "Founding Design Engineer",
-      "url": "https://jobs.ashbyhq.com/kinetic/1be6c97d-152b-43c6-bb71-7cdb7fed8dab",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-19T16:15:34.653Z"
-    },
-    {
-      "id": "automat-founding-designer",
-      "company": "Automat",
-      "title": "Founding Designer",
-      "url": "https://jobs.ashbyhq.com/automat/5c9a8eae-0705-48b6-9b7a-8d752146feb0",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-19T16:15:34.653Z"
-    },
-    {
-      "id": "hinge-health-staff-product-designer-design-systems",
-      "company": "Hinge Health",
-      "title": "Staff Product Designer, Design Systems",
-      "url": "https://jobs.ashbyhq.com/hinge-health/ebb10992-73df-4efb-85b1-979aba7f046d",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-19T16:15:34.653Z"
+      "checkedAt": "2026-08-20T00:02:25.140Z"
     }
   ],
-  "lastRun": "2026-08-19T16:15:34.653Z",
+  "lastRun": "2026-08-20T00:02:25.139Z",
   "summary": {
-    "passed": 4,
+    "passed": 1,
     "failed": 0,
-    "total": 4
+    "total": 1
   }
 }

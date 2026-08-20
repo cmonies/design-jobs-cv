@@ -1,5 +1,28 @@
 [
   {
+    "id": "obama-foundation-associate-digital-designer",
+    "title": "Associate Digital Designer",
+    "company": "Obama Foundation",
+    "companyUrl": "https://obama.org",
+    "url": "https://obama.wd5.myworkdayjobs.com/en-US/Careers/job/Obama-Presidential-Center/Associate-Digital-Designer_JR10220",
+    "level": "Junior",
+    "locationType": "Hybrid",
+    "location": "Chicago, IL",
+    "postedAt": "2026-08-18",
+    "vertical": "Gov/Civic",
+    "employmentType": "Full-time",
+    "salary": "$59,755–$74,670",
+    "tags": [
+      "brand design",
+      "digital production",
+      "web design",
+      "email design",
+      "nonprofit"
+    ],
+    "_sourceUrl": "https://lnkd.in/p/gsmiY8ve",
+    "_verifiedAt": "2026-08-19"
+  },
+  {
     "id": "usul-product-designer",
     "title": "Product Designer",
     "company": "Usul",
@@ -676,28 +699,6 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/garage/c8aced60-6abf-46a2-8a00-59c2996305d0",
     "_verifiedAt": "2026-08-10",
     "salary": "$150,000 - $250,000"
-  },
-  {
-    "id": "clariti-product-designer-contract",
-    "title": "Product Designer (Contract)",
-    "company": "Clariti",
-    "companyUrl": "https://www.claritisoftware.com",
-    "url": "https://job-boards.greenhouse.io/clariticloudinc/jobs/7830081003",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "Remote (Canada)",
-    "postedAt": "2026-08-05",
-    "vertical": "Gov/Civic",
-    "employmentType": "Contract",
-    "tags": [
-      "civic tech",
-      "municipal government",
-      "design systems",
-      "AI-native",
-      "accessibility"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/clariticloudinc/jobs/7830081003",
-    "_verifiedAt": "2026-08-07"
   },
   {
     "id": "supabase-product-designer",
@@ -2029,27 +2030,6 @@
       "families"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/primer",
-    "_verifiedAt": "2026-07-13"
-  },
-  {
-    "id": "krea-product-designer",
-    "title": "Product Designer",
-    "company": "Krea",
-    "companyUrl": "https://www.krea.ai",
-    "url": "https://jobs.ashbyhq.com/krea/658fb41c-6cf8-49c7-bcd6-e68e0cc2a217",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "San Francisco, CA",
-    "postedAt": "2026-01-24",
-    "vertical": "AI",
-    "employmentType": "Full-time",
-    "tags": [
-      "generative AI",
-      "creative tools",
-      "image generation",
-      "consumer AI"
-    ],
-    "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=product%20designer%20startup",
     "_verifiedAt": "2026-07-13"
   },
   {
