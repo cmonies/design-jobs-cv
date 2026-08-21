@@ -1,5 +1,48 @@
 [
   {
+    "id": "spike-labs-staff-product-designer",
+    "title": "Staff Product Designer",
+    "company": "Spike Labs",
+    "companyUrl": "https://spikelabs.ai",
+    "url": "https://jobs.ashbyhq.com/spikelabs/00cd4a96-3df6-45dd-949d-b6fd2afe4258",
+    "level": "Staff",
+    "locationType": "Remote",
+    "location": "Remote",
+    "postedAt": "2026-08-21",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI-native",
+      "consumer apps",
+      "0-to-1",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/spikelabs/00cd4a96-3df6-45dd-949d-b6fd2afe4258",
+    "_verifiedAt": "2026-08-21"
+  },
+  {
+    "id": "phoenix-technologies-ai-ux-product-designer",
+    "title": "AI UX Product Designer",
+    "company": "Phoenix Technologies",
+    "companyUrl": "https://phoenixtechnologies.io",
+    "url": "https://jobs.lever.co/phoenixtechnologies/5a30e730-e121-4cfe-911a-10940dc154e8",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-08-21",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI-native",
+      "ecommerce",
+      "DTC",
+      "design engineering",
+      "conversion optimization"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/phoenixtechnologies/5a30e730-e121-4cfe-911a-10940dc154e8",
+    "_verifiedAt": "2026-08-21"
+  },
+  {
     "id": "obama-foundation-associate-digital-designer",
     "title": "Associate Digital Designer",
     "company": "Obama Foundation",

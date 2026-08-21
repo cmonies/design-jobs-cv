@@ -5,20 +5,30 @@
   "failed": 0,
   "results": [
     {
-      "id": "obama-foundation-associate-digital-designer",
-      "company": "Obama Foundation",
-      "title": "Associate Digital Designer",
-      "url": "https://obama.wd5.myworkdayjobs.com/en-US/Careers/job/Obama-Presidential-Center/Associate-Digital-Designer_JR10220",
+      "id": "spike-labs-staff-product-designer",
+      "company": "Spike Labs",
+      "title": "Staff Product Designer",
+      "url": "https://jobs.ashbyhq.com/spikelabs/00cd4a96-3df6-45dd-949d-b6fd2afe4258",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-20T00:02:25.140Z"
+      "checkedAt": "2026-08-21T16:15:25.043Z"
+    },
+    {
+      "id": "phoenix-technologies-ai-ux-product-designer",
+      "company": "Phoenix Technologies",
+      "title": "AI UX Product Designer",
+      "url": "https://jobs.lever.co/phoenixtechnologies/5a30e730-e121-4cfe-911a-10940dc154e8",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-21T16:15:25.044Z"
     }
   ],
-  "lastRun": "2026-08-20T00:02:25.139Z",
+  "lastRun": "2026-08-21T16:15:25.043Z",
   "summary": {
-    "passed": 1,
+    "passed": 2,
     "failed": 0,
-    "total": 1
+    "total": 2
   }
 }
