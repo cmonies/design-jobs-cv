@@ -1,5 +1,93 @@
 [
   {
+    "id": "fetch-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Fetch",
+    "companyUrl": "https://fetch.com",
+    "url": "https://jobs.gem.com/fetch/am9icG9zdDpG5zH_yMBPP12ndIz2TqJU",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote",
+    "postedAt": "2026-08-22",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "salary": "$149,592–$175,990",
+    "tags": [
+      "mobile",
+      "consumer apps",
+      "rewards",
+      "animation"
+    ],
+    "_sourceUrl": "https://jobs.gem.com/fetch/am9icG9zdDpG5zH_yMBPP12ndIz2TqJU",
+    "_verifiedAt": "2026-08-22"
+  },
+  {
+    "id": "fetch-staff-product-designer-ai-labs",
+    "title": "Staff Product Designer, AI Labs",
+    "company": "Fetch",
+    "companyUrl": "https://fetch.com",
+    "url": "https://jobs.gem.com/fetch/am9icG9zdDpej7tFthjouJXDGCcJBPD8",
+    "level": "Staff",
+    "locationType": "Remote",
+    "location": "Remote",
+    "postedAt": "2026-08-22",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "salary": "$173,742–$204,402",
+    "tags": [
+      "mobile",
+      "AI-native",
+      "design systems",
+      "enterprise tools",
+      "animation"
+    ],
+    "_sourceUrl": "https://jobs.gem.com/fetch/am9icG9zdDpej7tFthjouJXDGCcJBPD8",
+    "_verifiedAt": "2026-08-22"
+  },
+  {
+    "id": "fetch-director-product-design",
+    "title": "Director, Product Design",
+    "company": "Fetch",
+    "companyUrl": "https://fetch.com",
+    "url": "https://jobs.gem.com/fetch/am9icG9zdDpHOtHt74x4-mMbLF4cL9q4",
+    "level": "Director",
+    "locationType": "Remote",
+    "location": "Remote",
+    "postedAt": "2026-08-22",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "mobile",
+      "people management",
+      "consumer apps",
+      "player-coach"
+    ],
+    "_sourceUrl": "https://jobs.gem.com/fetch/am9icG9zdDpHOtHt74x4-mMbLF4cL9q4",
+    "_verifiedAt": "2026-08-22"
+  },
+  {
+    "id": "fetch-senior-product-designer-growth",
+    "title": "Senior Product Designer, Growth",
+    "company": "Fetch",
+    "companyUrl": "https://fetch.com",
+    "url": "https://jobs.gem.com/fetch/am9icG9zdDrSZ8lN_BWU518IC7Htrtnn",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote",
+    "postedAt": "2026-08-22",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "salary": "$149,592–$175,990",
+    "tags": [
+      "mobile",
+      "growth",
+      "consumer apps",
+      "rewards"
+    ],
+    "_sourceUrl": "https://jobs.gem.com/fetch/am9icG9zdDrSZ8lN_BWU518IC7Htrtnn",
+    "_verifiedAt": "2026-08-22"
+  },
+  {
     "id": "spike-labs-staff-product-designer",
     "title": "Staff Product Designer",
     "company": "Spike Labs",
