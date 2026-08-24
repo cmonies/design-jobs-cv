@@ -5,50 +5,70 @@
   "failed": 0,
   "results": [
     {
-      "id": "fetch-senior-product-designer",
-      "company": "Fetch",
+      "id": "inferact-founding-product-designer",
+      "company": "Inferact",
+      "title": "Founding Product Designer",
+      "url": "https://jobs.ashbyhq.com/inferact/f73d3f45-cdea-41a8-8144-acf504aa4fda",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-24T16:15:36.926Z"
+    },
+    {
+      "id": "retell-ai-senior-product-designer",
+      "company": "Retell AI",
       "title": "Senior Product Designer",
-      "url": "https://jobs.gem.com/fetch/am9icG9zdDpG5zH_yMBPP12ndIz2TqJU",
+      "url": "https://jobs.ashbyhq.com/retell-ai/9b165c15-aa78-49a7-a755-8c2379fd5416",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-22T17:00:14.923Z"
+      "checkedAt": "2026-08-24T16:15:36.926Z"
     },
     {
-      "id": "fetch-staff-product-designer-ai-labs",
-      "company": "Fetch",
-      "title": "Staff Product Designer, AI Labs",
-      "url": "https://jobs.gem.com/fetch/am9icG9zdDpej7tFthjouJXDGCcJBPD8",
+      "id": "true-link-financial-principal-product-designer",
+      "company": "True Link Financial",
+      "title": "Principal Product Designer",
+      "url": "https://jobs.ashbyhq.com/truelinkfinancial/790972da-861c-425d-9175-a0053f71e63e",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-22T17:00:14.923Z"
+      "checkedAt": "2026-08-24T16:15:36.926Z"
     },
     {
-      "id": "fetch-director-product-design",
-      "company": "Fetch",
-      "title": "Director, Product Design",
-      "url": "https://jobs.gem.com/fetch/am9icG9zdDpHOtHt74x4-mMbLF4cL9q4",
+      "id": "savvy-wealth-senior-product-designer",
+      "company": "Savvy Wealth",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/savvy/e3c243e2-a35c-4786-95ee-f3ffb3b63e14",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-22T17:00:14.923Z"
+      "checkedAt": "2026-08-24T16:15:36.926Z"
     },
     {
-      "id": "fetch-senior-product-designer-growth",
-      "company": "Fetch",
-      "title": "Senior Product Designer, Growth",
-      "url": "https://jobs.gem.com/fetch/am9icG9zdDrSZ8lN_BWU518IC7Htrtnn",
+      "id": "tilt-principal-product-designer",
+      "company": "Tilt",
+      "title": "Principal Product Designer",
+      "url": "https://www.ycombinator.com/companies/tilt-fka-delphia/jobs/uX5Z3wu-principal-product-designer",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-22T17:00:14.923Z"
+      "checkedAt": "2026-08-24T16:15:36.926Z"
+    },
+    {
+      "id": "outsmart-senior-product-designer",
+      "company": "Outsmart",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/Outsmart/ab39350e-9cda-4dc5-a23b-ae7a4c822fb3",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-24T16:15:36.926Z"
     }
   ],
-  "lastRun": "2026-08-22T17:00:14.923Z",
+  "lastRun": "2026-08-24T16:15:36.926Z",
   "summary": {
-    "passed": 4,
+    "passed": 6,
     "failed": 0,
-    "total": 4
+    "total": 6
   }
 }

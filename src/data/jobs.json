@@ -1,5 +1,136 @@
 [
   {
+    "id": "inferact-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Inferact",
+    "companyUrl": "https://inferact.ai",
+    "url": "https://jobs.ashbyhq.com/inferact/f73d3f45-cdea-41a8-8144-acf504aa4fda",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-08-24",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI infrastructure",
+      "0-to-1",
+      "open source",
+      "developer tools",
+      "brand identity"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/inferact/f73d3f45-cdea-41a8-8144-acf504aa4fda",
+    "_verifiedAt": "2026-08-24"
+  },
+  {
+    "id": "retell-ai-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Retell AI",
+    "companyUrl": "https://www.retellai.com",
+    "url": "https://jobs.ashbyhq.com/retell-ai/9b165c15-aa78-49a7-a755-8c2379fd5416",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "Redwood City, CA",
+    "postedAt": "2026-08-24",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "voice AI",
+      "enterprise",
+      "CX platform",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/retell-ai/9b165c15-aa78-49a7-a755-8c2379fd5416",
+    "_verifiedAt": "2026-08-24"
+  },
+  {
+    "id": "true-link-financial-principal-product-designer",
+    "title": "Principal Product Designer",
+    "company": "True Link Financial",
+    "companyUrl": "https://www.truelinkfinancial.com",
+    "url": "https://jobs.ashbyhq.com/truelinkfinancial/790972da-861c-425d-9175-a0053f71e63e",
+    "level": "Principal",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-08-24",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "financial inclusion",
+      "accessibility",
+      "user research",
+      "mobile",
+      "card platform"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/truelinkfinancial/790972da-861c-425d-9175-a0053f71e63e",
+    "_verifiedAt": "2026-08-24"
+  },
+  {
+    "id": "savvy-wealth-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Savvy Wealth",
+    "companyUrl": "https://www.savvywealth.com",
+    "url": "https://jobs.ashbyhq.com/savvy/e3c243e2-a35c-4786-95ee-f3ffb3b63e14",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "New York, NY",
+    "postedAt": "2026-08-24",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "wealth management",
+      "AI-native",
+      "B2B2C",
+      "service design",
+      "information architecture"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/savvy/e3c243e2-a35c-4786-95ee-f3ffb3b63e14",
+    "_verifiedAt": "2026-08-24"
+  },
+  {
+    "id": "tilt-principal-product-designer",
+    "title": "Principal Product Designer",
+    "company": "Tilt",
+    "companyUrl": "https://tilt.io",
+    "url": "https://www.ycombinator.com/companies/tilt-fka-delphia/jobs/uX5Z3wu-principal-product-designer",
+    "level": "Principal",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-08-20",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "investing",
+      "AI agents",
+      "0-to-1",
+      "design systems",
+      "data visualization"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/companies/tilt-fka-delphia/jobs/uX5Z3wu-principal-product-designer",
+    "_verifiedAt": "2026-08-24"
+  },
+  {
+    "id": "outsmart-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Outsmart",
+    "companyUrl": "https://joinoutsmart.com",
+    "url": "https://jobs.ashbyhq.com/Outsmart/ab39350e-9cda-4dc5-a23b-ae7a4c822fb3",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "Lehi, UT / Los Angeles, CA / San Francisco, CA",
+    "postedAt": "2026-08-24",
+    "vertical": "Education",
+    "employmentType": "Full-time",
+    "tags": [
+      "edtech",
+      "AI-native",
+      "consumer",
+      "0-to-1",
+      "design leadership"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/Outsmart/ab39350e-9cda-4dc5-a23b-ae7a4c822fb3",
+    "_verifiedAt": "2026-08-24"
+  },
+  {
     "id": "fetch-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Fetch",
@@ -457,29 +588,6 @@
     "_verifiedAt": "2026-08-14"
   },
   {
-    "id": "obviant-product-designer",
-    "title": "Product Designer (UI/UX)",
-    "company": "Obviant",
-    "companyUrl": "https://www.obviant.com",
-    "url": "https://jobs.ashbyhq.com/obviant/cbefe7f0-56b5-4b9f-9786-4b5112d03aae",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "Arlington, VA (Hybrid)",
-    "postedAt": "2026-08-14",
-    "vertical": "Gov/Civic",
-    "employmentType": "Full-time",
-    "tags": [
-      "0-to-1",
-      "defense",
-      "data visualization",
-      "first design hire",
-      "B2G"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/obviant/cbefe7f0-56b5-4b9f-9786-4b5112d03aae",
-    "_verifiedAt": "2026-08-14",
-    "salary": "$160,000 - $225,000"
-  },
-  {
     "id": "zoe-lead-product-designer-app",
     "title": "Lead Product Designer - App Experience",
     "company": "ZOE",
@@ -875,27 +983,6 @@
     "salary": "$198,000 - $276,000"
   },
   {
-    "id": "npr-staff-product-designer-mobile",
-    "title": "Staff Product Designer, Mobile",
-    "company": "NPR",
-    "companyUrl": "https://www.npr.org",
-    "url": "https://job-boards.greenhouse.io/nationalpublicradioinc/jobs/4716901005",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "Remote (Washington, DC)",
-    "postedAt": "2026-07-28",
-    "vertical": "Consumer",
-    "employmentType": "Full-time",
-    "tags": [
-      "public media",
-      "mobile",
-      "accessibility",
-      "design leadership"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/nationalpublicradioinc/jobs/4716901005",
-    "_verifiedAt": "2026-08-07"
-  },
-  {
     "id": "seesaw-product-designer",
     "title": "Product Designer",
     "company": "Seesaw",
@@ -1138,27 +1225,6 @@
     "salary": "$115,000 - $205,000"
   },
   {
-    "id": "assemble-lead-product-designer",
-    "title": "Lead Product Designer",
-    "company": "Assemble",
-    "companyUrl": "https://www.comeassemble.com",
-    "url": "https://jobs.ashbyhq.com/assemble/8b561cfd-ffc7-4128-99a0-94b0d9cfe26e",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "Remote (US)",
-    "postedAt": "2026-07-29",
-    "vertical": "Healthcare",
-    "employmentType": "Full-time",
-    "tags": [
-      "clinical ops",
-      "0-to-1",
-      "design systems",
-      "productivity"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/assemble/8b561cfd-ffc7-4128-99a0-94b0d9cfe26e",
-    "_verifiedAt": "2026-07-29"
-  },
-  {
     "id": "rogo-product-designer",
     "title": "Product Designer",
     "company": "Rogo",
@@ -1393,28 +1459,6 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/clarion",
     "_verifiedAt": "2026-07-22",
     "salary": "$120,000 - $160,000"
-  },
-  {
-    "id": "patch-product-designer",
-    "title": "Product Designer",
-    "company": "Patch",
-    "companyUrl": "https://www.patch.io",
-    "url": "https://jobs.ashbyhq.com/patch.io/84da9a54-c3b7-40c8-851b-a4718323165f",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "San Francisco, CA",
-    "postedAt": "2026-07-22",
-    "vertical": "Climate",
-    "employmentType": "Full-time",
-    "tags": [
-      "carbon removal",
-      "environmental markets",
-      "AI-native",
-      "data visualization"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/patch.io",
-    "_verifiedAt": "2026-07-22",
-    "salary": "$170,000 - $240,000"
   },
   {
     "id": "credal-founding-design-engineer",
@@ -2204,26 +2248,6 @@
     "salary": "$100,000 - $150,000"
   },
   {
-    "id": "unlearn-product-designer-contract",
-    "title": "Product Designer (Contract)",
-    "company": "Unlearn",
-    "companyUrl": "https://unlearn.ai",
-    "url": "https://jobs.ashbyhq.com/Unlearn/e8426b1c-d7ae-4352-b065-b2b534594f6b",
-    "level": "Mid",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "postedAt": "2026-07-09",
-    "vertical": "Healthcare",
-    "employmentType": "Contract",
-    "tags": [
-      "clinical trials",
-      "AI"
-    ],
-    "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=contract%20product%20designer&f_JT=C",
-    "_verificationNote": "LinkedIn discovery lead resolved via unlearn.ai/careers to Ashby; WebFetch confirmed title + company. No linkedin URL published.",
-    "_verifiedAt": "2026-07-09"
-  },
-  {
     "id": "wayline-contract-product-designer",
     "title": "Contract Product Designer",
     "company": "Wayline",
@@ -2476,27 +2500,6 @@
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $150-250K.",
     "_verifiedAt": "2026-07-09",
     "salary": "$150,000 - $250,000"
-  },
-  {
-    "id": "pocket-senior-product-designer-ai-hardware",
-    "title": "Senior Product Designer, AI Hardware & User Interface",
-    "company": "Pocket",
-    "companyUrl": "https://www.ycombinator.com/companies/pocket",
-    "url": "https://www.ycombinator.com/companies/pocket/jobs/SCxFeFa-senior-product-designer-ai-hardware-user-interface",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "San Francisco, CA",
-    "postedAt": "2026-06-26",
-    "vertical": "Consumer",
-    "employmentType": "Full-time",
-    "tags": [
-      "hardware",
-      "AI"
-    ],
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $165-200K.",
-    "_verifiedAt": "2026-07-09",
-    "salary": "$165,000 - $200,000"
   },
   {
     "id": "voicepanel-founding-designer",
@@ -2933,31 +2936,6 @@
     "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Headway — mental health platform, Series D $325M+. Senior PD, New Channels owns patient experience across Health Systems, EAP, and Payer Partnership channels. Designs handoff-to-care flows, Booking Assistant tool, EAP onboarding, co-branded payer journeys, conversion experiments. B2B2C design experience required, experimentation fluency, AI-native workflow (Claude.ai, Claude Code, Cursor, MagicPatterns). $180K-$225K + equity. NY/SF/Seattle hybrid. DISTINCT from headway-staff-product-designer-group-practices — different team (Patient team vs Group Practices). Not in existing jobs.json.",
     "vertical": "Healthcare",
     "employmentType": "Full-time"
-  },
-  {
-    "id": "chorus-innovations-principal-product-designer-contract",
-    "title": "Principal Product Designer (Contract-to-Hire)",
-    "company": "Chorus Innovations",
-    "companyUrl": "https://joinchorus.com",
-    "url": "https://job-boards.greenhouse.io/chorusinnovations/jobs/5126846007",
-    "level": "Principal",
-    "locationType": "Remote",
-    "location": "Remote (US)",
-    "postedAt": "2026-05-18",
-    "salary": "$165,000 - $190,000",
-    "tags": [
-      "healthcare PaaS",
-      "mobile health",
-      "public health",
-      "community health",
-      "design leadership",
-      "design systems"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/chorusinnovations/jobs/5126846007",
-    "_verifiedAt": "2026-05-18",
-    "_verificationNote": "Verified live via Playwright (200, no dead signals)",
-    "vertical": "Healthcare",
-    "employmentType": "Contract"
   },
   {
     "id": "alpaca-health-founding-product-designer",
