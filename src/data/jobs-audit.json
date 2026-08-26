@@ -5,70 +5,50 @@
   "failed": 0,
   "results": [
     {
-      "id": "inferact-founding-product-designer",
-      "company": "Inferact",
-      "title": "Founding Product Designer",
-      "url": "https://jobs.ashbyhq.com/inferact/f73d3f45-cdea-41a8-8144-acf504aa4fda",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-24T16:15:36.926Z"
-    },
-    {
-      "id": "retell-ai-senior-product-designer",
-      "company": "Retell AI",
+      "id": "assort-health-senior-product-designer",
+      "company": "Assort Health",
       "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/retell-ai/9b165c15-aa78-49a7-a755-8c2379fd5416",
+      "url": "https://jobs.ashbyhq.com/assorthealth/75286761-b8da-4715-bd05-a8226602b8b9",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-24T16:15:36.926Z"
+      "checkedAt": "2026-08-26T16:15:33.022Z"
     },
     {
-      "id": "true-link-financial-principal-product-designer",
-      "company": "True Link Financial",
-      "title": "Principal Product Designer",
-      "url": "https://jobs.ashbyhq.com/truelinkfinancial/790972da-861c-425d-9175-a0053f71e63e",
+      "id": "happy-health-product-designer",
+      "company": "Happy Health",
+      "title": "Product Designer II",
+      "url": "https://jobs.lever.co/happy-sleep/cc59e4ab-750f-4aa8-9096-ebf4169f3364",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-24T16:15:36.926Z"
+      "checkedAt": "2026-08-26T16:15:33.022Z"
     },
     {
-      "id": "savvy-wealth-senior-product-designer",
-      "company": "Savvy Wealth",
+      "id": "faculty-senior-product-designer-energy-transition",
+      "company": "Faculty",
+      "title": "Senior Product Designer - Energy Transition & Environment",
+      "url": "https://jobs.ashbyhq.com/faculty/b561a153-b935-4703-a0e1-40b55a8bf236",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-08-26T16:15:33.022Z"
+    },
+    {
+      "id": "bobyard-senior-product-designer",
+      "company": "Bobyard",
       "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/savvy/e3c243e2-a35c-4786-95ee-f3ffb3b63e14",
+      "url": "https://jobs.ashbyhq.com/bobyard/f4f690d9-1168-414a-bb99-1ff8a4f2943f",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-24T16:15:36.926Z"
-    },
-    {
-      "id": "tilt-principal-product-designer",
-      "company": "Tilt",
-      "title": "Principal Product Designer",
-      "url": "https://www.ycombinator.com/companies/tilt-fka-delphia/jobs/uX5Z3wu-principal-product-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-24T16:15:36.926Z"
-    },
-    {
-      "id": "outsmart-senior-product-designer",
-      "company": "Outsmart",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/Outsmart/ab39350e-9cda-4dc5-a23b-ae7a4c822fb3",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-24T16:15:36.926Z"
+      "checkedAt": "2026-08-26T16:15:33.022Z"
     }
   ],
-  "lastRun": "2026-08-24T16:15:36.926Z",
+  "lastRun": "2026-08-26T16:15:33.021Z",
   "summary": {
-    "passed": 6,
+    "passed": 4,
     "failed": 0,
-    "total": 6
+    "total": 4
   }
 }
