@@ -1,5 +1,69 @@
 [
   {
+    "id": "clariti-cloud-product-designer-contract",
+    "title": "Product Designer (Contract)",
+    "company": "Clariti Cloud",
+    "companyUrl": "https://www.claritisoftware.com",
+    "url": "https://job-boards.greenhouse.io/clariticloudinc/jobs/7830081003",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (Canada)",
+    "postedAt": "2026-08-28",
+    "vertical": "Gov/Civic",
+    "employmentType": "Contract",
+    "tags": [
+      "govtech",
+      "permitting",
+      "AI-native",
+      "accessibility"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/clariticloudinc/jobs/7830081003",
+    "_verifiedAt": "2026-08-28"
+  },
+  {
+    "id": "civilgrid-senior-ux-designer",
+    "title": "Senior UX Designer",
+    "company": "CivilGrid",
+    "companyUrl": "https://www.civilgrid.com",
+    "url": "https://jobs.ashbyhq.com/civilgrid/77638cea-216f-46b9-8442-a97ff68f569e",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "Boston, MA",
+    "postedAt": "2026-08-28",
+    "vertical": "Gov/Civic",
+    "employmentType": "Full-time",
+    "tags": [
+      "govtech",
+      "GIS",
+      "infrastructure",
+      "B2B",
+      "spatial data"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/civilgrid/77638cea-216f-46b9-8442-a97ff68f569e",
+    "_verifiedAt": "2026-08-28"
+  },
+  {
+    "id": "openai-product-designer-engineering-acceleration",
+    "title": "Product Designer, Engineering Acceleration",
+    "company": "OpenAI",
+    "companyUrl": "https://openai.com",
+    "url": "https://jobs.ashbyhq.com/openai/73fdf2c0-4318-4b13-addc-b66bc1308ba4",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "Seattle, WA / San Francisco, CA",
+    "postedAt": "2026-08-28",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "internal tools",
+      "data visualization",
+      "developer tools",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/openai/73fdf2c0-4318-4b13-addc-b66bc1308ba4",
+    "_verifiedAt": "2026-08-28"
+  },
+  {
     "id": "assort-health-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Assort Health",

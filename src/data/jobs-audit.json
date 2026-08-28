@@ -5,50 +5,40 @@
   "failed": 0,
   "results": [
     {
-      "id": "assort-health-senior-product-designer",
-      "company": "Assort Health",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/assorthealth/75286761-b8da-4715-bd05-a8226602b8b9",
+      "id": "clariti-cloud-product-designer-contract",
+      "company": "Clariti Cloud",
+      "title": "Product Designer (Contract)",
+      "url": "https://job-boards.greenhouse.io/clariticloudinc/jobs/7830081003",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-26T16:15:33.022Z"
+      "checkedAt": "2026-08-28T16:15:28.596Z"
     },
     {
-      "id": "happy-health-product-designer",
-      "company": "Happy Health",
-      "title": "Product Designer II",
-      "url": "https://jobs.lever.co/happy-sleep/cc59e4ab-750f-4aa8-9096-ebf4169f3364",
+      "id": "civilgrid-senior-ux-designer",
+      "company": "CivilGrid",
+      "title": "Senior UX Designer",
+      "url": "https://jobs.ashbyhq.com/civilgrid/77638cea-216f-46b9-8442-a97ff68f569e",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-26T16:15:33.022Z"
+      "checkedAt": "2026-08-28T16:15:28.596Z"
     },
     {
-      "id": "faculty-senior-product-designer-energy-transition",
-      "company": "Faculty",
-      "title": "Senior Product Designer - Energy Transition & Environment",
-      "url": "https://jobs.ashbyhq.com/faculty/b561a153-b935-4703-a0e1-40b55a8bf236",
+      "id": "openai-product-designer-engineering-acceleration",
+      "company": "OpenAI",
+      "title": "Product Designer, Engineering Acceleration",
+      "url": "https://jobs.ashbyhq.com/openai/73fdf2c0-4318-4b13-addc-b66bc1308ba4",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-26T16:15:33.022Z"
-    },
-    {
-      "id": "bobyard-senior-product-designer",
-      "company": "Bobyard",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/bobyard/f4f690d9-1168-414a-bb99-1ff8a4f2943f",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-08-26T16:15:33.022Z"
+      "checkedAt": "2026-08-28T16:15:28.596Z"
     }
   ],
-  "lastRun": "2026-08-26T16:15:33.021Z",
+  "lastRun": "2026-08-28T16:15:28.595Z",
   "summary": {
-    "passed": 4,
+    "passed": 3,
     "failed": 0,
-    "total": 4
+    "total": 3
   }
 }
