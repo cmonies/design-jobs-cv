@@ -5,37 +5,37 @@
   "failed": 0,
   "results": [
     {
-      "id": "clariti-cloud-product-designer-contract",
-      "company": "Clariti Cloud",
-      "title": "Product Designer (Contract)",
-      "url": "https://job-boards.greenhouse.io/clariticloudinc/jobs/7830081003",
+      "id": "oddin-product-designer-contract",
+      "company": "Oddin",
+      "title": "Product Designer",
+      "url": "https://jobs.lever.co/oddin/9d227ce4-5179-43f6-aad5-fc0c34c264fd",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-28T16:15:28.596Z"
+      "checkedAt": "2026-08-31T16:15:34.472Z"
     },
     {
-      "id": "civilgrid-senior-ux-designer",
-      "company": "CivilGrid",
-      "title": "Senior UX Designer",
-      "url": "https://jobs.ashbyhq.com/civilgrid/77638cea-216f-46b9-8442-a97ff68f569e",
+      "id": "p1-ai-founding-product-designer",
+      "company": "P-1 AI",
+      "title": "Founding Product Designer",
+      "url": "https://jobs.ashbyhq.com/P-1%20AI/cfbb66d3-0088-4f31-a63f-d5bed860ce10",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-28T16:15:28.596Z"
+      "checkedAt": "2026-08-31T16:15:34.472Z"
     },
     {
-      "id": "openai-product-designer-engineering-acceleration",
-      "company": "OpenAI",
-      "title": "Product Designer, Engineering Acceleration",
-      "url": "https://jobs.ashbyhq.com/openai/73fdf2c0-4318-4b13-addc-b66bc1308ba4",
+      "id": "algo1-product-designer",
+      "company": "algo1",
+      "title": "Product Designer (UI/UX)",
+      "url": "https://jobs.ashbyhq.com/algo1/7a340ae2-7ce1-479e-a2f0-788b99111515",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-08-28T16:15:28.596Z"
+      "checkedAt": "2026-08-31T16:15:34.472Z"
     }
   ],
-  "lastRun": "2026-08-28T16:15:28.595Z",
+  "lastRun": "2026-08-31T16:15:34.472Z",
   "summary": {
     "passed": 3,
     "failed": 0,

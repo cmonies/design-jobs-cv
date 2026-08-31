@@ -1,5 +1,71 @@
 [
   {
+    "id": "oddin-product-designer-contract",
+    "title": "Product Designer",
+    "company": "Oddin",
+    "companyUrl": "https://oddin.gg",
+    "url": "https://jobs.lever.co/oddin/9d227ce4-5179-43f6-aad5-fc0c34c264fd",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Remote (Prague)",
+    "postedAt": "2026-08-31",
+    "vertical": "Other",
+    "employmentType": "Freelance",
+    "tags": [
+      "design systems",
+      "data-heavy products",
+      "back-office tools",
+      "B2B",
+      "esports"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/oddin/9d227ce4-5179-43f6-aad5-fc0c34c264fd",
+    "_verifiedAt": "2026-08-31"
+  },
+  {
+    "id": "p1-ai-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "P-1 AI",
+    "companyUrl": "https://p1.ai",
+    "url": "https://jobs.ashbyhq.com/P-1%20AI/cfbb66d3-0088-4f31-a63f-d5bed860ce10",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US/Canada)",
+    "postedAt": "2026-07-29",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI agents",
+      "0-to-1",
+      "engineering tools",
+      "complex workflows",
+      "founding role"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/P-1%20AI/cfbb66d3-0088-4f31-a63f-d5bed860ce10",
+    "_verifiedAt": "2026-08-31"
+  },
+  {
+    "id": "algo1-product-designer",
+    "title": "Product Designer (UI/UX)",
+    "company": "algo1",
+    "companyUrl": "https://algo1.ai",
+    "url": "https://jobs.ashbyhq.com/algo1/7a340ae2-7ce1-479e-a2f0-788b99111515",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "London, UK",
+    "postedAt": "2026-07-31",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI-native",
+      "in-store retail",
+      "0-to-1",
+      "design systems",
+      "motion design"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/algo1/7a340ae2-7ce1-479e-a2f0-788b99111515",
+    "_verifiedAt": "2026-08-31"
+  },
+  {
     "id": "clariti-cloud-product-designer-contract",
     "title": "Product Designer (Contract)",
     "company": "Clariti Cloud",
