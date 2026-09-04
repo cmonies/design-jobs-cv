@@ -5,50 +5,60 @@
   "failed": 0,
   "results": [
     {
-      "id": "bolter-founding-product-designer-contract",
-      "company": "Bolter",
-      "title": "Founding Product Designer",
-      "url": "https://jobs.ashbyhq.com/improbable/e42c8196-6899-4394-a795-5c7e1654be67",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-09-02T16:15:34.868Z"
-    },
-    {
-      "id": "flo-health-senior-staff-product-designer-virtual-clinics",
-      "company": "Flo Health",
-      "title": "Senior/Staff Product Designer (Virtual Clinics)",
-      "url": "https://job-boards.greenhouse.io/flohealth/jobs/7592507003",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-09-02T16:15:34.868Z"
-    },
-    {
-      "id": "spring-health-staff-ai-interaction-designer",
-      "company": "Spring Health",
-      "title": "Staff AI Interaction Designer",
-      "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4713598005",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-09-02T16:15:34.868Z"
-    },
-    {
-      "id": "permitflow-staff-product-designer",
-      "company": "PermitFlow",
+      "id": "goodparty-staff-product-designer",
+      "company": "GoodParty.org",
       "title": "Staff Product Designer",
-      "url": "https://jobs.ashbyhq.com/permitflow/9c3cac9e-2a67-4d7e-8098-42092a628390",
+      "url": "https://jobs.ashbyhq.com/goodparty/972dc2d9-dfa5-4acc-a225-f7af92b69d01",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-02T16:15:34.868Z"
+      "checkedAt": "2026-09-04T16:15:38.720Z"
+    },
+    {
+      "id": "alltrails-product-designer",
+      "company": "AllTrails",
+      "title": "Product Designer",
+      "url": "https://jobs.lever.co/alltrails/0a84e45b-b67b-48a6-94d4-6bdaa2746e93",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-09-04T16:15:38.720Z"
+    },
+    {
+      "id": "amboss-product-designer-education",
+      "company": "AMBOSS",
+      "title": "Product Designer",
+      "url": "https://jobs.ashbyhq.com/amboss/bef7d0e8-857e-4cd0-9ee7-c9df4b8e76b4",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-09-04T16:15:38.720Z"
+    },
+    {
+      "id": "counsel-health-product-designer-consumer",
+      "company": "Counsel Health",
+      "title": "Product Designer (Consumer)",
+      "url": "https://jobs.ashbyhq.com/counsel/9492d31d-2086-4fde-9350-b9a28ebc4a22",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-09-04T16:15:38.720Z"
+    },
+    {
+      "id": "lean-in-product-designer",
+      "company": "Lean In",
+      "title": "Product Designer",
+      "url": "https://jobs.lever.co/sgff.org/a836d1b9-06ca-4864-8a48-01881e404936",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-09-04T16:15:38.720Z"
     }
   ],
-  "lastRun": "2026-09-02T16:15:34.868Z",
+  "lastRun": "2026-09-04T16:15:38.719Z",
   "summary": {
-    "passed": 4,
+    "passed": 5,
     "failed": 0,
-    "total": 4
+    "total": 5
   }
 }

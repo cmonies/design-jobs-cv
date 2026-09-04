@@ -1,5 +1,113 @@
 [
   {
+    "id": "goodparty-staff-product-designer",
+    "title": "Staff Product Designer",
+    "company": "GoodParty.org",
+    "companyUrl": "https://goodparty.org",
+    "url": "https://jobs.ashbyhq.com/goodparty/972dc2d9-dfa5-4acc-a225-f7af92b69d01",
+    "level": "Staff",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-09-04",
+    "vertical": "Gov/Civic",
+    "employmentType": "Full-time",
+    "tags": [
+      "civic tech",
+      "democracy",
+      "design systems",
+      "0-to-1",
+      "social impact"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/goodparty/972dc2d9-dfa5-4acc-a225-f7af92b69d01",
+    "_verifiedAt": "2026-09-04"
+  },
+  {
+    "id": "alltrails-product-designer",
+    "title": "Product Designer",
+    "company": "AllTrails",
+    "companyUrl": "https://www.alltrails.com",
+    "url": "https://jobs.lever.co/alltrails/0a84e45b-b67b-48a6-94d4-6bdaa2746e93",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-09-04",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "outdoor",
+      "mobile",
+      "community",
+      "social",
+      "growth"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/alltrails/0a84e45b-b67b-48a6-94d4-6bdaa2746e93",
+    "_verifiedAt": "2026-09-04"
+  },
+  {
+    "id": "amboss-product-designer-education",
+    "title": "Product Designer",
+    "company": "AMBOSS",
+    "companyUrl": "https://www.amboss.com",
+    "url": "https://jobs.ashbyhq.com/amboss/bef7d0e8-857e-4cd0-9ee7-c9df4b8e76b4",
+    "level": "Mid",
+    "locationType": "Hybrid",
+    "location": "Berlin, Germany",
+    "postedAt": "2026-09-04",
+    "vertical": "Education",
+    "employmentType": "Full-time",
+    "tags": [
+      "medical education",
+      "edtech",
+      "learning",
+      "exam prep"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/amboss/bef7d0e8-857e-4cd0-9ee7-c9df4b8e76b4",
+    "_verifiedAt": "2026-09-04"
+  },
+  {
+    "id": "counsel-health-product-designer-consumer",
+    "title": "Product Designer (Consumer)",
+    "company": "Counsel Health",
+    "companyUrl": "https://www.counselhealth.com",
+    "url": "https://jobs.ashbyhq.com/counsel/9492d31d-2086-4fde-9350-b9a28ebc4a22",
+    "level": "Mid",
+    "locationType": "Hybrid",
+    "location": "New York, NY / Boston, MA",
+    "postedAt": "2026-09-04",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time",
+    "tags": [
+      "consumer health",
+      "AI-native",
+      "telehealth",
+      "mobile",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/counsel/9492d31d-2086-4fde-9350-b9a28ebc4a22",
+    "_verifiedAt": "2026-09-04"
+  },
+  {
+    "id": "lean-in-product-designer",
+    "title": "Product Designer",
+    "company": "Lean In",
+    "companyUrl": "https://leanin.org",
+    "url": "https://jobs.lever.co/sgff.org/a836d1b9-06ca-4864-8a48-01881e404936",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-09-04",
+    "vertical": "Consumer",
+    "employmentType": "Full-time",
+    "tags": [
+      "social impact",
+      "community",
+      "design systems",
+      "B2C"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/sgff.org/a836d1b9-06ca-4864-8a48-01881e404936",
+    "_verifiedAt": "2026-09-04"
+  },
+  {
     "id": "bolter-founding-product-designer-contract",
     "title": "Founding Product Designer",
     "company": "Bolter",
