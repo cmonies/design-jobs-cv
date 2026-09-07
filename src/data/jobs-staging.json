@@ -1,1 +1,83 @@
-[]
+[
+  {
+    "id": "luxury-presence-sr-product-designer-contract",
+    "title": "Sr. Product Designer - Contract",
+    "company": "Luxury Presence",
+    "companyUrl": "https://www.luxurypresence.com",
+    "url": "https://jobs.lever.co/luxurypresence/d5b88b52-fca6-4561-96d5-023e121cf3cf",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-09-07",
+    "vertical": "Enterprise/SaaS",
+    "employmentType": "Contract",
+    "tags": [
+      "proptech",
+      "real estate",
+      "AI",
+      "B2B",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/luxurypresence/d5b88b52-fca6-4561-96d5-023e121cf3cf"
+  },
+  {
+    "id": "onepay-product-designer",
+    "title": "Product Designer",
+    "company": "OnePay",
+    "companyUrl": "https://www.one.app",
+    "url": "https://jobs.ashbyhq.com/oneapp/6657d2b9-8df4-452b-8be0-d9656266fe3f",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-09-07",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "consumer fintech",
+      "banking",
+      "mobile-first",
+      "embedded finance"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/oneapp/6657d2b9-8df4-452b-8be0-d9656266fe3f"
+  },
+  {
+    "id": "epoch-ai-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Epoch AI",
+    "companyUrl": "https://epoch.ai",
+    "url": "https://jobs.lever.co/epoch-ai/b71cd010-d3cf-446c-80fa-fa5737573e82",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (Americas)",
+    "postedAt": "2026-09-07",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "data visualization",
+      "AI research",
+      "scientific communication",
+      "design leadership"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/epoch-ai/b71cd010-d3cf-446c-80fa-fa5737573e82"
+  },
+  {
+    "id": "jump-sr-ux-designer",
+    "title": "Sr. UX Designer",
+    "company": "Jump",
+    "companyUrl": "https://jump.ai",
+    "url": "https://jobs.ashbyhq.com/jump-app/60b89041-6d2b-434c-a5a6-f1a844c57ac8",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-09-07",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "wealthtech",
+      "AI assistant",
+      "B2B",
+      "financial advisors"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/jump-app/60b89041-6d2b-434c-a5a6-f1a844c57ac8"
+  }
+]
