@@ -5,60 +5,50 @@
   "failed": 0,
   "results": [
     {
-      "id": "goodparty-staff-product-designer",
-      "company": "GoodParty.org",
-      "title": "Staff Product Designer",
-      "url": "https://jobs.ashbyhq.com/goodparty/972dc2d9-dfa5-4acc-a225-f7af92b69d01",
+      "id": "luxury-presence-sr-product-designer-contract",
+      "company": "Luxury Presence",
+      "title": "Sr. Product Designer - Contract",
+      "url": "https://jobs.lever.co/luxurypresence/d5b88b52-fca6-4561-96d5-023e121cf3cf",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-04T16:15:38.720Z"
+      "checkedAt": "2026-09-07T16:15:28.232Z"
     },
     {
-      "id": "alltrails-product-designer",
-      "company": "AllTrails",
+      "id": "onepay-product-designer",
+      "company": "OnePay",
       "title": "Product Designer",
-      "url": "https://jobs.lever.co/alltrails/0a84e45b-b67b-48a6-94d4-6bdaa2746e93",
+      "url": "https://jobs.ashbyhq.com/oneapp/6657d2b9-8df4-452b-8be0-d9656266fe3f",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-04T16:15:38.720Z"
+      "checkedAt": "2026-09-07T16:15:28.232Z"
     },
     {
-      "id": "amboss-product-designer-education",
-      "company": "AMBOSS",
-      "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/amboss/bef7d0e8-857e-4cd0-9ee7-c9df4b8e76b4",
+      "id": "epoch-ai-senior-product-designer",
+      "company": "Epoch AI",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.lever.co/epoch-ai/b71cd010-d3cf-446c-80fa-fa5737573e82",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-04T16:15:38.720Z"
+      "checkedAt": "2026-09-07T16:15:28.232Z"
     },
     {
-      "id": "counsel-health-product-designer-consumer",
-      "company": "Counsel Health",
-      "title": "Product Designer (Consumer)",
-      "url": "https://jobs.ashbyhq.com/counsel/9492d31d-2086-4fde-9350-b9a28ebc4a22",
+      "id": "jump-sr-ux-designer",
+      "company": "Jump",
+      "title": "Sr. UX Designer",
+      "url": "https://jobs.ashbyhq.com/jump-app/60b89041-6d2b-434c-a5a6-f1a844c57ac8",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-04T16:15:38.720Z"
-    },
-    {
-      "id": "lean-in-product-designer",
-      "company": "Lean In",
-      "title": "Product Designer",
-      "url": "https://jobs.lever.co/sgff.org/a836d1b9-06ca-4864-8a48-01881e404936",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-09-04T16:15:38.720Z"
+      "checkedAt": "2026-09-07T16:15:28.232Z"
     }
   ],
-  "lastRun": "2026-09-04T16:15:38.719Z",
+  "lastRun": "2026-09-07T16:15:28.232Z",
   "summary": {
-    "passed": 5,
+    "passed": 4,
     "failed": 0,
-    "total": 5
+    "total": 4
   }
 }
