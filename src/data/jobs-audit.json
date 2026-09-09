@@ -5,47 +5,47 @@
   "failed": 0,
   "results": [
     {
-      "id": "luxury-presence-sr-product-designer-contract",
-      "company": "Luxury Presence",
-      "title": "Sr. Product Designer - Contract",
-      "url": "https://jobs.lever.co/luxurypresence/d5b88b52-fca6-4561-96d5-023e121cf3cf",
+      "id": "runway-sr-staff-product-designer-growth",
+      "company": "Runway",
+      "title": "Sr./Staff Product Designer, Growth",
+      "url": "https://jobs.ashbyhq.com/runway-ml/28e151ac-cb29-4695-9041-a9e352624111",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-07T16:15:28.232Z"
+      "checkedAt": "2026-09-09T16:15:41.898Z"
     },
     {
-      "id": "onepay-product-designer",
-      "company": "OnePay",
+      "id": "restaurant-supply-freelance-product-designer",
+      "company": "Restaurant Supply",
+      "title": "Freelance B2B eCommerce CRO & Product Designer",
+      "url": "https://job-boards.greenhouse.io/restaurantsupply/jobs/4329466009",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-09-09T16:15:41.898Z"
+    },
+    {
+      "id": "nevis-wealth-product-designer",
+      "company": "Nevis Wealth",
       "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/oneapp/6657d2b9-8df4-452b-8be0-d9656266fe3f",
+      "url": "https://jobs.ashbyhq.com/nevis/a387af7b-075a-4b84-8380-480a91af5c85",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-07T16:15:28.232Z"
+      "checkedAt": "2026-09-09T16:15:41.898Z"
     },
     {
-      "id": "epoch-ai-senior-product-designer",
-      "company": "Epoch AI",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.lever.co/epoch-ai/b71cd010-d3cf-446c-80fa-fa5737573e82",
+      "id": "gather-ai-ux-designer",
+      "company": "Gather AI",
+      "title": "UX Designer",
+      "url": "https://job-boards.greenhouse.io/gatherai/jobs/5176171007",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-07T16:15:28.232Z"
-    },
-    {
-      "id": "jump-sr-ux-designer",
-      "company": "Jump",
-      "title": "Sr. UX Designer",
-      "url": "https://jobs.ashbyhq.com/jump-app/60b89041-6d2b-434c-a5a6-f1a844c57ac8",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-09-07T16:15:28.232Z"
+      "checkedAt": "2026-09-09T16:15:41.898Z"
     }
   ],
-  "lastRun": "2026-09-07T16:15:28.232Z",
+  "lastRun": "2026-09-09T16:15:41.898Z",
   "summary": {
     "passed": 4,
     "failed": 0,

@@ -1,5 +1,92 @@
 [
   {
+    "id": "runway-sr-staff-product-designer-growth",
+    "title": "Sr./Staff Product Designer, Growth",
+    "company": "Runway",
+    "companyUrl": "https://runway.com",
+    "url": "https://jobs.ashbyhq.com/runway-ml/28e151ac-cb29-4695-9041-a9e352624111",
+    "level": "Staff",
+    "locationType": "Remote",
+    "location": "Remote",
+    "postedAt": "2026-09-09",
+    "vertical": "AI/ML",
+    "employmentType": "Full-time",
+    "tags": [
+      "growth",
+      "monetization",
+      "video AI",
+      "creative tools"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/runway-ml/28e151ac-cb29-4695-9041-a9e352624111",
+    "_verifiedAt": "2026-09-09"
+  },
+  {
+    "id": "restaurant-supply-freelance-product-designer",
+    "title": "Freelance B2B eCommerce CRO & Product Designer",
+    "company": "Restaurant Supply",
+    "companyUrl": "https://restaurantsupply.com",
+    "url": "https://job-boards.greenhouse.io/restaurantsupply/jobs/4329466009",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-09-09",
+    "vertical": "Other",
+    "employmentType": "Freelance",
+    "tags": [
+      "B2B",
+      "ecommerce",
+      "CRO",
+      "A/B testing",
+      "part-time"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/restaurantsupply/jobs/4329466009",
+    "_verifiedAt": "2026-09-09"
+  },
+  {
+    "id": "nevis-wealth-product-designer",
+    "title": "Product Designer",
+    "company": "Nevis Wealth",
+    "companyUrl": "https://www.neviswealth.com",
+    "url": "https://jobs.ashbyhq.com/nevis/a387af7b-075a-4b84-8380-480a91af5c85",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "New York, NY",
+    "postedAt": "2026-09-09",
+    "vertical": "Fintech",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI-native",
+      "wealth management",
+      "B2B",
+      "0-to-1",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/nevis/a387af7b-075a-4b84-8380-480a91af5c85",
+    "_verifiedAt": "2026-09-09"
+  },
+  {
+    "id": "gather-ai-ux-designer",
+    "title": "UX Designer",
+    "company": "Gather AI",
+    "companyUrl": "https://gather.ai",
+    "url": "https://job-boards.greenhouse.io/gatherai/jobs/5176171007",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US) / Pittsburgh, PA",
+    "postedAt": "2026-09-09",
+    "vertical": "AI/ML",
+    "employmentType": "Full-time",
+    "tags": [
+      "0-to-1",
+      "logistics",
+      "field research",
+      "supply chain",
+      "warehouse operations"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/gatherai/jobs/5176171007",
+    "_verifiedAt": "2026-09-09"
+  },
+  {
     "id": "luxury-presence-sr-product-designer-contract",
     "title": "Sr. Product Designer - Contract",
     "company": "Luxury Presence",
