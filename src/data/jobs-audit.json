@@ -5,50 +5,40 @@
   "failed": 0,
   "results": [
     {
-      "id": "runway-sr-staff-product-designer-growth",
-      "company": "Runway",
-      "title": "Sr./Staff Product Designer, Growth",
-      "url": "https://jobs.ashbyhq.com/runway-ml/28e151ac-cb29-4695-9041-a9e352624111",
+      "id": "right-side-up-design-systems-consultant",
+      "company": "Right Side Up",
+      "title": "UX/UI Designer, Design Systems Consultant (AI-Fluent)",
+      "url": "https://jobs.lever.co/rightsideup/1d1d6511-f337-432c-b46e-9f5b060c1f22",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-09T16:15:41.898Z"
+      "checkedAt": "2026-09-10T03:21:28.759Z"
     },
     {
-      "id": "restaurant-supply-freelance-product-designer",
-      "company": "Restaurant Supply",
-      "title": "Freelance B2B eCommerce CRO & Product Designer",
-      "url": "https://job-boards.greenhouse.io/restaurantsupply/jobs/4329466009",
+      "id": "instrument-freelance-product-brand-designers",
+      "company": "Instrument",
+      "title": "Freelance Product and Brand Designers – Join Our Network",
+      "url": "https://jobs.lever.co/instrument/3f68f48d-8a24-4a7d-9825-2a6091d814f5",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-09T16:15:41.898Z"
+      "checkedAt": "2026-09-10T03:21:28.759Z"
     },
     {
-      "id": "nevis-wealth-product-designer",
-      "company": "Nevis Wealth",
-      "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/nevis/a387af7b-075a-4b84-8380-480a91af5c85",
+      "id": "fantasy-lead-product-designer-freelance",
+      "company": "Fantasy",
+      "title": "Lead Product Designer - Future Freelance",
+      "url": "https://jobs.lever.co/fantasy/423f0191-cd39-4f8f-80dc-a5a521d91db9",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-09T16:15:41.898Z"
-    },
-    {
-      "id": "gather-ai-ux-designer",
-      "company": "Gather AI",
-      "title": "UX Designer",
-      "url": "https://job-boards.greenhouse.io/gatherai/jobs/5176171007",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-09-09T16:15:41.898Z"
+      "checkedAt": "2026-09-10T03:21:28.759Z"
     }
   ],
-  "lastRun": "2026-09-09T16:15:41.898Z",
+  "lastRun": "2026-09-10T03:21:28.759Z",
   "summary": {
-    "passed": 4,
+    "passed": 3,
     "failed": 0,
-    "total": 4
+    "total": 3
   }
 }
