@@ -5,47 +5,47 @@
   "failed": 0,
   "results": [
     {
-      "id": "instrument-freelance-product-brand-designer",
-      "company": "Instrument",
-      "title": "Freelance Product and Brand Designers",
-      "url": "https://jobs.lever.co/instrument/3f68f48d-8a24-4a7d-9825-2a6091d814f5",
+      "id": "bland-product-designer",
+      "company": "Bland",
+      "title": "Product Designer",
+      "url": "https://jobs.ashbyhq.com/bland/25b88b58-c567-4675-b41f-1d94f00192c9",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-10T16:15:26.906Z"
+      "checkedAt": "2026-09-11T16:16:11.439Z"
     },
     {
-      "id": "fantasy-lead-product-designer-freelance",
-      "company": "Fantasy",
-      "title": "Lead Product Designer — Future Freelance",
-      "url": "https://jobs.lever.co/fantasy/423f0191-cd39-4f8f-80dc-a5a521d91db9",
+      "id": "rilla-product-designer-internship",
+      "company": "Rilla",
+      "title": "Product Designer, Internship",
+      "url": "https://jobs.ashbyhq.com/rilla/c15fc0ad-6da3-4bab-9c64-f8288453b2ae",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-10T16:15:26.906Z"
+      "checkedAt": "2026-09-11T16:16:11.439Z"
     },
     {
-      "id": "right-side-up-ux-ui-designer-design-systems",
-      "company": "Right Side Up",
-      "title": "UX/UI Designer, Design Systems Consultant (AI-Fluent)",
-      "url": "https://jobs.lever.co/rightsideup/1d1d6511-f337-432c-b46e-9f5b060c1f22",
+      "id": "omnea-product-designer",
+      "company": "Omnea",
+      "title": "Product Designer",
+      "url": "https://jobs.ashbyhq.com/omnea/64653fce-eb26-4b2d-9107-ae50801f700f",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-10T16:15:26.906Z"
+      "checkedAt": "2026-09-11T16:16:11.439Z"
     },
     {
-      "id": "linear-senior-staff-product-designer",
-      "company": "Linear",
-      "title": "Senior/Staff Product Designer",
-      "url": "https://jobs.ashbyhq.com/linear/a264869e-f058-487c-ab7f-9b77dffa427c",
+      "id": "ashby-senior-product-designer",
+      "company": "Ashby",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/ashby/f40ef345-82a8-4956-9150-193b4fdf8183",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-10T16:15:26.906Z"
+      "checkedAt": "2026-09-11T16:16:11.439Z"
     }
   ],
-  "lastRun": "2026-09-10T16:15:26.906Z",
+  "lastRun": "2026-09-11T16:16:11.439Z",
   "summary": {
     "passed": 4,
     "failed": 0,
