@@ -473,8 +473,22 @@ const employmentOptions = [
     background: #F1F0EC;
     color: #161512;
   }
-  /* Badge inside saved toggle must invert when button is active (same bg = invisible) */
-  #saved-toggle[aria-pressed="true"] #saved-count {
+  /* Active state for saved toggles — CSS wins over conflicting Tailwind utilities */
+  #saved-toggle[aria-pressed="true"],
+  #sheet-saved-toggle[aria-pressed="true"] {
+    background-color: #161512;
+    color: #FFFFFF;
+    border-color: #161512;
+  }
+  .dark #saved-toggle[aria-pressed="true"],
+  .dark #sheet-saved-toggle[aria-pressed="true"] {
+    background-color: #f1f5f9;
+    color: #161512;
+    border-color: #f1f5f9;
+  }
+  /* Count badge inverts so it stays visible against the active button bg */
+  #saved-toggle[aria-pressed="true"] #saved-count,
+  #sheet-saved-toggle[aria-pressed="true"] #sheet-saved-count {
     filter: invert(1);
   }
 </style>
@@ -504,11 +518,6 @@ const employmentOptions = [
       savedCountBadge.classList.toggle('hidden', bookmarks.size === 0);
     }
     savedToggle?.setAttribute('aria-pressed', String(savedOnly));
-    savedToggle?.classList.toggle('bg-ink', savedOnly);
-    savedToggle?.classList.toggle('text-paper', savedOnly);
-    savedToggle?.classList.toggle('border-ink', savedOnly);
-    savedToggle?.classList.toggle('dark:bg-slate-100', savedOnly);
-    savedToggle?.classList.toggle('dark:text-ink', savedOnly);
     // sync sheet saved count badge too
     const sheetSavedCountEl = document.getElementById('sheet-saved-count');
     if (sheetSavedCountEl) {
@@ -824,11 +833,6 @@ const employmentOptions = [
   function syncSheetSavedUI() {
     if (!sheetSavedToggle) return;
     sheetSavedToggle.setAttribute('aria-pressed', String(sheetSavedOnly));
-    sheetSavedToggle.classList.toggle('bg-ink', sheetSavedOnly);
-    sheetSavedToggle.classList.toggle('text-paper', sheetSavedOnly);
-    sheetSavedToggle.classList.toggle('border-ink', sheetSavedOnly);
-    sheetSavedToggle.classList.toggle('dark:bg-slate-100', sheetSavedOnly);
-    sheetSavedToggle.classList.toggle('dark:text-ink', sheetSavedOnly);
   }
 
   mobileFiltersBtn?.addEventListener('click', openFilterSheet);
