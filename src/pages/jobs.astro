@@ -473,6 +473,10 @@ const employmentOptions = [
     background: #F1F0EC;
     color: #161512;
   }
+  /* Badge inside saved toggle must invert when button is active (same bg = invisible) */
+  #saved-toggle[aria-pressed="true"] #saved-count {
+    filter: invert(1);
+  }
 </style>
 
 <script>
