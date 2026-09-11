@@ -33,15 +33,15 @@ interface Props {
 const { jobs, filterable = false, maxDelay = 150, delayStep = 20, id } = Astro.props;
 ---
 
-<!-- Masonry: CSS columns, tight gutters. Tiles flow top-to-bottom per column. -->
+<!-- Grid: rows flow left-to-right so sort order is preserved visually. -->
 <ul
-  class="columns-1 sm:columns-2 lg:columns-3 2xl:columns-4 gap-2.5 list-none"
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-2.5 list-none"
   id={id}
   aria-label="Job listings"
 >
   {jobs.map((job, i) => (
     <li
-      class:list={["relative group/tile reveal reveal-tile break-inside-avoid mb-2.5", filterable && "job-item"]}
+      class:list={["relative group/tile reveal reveal-tile", filterable && "job-item"]}
       data-delay={String(Math.min(i * delayStep, maxDelay))}
       data-job-id={job.id}
       {...(filterable ? {
