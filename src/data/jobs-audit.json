@@ -1,7 +1,7 @@
 {
   "auditedAt": "2026-02-25T17:07:32.353966+00:00",
-  "total": 49,
-  "passed": 49,
+  "total": 185,
+  "passed": 152,
   "failed": 0,
   "results": [
     {
@@ -65,30 +65,10 @@
       "checkedAt": "2026-09-11T16:39:12.879Z"
     },
     {
-      "id": "right-side-up-ux-ui-designer-design-systems",
-      "company": "Right Side Up",
-      "title": "UX/UI Designer, Design Systems Consultant (AI-Fluent)",
-      "url": "https://jobs.lever.co/rightsideup/1d1d6511-f337-432c-b46e-9f5b060c1f22",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-09-11T16:39:12.879Z"
-    },
-    {
       "id": "linear-senior-staff-product-designer",
       "company": "Linear",
       "title": "Senior/Staff Product Designer",
       "url": "https://jobs.ashbyhq.com/linear/a264869e-f058-487c-ab7f-9b77dffa427c",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-09-11T16:39:12.879Z"
-    },
-    {
-      "id": "right-side-up-design-systems-consultant",
-      "company": "Right Side Up",
-      "title": "UX/UI Designer, Design Systems Consultant (AI-Fluent)",
-      "url": "https://jobs.lever.co/rightsideup/1d1d6511-f337-432c-b46e-9f5b060c1f22",
       "pass": true,
       "reason": "OK",
       "status": 200,
