@@ -1,6 +1,6 @@
 {
   "auditedAt": "2026-02-25T17:07:32.353966+00:00",
-  "total": 184,
+  "total": 183,
   "passed": 152,
   "failed": 0,
   "results": [
@@ -1382,16 +1382,6 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-09-11T16:39:12.879Z"
-    },
-    {
-      "id": "wayline-contract-product-designer",
-      "company": "Wayline",
-      "title": "Contract Product Designer",
-      "url": "https://www.ycombinator.com/companies/wayline/jobs/d6ugYvj-contract-product-designer",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
       "checkedAt": "2026-09-11T16:39:12.879Z"
     },
     {

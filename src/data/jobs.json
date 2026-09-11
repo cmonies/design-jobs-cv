@@ -2977,26 +2977,6 @@
     "salary": "$100,000 - $150,000"
   },
   {
-    "id": "wayline-contract-product-designer",
-    "title": "Contract Product Designer",
-    "company": "Wayline",
-    "companyUrl": "https://www.ycombinator.com/companies/wayline",
-    "url": "https://www.ycombinator.com/companies/wayline/jobs/d6ugYvj-contract-product-designer",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "San Francisco, CA / Remote (US)",
-    "postedAt": "2026-07-08",
-    "vertical": "AI",
-    "employmentType": "Contract",
-    "tags": [
-      "AI voice"
-    ],
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $75-125K",
-    "_verifiedAt": "2026-07-09",
-    "salary": "$75,000 - $125,000"
-  },
-  {
     "id": "vitvio-product-designer-ai-native-contract",
     "title": "Lead Product Designer - AI-Native Design",
     "company": "VitVio",
