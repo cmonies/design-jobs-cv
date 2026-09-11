@@ -1,6 +1,6 @@
 {
   "auditedAt": "2026-02-25T17:07:32.353966+00:00",
-  "total": 185,
+  "total": 184,
   "passed": 152,
   "failed": 0,
   "results": [
@@ -889,16 +889,6 @@
       "company": "Midstream Health",
       "title": "Product Designer",
       "url": "https://jobs.ashbyhq.com/midstream/b89999ca-564f-4c13-b89a-54f3daeeb140",
-      "pass": false,
-      "reason": "No live job signals found on page",
-      "status": 200,
-      "checkedAt": "2026-09-11T16:39:12.879Z"
-    },
-    {
-      "id": "plaud-product-designer-contract",
-      "company": "Plaud",
-      "title": "Product Designer (Contract)- San Francisco",
-      "url": "https://jobs.ashbyhq.com/Plaud/3f58500a-2f40-40c3-bf0e-cbf714f05ee4",
       "pass": false,
       "reason": "No live job signals found on page",
       "status": 200,
