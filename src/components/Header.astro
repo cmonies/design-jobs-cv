@@ -1,4 +1,6 @@
 ---
+import AccountMenu from './AccountMenu.astro';
+import SignInDialog from './SignInDialog.astro';
 const currentPath = Astro.url.pathname;
 const isJobsRoute = currentPath === "/jobs" || currentPath === "/jobs/" || currentPath.startsWith("/jobs/");
 ---
@@ -36,6 +38,7 @@ const isJobsRoute = currentPath === "/jobs" || currentPath === "/jobs/" || curre
       >
         Contract
       </a>
+      <AccountMenu variant="desktop" />
       <a
         href="/submit"
         class="text-sm font-medium px-4 py-1.5 rounded-full border border-ink dark:border-slate-300 text-ink dark:text-slate-100 hover:bg-ink hover:text-paper dark:hover:bg-slate-100 dark:hover:text-ink transition-colors"
@@ -59,9 +62,11 @@ const isJobsRoute = currentPath === "/jobs" || currentPath === "/jobs/" || curre
     <div class="px-6 py-4 space-y-3">
       <a href="/jobs" aria-current={isJobsRoute ? "page" : undefined} class="block text-sm font-medium text-ink-soft dark:text-slate-300 hover:text-ink dark:hover:text-white transition-colors py-1">Jobs</a>
       <a href="/jobs?type=Contract" class="block text-sm font-medium text-ink-soft dark:text-slate-300 py-1">Contract roles</a>
+      <AccountMenu variant="mobile" />
       <a href="/submit" class="block text-sm font-medium text-ink dark:text-slate-100 py-1">Submit a job →</a>
     </div>
   </div>
+  <SignInDialog />
 </header>
 
 <script>

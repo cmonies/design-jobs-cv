@@ -242,6 +242,35 @@ const breadcrumbSchema = {
           <p class="text-[11px] text-slate-400 dark:text-slate-500 md:text-right">
             Verified listing on {atsDomain}
           </p>
+          <!-- Account: save + application status. Anonymous saves live in localStorage. -->
+          <div class="flex flex-wrap items-center gap-2 mt-1 md:justify-end">
+            <button
+              type="button"
+              data-save-job={id}
+              aria-pressed="false"
+              class="save-btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-line dark:border-slate-700 text-[12px] font-semibold text-ink dark:text-slate-200 hover:border-ink dark:hover:border-slate-300 transition-colors"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+              <span data-save-label>Save</span>
+            </button>
+            <label data-when="in" class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-400">
+              Status
+              <select
+                data-app-status
+                class="px-3 py-1.5 rounded-full border border-line dark:border-slate-700 bg-paper dark:bg-surface-card font-sans text-[12px] font-semibold normal-case tracking-normal text-ink dark:text-slate-200 focus:outline-none focus:border-ink dark:focus:border-slate-300 transition-colors"
+              >
+                <option value="">Not tracked</option>
+                <option value="applied">Applied</option>
+                <option value="interviewing">Interviewing</option>
+                <option value="offer">Offer</option>
+                <option value="rejected">Rejected</option>
+                <option value="withdrawn">Withdrew</option>
+              </select>
+            </label>
+            <button type="button" data-open-signin data-when="out" class="text-[11px] text-muted dark:text-slate-500 hover:text-ink dark:hover:text-white underline underline-offset-2 transition-colors">
+              Sign in to track this application
+            </button>
+          </div>
         </div>
       </header>
 
@@ -468,6 +497,66 @@ const breadcrumbSchema = {
       </div>
     </section>
 
+
+  <script>
+    // Save button + application status. Saves mirror the tile bookmarks
+    // (localStorage, synced to the account when signed in); status writes
+    // straight to the account. See src/lib/account.ts.
+    import type { Session } from '@supabase/supabase-js';
+    const saveBtn = document.querySelector<HTMLButtonElement>('[data-save-job]');
+    const jobId = saveBtn?.dataset.saveJob ?? '';
+    const statusSel = document.querySelector<HTMLSelectElement>('[data-app-status]');
+    const KEY = 'dj-bookmarks';
+    const readSaved = (): string[] => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } };
+
+    function paintSave() {
+      const on = readSaved().includes(jobId);
+      saveBtn?.setAttribute('aria-pressed', String(on));
+      saveBtn?.classList.toggle('save-btn--on', on);
+      const label = saveBtn?.querySelector('[data-save-label]');
+      if (label) label.textContent = on ? 'Saved' : 'Save';
+    }
+    saveBtn?.addEventListener('click', () => {
+      const ids = readSaved();
+      const i = ids.indexOf(jobId);
+      i >= 0 ? ids.splice(i, 1) : ids.push(jobId);
+      localStorage.setItem(KEY, JSON.stringify(ids));
+      paintSave();
+      document.dispatchEvent(new CustomEvent('dj-bookmarks-changed', { detail: { count: ids.length } }));
+    });
+    document.addEventListener('dj-bookmarks-synced', paintSave);
+    paintSave();
+
+    let session: Session | null = null;
+    const account = () => import('../../lib/account');
+    async function loadStatus() {
+      if (!session || !statusSel) return;
+      const a = await account();
+      const app = await a.getApplication(session, jobId);
+      statusSel.value = app?.status ?? '';
+    }
+    document.addEventListener('dj-auth', (e) => {
+      session = (e as CustomEvent).detail.session;
+      loadStatus();
+    });
+    if (document.documentElement.hasAttribute('data-signed-in')) {
+      account().then(a => a.getSession()).then(s => { session = s; loadStatus(); });
+    }
+    statusSel?.addEventListener('change', async () => {
+      if (!session) return;
+      const a = await account();
+      await a.setApplication(session, jobId, (statusSel.value || null) as any);
+    });
+    // First Apply click while signed in counts as "applied"
+    document.querySelectorAll('[data-apply-tracking]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        if (!session) return;
+        const a = await account();
+        await a.trackApplyClick(session, jobId);
+        if (statusSel && !statusSel.value) statusSel.value = 'applied';
+      });
+    });
+  </script>
 
   <script define:vars={{ jobId: id }}>
     // Apply tracking: record first click date in localStorage
@@ -730,6 +819,11 @@ const breadcrumbSchema = {
   @media (min-width: 1024px) {
     .rail-tip .tip-body { left: auto; right: -10px; transform: none; }
   }
+
+  /* Save button — filled mark when saved */
+  .save-btn--on { border-color: #161512; }
+  .save-btn--on svg { fill: currentColor; }
+  :root.dark .save-btn--on { border-color: #D6D6D3; }
 
   /* Sticky context bar */
   #section-nav.section-nav--visible {

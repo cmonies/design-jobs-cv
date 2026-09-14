@@ -1,0 +1,125 @@
+---
+// Saved jobs + application tracking. Static shell; everything personal is
+// fetched in the browser under the signed-in user's own policies. Anonymous
+// visitors see the bookmarks kept in this browser and a nudge to sign in.
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Saved jobs | designjobs.cv" description="Your saved design jobs and where you are with each application.">
+  <Header />
+
+  <main id="main-content" tabindex="-1">
+    <section class="w-full max-w-3xl mx-auto px-4 md:px-6 pt-12 md:pt-16 pb-28">
+      <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-400 mb-4">Your jobs</p>
+      <h1 class="font-display font-semibold text-[2rem] md:text-[2.75rem] leading-[1.04] tracking-tight mb-3">Saved jobs</h1>
+      <p class="text-base text-muted dark:text-slate-400 leading-relaxed max-w-xl">
+        Everything you've bookmarked, and where you are with each application.
+      </p>
+
+      <div data-when="out" class="mt-6 flex flex-wrap items-center gap-3 p-4 rounded-xl border border-line dark:border-slate-700 bg-[#FAFAF9] dark:bg-surface-card">
+        <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed flex-1 min-w-[16rem]">
+          Saves on this device stay in this browser. Sign in to keep them on every device and track applications.
+        </p>
+        <button type="button" data-open-signin class="inline-flex items-center justify-center px-5 py-2 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-semibold hover:opacity-85 transition-opacity">
+          Sign in
+        </button>
+      </div>
+
+      <p data-when="in" class="mt-4 text-[11px] font-mono text-muted dark:text-slate-500">Signed in as <span data-account-email></span></p>
+
+      <div id="saved-status" class="mt-10 text-sm text-muted dark:text-slate-500" aria-live="polite">Loading…</div>
+      <ul id="saved-list" class="mt-8 list-none divide-y divide-line dark:divide-slate-700/60 border-t border-line dark:border-slate-700/60 hidden"></ul>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  import type { Session } from '@supabase/supabase-js';
+  import type { AppStatus, JobSummary, ApplicationRow } from '../lib/account';
+
+  const statusEl = document.getElementById('saved-status')!;
+  const list = document.getElementById('saved-list')!;
+  const STATUS: [AppStatus | '', string][] = [
+    ['', 'Not tracked'], ['applied', 'Applied'], ['interviewing', 'Interviewing'],
+    ['offer', 'Offer'], ['rejected', 'Rejected'], ['withdrawn', 'Withdrew'],
+  ];
+
+  const el = <K extends keyof HTMLElementTagNameMap>(tag: K, cls: string, text?: string) => {
+    const n = document.createElement(tag); n.className = cls; if (text != null) n.textContent = text; return n;
+  };
+  const fmtDate = (iso: string) => new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+  async function main() {
+    const a = await import('../lib/account');
+    if (!a.accountsEnabled) { statusEl.textContent = 'Accounts are not set up on this deployment yet.'; return; }
+    const session: Session | null = await a.getSession();
+
+    const savedIds = session ? await a.syncSaved(session) : a.localSaved();
+    const apps: ApplicationRow[] = session ? (await a.loadAccount(session)).applications : [];
+    const appById = new Map(apps.map(x => [x.job_id, x]));
+    const ids = [...new Set([...savedIds, ...apps.map(x => x.job_id)])];
+    const jobs = await a.fetchJobs(ids);
+
+    if (!ids.length) {
+      statusEl.innerHTML = '';
+      statusEl.append('Nothing saved yet. Tap the bookmark on any tile, or Save on a job page. ');
+      const link = el('a', 'underline underline-offset-2 text-ink dark:text-slate-200', 'Browse jobs →');
+      link.setAttribute('href', '/jobs');
+      statusEl.append(link);
+      return;
+    }
+
+    statusEl.textContent = `${ids.length} job${ids.length === 1 ? '' : 's'}`;
+    list.classList.remove('hidden');
+    list.innerHTML = '';
+
+    for (const id of ids) {
+      const job: JobSummary | undefined = jobs.get(id);
+      const app = appById.get(id);
+      const li = el('li', 'flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-4');
+
+      const link = el('a', 'min-w-0 flex-1 group');
+      link.setAttribute('href', `/jobs/${encodeURIComponent(id)}`);
+      link.append(el('span', 'block font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-400', job?.company || '—'));
+      link.append(el('span', 'block font-display font-semibold text-lg md:text-xl tracking-tight leading-tight mt-0.5 group-hover:underline underline-offset-4', job?.title || id));
+      const meta = [job?.level, job?.location_type, job?.employment_type && job.employment_type !== 'Full-time' ? job.employment_type : null,
+        job?.status === 'dead' ? 'Closed' : null, !job ? 'No longer listed' : null].filter(Boolean).join(' · ');
+      link.append(el('span', `block font-mono text-[11px] uppercase tracking-[0.1em] mt-1 ${job?.status === 'dead' || !job ? 'text-amber-600 dark:text-amber-400' : 'text-muted dark:text-slate-400'}`, meta));
+      li.append(link);
+
+      const controls = el('div', 'flex items-center gap-2 shrink-0');
+      if (session) {
+        const sel = el('select', 'px-3 py-1.5 rounded-full border border-line dark:border-slate-700 bg-paper dark:bg-surface-card text-[12px] font-semibold text-ink dark:text-slate-200 focus:outline-none focus:border-ink dark:focus:border-slate-300 transition-colors');
+        sel.setAttribute('aria-label', `Application status for ${job?.title || id}`);
+        for (const [v, label] of STATUS) { const o = document.createElement('option'); o.value = v; o.textContent = label; sel.append(o); }
+        sel.value = app?.status ?? '';
+        sel.addEventListener('change', () => a.setApplication(session, id, (sel.value || null) as AppStatus | null));
+        controls.append(sel);
+        if (app) controls.append(el('span', 'font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-500', `since ${fmtDate(app.applied_on)}`));
+      }
+      const saved = savedIds.includes(id);
+      const rm = el('button', 'p-2 rounded-full text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors', undefined);
+      rm.type = 'button';
+      rm.setAttribute('aria-label', saved ? `Remove ${job?.title || id} from saved` : 'Not saved');
+      rm.title = saved ? 'Remove from saved' : 'Not saved';
+      rm.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="${saved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>`;
+      rm.addEventListener('click', async () => {
+        const ids = a.localSaved().filter(x => x !== id);
+        localStorage.setItem(a.BOOKMARK_KEY, JSON.stringify(ids));
+        if (session) await a.reconcileSaved(session);
+        if (!app) li.remove(); else { rm.querySelector('svg')?.setAttribute('fill', 'none'); rm.title = 'Not saved'; }
+        const left = list.children.length;
+        statusEl.textContent = left ? `${left} job${left === 1 ? '' : 's'}` : 'Nothing saved.';
+      });
+      controls.append(rm);
+      li.append(controls);
+      list.append(li);
+    }
+  }
+
+  main().catch(err => { console.error(err); statusEl.textContent = 'Could not load your saved jobs. Please try again.'; });
+</script>

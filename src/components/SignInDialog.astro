@@ -1,0 +1,173 @@
+---
+// Magic-link sign-in sheet + the one script that owns auth state for the page.
+// Rendered once by Header. Everything that reacts to sign-in state uses
+// `data-when="in" | "out"`, toggled by `html[data-signed-in]`.
+---
+
+<dialog
+  id="signin-modal"
+  class="process-modal w-full max-w-sm bg-paper dark:bg-[#1B1B19] text-ink dark:text-slate-100 border border-line dark:border-[#2C2C2A] p-0"
+  aria-labelledby="signin-title"
+>
+  <form id="signin-form" class="p-6 md:p-7" novalidate>
+    <div class="flex items-start justify-between gap-4">
+      <h2 id="signin-title" class="font-display font-semibold text-xl tracking-tight leading-tight">Sign in</h2>
+      <button type="button" data-close-signin class="shrink-0 -mt-1 -mr-2 p-2 text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+      </button>
+    </div>
+
+    <div data-signin-step="email">
+      <p class="mt-2 text-sm text-ink-soft dark:text-slate-400 leading-relaxed">
+        Save jobs and keep track of where you've applied, on any device. No password — we email you a link.
+      </p>
+      <label for="signin-email" class="block mt-5 font-mono text-[11px] uppercase tracking-[0.12em] text-muted dark:text-slate-400">Email</label>
+      <input
+        id="signin-email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        inputmode="email"
+        required
+        placeholder="you@example.com"
+        class="mt-1.5 w-full px-4 py-2.5 rounded-xl border border-line dark:border-slate-700 bg-paper dark:bg-surface-card text-sm text-ink dark:text-slate-100 focus:outline-none focus:border-ink dark:focus:border-slate-300 transition-colors"
+      />
+      <p id="signin-error" class="hidden mt-2 text-xs text-amber-700 dark:text-amber-400" role="alert"></p>
+      <button
+        type="submit"
+        id="signin-submit"
+        class="mt-4 w-full inline-flex items-center justify-center px-6 py-3 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-semibold hover:opacity-85 transition-opacity disabled:opacity-60"
+      >
+        Email me a sign-in link
+      </button>
+      <p class="mt-3 text-[11px] text-muted dark:text-slate-500 leading-relaxed">
+        We only use your email to sign you in. Nothing you save is public.
+      </p>
+    </div>
+
+    <div data-signin-step="sent" class="hidden">
+      <p class="mt-2 text-sm text-ink-soft dark:text-slate-300 leading-relaxed">
+        Check your inbox — we sent a sign-in link to <strong id="signin-sent-to" class="text-ink dark:text-slate-100"></strong>. It's valid for an hour.
+      </p>
+      <p class="mt-3 text-[11px] text-muted dark:text-slate-500 leading-relaxed">
+        Nothing there after a minute? Check spam, then <button type="button" data-signin-again class="underline underline-offset-2">try another address</button>.
+      </p>
+    </div>
+  </form>
+</dialog>
+
+<style is:global>
+  /* Sign-in state — one attribute on <html> drives every menu instance */
+  [data-when="in"] { display: none !important; }
+  html[data-signed-in] [data-when="in"] { display: revert !important; }
+  html[data-signed-in] [data-when="out"] { display: none !important; }
+  /* Until the client confirms accounts are configured, show nothing auth-related */
+  html:not([data-accounts]) [data-when="out"] { display: none !important; }
+</style>
+
+<script>
+  import type { Session } from '@supabase/supabase-js';
+
+  type Account = typeof import('../lib/account');
+  let account: Account | null = null;
+  let session: Session | null = null;
+
+  const root = document.documentElement;
+  const modal = document.getElementById('signin-modal') as HTMLDialogElement | null;
+  const form = document.getElementById('signin-form') as HTMLFormElement | null;
+  const emailInput = document.getElementById('signin-email') as HTMLInputElement | null;
+  const errorEl = document.getElementById('signin-error');
+  const submitBtn = document.getElementById('signin-submit') as HTMLButtonElement | null;
+
+  const step = (name: 'email' | 'sent') => {
+    document.querySelectorAll<HTMLElement>('[data-signin-step]').forEach(el => {
+      el.classList.toggle('hidden', el.dataset.signinStep !== name);
+    });
+  };
+
+  async function load(): Promise<Account> {
+    if (!account) account = await import('../lib/account');
+    return account;
+  }
+
+  function applySession(next: Session | null) {
+    session = next;
+    if (next) root.setAttribute('data-signed-in', '');
+    else root.removeAttribute('data-signed-in');
+    document.querySelectorAll<HTMLElement>('[data-account-email]').forEach(el => { el.textContent = next?.user.email ?? ''; });
+    document.dispatchEvent(new CustomEvent('dj-auth', { detail: { session: next } }));
+  }
+
+  async function boot() {
+    const a = await load();
+    if (!a.accountsEnabled) return;
+    root.setAttribute('data-accounts', 'on');
+    applySession(await a.getSession());
+    a.onAuthChange(async (s) => {
+      const wasSignedIn = !!session;
+      applySession(s);
+      if (s && !wasSignedIn) await a.syncSaved(s);
+    });
+    if (session) await a.syncSaved(session);
+    // Clean the magic-link hash out of the address bar once consumed
+    if (a.hasSessionInUrl()) history.replaceState(null, '', location.pathname + location.search);
+    // Tile bookmark buttons write localStorage and announce; mirror to the DB
+    document.addEventListener('dj-bookmarks-changed', () => { if (session) a.reconcileSaved(session); });
+  }
+
+  // Decide up front whether to download the client at all
+  const needsClient = (() => {
+    try {
+      return /access_token=|error_description=/.test(location.hash) ||
+        Object.keys(localStorage).some(k => k.startsWith('sb-') && k.endsWith('-auth-token'));
+    } catch { return false; }
+  })();
+  if (needsClient) boot();
+  else if (import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY) {
+    root.setAttribute('data-accounts', 'on');
+  }
+
+  // Open / close
+  document.addEventListener('click', async (e) => {
+    const t = e.target as HTMLElement;
+    if (t.closest('[data-open-signin]')) {
+      e.preventDefault();
+      step('email');
+      errorEl?.classList.add('hidden');
+      modal?.showModal();
+      emailInput?.focus();
+      if (!account) load();
+    } else if (t.closest('[data-close-signin]') || e.target === modal) {
+      modal?.close();
+    } else if (t.closest('[data-signin-again]')) {
+      step('email'); emailInput?.focus();
+    } else if (t.closest('[data-signout]')) {
+      e.preventDefault();
+      const a = await load();
+      await a.signOut();
+      applySession(null);
+      if (location.pathname === '/saved') location.reload();
+    }
+  });
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = emailInput?.value.trim() ?? '';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (errorEl) { errorEl.textContent = 'Please enter a valid email address.'; errorEl.classList.remove('hidden'); }
+      return;
+    }
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+    const a = await load();
+    if (!session) { await a.getSession().then(applySession); a.onAuthChange(applySession); }
+    const err = await a.signInWithEmail(email);
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Email me a sign-in link'; }
+    if (err) {
+      if (errorEl) { errorEl.textContent = /rate|limit/i.test(err) ? 'Too many sign-in emails right now. Try again in a few minutes.' : err; errorEl.classList.remove('hidden'); }
+      return;
+    }
+    const sentTo = document.getElementById('signin-sent-to');
+    if (sentTo) sentTo.textContent = email;
+    step('sent');
+  });
+</script>

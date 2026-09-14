@@ -15,6 +15,7 @@ A free, open-source job board for **designers** — product design, UX, research
 - 🧭 **Know before you apply** — community-reported interview processes (rounds, timeline, take-home, ghosting) in structured form, not free-text reviews. Reports publish the moment they're submitted and live on a company page that outlasts the posting
 - 👋 **Who to contact** — a likely recruiter or hiring contact per job, sourced from public profiles
 - 🌍 **Community-sourced** — anyone can submit a job or share process details
+- 🔖 **Accounts, optional** — magic-link sign-in to keep saved jobs across devices and track where you are with each application
 - 🔓 **Open source** — built in the open, maintained by the community
 - 🛡️ **Spam-protected** — Cloudflare Turnstile, server-side rate limiting, honeypot fields, manual review queue
 - ⚡ **Fast** — static site with server endpoints, loads instantly
@@ -126,6 +127,10 @@ So a report filed against a role stays on the company page after the posting clo
 - The free-text `notes` field is stored but hidden until a maintainer sets
   `notes_status = 'approved'` (criteria in `docs/process-report-criteria.md`).
 - After publishing new jobs, run `npm run sync` so the DB knows about them.
+- Accounts use Supabase Auth magic links. `saved_jobs` and `applications` are readable and
+  writable only by their owner (`auth.uid() = user_id`). Anonymous visitors keep bookmarks in
+  localStorage; signing in merges them into the account. Auth settings (site URL, redirect
+  allow-list, SMTP) live in `supabase/config.toml` and are applied with `supabase config push`.
 
 **Open source + secrets.** The schema and policies are public in
 `supabase/migrations`; that's the point. What keeps it safe: Row Level Security on
@@ -146,6 +151,8 @@ and forms fall back to GitHub issues. For production, set these in your hosting 
 | `GITHUB_REPO` | Repository for issue creation (e.g. `cmonies/design-jobs-cv`) |
 | `SUPABASE_URL` | Supabase project URL |
 | `SUPABASE_SECRET_KEY` | Supabase secret / service-role key — server only, never exposed |
+| `PUBLIC_SUPABASE_URL` | Same URL, exposed to the browser for sign-in and saved jobs |
+| `PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable key — safe in the browser, bounded by Row Level Security |
 | `FEEDBACK_SALT` | Salt for the anonymous submitter fingerprint (optional) |
 
 ## License

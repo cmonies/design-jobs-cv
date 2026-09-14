@@ -102,5 +102,6 @@ const { jobs, filterable = false, maxDelay = 150, delayStep = 20, id } = Astro.p
     });
   });
 
+  document.addEventListener('dj-bookmarks-synced', sync);
   sync();
 </script>

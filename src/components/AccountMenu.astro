@@ -1,0 +1,26 @@
+---
+// Header slot: "Sign in" when anonymous, "Saved" + sign out when signed in.
+// State is driven by html[data-signed-in] (see SignInDialog.astro).
+interface Props { variant?: 'desktop' | 'mobile' }
+const { variant = 'desktop' } = Astro.props;
+const linkClass = variant === 'desktop'
+  ? 'text-sm font-medium text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors'
+  : 'block text-sm font-medium text-ink-soft dark:text-slate-300 hover:text-ink dark:hover:text-white transition-colors py-1';
+---
+
+{variant === 'desktop' ? (
+  <>
+    <button type="button" data-open-signin data-when="out" class={linkClass}>Sign in</button>
+    <a href="/saved" data-when="in" class={linkClass}>Saved</a>
+    <button type="button" data-signout data-when="in" class={linkClass} title="Sign out">
+      <span class="sr-only">Sign out</span>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+    </button>
+  </>
+) : (
+  <>
+    <button type="button" data-open-signin data-when="out" class={linkClass}>Sign in</button>
+    <a href="/saved" data-when="in" class={linkClass}>Saved jobs</a>
+    <button type="button" data-signout data-when="in" class={linkClass}>Sign out</button>
+  </>
+)}
