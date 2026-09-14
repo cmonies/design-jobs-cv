@@ -238,20 +238,26 @@ otp_length = 6
 # Number of seconds before the email OTP expires (defaults to 1 hour).
 otp_expiry = 3600
 
-# Use a production-ready SMTP server
-# [auth.email.smtp]
-# enabled = true
-# host = "smtp.sendgrid.net"
-# port = 587
-# user = "apikey"
-# pass = "env(SENDGRID_API_KEY)"
-# admin_email = "admin@email.com"
-# sender_name = "Admin"
+# Resend SMTP for sign-in emails. RESEND_API_KEY must be in the environment
+# when running `supabase config push` (it is read from .env, never committed).
+[auth.email.smtp]
+enabled = false
+host = "smtp.resend.com"
+port = 465
+user = "resend"
+pass = "env(RESEND_API_KEY)"
+admin_email = "hello@designjobs.cv"
+sender_name = "designjobs.cv"
 
-# Uncomment to customize email template
-# [auth.email.template.invite]
-# subject = "You have been invited"
-# content_path = "./supabase/templates/invite.html"
+# Sign-in emails. Supabase uses "magic_link" for existing users and
+# "confirmation" for first-time sign-ins; both get the same design.
+[auth.email.template.magic_link]
+subject = "Your sign-in link for designjobs.cv"
+content_path = "./supabase/templates/sign-in.html"
+
+[auth.email.template.confirmation]
+subject = "Your sign-in link for designjobs.cv"
+content_path = "./supabase/templates/sign-in.html"
 
 # Uncomment to customize notification email template
 # [auth.email.notification.password_changed]
