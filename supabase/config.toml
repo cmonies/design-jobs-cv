@@ -241,7 +241,7 @@ otp_expiry = 3600
 # Resend SMTP for sign-in emails. RESEND_API_KEY must be in the environment
 # when running `supabase config push` (it is read from .env, never committed).
 [auth.email.smtp]
-enabled = false
+enabled = true
 host = "smtp.resend.com"
 port = 465
 user = "resend"
