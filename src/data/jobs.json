@@ -1,5 +1,115 @@
 [
   {
+    "id": "maintainx-senior-product-designer-ai",
+    "title": "Senior Product Designer, AI",
+    "company": "MaintainX",
+    "companyUrl": "https://www.getmaintainx.com",
+    "url": "https://jobs.ashbyhq.com/maintainx/1dd47448-2d63-44cb-b77e-40057180ebab",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US/Canada)",
+    "postedAt": "2026-09-14",
+    "vertical": "Trades",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI",
+      "mobile",
+      "frontline",
+      "industrial",
+      "B2B SaaS"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/maintainx",
+    "_verifiedAt": "2026-09-14"
+  },
+  {
+    "id": "genmo-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Genmo",
+    "companyUrl": "https://www.genmo.ai",
+    "url": "https://jobs.ashbyhq.com/genmo/1eec9a21-b686-498c-8ca5-27fe9c44e2b6",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-09-14",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI",
+      "video generation",
+      "consumer",
+      "0-to-1"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/genmo",
+    "_verifiedAt": "2026-09-14"
+  },
+  {
+    "id": "edra-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Edra",
+    "companyUrl": "https://edra.ai",
+    "url": "https://jobs.ashbyhq.com/edra/97b34fd9-4f34-45b5-b52a-67085b65e9b2",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "London, UK",
+    "postedAt": "2026-09-14",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI agents",
+      "enterprise",
+      "0-to-1",
+      "B2B"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/edra",
+    "_verifiedAt": "2026-09-14"
+  },
+  {
+    "id": "ollie-senior-product-designer-contract",
+    "title": "Senior Product Designer (Contract)",
+    "company": "Ollie",
+    "companyUrl": "https://www.myollie.com",
+    "url": "https://jobs.lever.co/myollie/3cfb5126-808b-4e01-ab11-e87450796eef",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US, East Coast preferred)",
+    "postedAt": "2026-09-14",
+    "vertical": "Consumer",
+    "employmentType": "Contract",
+    "tags": [
+      "DTC",
+      "e-commerce",
+      "subscription",
+      "mobile",
+      "web",
+      "60-90 day"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/myollie",
+    "_verifiedAt": "2026-09-14"
+  },
+  {
+    "id": "offerup-principal-product-designer-brand-contract",
+    "title": "Principal Product Designer, Brand and Experience (Contract)",
+    "company": "OfferUp",
+    "companyUrl": "https://offerup.com",
+    "url": "https://job-boards.greenhouse.io/offerup/jobs/8180867",
+    "level": "Principal",
+    "locationType": "On-site",
+    "location": "Bellevue, WA",
+    "postedAt": "2026-09-04",
+    "vertical": "Consumer",
+    "employmentType": "Contract",
+    "tags": [
+      "marketplace",
+      "fractional",
+      "brand",
+      "consumer",
+      "mobile",
+      "hands-on"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/offerup",
+    "_verifiedAt": "2026-09-14"
+  },
+  {
     "id": "ashby-staff-product-designer",
     "title": "Staff Product Designer",
     "company": "Ashby",
