@@ -1,0 +1,106 @@
+---
+import JobCard from './JobCard.astro';
+import { locationBuckets } from '../lib/locations';
+
+interface Job {
+  id?: string;
+  title: string;
+  company: string;
+  companyUrl: string;
+  level: string;
+  locationType: string;
+  location: string;
+  url: string;
+  postedDate?: string | null;
+  postedAt?: string | null;
+  tags: string[];
+  vertical?: string;
+  employmentType?: string;
+  salary?: string | null;
+}
+
+interface Props {
+  jobs: Job[];
+  /** Add data attributes for filtering (jobs page) */
+  filterable?: boolean;
+  /** Max stagger delay in ms */
+  maxDelay?: number;
+  /** Delay step per item in ms */
+  delayStep?: number;
+  id?: string;
+}
+
+const { jobs, filterable = false, maxDelay = 150, delayStep = 20, id } = Astro.props;
+---
+
+<!-- Grid: rows flow left-to-right so sort order is preserved visually. -->
+<ul
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-2.5 list-none"
+  id={id}
+  aria-label="Job listings"
+>
+  {jobs.map((job, i) => (
+    <li
+      class:list={["relative group/tile reveal reveal-tile", filterable && "job-item"]}
+      data-delay={String(Math.min(i * delayStep, maxDelay))}
+      data-job-id={job.id}
+      {...(filterable ? {
+        "data-level": job.level,
+        "data-location-type": job.locationType,
+        "data-location-buckets": locationBuckets(job.location, job.locationType).join('|'),
+        "data-vertical": job.vertical || 'Healthcare',
+        "data-employment-type": job.employmentType || 'Full-time',
+        "data-search": `${job.title} ${job.company} ${job.location} ${job.vertical || ''} ${job.tags.join(' ')}`.toLowerCase(),
+      } : {})}
+    >
+      <JobCard {...job} index={i} />
+    </li>
+  ))}
+</ul>
+
+<style is:global>
+  /* Bookmark affordance: hidden until tile hover / keyboard focus / already saved */
+  li:hover > .bookmark-btn,
+  .bookmark-btn:focus-visible,
+  .bookmark-btn[aria-pressed="true"] {
+    opacity: 1;
+  }
+  @media (hover: none) {
+    .bookmark-btn { opacity: 1; } /* always visible on touch — there is no hover */
+  }
+  .bookmark-btn[aria-pressed="true"] svg {
+    fill: currentColor;
+  }
+</style>
+
+<script>
+  const KEY = 'dj-bookmarks';
+  const read = (): string[] => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } };
+  const write = (ids: string[]) => localStorage.setItem(KEY, JSON.stringify(ids));
+
+  function sync() {
+    const saved = new Set(read());
+    document.querySelectorAll<HTMLButtonElement>('.bookmark-btn').forEach(btn => {
+      const on = saved.has(btn.dataset.jobId || '');
+      btn.setAttribute('aria-pressed', String(on));
+      btn.setAttribute('aria-label', `${on ? 'Remove saved job' : 'Save job'}`);
+      btn.title = on ? 'Saved — click to remove' : 'Save job';
+    });
+    document.dispatchEvent(new CustomEvent('dj-bookmarks-changed', { detail: { count: saved.size } }));
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.bookmark-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const id = btn.dataset.jobId || '';
+      const ids = read();
+      const i = ids.indexOf(id);
+      i >= 0 ? ids.splice(i, 1) : ids.push(id);
+      write(ids);
+      sync();
+    });
+  });
+
+  sync();
+</script>

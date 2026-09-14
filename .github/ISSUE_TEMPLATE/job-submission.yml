@@ -1,0 +1,95 @@
+name: 🎯 Job Submission
+description: Submit a healthcare UX/design job listing
+title: "Add: [Job Title] at [Company]"
+labels: ["job-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a job! A maintainer will review and add it to the site.
+
+  - type: input
+    id: title
+    attributes:
+      label: Job Title
+      placeholder: "e.g., Senior UX Designer"
+    validations:
+      required: true
+
+  - type: input
+    id: company
+    attributes:
+      label: Company Name
+      placeholder: "e.g., Oscar Health"
+    validations:
+      required: true
+
+  - type: input
+    id: company-url
+    attributes:
+      label: Company Website
+      placeholder: "https://company.com"
+    validations:
+      required: true
+
+  - type: input
+    id: job-url
+    attributes:
+      label: Job Posting URL
+      description: Direct link to the job listing (must be active)
+      placeholder: "https://company.com/careers/job-link"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options:
+        - Junior
+        - Mid
+        - Senior
+        - Lead
+        - Principal
+        - Director
+    validations:
+      required: true
+
+  - type: dropdown
+    id: location-type
+    attributes:
+      label: Location Type
+      options:
+        - Remote
+        - Hybrid
+        - Onsite
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: City/State, Country, or "USA" for remote
+      placeholder: "e.g., San Francisco, CA or USA"
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated relevant tags
+      placeholder: "e.g., telehealth, B2C, consumer, mental health"
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      options:
+        - label: This is a direct company listing (not a recruiter/staffing agency)
+          required: true
+        - label: The job posting is currently active
+          required: true
+        - label: This is a UX/design role at a healthcare or health-tech company
+          required: true

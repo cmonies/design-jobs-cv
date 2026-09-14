@@ -1,0 +1,143 @@
+---
+interface Props {
+  id?: string;
+  title: string;
+  company: string;
+  companyUrl: string;
+  level: string;
+  locationType: string;
+  location: string;
+  url: string;
+  postedDate?: string | null;
+  postedAt?: string | null;
+  tags: string[];
+  vertical?: string;
+  employmentType?: string;
+  salary?: string | null;
+  /** Position in the grid — drives the deterministic treatment cycle */
+  index?: number;
+}
+
+const {
+  id, title, company, level, locationType, location, url, tags,
+  vertical = 'Healthcare', employmentType = 'Full-time', salary, index = 0,
+  postedAt,
+} = Astro.props;
+
+const daysAgo = postedAt
+  ? Math.floor((Date.now() - new Date(postedAt + 'T12:00:00').getTime()) / 86400000)
+  : null;
+const ageLabel = (() => {
+  if (daysAgo === null) return null;
+  if (daysAgo === 0) return 'today';
+  if (daysAgo === 1) return '1d';
+  if (daysAgo < 7) return `${daysAgo}d`;
+  if (daysAgo < 14) return '1w';
+  if (daysAgo < 21) return '2w';
+  if (daysAgo < 30) return '3w';
+  return `${Math.floor(daysAgo / 7)}w`;
+})();
+const isStaleCard = daysAgo !== null && daysAgo >= 21;
+
+const isContract = employmentType === 'Contract' || employmentType === 'Freelance';
+
+// Tile ground encodes SENIORITY — heavier ground, more senior role. It's the
+// fastest disqualifier when scanning a board, splits the listings into three
+// balanced groups, and stays monochrome so contract tiles remain the loudest
+// thing on the wall. (Vertical was the obvious alternative but Healthcare is
+// ~40% of the board while Climate/Trades/Education have 1-2 jobs each —
+// that's confetti, not a system.)
+// Every tile carries a hairline. Each border is derived one consistent
+// lightness step off its own ground (OKLCH, same chroma and hue), so the
+// outline reads as the same structural element everywhere instead of an
+// exception on the white tile — which is what it looked like when only the
+// white ground had one.
+const TREATMENTS = {
+  light:    { key: 'plain',    tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-[#2C2C2A]',       meta: 'text-muted dark:text-slate-400',     titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  mid:      { key: 'cream',    tile: 'bg-tile-cream text-ink border border-[#DDDDDB] dark:bg-[#232321] dark:text-slate-100 dark:border-[#323230]', meta: 'text-[#54534E] dark:text-slate-400', titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  // Stone, not graphite: in light mode a near-black ground would compete with
+  // the contract tile and blunt the one signal we most want people to catch.
+  // Contract keeps sole ownership of true dark.
+  heavy:    { key: 'stone',    tile: 'bg-[#E3E1DA] text-ink border border-[#CCCAC3] dark:bg-[#323230] dark:text-slate-100 dark:border-[#444442]', meta: 'text-[#5C5A53] dark:text-slate-400', titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+};
+
+// Entry/Junior/Mid → light · Senior → cream · Staff and above → graphite
+const SENIOR_PLUS = ['staff', 'lead', 'principal', 'director', 'manager', 'head'];
+function treatmentForLevel(lvl: string) {
+  const l = (lvl || '').toLowerCase();
+  if (SENIOR_PLUS.some(s => l.includes(s))) return TREATMENTS.heavy;
+  if (l.includes('senior')) return TREATMENTS.mid;   // covers "Mid-Senior" too
+  return TREATMENTS.light;
+}
+
+// Contract roles always take the inverted treatment — the boldest tile on the wall:
+// pure ink on the light canvas, paper-white on the dark one. No extra color needed.
+const contractTreatment = {
+  key: 'contract',
+  tile: 'bg-tile-ink text-[#F2F1EC] border border-[#2D2C2A] dark:bg-[#EDEBE4] dark:text-ink dark:border-[#D6D4CD]',
+  meta: 'text-[#A3A099] dark:text-[#54534E]',
+  titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6',
+};
+
+const t = isContract ? contractTreatment : treatmentForLevel(level);
+
+// Short location for the meta line — drop it when it just repeats the location type
+const shortLocation = location.replace(/\s*\(.*\)$/, '');
+const locationRedundant = shortLocation.toLowerCase().startsWith(locationType.toLowerCase());
+const metaBits = [level, locationType, locationRedundant ? null : shortLocation].filter(Boolean);
+---
+
+<a
+  href={id ? `/jobs/${id}` : url}
+  {...(!id ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+  aria-label={`${title} at ${company}${isContract ? ' (contract)' : ''}${!id ? ' (opens in a new tab)' : ''}`}
+  class={`job-tile group relative flex flex-col justify-between gap-8 rounded-xl ${t.tile} ${t.pad} transition-[transform,box-shadow,border-color] duration-200 ease-[cubic-bezier(0.215,0.61,0.355,1)] hover:-translate-y-0.5 hover:shadow-soft-md motion-reduce:hover:translate-y-0`}
+>
+  <div class="flex items-start justify-between gap-3 pr-8">
+    <span class={`font-mono text-[11px] uppercase tracking-[0.14em] ${t.meta}`}>{company}</span>
+    {isContract && (
+      <span class="font-mono text-[11px] uppercase tracking-[0.14em] font-bold shrink-0">Contract</span>
+    )}
+  </div>
+
+  <h3 class={`font-display font-semibold leading-[1.04] tracking-tight [text-wrap:balance] ${t.titleSize}`}>
+    {title}
+  </h3>
+
+  <div class="flex items-end justify-between gap-3">
+    <div class={`font-mono text-[11px] leading-relaxed uppercase tracking-[0.08em] ${t.meta}`}>
+      <span class="flex items-center gap-2">
+        {metaBits.join(' · ')}
+        {ageLabel && (
+          <span class:list={[
+            'text-[10px] tabular-nums',
+            isStaleCard ? 'opacity-60' : 'opacity-50'
+          ]} aria-label={`Posted ${ageLabel} ago`}>
+            {ageLabel}
+          </span>
+        )}
+      </span>
+      {salary && <span class="block mt-0.5">{salary}</span>}
+    </div>
+    <span class={`shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ${t.meta}`} aria-hidden="true">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+      </svg>
+    </span>
+  </div>
+</a>
+
+{id && (
+  <button
+    type="button"
+    class="bookmark-btn absolute top-3 right-3 z-10 p-2 rounded-full bg-paper/85 dark:bg-surface-card/85 backdrop-blur-sm border border-line dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:text-ink dark:hover:text-white hover:border-ink dark:hover:border-slate-400 transition-colors opacity-0 group-bookmark"
+    data-job-id={id}
+    aria-pressed="false"
+    aria-label={`Save ${title} at ${company}`}
+    title="Save job"
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+    </svg>
+  </button>
+)}

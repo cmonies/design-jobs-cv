@@ -1,0 +1,429 @@
+---
+// Interview-process report modal — structured fields only, no free text by design.
+// Centered dialog on desktop, bottom sheet on mobile. Files a GitHub issue via /api/submit.
+interface Props {
+  jobId: string;
+  company: string;
+  jobTitle: string;
+}
+const { jobId, company, jobTitle } = Astro.props;
+
+const ROUND_TYPES = ['recruiter screen', 'hiring manager', 'portfolio review', 'design exercise', 'take-home assessment', 'panel', 'executive screen', 'reference check'];
+const TURNSTILE_SITEKEY = '0x4AAAAAAE0X-h9S_HZGFjc6';
+---
+
+<dialog
+  id="process-modal"
+  class="process-modal w-full max-w-lg bg-paper dark:bg-[#1B1B19] text-ink dark:text-slate-100 border border-line dark:border-[#2C2C2A] p-0"
+  aria-labelledby="process-modal-title"
+>
+    <div id="process-form-view" class="flex flex-col min-h-0">
+      <div class="shrink-0 px-6 md:px-8 pt-5 pb-4 border-b border-line dark:border-[#2C2C2A]">
+        <div class="flex items-start justify-between gap-4">
+          <h2 id="process-modal-title" class="font-display font-semibold text-xl tracking-tight">Share the interview process</h2>
+          <button type="button" data-close-process-modal class="shrink-0 -mt-1 -mr-2 p-2 text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors" aria-label="Close">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-muted dark:text-slate-400 mt-1">
+          {jobTitle} · {company}
+        </p>
+      </div>
+
+      <form id="process-form" class="flex flex-col min-h-0 flex-1">
+        <div class="pm-body flex-1 min-h-0 overflow-y-auto px-6 md:px-8 py-5 space-y-5">
+        <input type="hidden" name="jobId" value={jobId} />
+        <input type="hidden" name="company" value={company} />
+        <input type="hidden" name="jobTitle" value={jobTitle} />
+        <div class="!absolute !opacity-0 !h-0 !overflow-hidden pointer-events-none" aria-hidden="true" tabindex="-1">
+          <label for="pm-website">Website</label>
+          <input type="text" id="pm-website" name="website_url" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="pm-rounds" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Rounds</label>
+            <select id="pm-rounds" name="rounds" class="pm-input">
+              <option value="" disabled selected>Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+          <div>
+            <label for="pm-timeline" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Total timeline</label>
+            <select id="pm-timeline" name="timeline" class="pm-input">
+              <option value="" disabled selected>Select</option>
+              <option value="under 1 week">Under 1 week</option>
+              <option value="1-2 weeks">1–2 weeks</option>
+              <option value="2-4 weeks">2–4 weeks</option>
+              <option value="4-6 weeks">4–6 weeks</option>
+              <option value="6+ weeks">6+ weeks</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset>
+          <legend class="font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-2">Round types — tap in the order they happened</legend>
+          <div class="grid grid-cols-2 gap-x-3 gap-y-1">
+            {ROUND_TYPES.map(rt => (
+              <label class="flex items-center gap-2 cursor-pointer py-1">
+                <input type="checkbox" name="roundTypes" value={rt} class="pm-check" />
+                <span class="text-sm text-ink-soft dark:text-slate-300">{rt.charAt(0).toUpperCase() + rt.slice(1)}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="pm-atype" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Take-home assessment?</label>
+          <select id="pm-atype" name="assessmentType" class="pm-input">
+            <option value="" disabled selected>Select</option>
+            <option value="none">No take-home</option>
+            <option value="paid take-home">Yes — paid</option>
+            <option value="unpaid take-home">Yes — unpaid</option>
+            <option value="timed exercise">Yes — timed live exercise</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend class="font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-2">Did they get back to you either way?</legend>
+          <div class="flex flex-wrap gap-1.5">
+            {[['yes', 'Yes'], ['no', 'No — ghosted'], ['', "Didn't get that far"]].map(([val, lbl]) => (
+              <label class="pm-pill">
+                <input type="radio" name="gotFeedback" value={val} checked={val === ''} class="sr-only" />
+                <span>{lbl}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend class="font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-2">How do you know this?</legend>
+          <div class="flex flex-wrap gap-1.5">
+            {[['interviewed', 'I interviewed here'], ['work-here', 'I work here'], ['secondhand', 'Someone told me']].map(([val, lbl]) => (
+              <label class="pm-pill">
+                <input type="radio" name="relationship" value={val} class="sr-only" />
+                <span>{lbl}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="pm-contact-name" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Recruiter you dealt with</label>
+            <input type="text" id="pm-contact-name" name="contactName" placeholder="Optional" class="pm-input !bg-none !pr-3" />
+          </div>
+          <div>
+            <label for="pm-contact-url" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Their LinkedIn or email</label>
+            <input type="text" id="pm-contact-url" name="contactUrl" placeholder="Optional" class="pm-input !bg-none !pr-3" />
+          </div>
+        </div>
+
+        <div>
+          <label for="pm-notes" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Anything else — optional</label>
+          <textarea
+            id="pm-notes"
+            name="notes"
+            rows="3"
+            maxlength="280"
+            placeholder="Keep it factual — panel format, who you met, how prepared they were…"
+            class="pm-input resize-none !bg-none"
+          ></textarea>
+          <p class="text-[10px] text-slate-400 dark:text-slate-500 text-right mt-1"><span id="pm-notes-count">0</span>/280</p>
+        </div>
+
+        <div id="pm-turnstile" class="[&_iframe]:rounded-xl"></div>
+        <div id="pm-error" class="hidden text-sm text-red-600 dark:text-red-400"></div>
+        </div>
+
+        <div class="shrink-0 px-6 md:px-8 pt-4 pb-5 border-t border-line dark:border-[#2C2C2A]">
+          <button
+            type="submit"
+            id="pm-submit"
+            class="w-full inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-[15px] font-semibold hover:opacity-85 transition-opacity"
+          >
+            Share process details
+          </button>
+          <p class="mt-2.5 text-[11px] text-center text-slate-400 dark:text-slate-500">
+            Anonymous &amp; reviewed before publishing. By submitting, you confirm this reflects your experience as accurately as you can recall.
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <div id="process-success-view" class="hidden text-center py-10 px-6">
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-line dark:border-[#2C2C2A] mb-5">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+      </div>
+      <h2 class="font-display font-semibold text-xl tracking-tight mb-2">Thank you</h2>
+      <p class="text-sm text-muted dark:text-slate-400 mb-7 max-w-xs mx-auto leading-relaxed">
+        Your report is in the review queue. Once verified it'll show up on this page for the next person.
+      </p>
+      <button type="button" data-close-process-modal class="inline-flex items-center justify-center px-7 py-3 rounded-full border border-line dark:border-slate-700 text-sm font-semibold hover:border-ink dark:hover:border-slate-400 transition-colors">
+        Done
+      </button>
+    </div>
+</dialog>
+
+<style is:global>
+  /* The dialog box itself never scrolls — border, radius, and background
+     stay put. Only .pm-body scrolls, between fixed header and footer rows. */
+  .process-modal {
+    border-radius: 1.25rem;
+    margin: auto;
+    max-height: 90dvh;
+    overflow: hidden;
+  }
+  .process-modal[open] {
+    display: flex;
+    flex-direction: column;
+  }
+  .process-modal .pm-body {
+    overscroll-behavior: contain;
+  }
+  .process-modal::backdrop {
+    background: rgb(26 25 23 / 0.45);
+    backdrop-filter: blur(2px);
+  }
+  @media (max-width: 640px) {
+    .process-modal {
+      margin: auto 0 0;
+      max-width: 100%;
+      border-radius: 1.25rem 1.25rem 0 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 0;
+      max-height: 92dvh;
+    }
+  }
+  .pm-input {
+    width: 100%;
+    padding: 0.6rem 2.25rem 0.6rem 0.85rem;
+    border-radius: 0.75rem;
+    border: 1px solid #E8E8E6;
+    background: #FFFFFF;
+    font-size: 0.875rem;
+    color: #1A1917;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23706F6A' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+  }
+  .pm-input:focus {
+    outline: none;
+    border-color: #1A1917;
+  }
+  .dark .pm-input {
+    background: #131211;
+    border-color: #2C2C2A;
+    color: #F1F5F9;
+  }
+  .dark .pm-input:focus {
+    border-color: #94A3B8;
+  }
+  .pm-pill span {
+    display: inline-block;
+    padding: 0.35rem 0.8rem;
+    border-radius: 9999px;
+    border: 1px solid #E8E8E6;
+    font-size: 0.8rem;
+    color: #3B3A36;
+    cursor: pointer;
+    transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+    user-select: none;
+  }
+  .pm-pill span:hover {
+    border-color: #1A1917;
+  }
+  .pm-pill input:checked + span {
+    background: #1A1917;
+    border-color: #1A1917;
+    color: #F2F1EC;
+  }
+  /* Round-type checkboxes show their tap order instead of a checkmark */
+  .pm-check {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 0.25rem;
+    border: 1.5px solid #D6D3D1;
+    background: #FFFFFF;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .pm-check:checked {
+    background: #1A1917;
+    border-color: #1A1917;
+  }
+  .pm-check:checked::after {
+    content: attr(data-ord);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F2F1EC;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .pm-check:focus-visible {
+    outline: 2px solid #1A1917;
+    outline-offset: 2px;
+  }
+  .dark .pm-check {
+    background: #131211;
+    border-color: #2C2C2A;
+  }
+  .dark .pm-check:checked {
+    background: #EDEBE4;
+    border-color: #EDEBE4;
+  }
+  .dark .pm-check:checked::after {
+    color: #1A1917;
+  }
+  .dark .pm-check:focus-visible {
+    outline-color: #94A3B8;
+  }
+  .pm-pill input:focus-visible + span {
+    outline: 2px solid #1A1917;
+    outline-offset: 2px;
+  }
+  .dark .pm-pill span {
+    border-color: #2C2C2A;
+    color: #CBD5E1;
+  }
+  .dark .pm-pill span:hover {
+    border-color: #94A3B8;
+  }
+  .dark .pm-pill input:checked + span {
+    background: #EDEBE4;
+    border-color: #EDEBE4;
+    color: #1A1917;
+  }
+</style>
+
+<script define:vars={{ TURNSTILE_SITEKEY }}>
+  const modal = document.getElementById('process-modal');
+  const form = document.getElementById('process-form');
+  const formView = document.getElementById('process-form-view');
+  const successView = document.getElementById('process-success-view');
+  const errorEl = document.getElementById('pm-error');
+  const submitBtn = document.getElementById('pm-submit');
+  let turnstileLoaded = false;
+  let turnstileToken = '';
+
+  function loadTurnstile() {
+    if (turnstileLoaded) return;
+    turnstileLoaded = true;
+    window.__pmTurnstileReady = () => {
+      window.turnstile.render('#pm-turnstile', {
+        sitekey: TURNSTILE_SITEKEY,
+        theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+        callback: (token) => { turnstileToken = token; },
+      });
+    };
+    const s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=__pmTurnstileReady';
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+
+  document.querySelectorAll('[data-open-process-modal]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      modal.showModal();
+      loadTurnstile();
+    });
+  });
+
+  document.querySelectorAll('[data-close-process-modal]').forEach(btn => {
+    btn.addEventListener('click', () => modal.close());
+  });
+
+  // Click on the backdrop closes (the dialog element itself is the click target there)
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.close();
+  });
+
+  const notesEl = document.getElementById('pm-notes');
+  const notesCount = document.getElementById('pm-notes-count');
+  notesEl.addEventListener('input', () => { notesCount.textContent = String(notesEl.value.length); });
+
+  // Round types are ordered by tap sequence — each checkbox shows its
+  // position number, and the payload preserves that order.
+  const roundOrder = [];
+  const roundInputs = [...form.querySelectorAll('input[name="roundTypes"]')];
+  roundInputs.forEach(cb => {
+    cb.addEventListener('change', () => {
+      if (cb.checked) roundOrder.push(cb.value);
+      else roundOrder.splice(roundOrder.indexOf(cb.value), 1);
+      roundInputs.forEach(c => {
+        const i = roundOrder.indexOf(c.value);
+        if (i >= 0) c.dataset.ord = String(i + 1);
+        else delete c.dataset.ord;
+      });
+    });
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    errorEl.classList.add('hidden');
+
+    const data = new FormData(form);
+    const atype = (data.get('assessmentType') || '').toString();
+    const payload = {
+      type: 'bug-report',
+      issueType: 'process',
+      jobId: data.get('jobId') || '',
+      company: data.get('company') || '',
+      jobTitle: data.get('jobTitle') || '',
+      rounds: data.get('rounds') || '',
+      roundTypes: roundOrder.join(', '),
+      timeline: data.get('timeline') || '',
+      hasAssessment: atype ? (atype === 'none' ? 'no' : 'yes') : '',
+      assessmentType: atype && atype !== 'none' ? atype : '',
+      gotFeedback: data.get('gotFeedback') || '',
+      relationship: data.get('relationship') || '',
+      contactName: (data.get('contactName') || '').toString().trim(),
+      contactUrl: (data.get('contactUrl') || '').toString().trim(),
+      notes: (data.get('notes') || '').toString().trim(),
+      website_url: data.get('website_url') || '',
+      turnstileToken,
+    };
+
+    try {
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await res.json();
+      if (result.ok) {
+        formView.classList.add('hidden');
+        successView.classList.remove('hidden');
+      } else {
+        errorEl.textContent = result.error || 'Something went wrong. Please try again.';
+        errorEl.classList.remove('hidden');
+        if (window.turnstile) window.turnstile.reset();
+      }
+    } catch {
+      errorEl.textContent = 'Network error. Please check your connection and try again.';
+      errorEl.classList.remove('hidden');
+    }
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Share process details';
+  });
+</script>

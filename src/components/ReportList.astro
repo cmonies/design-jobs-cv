@@ -1,0 +1,42 @@
+---
+// One candidate-experience report per row: stage, factual chips, an approved
+// note if there is one, and the month. Shared by the job page's live island
+// and the company page. Structured facts only — see docs/process-report-criteria.md.
+import { type ReportRow, STAGE_LABEL, reportFacts, reportMonth } from '../lib/reports';
+
+interface Props {
+  reports: ReportRow[];
+  /** Show which role the report was filed against (company page) */
+  showRole?: boolean;
+  dense?: boolean;
+}
+
+const { reports, showRole = false, dense = false } = Astro.props;
+---
+
+<ul class:list={['list-none', dense ? 'space-y-3.5' : 'space-y-5']}>
+  {reports.map(r => {
+    const facts = reportFacts(r);
+    return (
+      <li class="border-l-2 border-line dark:border-slate-700 pl-3">
+        <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+          <span class="text-[13px] font-semibold text-ink dark:text-slate-100">{STAGE_LABEL[r.stage] ?? r.stage}</span>
+          {showRole && r.job_title && (
+            <span class="text-[13px] text-muted dark:text-slate-400">· {r.job_title}</span>
+          )}
+        </div>
+        {facts.length > 0 && (
+          <p class="text-[13px] text-ink-soft dark:text-slate-300 leading-relaxed mt-0.5">
+            {facts.join(' · ')}
+          </p>
+        )}
+        {r.notes && (
+          <p class="text-[13px] text-ink-soft dark:text-slate-300 leading-relaxed mt-1.5">“{r.notes}”</p>
+        )}
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-1.5">
+          {reportMonth(r.created_at)}
+        </p>
+      </li>
+    );
+  })}
+</ul>

@@ -1,0 +1,61 @@
+---
+import DarkModeToggle from './DarkModeToggle.astro';
+---
+
+<footer role="contentinfo" class="bg-paper dark:bg-surface-footer border-t border-line dark:border-slate-700/50 mt-8">
+  <div class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pt-12 pb-6">
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+      <div class="max-w-sm">
+        <div class="flex items-center gap-2.5 mb-3 text-ink dark:text-slate-100">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" class="text-crust-500">
+            <path d="m30.47 4.57 -1.52 0 0 -1.52 -1.53 0 0 -1.53 -3.04 0 0 -1.52L7.61 0l0 1.52 10.67 0 0 1.53 3.05 0 0 1.52 1.52 0 0 1.53 1.53 0 0 7.61 -1.53 0 0 1.53 -1.52 0 0 15.24 -16.76 0 0 1.52 21.33 0 0 -1.52 1.52 0 0 -1.53 1.53 0 0 -1.52 1.52 0 0 -13.72 1.53 0 0 -7.61 -1.53 0 0 -1.53z"/>
+            <path d="M15.23 21.33h1.53v1.53h-1.53Z"/><path d="M13.71 18.29h1.52v1.52h-1.52Z"/><path d="M9.14 22.86h6.09v1.52H9.14Z"/><path d="M9.14 18.29h1.52v1.52H9.14Z"/><path d="M7.61 21.33h1.53v1.53H7.61Z"/><path d="M4.57 1.52h3.04v1.53H4.57Z"/><path d="M3.04 15.24h1.53v15.24H3.04Z"/><path d="M3.04 3.05h1.53v1.52H3.04Z"/><path d="M1.52 13.71h1.52v1.53H1.52Z"/><path d="M1.52 4.57h1.52V6.1H1.52Z"/><path d="M0 6.1h1.52v7.61H0Z"/>
+          </svg>
+          <span class="font-display font-semibold text-[15px] tracking-tight">designjobs.cv</span>
+        </div>
+        <p class="text-sm text-muted dark:text-slate-400 leading-relaxed">
+          Design jobs with real links, by the community. Open source and free forever.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-10 sm:gap-16 lg:gap-24 md:pr-8">
+      <div>
+        <h2 class="text-sm font-semibold text-ink dark:text-white mb-3">Links</h2>
+        <ul class="space-y-2 text-sm text-muted dark:text-slate-400">
+          <li><a href="/jobs" class="hover:text-ink dark:hover:text-white transition-colors">All jobs</a></li>
+          <li><a href="/jobs?type=Contract" class="hover:text-ink dark:hover:text-white transition-colors">Contract roles</a></li>
+          <li><a href="#newsletter" class="hover:text-ink dark:hover:text-white transition-colors">Newsletter</a></li>
+          <li><a href="/design" class="hover:text-ink dark:hover:text-white transition-colors">Design system</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-sm font-semibold text-ink dark:text-white mb-3">Contribute</h2>
+        <ul class="space-y-2 text-sm text-muted dark:text-slate-400">
+          <li><a href="https://github.com/cmonies/design-jobs-cv" target="_blank" rel="noopener noreferrer" class="hover:text-ink dark:hover:text-white transition-colors">GitHub Repo <span class="sr-only">(opens in a new tab)</span></a></li>
+          <li><a href="/submit" class="hover:text-ink dark:hover:text-white transition-colors">Submit a job</a></li>
+          <li><a href="/report" class="hover:text-ink dark:hover:text-white transition-colors">Feedback</a></li>
+        </ul>
+      </div>
+
+      <div id="newsletter" class="max-w-xs">
+        <h2 class="text-sm font-semibold text-ink dark:text-white mb-3">Newsletter</h2>
+        <p class="text-sm text-muted dark:text-slate-400 leading-relaxed mb-4">
+          Don't miss the good ones: new design roles weekly, full-time and contract.
+        </p>
+        <span class="inline-block px-4 py-2 rounded-full border border-line dark:border-slate-700 font-mono text-[10px] uppercase tracking-[0.14em] text-muted dark:text-slate-400">
+          Coming soon
+        </span>
+      </div>
+      </div>
+    </div>
+
+    <div class="border-t border-line dark:border-slate-700/50 mt-8 pt-6 flex items-center justify-between">
+      <p class="text-xs text-slate-500 dark:text-slate-400">
+        Made with care by <a href="https://carmen.cv/" target="_blank" rel="noopener noreferrer" class="text-ink dark:text-slate-200 hover:underline">carmen.cv <span class="sr-only">(opens in a new tab)</span></a> for the design community · Open source on
+        <a href="https://github.com/cmonies/design-jobs-cv" target="_blank" rel="noopener noreferrer" class="text-ink dark:text-slate-200 hover:underline">GitHub <span class="sr-only">(opens in a new tab)</span></a>
+      </p>
+      <DarkModeToggle />
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,31 @@
+# designjobs.cv — Extended LLM Context
+
+For the complete machine-readable job listing (all current roles in structured format), see:
+https://designjobs.cv/llms-jobs.txt
+
+For structured JSON data on all jobs:
+https://designjobs.cv/jobs.json
+
+---
+
+## About designjobs.cv
+
+designjobs.cv is a community-sourced board for UX/product design roles at startups.
+Coverage spans healthcare, AI, fintech, climate, consumer, enterprise/SaaS, trades
+technology, gov/civic, and education verticals. Both full-time and contract/freelance
+roles are listed. Every listing is browser-verified against the company's official
+ATS (Greenhouse, Lever, Ashby, Workday, Gem, etc.) before publication.
+
+## Technical Details
+
+- Built with Astro + Tailwind CSS, hosted on Vercel
+- Job data as JSON at /jobs.json (public API, CORS open)
+- Individual job pages at /jobs/{id} with full Schema.org JobPosting markup
+- Sitemap at /sitemap.xml includes all job pages
+- RSS feed at /rss.xml with pub dates
+- Source: https://github.com/cmonies/design-jobs-cv
+
+## Data Schema (per job)
+
+id, title, company, companyUrl, url (ATS link), level, locationType,
+location, postedAt, vertical, employmentType, tags[], salary (when available)

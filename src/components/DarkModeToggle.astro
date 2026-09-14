@@ -1,0 +1,73 @@
+---
+---
+
+<button
+  type="button"
+  id="dark-mode-toggle"
+  class="relative inline-flex items-center h-7 w-12 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 transition-colors cursor-pointer shrink-0"
+  aria-label="Toggle dark mode"
+  role="switch"
+  aria-checked="false"
+>
+  <!-- Thumb with icon inside -->
+  <span
+    id="toggle-thumb"
+    class="inline-flex items-center justify-center h-5 w-5 rounded-full bg-white dark:bg-slate-600 shadow-sm transform transition-transform translate-x-0.5 dark:translate-x-[1.375rem]"
+  >
+    <!-- Sun (light mode) -->
+    <svg class="h-3 w-3 text-amber-500 dark:hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+    </svg>
+    <!-- Moon (dark mode) -->
+    <svg class="h-3 w-3 text-brand-300 hidden dark:block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  </span>
+</button>
+
+<script is:inline>
+  const toggle = document.getElementById('dark-mode-toggle');
+
+  function setDark(dark) {
+    document.documentElement.classList.toggle('dark', dark);
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    toggle?.setAttribute('aria-checked', String(dark));
+    toggle?.setAttribute('aria-label', dark ? 'Dark mode: on' : 'Dark mode: off');
+  }
+
+  function toggleWithTransition() {
+    const next = !document.documentElement.classList.contains('dark');
+
+    // Skip animation for users who prefer reduced motion
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      setDark(next);
+      return;
+    }
+
+    // Use View Transitions API if available (Chrome 111+, Safari 18+)
+    if (document.startViewTransition) {
+      document.startViewTransition(() => setDark(next));
+    } else {
+      // Fallback: overlay fade
+      const overlay = document.createElement('div');
+      overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;pointer-events:none;opacity:0;background:' + (next ? '#131416' : '#FAF7F0');
+      document.body.appendChild(overlay);
+      overlay.animate([
+        { opacity: 0 },
+        { opacity: 1, offset: 0.4 },
+        { opacity: 1, offset: 0.6 },
+        { opacity: 0 }
+      ], { duration: 400, easing: 'ease-in-out' }).onfinish = () => overlay.remove();
+      // Apply the change at the midpoint
+      setTimeout(() => setDark(next), 160);
+    }
+  }
+
+  // Init (no animation on load)
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setDark(stored === 'dark' || (!stored && prefersDark));
+
+  toggle?.addEventListener('click', toggleWithTransition);
+</script>

@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import JobTable from '../components/JobTable.astro';
+import jobs from '../data/jobs.json';
+import { slugify } from '../lib/slug.js';
+
+const featuredJobs = [...jobs].sort((a, b) => {
+  if (!a.postedAt && !b.postedAt) return 0;
+  if (!a.postedAt) return 1;
+  if (!b.postedAt) return -1;
+  return b.postedAt.localeCompare(a.postedAt);
+}).slice(0, 18);
+
+// Every company with a live role, most roles first, then alphabetical.
+// Company pages keep the candidate-experience record after a listing closes.
+const companyMap = new Map<string, { name: string; slug: string; count: number }>();
+for (const job of jobs) {
+  if (!job.company) continue;
+  const slug = slugify(job.company);
+  const entry = companyMap.get(slug) ?? { name: job.company, slug, count: 0 };
+  entry.count += 1;
+  companyMap.set(slug, entry);
+}
+const companies = [...companyMap.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+---
+
+<Layout title="designjobs.cv — Design jobs, verified">
+  <Header />
+
+  <main id="main-content" tabindex="-1">
+
+  <!-- JSON-LD: WebSite + Organization -->
+  <script type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "designjobs.cv",
+      "url": "https://designjobs.cv",
+      "description": "Community-sourced design jobs board. Verified listings at startups across healthcare, AI, fintech, climate, and more. Full-time and contract.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://designjobs.cv/jobs?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "designjobs.cv",
+      "url": "https://designjobs.cv",
+      "logo": "https://designjobs.cv/og-image.png",
+      "description": "Community-sourced design jobs board covering product design, UX, and design leadership at startups.",
+      "sameAs": ["https://github.com/cmonies/design-jobs-cv"]
+    }
+  ])} />
+
+  <!-- Statement — the page opens like a gallery wall label, then the work -->
+  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-12 md:pb-16">
+    <h1 class="animate-fade-up stagger-1 font-display font-semibold text-[2.6rem] md:text-7xl leading-[0.98] tracking-tight [text-wrap:balance] max-w-4xl">
+      Design work worth&nbsp;doing.
+    </h1>
+    <div class="animate-fade-up stagger-2 mt-6 md:mt-8 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <p class="text-base md:text-lg text-muted dark:text-slate-400 leading-relaxed max-w-2xl">
+        A community-run board of design roles at startups — from healthcare to AI to the corners nobody else covers. Every link goes to the company's actual posting.
+      </p>
+      <a href="/jobs" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-medium hover:opacity-85 transition-opacity">
+        View {jobs.length} jobs
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- The wall: latest roles as typographic tiles -->
+  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-16">
+    <h2 class="sr-only">Latest roles</h2>
+    <JobTable jobs={featuredJobs} delayStep={45} maxDelay={270} />
+    <div class="reveal text-center mt-10" data-delay="100">
+      <a
+        href="/jobs"
+        class="inline-flex px-7 py-3 rounded-full border border-ink dark:border-slate-300 text-ink dark:text-slate-100 font-medium text-sm hover:bg-ink hover:text-paper dark:hover:bg-slate-100 dark:hover:text-ink transition-colors"
+       
+      >
+        View all {jobs.length} jobs →
+      </a>
+    </div>
+  </section>
+
+  <!-- Companies — one chip per employer, straight to its page -->
+  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-16">
+    <div class="border-t border-line dark:border-slate-700/50 pt-12 max-w-5xl mx-auto">
+      <div class="reveal flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 mb-6" data-delay="0">
+        <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Companies hiring</h2>
+        <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">{companies.length} companies · {jobs.length} roles</p>
+      </div>
+      <ul class="reveal flex flex-wrap gap-2 list-none" data-delay="60" aria-label="Companies with open design roles">
+        {companies.map(c => (
+          <li>
+            <a
+              href={`/companies/${c.slug}`}
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-line dark:border-slate-700 text-[13px] text-ink dark:text-slate-200 hover:border-ink dark:hover:border-slate-300 hover:bg-ink/[0.03] dark:hover:bg-white/[0.04] transition-colors"
+              aria-label={`${c.name}, ${c.count} open role${c.count === 1 ? '' : 's'}`}
+            >
+              {c.name}
+              {c.count > 1 && (
+                <span class="font-mono text-[10px] tabular-nums text-muted dark:text-slate-500" aria-hidden="true">{c.count}</span>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="reveal mt-6 text-sm text-muted dark:text-slate-400 leading-relaxed max-w-2xl" data-delay="120">
+        Each company page holds its open roles and what candidates report about interviewing there — rounds, timeline, take-home, whether anyone wrote back. The reports stay after a listing closes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why this board exists — quiet, three lines, no icon cards -->
+  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-16">
+    <div class="border-t border-line dark:border-slate-700/50 pt-12 grid md:grid-cols-3 gap-10 md:gap-14 max-w-5xl mx-auto text-center">
+      <div class="reveal" data-delay="0">
+        <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-2">No ghost jobs</h3>
+        <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">We open every link in a real browser before a job goes up, and keep re-checking while it's live. Dead listings come down on their own.</p>
+      </div>
+      <div class="reveal" data-delay="60">
+        <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-2">Real links only</h3>
+        <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">Every job points straight to the company's own careers page, so you never land on a LinkedIn login wall or get bounced through an aggregator.</p>
+      </div>
+      <div class="reveal" data-delay="120">
+        <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-2">Know before you apply</h3>
+        <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">People who've actually interviewed share what it was like — how many rounds, how long it took, whether the take-home was paid, and whether anyone ever wrote back.</p>
+      </div>
+    </div>
+  </section>
+
+
+  </main>
+
+  <Footer />
+</Layout>

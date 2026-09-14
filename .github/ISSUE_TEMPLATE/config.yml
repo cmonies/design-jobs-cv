@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💡 Feature Request
+    url: https://github.com/cmonies/healthcare-jobs/discussions
+    about: Suggest a feature or improvement

@@ -1,0 +1,487 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const ROUND_TYPES = ['recruiter screen', 'hiring manager', 'portfolio review', 'design exercise', 'take-home assessment', 'panel', 'executive screen', 'reference check'];
+---
+
+<Layout title="Submit a job — designjobs.cv" description="Submit a design job listing to the community-curated board. Full-time and contract roles welcome.">
+  <Header />
+
+  <main id="main-content" tabindex="-1">
+  <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pt-12 pb-20">
+    <div id="form-container" class="max-w-2xl mx-auto">
+      <div class="mb-10 text-center">
+        <h1 class="animate-fade-in stagger-1 font-display text-3xl font-semibold tracking-tight text-slate-900 dark:text-white mb-3">Submit a job</h1>
+        <p class="animate-fade-in stagger-1 text-base text-slate-500 dark:text-slate-400">
+          Drop the link — we pull the details from the posting itself. The gold is what the posting doesn't say: who to contact, what the process is like, how urgent the hire is.
+        </p>
+      </div>
+
+      <form id="job-form" class="animate-fade-in stagger-2 space-y-6">
+        <!-- Submitter Info -->
+        <div class="border border-line dark:border-slate-700 rounded-2xl p-5 space-y-4">
+          <p class="text-base font-medium text-slate-700 dark:text-slate-300">Your information</p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="submitterName" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Your Name <span class="text-red-400">*</span></label>
+              <input
+                type="text"
+                id="submitterName"
+                name="submitterName"
+                required
+                placeholder="Full name"
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label for="submitterEmail" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Your Email <span class="text-red-400">*</span></label>
+              <input
+                type="email"
+                id="submitterEmail"
+                name="submitterEmail"
+                required
+                placeholder="you@company.com"
+                class="form-input"
+              />
+            </div>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Your info is never published — it's only used for review and follow-up.</p>
+        </div>
+
+        <!-- Honeypot (hidden from humans) -->
+        <div class="!absolute !opacity-0 !h-0 !overflow-hidden pointer-events-none" aria-hidden="true">
+          <label for="website_url">Website</label>
+          <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <!-- Job URL -->
+        <div>
+          <label for="url" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Job Posting URL <span class="text-red-400">*</span></label>
+          <input
+            type="text"
+            id="url"
+            name="url"
+            required
+            placeholder="https://company.com/careers/job-link"
+            class="form-input"
+          />
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Direct link to the company's own posting (no LinkedIn links). We verify it and pull level, location, comp, and description from here.</p>
+        </div>
+
+        <!-- Tags -->
+        <div>
+          <label for="tags" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Tags</label>
+          <input
+            type="text"
+            id="tags"
+            name="tags"
+            placeholder="e.g., design systems, B2C, 0-to-1"
+            class="form-input"
+          />
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Comma-separated. Helps people find relevant roles.</p>
+        </div>
+
+        <!-- What only you would know -->
+        <div class="border border-line dark:border-slate-700 rounded-2xl p-5 space-y-5">
+          <div>
+            <p class="text-base font-medium text-slate-700 dark:text-slate-300">Beyond the job description</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">The behind-the-curtains stuff that helps candidates show up ready to interview with this company. Share whatever you think is valuable.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="relationship" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">How do you know about this role?</label>
+              <select id="relationship" name="relationship" class="form-input">
+                <option value="" disabled selected>Select</option>
+                <option value="work-here">I work at this company</option>
+                <option value="know-team">I know the hiring team</option>
+                <option value="found-it">I found it posted</option>
+              </select>
+            </div>
+            <div>
+              <label for="urgency" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">How urgent is the hire?</label>
+              <select id="urgency" name="urgency" class="form-input">
+                <option value="" disabled selected>Select</option>
+                <option value="asap">Actively interviewing — ASAP</option>
+                <option value="within-month">Within the next month</option>
+                <option value="few-months">Next few months</option>
+                <option value="evergreen">Evergreen — always open</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="contactName" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Who should applicants contact?</label>
+              <input
+                type="text"
+                id="contactName"
+                name="contactName"
+                placeholder="e.g., Jane Doe, Design Recruiter"
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label for="contactUrl" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Their LinkedIn or email</label>
+              <input
+                type="text"
+                id="contactUrl"
+                name="contactUrl"
+                placeholder="linkedin.com/in/… or name@company.com"
+                class="form-input"
+              />
+            </div>
+          </div>
+
+          <!-- Interview process -->
+          <div class="pt-1 space-y-4">
+            <p class="text-sm font-medium text-slate-700 dark:text-slate-300">Interview process</p>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="process_rounds" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Number of rounds</label>
+                <select id="process_rounds" name="process_rounds" class="form-input">
+                  <option value="" disabled selected>Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5+</option>
+                </select>
+              </div>
+              <div>
+                <label for="process_timeline" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Total timeline</label>
+                <select id="process_timeline" name="process_timeline" class="form-input">
+                  <option value="" disabled selected>Select</option>
+                  <option value="under 1 week">Under 1 week</option>
+                  <option value="1-2 weeks">1–2 weeks</option>
+                  <option value="2-4 weeks">2–4 weeks</option>
+                  <option value="4-6 weeks">4–6 weeks</option>
+                  <option value="6+ weeks">6+ weeks</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Round types — in order, if you can</label>
+              <div class="grid sm:grid-cols-2 gap-1.5">
+                {ROUND_TYPES.map(rt => (
+                  <label class="flex items-center gap-2 cursor-pointer py-1">
+                    <input type="checkbox" name="process_roundTypes" value={rt} class="mt-0 rounded" />
+                    <span class="text-sm text-slate-600 dark:text-slate-400">{rt.charAt(0).toUpperCase() + rt.slice(1)}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+            <div>
+              <label for="process_assessmentType" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Take-home assessment?</label>
+              <select id="process_assessmentType" name="process_assessmentType" class="form-input">
+                <option value="" disabled selected>Select</option>
+                <option value="none">No take-home</option>
+                <option value="paid take-home">Yes — paid</option>
+                <option value="unpaid take-home">Yes — unpaid</option>
+                <option value="timed exercise">Yes — timed live exercise</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verification -->
+        <div class="border border-line dark:border-slate-700 rounded-2xl p-5 space-y-3">
+          <p class="text-base font-medium text-slate-700 dark:text-slate-300">Before submitting, please confirm:</p>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" name="confirm_direct" required class="mt-0.5" />
+            <span class="text-sm text-slate-600 dark:text-slate-400">This links to the company's own active posting (not a recruiter/staffing agency, not expired)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" name="confirm_design" required class="mt-0.5" />
+            <span class="text-sm text-slate-600 dark:text-slate-400">This is a real design role (product design, UX, research, design engineering) — not spam or a test</span>
+          </label>
+        </div>
+
+        <!-- Cloudflare Turnstile widget -->
+        <div id="turnstile-container" class="[&_iframe]:rounded-xl"></div>
+        <input type="hidden" id="turnstile-token" name="turnstile-token" value="" />
+
+        <!-- Error messages (hidden by default) -->
+        <div id="error-msg" class="hidden bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-sm text-red-600 dark:text-red-400"></div>
+
+        <div id="rate-limit-msg" class="hidden bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-sm text-red-600 dark:text-red-400">
+          You've reached the maximum of 5 submissions per 24 hours for this email. Please try again later.
+        </div>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full py-3 bg-ink text-paper dark:bg-slate-100 dark:text-ink font-semibold rounded-full hover:opacity-85 transition-opacity text-sm"
+        >
+          Submit for review
+        </button>
+
+        <p class="text-xs text-center text-slate-400 dark:text-slate-500">
+          Reviewed before publishing. By submitting, you confirm this is accurate to the best of your knowledge.
+        </p>
+      </form>
+
+    </div>
+
+    <!-- Success state — replaces entire form container -->
+    <div id="success-msg" class="hidden max-w-lg mx-auto text-center py-24">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 mb-6">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-ink dark:text-slate-100" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+      </div>
+      <h2 class="font-display text-2xl font-semibold tracking-tight text-slate-900 dark:text-white mb-3">Submitted!</h2>
+      <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">Your listing is in the review queue. We'll verify the link, pull the full details from the posting, and publish it once approved.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-3">
+        <a href="/jobs" class="px-6 py-3 bg-ink text-paper dark:bg-slate-100 dark:text-ink font-semibold rounded-full hover:opacity-85 transition-opacity text-sm">
+          Browse jobs
+        </a>
+        <a href="/submit" class="px-6 py-3 border border-line dark:border-slate-700 text-ink-soft dark:text-slate-300 font-semibold rounded-full hover:border-ink dark:hover:border-slate-400 transition-[border-color] duration-150 text-sm">
+          Submit another
+        </a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #E7E5E4;
+    background: white;
+    font-size: 0.875rem;
+    color: #18181B;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .form-input:focus {
+    outline: none;
+    border-color: #161512;
+    box-shadow: 0 0 0 2px rgba(22, 21, 18, 0.10);
+  }
+  .form-input::placeholder {
+    color: #A1A1AA;
+  }
+  :global(.dark) .form-input {
+    background: #131313;
+    border-color: #232326;
+    color: #F5F5F4;
+  }
+  :global(.dark) .form-input::placeholder {
+    color: #71717A;
+  }
+  :global(.dark) .form-input:focus {
+    border-color: #A3A099;
+    box-shadow: 0 0 0 2px rgba(241, 240, 236, 0.15);
+  }
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 0.25rem;
+    border: 1.5px solid #D6D3D1;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+  }
+  input[type="checkbox"]:checked {
+    background: #C0722A;
+    border-color: #A3A099;
+  }
+  input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  input[type="checkbox"]:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(22, 21, 18, 0.3);
+  }
+  :global(.dark) input[type="checkbox"] {
+    background: #131313;
+    border-color: #232326;
+  }
+  :global(.dark) input[type="checkbox"]:checked {
+    background: #C0722A;
+    border-color: #A3A099;
+  }
+  /* Round-type checkboxes show their tap order instead of a checkmark */
+  input[name="process_roundTypes"]:checked {
+    background: #1A1917;
+    border-color: #1A1917;
+  }
+  input[name="process_roundTypes"]:checked::after {
+    content: attr(data-ord);
+    border: 0;
+    transform: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F2F1EC;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  :global(.dark) input[name="process_roundTypes"]:checked {
+    background: #EDEBE4;
+    border-color: #EDEBE4;
+  }
+  :global(.dark) input[name="process_roundTypes"]:checked::after {
+    color: #1A1917;
+  }
+  select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2.5rem;
+  }
+</style>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+
+<script is:inline>
+  function onTurnstileLoad() {
+    turnstile.render('#turnstile-container', {
+      sitekey: '0x4AAAAAAE0X-h9S_HZGFjc6',
+      theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+      callback: function(token) {
+        document.getElementById('turnstile-token').value = token;
+      },
+    });
+  }
+</script>
+
+<script>
+  const form = document.getElementById('job-form') as HTMLFormElement;
+  const formContainer = document.getElementById('form-container');
+  const successMsg = document.getElementById('success-msg');
+  const rateLimitMsg = document.getElementById('rate-limit-msg');
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const errorMsg = document.getElementById('error-msg');
+
+  // Round types keep the order they were checked in; each box shows its number
+  const roundOrder: string[] = [];
+  const roundBoxes = [...form.querySelectorAll<HTMLInputElement>('input[name="process_roundTypes"]')];
+  roundBoxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      if (cb.checked) roundOrder.push(cb.value);
+      else roundOrder.splice(roundOrder.indexOf(cb.value), 1);
+      roundBoxes.forEach(c => {
+        const i = roundOrder.indexOf(c.value);
+        if (i >= 0) c.dataset.ord = String(i + 1);
+        else delete c.dataset.ord;
+      });
+    });
+  });
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.classList.add('opacity-75');
+
+    const data = new FormData(form);
+    const turnstileToken = (document.getElementById('turnstile-token') as HTMLInputElement)?.value || (document.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement)?.value || '';
+
+    // Auto-prepend https:// if user didn't include a protocol
+    function normalizeUrl(val: string): string {
+      val = val.trim();
+      if (!val) return val;
+      if (!/^https?:\/\//i.test(val)) val = 'https://' + val;
+      return val;
+    }
+
+    const contactUrlRaw = (data.get('contactUrl') as string || '').trim();
+
+    const payload: Record<string, string> = {
+      submitterName: data.get('submitterName') as string,
+      submitterEmail: data.get('submitterEmail') as string,
+      url: normalizeUrl(data.get('url') as string),
+      tags: data.get('tags') as string || '',
+      relationship: data.get('relationship') as string || '',
+      urgency: data.get('urgency') as string || '',
+      contactName: data.get('contactName') as string || '',
+      contactUrl: contactUrlRaw.includes('@') ? contactUrlRaw : (contactUrlRaw ? normalizeUrl(contactUrlRaw) : ''),
+      rounds: data.get('process_rounds') as string || '',
+      roundTypes: roundOrder.join(', '),
+      timeline: data.get('process_timeline') as string || '',
+      assessmentType: data.get('process_assessmentType') as string || '',
+      website_url: data.get('website_url') as string || '',
+      turnstileToken,
+    };
+
+    try {
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json() as { ok: boolean; error?: string; duplicate?: boolean; jobId?: string };
+
+      if (result.ok && result.duplicate && result.jobId) {
+        // Already live — no need to queue it; send them to the listing.
+        if (errorMsg) {
+          errorMsg.textContent = '';
+          errorMsg.append('This job is already listed. ');
+          const link = document.createElement('a');
+          link.href = `/jobs/${encodeURIComponent(result.jobId)}`;
+          link.className = 'underline underline-offset-2';
+          link.textContent = 'View it →';
+          errorMsg.append(link);
+          errorMsg.classList.remove('hidden');
+        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit for review';
+        submitBtn.classList.remove('opacity-75');
+        if (window.turnstile) window.turnstile.reset();
+      } else if (result.ok) {
+        formContainer?.classList.add('hidden');
+        successMsg?.classList.remove('hidden');
+      } else if (res.status === 429) {
+        rateLimitMsg?.classList.remove('hidden');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Limit reached';
+        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      } else {
+        if (errorMsg) {
+          errorMsg.textContent = result.error || 'Something went wrong. Please try again.';
+          errorMsg.classList.remove('hidden');
+        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit for review';
+        submitBtn.classList.remove('opacity-75');
+        if (window.turnstile) window.turnstile.reset();
+      }
+    } catch (err) {
+      if (errorMsg) {
+        errorMsg.textContent = 'Network error. Please check your connection and try again.';
+        errorMsg.classList.remove('hidden');
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit for review';
+      submitBtn.classList.remove('opacity-75');
+    }
+  });
+</script>

@@ -1,0 +1,165 @@
+---
+// PostHog key injected at build time via env var, or hardcoded for production
+const posthogKey = import.meta.env.PUBLIC_POSTHOG_KEY || 'phc_RUFiWIcG8bGN2meCPBrvuzvj3bXolqSHxF10hRqflTJ';
+const posthogHost = import.meta.env.PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com';
+---
+
+<script is:inline
+  data-posthog-key={posthogKey}
+  data-posthog-host={posthogHost}
+>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init ns hs wi ls ds rs os capture calculateEventProperties fs register register_once register_for_session unregister unregister_for_session bs getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty gs cs createPersonProfile setInternalOrTestUser ts ys opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing vs debug M ps getPageViewId captureTraceFeedback captureTraceMetric Xr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+
+  var scriptTag = document.currentScript;
+  var key = scriptTag.getAttribute('data-posthog-key');
+  var host = scriptTag.getAttribute('data-posthog-host');
+
+  if (key) {
+    posthog.init(key, {
+      api_host: host,
+      person_profiles: 'identified_only',
+      persistence: 'memory',
+      disable_cookie: true,
+      capture_pageview: true,
+      capture_pageleave: true,
+      autocapture: true
+    });
+  }
+</script>
+
+<!-- Custom event tracking for key interactions -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof posthog === 'undefined' || !posthog.__SV) return;
+
+    // --- NAV TRACKING ---
+    document.querySelectorAll('header a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        posthog.capture('nav_click', {
+          link_text: link.textContent.trim(),
+          link_url: link.getAttribute('href') || '',
+          nav_type: link.closest('#mobile-menu') ? 'mobile' : 'desktop'
+        });
+      });
+    });
+
+    // --- FOOTER TRACKING ---
+    document.querySelectorAll('footer a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        posthog.capture('footer_click', {
+          link_text: link.textContent.trim(),
+          link_url: link.getAttribute('href') || ''
+        });
+      });
+    });
+
+    // --- JOB CLICKS ---
+    document.querySelectorAll('.job-item a, .job-row a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        var row = link.closest('[data-company]') || link.closest('.job-item');
+        posthog.capture('job_click', {
+          job_title: row ? (row.dataset.title || link.textContent.trim()) : link.textContent.trim(),
+          company: row ? row.dataset.company : '',
+          level: row ? row.dataset.level : '',
+          location_type: row ? row.dataset.locationType : '',
+          location: row ? row.dataset.location : '',
+          link_url: link.getAttribute('href') || ''
+        });
+      });
+    });
+
+    // --- SEARCH & FILTER TRACKING ---
+    var searchInput = document.getElementById('search-input');
+    var searchTimer;
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(function() {
+          var q = searchInput.value.trim();
+          if (q.length >= 2) {
+            posthog.capture('job_search', { query: q });
+          }
+        }, 1000);
+      });
+    }
+
+    // Filter checkbox changes
+    document.querySelectorAll('.filter-checkbox').forEach(function(cb) {
+      cb.addEventListener('change', function() {
+        posthog.capture('filter_change', {
+          filter_type: cb.dataset.type,
+          filter_value: cb.dataset.value,
+          action: cb.checked ? 'add' : 'remove'
+        });
+      });
+    });
+
+    // Location dropdown
+    var locSelect = document.getElementById('location-select');
+    if (locSelect) {
+      locSelect.addEventListener('change', function() {
+        posthog.capture('filter_change', {
+          filter_type: 'location',
+          filter_value: locSelect.value || 'all'
+        });
+      });
+    }
+
+    // --- DARK MODE TOGGLE ---
+    var darkToggle = document.getElementById('dark-mode-toggle');
+    if (darkToggle) {
+      darkToggle.addEventListener('click', function() {
+        posthog.capture('theme_toggle', {
+          new_theme: document.documentElement.classList.contains('dark') ? 'light' : 'dark'
+        });
+      });
+    }
+
+    // --- FORM SUBMISSIONS ---
+    var jobForm = document.getElementById('job-form');
+    if (jobForm) {
+      jobForm.addEventListener('submit', function() {
+        var data = new FormData(jobForm);
+        posthog.capture('job_submit', {
+          level: data.get('level'),
+          location_type: data.get('locationType'),
+          location: data.get('location')
+        });
+      });
+    }
+
+    var reportForm = document.getElementById('report-form');
+    if (reportForm) {
+      reportForm.addEventListener('submit', function() {
+        var data = new FormData(reportForm);
+        posthog.capture('feedback_submit', {
+          category: data.get('category')
+        });
+      });
+    }
+
+    // --- CTA BUTTONS ---
+    document.querySelectorAll('a[href="/jobs"], a[href="/submit"]').forEach(function(link) {
+      if (!link.closest('header') && !link.closest('footer') && link.closest('section')) {
+        link.addEventListener('click', function() {
+          posthog.capture('cta_click', {
+            cta_text: link.textContent.trim(),
+            page: window.location.pathname
+          });
+        });
+      }
+    });
+
+    // --- EXTERNAL LINK CLICKS ---
+    document.querySelectorAll('a[target="_blank"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (link.closest('.job-item') || link.closest('.job-row')) return;
+        posthog.capture('external_link_click', {
+          link_text: link.textContent.trim(),
+          link_url: link.getAttribute('href') || '',
+          section: link.closest('footer') ? 'footer' : link.closest('header') ? 'nav' : 'page'
+        });
+      });
+    });
+  });
+</script>

@@ -1,0 +1,483 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Feedback — Design Jobs" description="Report an issue, request a feature, or share feedback.">
+  <Header />
+
+  <main id="main-content" tabindex="-1">
+  <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pt-12 pb-20">
+    <div id="form-container" class="max-w-2xl mx-auto">
+      <div class="mb-10 text-center">
+        <h1 class="animate-fade-in stagger-1 text-3xl font-bold text-slate-900 dark:text-white mb-3">Send feedback</h1>
+        <p class="animate-fade-in stagger-1 text-base text-slate-500 dark:text-slate-400">
+          Found a bug, have an idea, or just want to say something? We're listening.
+        </p>
+      </div>
+
+      <form id="report-form" class="animate-fade-in stagger-2 space-y-6">
+        <!-- Reporter Info -->
+        <div class="bg-slate-50 dark:bg-surface-card border border-slate-200 dark:border-slate-700 rounded-xl p-5 space-y-4">
+          <p class="text-base font-medium text-slate-700 dark:text-slate-300">Your information</p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="reporterName" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Your Name <span class="text-red-400">*</span></label>
+              <input type="text" id="reporterName" name="reporterName" required placeholder="Full name" class="form-input" />
+            </div>
+            <div>
+              <label for="reporterEmail" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Your Email <span class="text-red-400">*</span></label>
+              <input type="email" id="reporterEmail" name="reporterEmail" required placeholder="you@example.com" class="form-input" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Honeypot -->
+        <div class="!absolute !opacity-0 !h-0 !overflow-hidden pointer-events-none" aria-hidden="true" tabindex="-1">
+          <label for="website_url">Website</label>
+          <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <!-- Feedback Category -->
+        <div>
+          <label for="category" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">What kind of feedback? <span class="text-red-400">*</span></label>
+          <select id="category" name="category" required class="form-input">
+            <option value="">Select category</option>
+            <optgroup label="Share what you know">
+              <option value="process">📋 Share interview process details</option>
+            </optgroup>
+            <optgroup label="Report an issue">
+              <option value="dead-link">🔗 Dead or broken job link</option>
+              <option value="wrong-info">📝 Wrong job information</option>
+              <option value="spam">🚫 Spam or fake listing</option>
+              <option value="site-bug">🐛 Website bug or display issue</option>
+            </optgroup>
+            <optgroup label="Suggest something">
+              <option value="feature-request">💡 Feature request</option>
+              <option value="enhancement">✨ Enhancement to existing feature</option>
+              <option value="content">📄 Content or copy suggestion</option>
+            </optgroup>
+            <option value="other">💬 Other</option>
+          </select>
+        </div>
+
+        <!-- Process-specific fields (shown when category=process) -->
+        <div id="process-fields" class="hidden border border-line dark:border-slate-700 rounded-2xl p-5 space-y-4">
+          <p class="text-sm font-medium text-slate-700 dark:text-slate-300">Interview process details</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">These get added as structured data on the job page — not free-text reviews, just facts.</p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="process_rounds" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Number of rounds</label>
+              <select id="process_rounds" name="process_rounds" class="form-input">
+                <option value="">Unknown</option>
+                <option value="1">1 round</option>
+                <option value="2">2 rounds</option>
+                <option value="3">3 rounds</option>
+                <option value="4">4 rounds</option>
+                <option value="5">5+ rounds</option>
+              </select>
+            </div>
+            <div>
+              <label for="process_timeline" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Total timeline</label>
+              <select id="process_timeline" name="process_timeline" class="form-input">
+                <option value="">Unknown</option>
+                <option value="under 1 week">Under 1 week</option>
+                <option value="1-2 weeks">1–2 weeks</option>
+                <option value="2-4 weeks">2–4 weeks</option>
+                <option value="4-6 weeks">4–6 weeks</option>
+                <option value="6+ weeks">6+ weeks</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Round types (check all that apply)</label>
+            <div class="grid sm:grid-cols-2 gap-1.5">
+              {['recruiter screen', 'hiring manager', 'portfolio review', 'design exercise', 'take-home assessment', 'panel', 'executive screen', 'reference check'].map(rt => (
+                <label class="flex items-center gap-2 cursor-pointer py-1">
+                  <input type="checkbox" name="process_roundTypes" value={rt} class="mt-0 rounded" />
+                  <span class="text-sm text-slate-600 dark:text-slate-400">{rt}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Take-home assessment?</label>
+            <div class="flex gap-4">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="process_hasAssessment" value="yes" />
+                <span class="text-sm text-slate-600 dark:text-slate-400">Yes</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="process_hasAssessment" value="no" />
+                <span class="text-sm text-slate-600 dark:text-slate-400">No</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="process_hasAssessment" value="unknown" />
+                <span class="text-sm text-slate-600 dark:text-slate-400">Don't know</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label for="process_assessmentType" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">If yes — paid, unpaid, or timed?</label>
+            <select id="process_assessmentType" name="process_assessmentType" class="form-input">
+              <option value="">N/A or unknown</option>
+              <option value="paid take-home">Paid take-home</option>
+              <option value="unpaid take-home">Unpaid take-home</option>
+              <option value="timed exercise">Timed exercise (live)</option>
+            </select>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Did you hear back either way after interviewing?
+            <label class="inline-flex items-center gap-1.5 ml-2 cursor-pointer">
+              <input type="radio" name="process_gotFeedback" value="yes" /> Yes
+            </label>
+            <label class="inline-flex items-center gap-1.5 ml-2 cursor-pointer">
+              <input type="radio" name="process_gotFeedback" value="no" /> No (ghosted)
+            </label>
+          </p>
+        </div>
+
+        <!-- Page URL (contextual — required for bugs, optional for features) -->
+        <div id="url-field">
+          <label for="pageUrl" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+            <span id="url-label">Related page or URL</span>
+          </label>
+          <input
+            type="text"
+            id="pageUrl"
+            name="pageUrl"
+            placeholder="https://designjobs.cv/..."
+            class="form-input"
+          />
+          <p class="text-xs text-slate-400 dark:text-slate-500 mt-1" id="url-hint">Link to the relevant page (optional for feature requests)</p>
+        </div>
+
+        <!-- Title (for feature requests) -->
+        <div id="title-field" class="hidden">
+          <label for="title" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Short title <span class="text-red-400">*</span></label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="e.g., Add salary range filter"
+            class="form-input"
+          />
+        </div>
+
+        <!-- Description -->
+        <div>
+          <label for="description" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+            <span id="desc-label">Tell us more</span> <span class="text-red-400">*</span>
+          </label>
+          <textarea
+            id="description"
+            name="description"
+            required
+            rows="4"
+            maxlength="650"
+            placeholder="What's wrong? What did you expect?"
+            class="form-input"
+            style="max-height: 200px;"
+          ></textarea>
+          <p class="text-xs text-slate-400 mt-1 text-right"><span id="char-count">0</span>/650</p>
+        </div>
+
+        <!-- Turnstile -->
+        <div id="turnstile-container" class="[&_iframe]:rounded-xl"></div>
+        <input type="hidden" id="turnstile-token" name="turnstile-token" value="" />
+
+        <!-- Error -->
+        <div id="error-msg" class="hidden bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-sm text-red-600 dark:text-red-400"></div>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full py-3 bg-brand-500 text-white font-semibold rounded-2xl hover:bg-brand-600 transition-colors text-sm"
+        >
+          Send feedback
+        </button>
+
+        <p class="text-xs text-center text-slate-400 dark:text-slate-500">
+          All feedback creates a GitHub issue so the community can track it.
+        </p>
+      </form>
+
+    </div>
+
+    <!-- Success state -->
+    <div id="success-msg" class="hidden max-w-lg mx-auto text-center py-24">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-green-50 dark:bg-green-900/30 mb-6">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Thanks for your feedback!</h2>
+      <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">We've created a GitHub issue to track this. The community can follow along and contribute.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-3">
+        <a href="/jobs" class="px-6 py-3 bg-brand-500 text-white font-semibold rounded-2xl hover:bg-brand-600 transition-colors text-sm">
+          Browse jobs
+        </a>
+        <a href="/report" class="px-6 py-3 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold rounded-2xl hover:border-brand-200 hover:text-brand-500 transition-[color,border-color] duration-150 text-sm">
+          Send more feedback
+        </a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #E7E5E4;
+    background: white;
+    font-size: 0.875rem;
+    color: #18181B;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .form-input:focus {
+    outline: none;
+    border-color: #8D9AFC;
+    box-shadow: 0 0 0 2px rgba(36, 75, 248, 0.12);
+  }
+  .form-input::placeholder {
+    color: #A1A1AA;
+  }
+  :global(.dark) .form-input {
+    background: #131313;
+    border-color: #232326;
+    color: #F5F5F4;
+  }
+  :global(.dark) .form-input::placeholder {
+    color: #71717A;
+  }
+  :global(.dark) .form-input:focus {
+    border-color: #5872FA;
+    box-shadow: 0 0 0 2px rgba(36, 75, 248, 0.2);
+  }
+  select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2.5rem;
+  }
+  textarea.form-input {
+    resize: vertical;
+    min-height: 100px;
+  }
+</style>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+
+<script is:inline>
+  function onTurnstileLoad() {
+    turnstile.render('#turnstile-container', {
+      sitekey: '0x4AAAAAAE0X-h9S_HZGFjc6',
+      theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+      callback: function(token) {
+        document.getElementById('turnstile-token').value = token;
+      },
+    });
+  }
+</script>
+
+<script>
+  // Pre-fill from URL params (e.g. from job detail page links)
+  const params = new URLSearchParams(window.location.search);
+  const urlParamCategory = params.get('category');
+  const urlParamJob = params.get('job');
+  const urlParamUrl = params.get('url');
+  const urlParamCompany = params.get('company');
+
+  const categorySelect = document.getElementById('category') as HTMLSelectElement;
+  const urlField = document.getElementById('url-field');
+  const urlInput = document.getElementById('pageUrl') as HTMLInputElement;
+  const urlLabel = document.getElementById('url-label');
+  const urlHint = document.getElementById('url-hint');
+  const titleField = document.getElementById('title-field');
+  const titleInput = document.getElementById('title') as HTMLInputElement;
+  const descLabel = document.getElementById('desc-label');
+  const descInput = document.getElementById('description') as HTMLTextAreaElement;
+  const processFields = document.getElementById('process-fields');
+
+  const bugTypes = ['dead-link', 'wrong-info', 'spam', 'site-bug'];
+  const featureTypes = ['feature-request', 'enhancement', 'content'];
+
+  // Pre-fill category from URL
+  if (urlParamCategory && categorySelect) {
+    categorySelect.value = urlParamCategory;
+  }
+  // Pre-fill job URL or page URL
+  if (urlInput) {
+    if (urlParamUrl) {
+      urlInput.value = urlParamUrl;
+    } else if (urlParamJob) {
+      urlInput.value = `https://designjobs.cv/jobs/${urlParamJob}`;
+    }
+  }
+
+  function updateProcessFields(val: string) {
+    if (processFields) {
+      processFields.classList.toggle('hidden', val !== 'process');
+    }
+  }
+
+  // Also update the form heading for process submissions
+  const formHeading = document.querySelector('#form-container h1') as HTMLElement;
+
+  categorySelect?.addEventListener('change', () => {
+    const val = categorySelect.value;
+    const isBug = bugTypes.includes(val);
+    const isFeature = featureTypes.includes(val);
+    updateProcessFields(val);
+
+    // URL field: required for bugs, optional for features
+    if (isBug) {
+      urlInput.required = true;
+      urlLabel!.innerHTML = 'Page or job URL <span class="text-red-400">*</span>';
+      urlHint!.textContent = 'Link to the page or job listing with the issue';
+      urlInput.placeholder = 'https://designjobs.cv/jobs or the job listing URL';
+    } else {
+      urlInput.required = false;
+      urlLabel!.textContent = 'Related page or URL';
+      urlHint!.textContent = 'Optional — link to anything relevant';
+      urlInput.placeholder = 'https://...';
+    }
+
+    // Title field: show for features
+    if (isFeature) {
+      titleField!.classList.remove('hidden');
+      titleInput.required = true;
+    } else {
+      titleField!.classList.add('hidden');
+      titleInput.required = false;
+    }
+
+    // Description placeholder
+    if (isFeature) {
+      descLabel!.textContent = 'Describe your idea';
+      descInput.placeholder = 'What problem does this solve? How would it work?';
+    } else if (isBug) {
+      descLabel!.textContent = 'Describe the issue';
+      descInput.placeholder = 'What\'s wrong? What did you expect to see?';
+    } else {
+      descLabel!.textContent = 'Tell us more';
+      descInput.placeholder = 'Share your thoughts...';
+    }
+  });
+
+  // Initialize process fields visibility on page load (handles URL param pre-fill)
+  if (urlParamCategory) {
+    updateProcessFields(urlParamCategory);
+  }
+
+  // Character counter
+  const charCount = document.getElementById('char-count');
+  descInput?.addEventListener('input', () => {
+    if (charCount) charCount.textContent = String(descInput.value.length);
+  });
+
+  // GitHub label mapping
+  const labelMap: Record<string, string[]> = {
+    'process': ['community-data', 'interview-process'],
+    'dead-link': ['bug', 'dead-link'],
+    'wrong-info': ['bug', 'wrong-info'],
+    'spam': ['bug', 'spam'],
+    'site-bug': ['bug'],
+    'feature-request': ['enhancement'],
+    'enhancement': ['enhancement'],
+    'content': ['enhancement', 'content'],
+    'other': [],
+  };
+
+  const form = document.getElementById('report-form') as HTMLFormElement;
+  const formContainer = document.getElementById('form-container');
+  const successMsg = document.getElementById('success-msg');
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const errorMsg = document.getElementById('error-msg');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.classList.add('opacity-75');
+
+    const data = new FormData(form);
+    const category = data.get('category') as string;
+    const turnstileToken = (document.getElementById('turnstile-token') as HTMLInputElement)?.value || '';
+
+    function normalizeUrl(val: string): string {
+      val = val.trim();
+      if (!val) return val;
+      if (!/^https?:\/\//i.test(val)) val = 'https://' + val;
+      return val;
+    }
+
+    const payload: Record<string, string | string[]> = {
+      type: 'bug-report',
+      reporterName: data.get('reporterName') as string || '',
+      reporterEmail: data.get('reporterEmail') as string || '',
+      issueType: category,
+      title: data.get('title') as string || '',
+      pageUrl: normalizeUrl(data.get('pageUrl') as string || ''),
+      description: data.get('description') as string,
+      labels: labelMap[category] || [],
+      website_url: data.get('website_url') as string || '',
+      turnstileToken,
+    };
+
+    // Process reports carry structured fields the API files as community data
+    if (category === 'process') {
+      const pageUrl = payload.pageUrl as string;
+      const jobIdMatch = /\/jobs\/([^/?#]+)/.exec(pageUrl);
+      payload.jobId = jobIdMatch ? jobIdMatch[1] : '';
+      payload.company = urlParamCompany || 'Unknown — see linked page';
+      payload.jobTitle = '';
+      payload.rounds = data.get('process_rounds') as string || '';
+      payload.roundTypes = data.getAll('process_roundTypes').join(', ');
+      payload.timeline = data.get('process_timeline') as string || '';
+      payload.hasAssessment = data.get('process_hasAssessment') as string || '';
+      payload.assessmentType = data.get('process_assessmentType') as string || '';
+      payload.gotFeedback = data.get('process_gotFeedback') as string || '';
+    }
+
+    try {
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json() as { ok: boolean; error?: string };
+
+      if (result.ok) {
+        formContainer?.classList.add('hidden');
+        successMsg?.classList.remove('hidden');
+      } else {
+        if (errorMsg) {
+          errorMsg.textContent = result.error || 'Something went wrong. Please try again.';
+          errorMsg.classList.remove('hidden');
+        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send feedback';
+        submitBtn.classList.remove('opacity-75');
+        if (window.turnstile) window.turnstile.reset();
+      }
+    } catch (err) {
+      if (errorMsg) {
+        errorMsg.textContent = 'Network error. Please check your connection and try again.';
+        errorMsg.classList.remove('hidden');
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send feedback';
+      submitBtn.classList.remove('opacity-75');
+    }
+  });
+</script>

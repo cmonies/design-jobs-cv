@@ -1,0 +1,353 @@
+---
+import Analytics from '../components/Analytics.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "A community-sourced design job board. Startup, AI, and non-traditional verticals — full-time and contract, every listing verified. Open source and free forever." } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, 'https://designjobs.cv');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#11110F" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:site_name" content="designjobs.cv" />
+    <meta property="og:image" content="https://designjobs.cv/og-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://designjobs.cv/og-image.png" />
+
+    <link rel="canonical" href={canonicalUrl.href} />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="application/rss+xml" title="designjobs.cv feed" href="/rss.xml" />
+
+    <link rel="alternate" type="application/json" title="designjobs.cv job data" href="/jobs.json" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:alt" content="designjobs.cv — verified design jobs at startups" />
+    <meta name="twitter:creator" content="@carmen_cv" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+
+    <script is:inline>
+      document.documentElement.classList.add('js-ready');
+      const t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-paper dark:bg-surface-page text-ink dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col transition-colors">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium">
+      Skip to main content
+    </a>
+    <slot />
+    <Analytics />
+  </body>
+</html>
+
+<style is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  /* Footer must end the page — main absorbs leftover viewport height */
+  main {
+    flex: 1 1 auto;
+  }
+
+  /* main is a skip-link target (tabindex="-1") — don't ring the whole page
+     when a stray click programmatically focuses it */
+  #main-content:focus {
+    outline: none;
+  }
+
+  /* Placeholders stay on the warm ramp — preflight's default is a blue-gray */
+  ::placeholder {
+    color: #77746B;
+    opacity: 1;
+  }
+  .dark ::placeholder {
+    color: #8E8B82;
+  }
+
+  /* Shared dialog shell — every <dialog class="process-modal"> on the site.
+     The box itself never scrolls; scrollable content lives in .pm-body. */
+  .process-modal {
+    border-radius: 1.25rem;
+    margin: auto;
+    max-height: 90dvh;
+    overflow: hidden;
+  }
+  .process-modal[open] {
+    display: flex;
+    flex-direction: column;
+  }
+  .process-modal .pm-body {
+    overscroll-behavior: contain;
+  }
+  .process-modal::backdrop {
+    background: rgb(26 25 23 / 0.45);
+    backdrop-filter: blur(2px);
+  }
+  @media (max-width: 640px) {
+    .process-modal {
+      margin: auto 0 0;
+      max-width: 100%;
+      border-radius: 1.25rem 1.25rem 0 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 0;
+      max-height: 92dvh;
+    }
+  }
+
+  /* Custom easing curves (stronger than defaults) */
+  :root {
+    --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  /* Candidate experience grade tile — job pages (live island) and company pages */
+  .grade-chip-lg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    border: 1px solid;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  /* Grade tiers — derived in OKLCH so every tier carries equal visual weight:
+     light text L.52 C.125, dark text L.78 C.115; hue alone signals the grade
+     (a 158° · b 240° · c 75° · d 50° · f 25°) */
+  .grade-chip-a { color: #027d4d; background: #ecfbf2; border-color: #b4e5c7; }
+  .grade-chip-b { color: #0070a6; background: #f0f8fe; border-color: #b1deff; }
+  .grade-chip-c { color: #8d5e02; background: #fff5e8; border-color: #f1d2a8; }
+  .grade-chip-d { color: #a04f18; background: #fef5f0; border-color: #fcccb2; }
+  .grade-chip-f { color: #a54743; background: #fff4f3; border-color: #ffc8c3; }
+  :root.dark .grade-chip-a { color: #72ce9b; background: rgba(114,206,155,0.1); border-color: rgba(114,206,155,0.25); }
+  :root.dark .grade-chip-b { color: #6dc1f9; background: rgba(109,193,249,0.1); border-color: rgba(109,193,249,0.25); }
+  :root.dark .grade-chip-c { color: #e2ac5e; background: rgba(226,172,94,0.1); border-color: rgba(226,172,94,0.25); }
+  :root.dark .grade-chip-d { color: #f3a173; background: rgba(243,161,115,0.1); border-color: rgba(243,161,115,0.25); }
+  :root.dark .grade-chip-f { color: #f89a92; background: rgba(248,154,146,0.1); border-color: rgba(248,154,146,0.25); }
+
+  /* Dark mode toggle transition (View Transitions API) */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 350ms;
+    animation-timing-function: ease-in-out;
+  }
+  ::view-transition-old(root) {
+    animation-name: fade-out;
+  }
+  ::view-transition-new(root) {
+    animation-name: fade-in;
+  }
+  @keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+  /* Button press feedback — instant "the UI heard you" signal */
+  button[type="submit"],
+  .emp-chip,
+  a[class*="rounded-full"] {
+    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, transform 100ms var(--ease-out-cubic);
+  }
+  button[type="submit"]:active,
+  .emp-chip:active,
+  a[class*="rounded-full"]:active {
+    transform: scale(0.97);
+  }
+
+  /* Filter apply: brief settle so the masonry reflow reads as one motion, not a jump */
+  .filtering {
+    opacity: 0.5;
+    transition: opacity 80ms var(--ease-out-cubic);
+  }
+  .filter-settle {
+    opacity: 1;
+    transition: opacity 180ms var(--ease-out-quart);
+  }
+
+  /* Touch devices: no hover lift (tap would trigger it falsely) */
+  @media (hover: none) {
+    .job-tile:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  /* Stagger fade-in animations */
+  /* fadeUp — for hero/decorative elements (has scale + translateY) */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* fadeIn — for functional UI (opacity + subtle translateY only, no scale) */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    opacity: 0;
+    animation: fadeUp 0.25s var(--ease-out-quart) forwards;
+    will-change: transform, opacity;
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.2s var(--ease-out-cubic) forwards;
+    will-change: opacity, transform;
+  }
+
+  .stagger-1 { animation-delay: 0ms; }
+  .stagger-2 { animation-delay: 60ms; }
+  .stagger-3 { animation-delay: 120ms; }
+  .stagger-4 { animation-delay: 180ms; }
+  .stagger-5 { animation-delay: 240ms; }
+  .stagger-6 { animation-delay: 300ms; }
+
+  /* Intersection observer reveal — hidden by default, JS adds .visible */
+  .js-ready .reveal {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 150ms var(--ease-out-quart), transform 150ms var(--ease-out-quart);
+    will-change: transform, opacity;
+  }
+  .js-ready .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* List items: opacity only, no vertical shift — snappier for repeated elements */
+  .js-ready .reveal.reveal-fade {
+    transform: none;
+    transition: opacity 120ms var(--ease-out-cubic);
+  }
+  .js-ready .reveal.reveal-fade.visible {
+    transform: none;
+  }
+  /* Job tiles: a real entrance — rise + fade, exponential ease-out, staggered per tile */
+  .js-ready .reveal.reveal-tile {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 380ms cubic-bezier(0.23, 1, 0.32, 1), transform 380ms cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform, opacity;
+  }
+  .js-ready .reveal.reveal-tile.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Global focus visible styles */
+  :root { --focus-ring: #161512; }
+  .dark { --focus-ring: #F1F0EC; }
+  :where(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  /* Accessibility: respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none !important;
+    }
+    .animate-fade-up,
+    .animate-fade-in {
+      animation: none;
+      opacity: 1;
+    }
+    .js-ready .reveal,
+    .js-ready .reveal.reveal-fade,
+    .js-ready .reveal.reveal-tile {
+      transition: none;
+      opacity: 1;
+      transform: none;
+    }
+    .filtering,
+    .filter-settle {
+      transition: none;
+      opacity: 1;
+    }
+  }
+</style>
+
+<script is:inline>
+  // Intersection observer for scroll-triggered reveals (js-ready added in <head>)
+  document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      // Fallback: just show everything
+      reveals.forEach(function(el) { el.classList.add('visible'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = el.dataset.delay || '0';
+          el.style.transitionDelay = delay + 'ms';
+          el.classList.add('visible');
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px 200px 0px' });
+
+    reveals.forEach(function(el) { observer.observe(el); });
+  });
+</script>

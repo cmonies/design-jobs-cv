@@ -1,0 +1,156 @@
+---
+// Live candidate-experience block for a job page. Rendered as a server island
+// (`server:defer`) so the job page itself stays static while this part reads
+// Supabase on every request — a report filed a second ago is already here.
+//
+// Reports attach to the COMPANY, not the job, so a role's page shows every
+// report for that employer, and reports outlive the posting.
+import { getServerClient } from '../lib/supabase';
+import { slugify } from '../lib/slug.js';
+import { fetchCompanyExperience, toFeedbackReport } from '../lib/reports';
+import { computeGrade, gradeColorKey, MIN_REPORTS_FOR_GRADE } from '../lib/grades';
+import ReportList from './ReportList.astro';
+
+interface Props {
+  company: string;
+  feedbackUrl: string;
+  companyPageUrl: string;
+}
+
+const { company, feedbackUrl, companyPageUrl } = Astro.props;
+
+const db = getServerClient();
+const data = db ? await fetchCompanyExperience(db, slugify(company)) : null;
+const reports = data?.reports ?? [];
+
+const grade = reports.length ? computeGrade(reports.map(r => toFeedbackReport(r))) : null;
+const colorKey = grade?.hasEnoughData ? gradeColorKey(grade.grade) : null;
+const gradeRows = grade?.hasEnoughData ? [
+  { label: 'Communication', pts: grade.breakdown.communication, max: 30 },
+  { label: 'Respect for time', pts: grade.breakdown.respectForTime, max: 25 },
+  { label: 'Transparency', pts: grade.breakdown.transparency, max: 20 },
+  { label: 'Interviewer quality', pts: grade.breakdown.interviewerQuality, max: 15 },
+  { label: 'Community rating', pts: grade.breakdown.overall, max: 10 },
+] : [];
+
+const PREVIEW = 3;
+const ctaClass = 'inline-flex items-center justify-center rounded-full border border-ink/25 dark:border-slate-600 font-semibold text-ink dark:text-slate-200 hover:border-ink dark:hover:border-slate-300 hover:bg-ink/[0.03] dark:hover:bg-white/[0.04] transition-colors';
+---
+
+{reports.length === 0 ? (
+  <div>
+    <p class="text-sm text-ink-soft dark:text-slate-400 leading-relaxed">
+      No process details yet — rounds, timeline, take-home. Be the first to share what it's like to apply here.
+    </p>
+    <a href={feedbackUrl} class={`${ctaClass} mt-4 px-5 py-2.5 text-sm`}>
+      Share what I know
+    </a>
+  </div>
+) : (
+  <div>
+    {grade && !grade.hasEnoughData && (
+      <p class="text-[11px] font-mono text-muted dark:text-slate-500 mb-3">
+        {grade.reportCount} report{grade.reportCount !== 1 ? 's' : ''} — grade appears at {MIN_REPORTS_FOR_GRADE}
+      </p>
+    )}
+    {grade?.hasEnoughData && (
+      <button
+        type="button"
+        data-open-grade-modal
+        aria-haspopup="dialog"
+        aria-label={`Candidate experience grade ${grade.grade}, ${grade.score} out of 100 from ${grade.reportCount} reports — see breakdown`}
+        class="group/grade w-full flex items-center gap-3 mb-5 pb-5 border-b border-line dark:border-slate-700/50 text-left cursor-pointer"
+      >
+        <span class={`grade-chip-lg grade-chip-${colorKey}`} aria-hidden="true">{grade.grade}</span>
+        <span class="flex-1 min-w-0 text-sm text-ink dark:text-slate-100">
+          {grade.score}/100
+          <span class="text-muted dark:text-slate-500"> · {grade.reportCount} reports</span>
+        </span>
+        <svg class="shrink-0 text-muted dark:text-slate-500 group-hover/grade:text-ink dark:group-hover/grade:text-slate-200 transition-colors" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    )}
+
+    <ReportList reports={reports.slice(0, PREVIEW)} dense />
+
+    {reports.length > PREVIEW && (
+      <a
+        href={companyPageUrl}
+        class="inline-block mt-4 text-xs font-mono uppercase tracking-[0.1em] text-ink dark:text-slate-300 hover:underline underline-offset-2 transition-colors"
+      >
+        All {reports.length} reports at {company} →
+      </a>
+    )}
+
+    <div class="mt-5">
+      <a href={feedbackUrl} class={`${ctaClass} px-4 py-1.5 text-[13px]`}>
+        Share what I know
+      </a>
+    </div>
+  </div>
+)}
+
+{grade?.hasEnoughData && (
+  <dialog
+    id="grade-modal"
+    class="process-modal w-full max-w-sm bg-paper dark:bg-[#1B1B19] text-ink dark:text-slate-100 border border-line dark:border-[#2C2C2A] p-0"
+    aria-labelledby="grade-modal-title"
+  >
+    <div class="p-6 md:p-7">
+      <div class="flex items-start justify-between gap-4">
+        <h2 id="grade-modal-title" class="font-display font-semibold text-xl tracking-tight leading-tight">Candidate experience</h2>
+        <button type="button" data-close-grade-modal class="shrink-0 -mt-1 -mr-2 p-2 text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors" aria-label="Close">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-muted dark:text-slate-400 mt-1">
+        {company} · {grade.reportCount} community reports
+      </p>
+
+      <div class="mt-6 flex items-center gap-3.5">
+        <span class={`grade-chip-lg grade-chip-${colorKey}`} aria-hidden="true">{grade.grade}</span>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-baseline justify-between gap-3">
+            <span class="text-sm font-semibold text-ink dark:text-slate-100">Overall grade {grade.grade}</span>
+            <span class="font-mono text-sm tabular-nums text-ink dark:text-slate-100">{grade.score}<span class="text-muted dark:text-slate-400">/100</span></span>
+          </div>
+          <div class="mt-2 h-[5px] bg-line dark:bg-slate-700/60 rounded-full overflow-hidden">
+            <div class="h-full rounded-full bg-ink dark:bg-slate-100" style={`width: ${grade.score}%`}></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 border-t border-line dark:border-slate-700/60">
+        {gradeRows.map(r => (
+          <div class="py-3 border-b border-line dark:border-slate-700/60 last:border-b-0">
+            <div class="flex items-baseline justify-between gap-3">
+              <span class="text-[13px] font-medium text-ink dark:text-slate-100">{r.label}</span>
+              <span class="font-mono text-xs tabular-nums text-ink dark:text-slate-100">{r.pts}<span class="text-muted dark:text-slate-500">/{r.max}</span></span>
+            </div>
+            <div class="mt-2 h-[3px] bg-line dark:bg-slate-700/60 rounded-full overflow-hidden">
+              <div class="h-full rounded-full bg-ink dark:bg-slate-100" style={`width: ${Math.max(2, Math.round((r.pts / r.max) * 100))}%`}></div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {grade.ghostingCount >= 2 && (
+        <p class="mt-4 flex items-start gap-1.5 text-[11px] leading-relaxed text-amber-700 dark:text-amber-400">
+          <svg class="shrink-0 mt-px" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8Z"/></svg>
+          {grade.ghostingCount} ghosting reports — grade capped at {grade.ghostingCount >= 4 ? 'D' : 'C+'}.
+        </p>
+      )}
+
+      <p class="mt-5 pt-3 border-t border-line dark:border-slate-700/60 text-[11px] text-muted dark:text-slate-400 leading-relaxed">
+        Scored from structured reports by designers who interviewed here. Community-sourced, not company-provided.
+      </p>
+      <a
+        href={feedbackUrl}
+        class="mt-5 w-full inline-flex items-center justify-center px-6 py-3 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-semibold hover:opacity-85 transition-opacity"
+      >
+        Share your experience
+      </a>
+    </div>
+  </dialog>
+)}

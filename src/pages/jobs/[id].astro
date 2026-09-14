@@ -1,0 +1,776 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import jobs from '../../data/jobs.json';
+import jobDetails from '../../data/job-details.json';
+import jobContacts from '../../data/job-contacts.json';
+import CandidateExperience from '../../components/CandidateExperience.astro';
+import { slugify } from '../../lib/slug.js';
+
+export function getStaticPaths() {
+  return jobs
+    .filter((job): job is typeof job & { id: string } => !!job.id)
+    .map(job => ({
+      params: { id: job.id },
+      props: { job },
+    }));
+}
+
+const { job } = Astro.props;
+const {
+  id, title, company, companyUrl, url, level, locationType, location,
+  postedAt, tags = [], vertical, employmentType = 'Full-time', salary,
+  interviewProcess = null,
+} = job;
+
+const details = (jobDetails as Record<string, { descriptionHtml: string; salaryText: string | null; source: string; fetchedAt: string }>)[id] ?? null;
+
+type Contact = { name: string; title: string; linkedinUrl: string; role: string; source: string; verifiedAt: string };
+const contacts = ((jobContacts as Record<string, Contact[]>)[id] ?? []).slice(0, 3);
+const roleLabel: Record<string, string> = {
+  'founder': 'Founder',
+  'recruiter': 'Recruiter',
+  'design-leader': 'Design lead',
+};
+const sentence = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+type Anecdote = { text: string; source: string; date?: string };
+const MONTHS: Record<string, number> = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+const anecdoteKey = (a: Anecdote) => {
+  const m = /([a-z]{3})[a-z]*\s+(\d{4})/i.exec(a.date || '');
+  return m ? parseInt(m[2], 10) * 100 + (MONTHS[m[1].toLowerCase()] || 0) : 0;
+};
+// most recent first — recency is the ranking until we collect helpfulness votes
+const anecdotes: Anecdote[] = ((interviewProcess?.anecdotes as Anecdote[]) || [])
+  .slice()
+  .sort((a, b) => anecdoteKey(b) - anecdoteKey(a));
+const salaryDisplay = salary || details?.salaryText || null;
+
+const feedbackUrl = `/feedback?job=${encodeURIComponent(id)}&company=${encodeURIComponent(company)}&title=${encodeURIComponent(title)}`;
+const companyPageUrl = `/companies/${slugify(company)}`;
+
+const isContract = employmentType === 'Contract' || employmentType === 'Freelance';
+const locationStr = locationType === 'Remote'
+  ? 'Remote'
+  : location ? `${locationType} — ${location}` : locationType;
+
+const pageTitle = `${title} at ${company} | designjobs.cv`;
+const description = `${level} ${title} at ${company}. ${employmentType}, ${locationStr}. Verified listing on designjobs.cv — the community design jobs board.`;
+
+const atsDomain = (() => {
+  try { return new URL(url).hostname.replace('www.', ''); }
+  catch { return 'company careers page'; }
+})();
+
+const daysAgo = postedAt
+  ? Math.floor((Date.now() - new Date(postedAt + 'T12:00:00').getTime()) / 86400000)
+  : null;
+
+const freshnessLabel = (() => {
+  if (daysAgo === null) return null;
+  if (daysAgo === 0) return 'Posted today';
+  if (daysAgo === 1) return 'Posted yesterday';
+  if (daysAgo < 7) return `Posted ${daysAgo} days ago`;
+  if (daysAgo < 14) return 'Posted 1 week ago';
+  if (daysAgo < 21) return 'Posted 2 weeks ago';
+  if (daysAgo < 30) return 'Posted 3 weeks ago';
+  return `Posted ${daysAgo} days ago`;
+})();
+
+const isStale = daysAgo !== null && daysAgo >= 21;
+const isVeryStale = daysAgo !== null && daysAgo >= 30;
+
+const reportUrl = `/report?category=dead-link&job=${encodeURIComponent(id)}&url=${encodeURIComponent(url)}`;
+
+const descriptionPlain = details
+  ? details.descriptionHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 5000)
+  : null;
+
+const jobPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": title,
+  "datePosted": postedAt || new Date().toISOString().split('T')[0],
+  ...(descriptionPlain ? { "description": descriptionPlain } : {}),
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": company,
+    "sameAs": companyUrl,
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US",
+      ...(locationType !== 'Remote' && location ? { "addressLocality": location } : {}),
+    },
+  },
+  ...(locationType === 'Remote' ? {
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": { "@type": "Country", "name": "United States" },
+  } : {}),
+  "employmentType": isContract ? "CONTRACTOR" : "FULL_TIME",
+  "url": `https://designjobs.cv/jobs/${id}`,
+  "directApply": false,
+  ...(salaryDisplay ? { "baseSalary": { "@type": "MonetaryAmount", "description": salaryDisplay } } : {}),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "designjobs.cv", "item": "https://designjobs.cv" },
+    { "@type": "ListItem", "position": 2, "name": "All jobs", "item": "https://designjobs.cv/jobs" },
+    { "@type": "ListItem", "position": 3, "name": `${title} at ${company}`, "item": `https://designjobs.cv/jobs/${id}` },
+  ],
+};
+
+---
+
+<Layout title={pageTitle} description={description}>
+  <Header />
+
+  <main id="main-content" tabindex="-1">
+
+    <!-- Sticky section nav — slides in after scrolling past the page header -->
+    <nav
+      id="section-nav"
+      aria-label="Page sections"
+      class="fixed inset-x-0 top-0 z-[60] bg-paper/95 dark:bg-surface-header/95 backdrop-blur-xl border-b border-line dark:border-slate-700/50 -translate-y-full opacity-0 pointer-events-none transition-[transform,opacity] duration-200 ease-out motion-reduce:transition-none"
+    >
+      <div class="w-full max-w-6xl mx-auto px-4 md:px-6 h-full min-h-14 flex items-center justify-between gap-4">
+        <button type="button" id="nav-to-top" class="group min-w-0 flex items-baseline gap-2.5 text-left cursor-pointer" aria-label="Back to top">
+          <span class="truncate text-[15px] font-semibold text-ink dark:text-slate-100 group-hover:opacity-75 transition-opacity">{title}</span>
+          <span class="hidden sm:inline font-mono text-[11px] uppercase tracking-[0.12em] text-muted dark:text-slate-400 shrink-0">{company}</span>
+        </button>
+        <div class="flex items-center gap-4 shrink-0">
+          {salaryDisplay && (
+            <span class="hidden md:block font-mono text-[11px] text-muted dark:text-slate-400 whitespace-nowrap">{salaryDisplay}</span>
+          )}
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-apply-tracking={id}
+            class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-[13px] font-semibold hover:opacity-85 transition-opacity whitespace-nowrap"
+          >
+            Apply
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <script type="application/ld+json" set:html={JSON.stringify(jobPostingSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+    <div class="hidden md:block w-full max-w-6xl mx-auto px-4 md:px-6 pt-6 pb-0">
+      <nav aria-label="Breadcrumb" class="animate-fade-in stagger-1">
+        <a href="/jobs" class="inline-flex items-center gap-1.5 text-sm text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+          All design jobs
+        </a>
+      </nav>
+    </div>
+
+    <section class="w-full max-w-6xl mx-auto px-4 md:px-6 pt-6 pb-28">
+
+      <!-- Page header: title block left, apply action right -->
+      <header id="overview" class="scroll-mt-20 animate-fade-up stagger-1 flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-0 lg:pb-8 border-b-0 lg:border-b border-line dark:border-slate-700/50">
+        <div class="min-w-0">
+          <div class="flex items-center gap-3 mb-4">
+            <a href={companyPageUrl} class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors">
+              {company}
+            </a>
+            {isContract && (
+              <span class="font-mono text-[10px] uppercase tracking-[0.12em] font-bold px-2.5 py-1 rounded-full bg-tile-ink text-[#F2F1EC] dark:bg-[#EDEBE4] dark:text-ink">
+                Contract
+              </span>
+            )}
+          </div>
+
+          <h1 class="font-display font-semibold text-[2rem] md:text-[2.75rem] leading-[1.04] tracking-tight [text-wrap:balance] mb-4">
+            {title}
+          </h1>
+
+          <div class="flex flex-wrap gap-x-5 gap-y-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-400">
+            <span>{level}</span>
+            <span>{employmentType}</span>
+            <span>{locationStr}</span>
+            {vertical && <span>{vertical}</span>}
+            {freshnessLabel && (
+              <span class:list={[
+                isVeryStale ? 'text-amber-500 dark:text-amber-400' :
+                isStale     ? 'text-amber-500/70 dark:text-amber-400/70' :
+                              'text-muted dark:text-slate-400'
+              ]}>
+                {freshnessLabel}
+              </span>
+            )}
+          </div>
+
+          {salaryDisplay && (
+            <p class="font-mono text-sm text-ink-soft dark:text-slate-300 mt-3">{salaryDisplay}</p>
+          )}
+
+          {tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mt-5">
+              {tags.map(tag => (
+                <span class="px-3 py-1 rounded-full border border-line dark:border-slate-700 text-xs text-ink-soft dark:text-slate-300 font-mono">
+                  {sentence(tag)}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div class="shrink-0 flex flex-col md:items-end gap-2">
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-apply-tracking={id}
+            class="inline-flex items-center justify-center gap-2.5 w-full md:w-auto px-7 py-3.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-[15px] font-semibold hover:opacity-85 transition-opacity whitespace-nowrap"
+          >
+            Apply at {company}
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+            </svg>
+          </a>
+          <p class="text-[11px] text-slate-400 dark:text-slate-500 md:text-right">
+            Verified listing on {atsDomain}
+          </p>
+        </div>
+      </header>
+
+      {isVeryStale && (
+        <div class="animate-fade-in stagger-2 flex items-start gap-2 mt-6 px-3 py-2.5 rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/40">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="shrink-0 mt-0.5 text-amber-500" aria-hidden="true">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>
+          </svg>
+          <p class="text-xs text-amber-700 dark:text-amber-300 leading-relaxed">
+            This listing is 30+ days old. Verify it's still open before applying — roles at this age are sometimes filled or quietly closed.
+          </p>
+        </div>
+      )}
+
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-12 lg:gap-16 pt-10">
+
+        <!-- Main column: the role itself -->
+        <article id="about" class="scroll-mt-20 animate-fade-up stagger-2 min-w-0">
+          {details ? (
+            <>
+              <div class="job-desc" set:html={details.descriptionHtml} />
+              <p class="mt-8 text-[11px] text-slate-400 dark:text-slate-500">
+                Pulled from {company}'s listing on {atsDomain} · last checked {details.fetchedAt}. The listing itself is the source of truth.
+              </p>
+            </>
+          ) : (
+            <p class="text-[15px] text-ink-soft dark:text-slate-300 leading-relaxed max-w-prose">
+              {company}'s listing doesn't allow automated preview — the full description, requirements, and process live on their official posting.
+            </p>
+          )}
+
+          <div class="border-t border-line dark:border-slate-700/50 mt-10 pt-8">
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-apply-tracking={id}
+              class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-base font-semibold hover:opacity-85 transition-opacity"
+            >
+              Apply at {company}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+              </svg>
+            </a>
+            <a
+              href={reportUrl}
+              class="flex w-fit mt-8 items-center gap-1.5 text-xs text-slate-400 dark:text-slate-500 hover:text-ink dark:hover:text-slate-300 transition-colors"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="m10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              Looks like this job is closed? Flag it.
+            </a>
+
+            <!-- Feedback prompt: shown by JS after 14+ days from first apply click -->
+            <div id="feedback-prompt" class="hidden mt-8 p-4 rounded-xl border border-line dark:border-slate-700 bg-[#FAFAF9] dark:bg-surface-card">
+              <p class="text-sm font-semibold text-ink dark:text-slate-100 mb-1">How's the process at {company}?</p>
+              <p class="text-xs text-muted dark:text-slate-400 mb-3 leading-relaxed">Looks like you applied a while back. Your experience helps other designers know what to expect.</p>
+              <div class="flex items-center gap-3 flex-wrap">
+                <a
+                  href={feedbackUrl}
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-semibold hover:opacity-85 transition-opacity"
+                >
+                  Share your experience
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                </a>
+                <button type="button" id="dismiss-feedback-prompt" class="text-xs text-muted dark:text-slate-400 hover:text-ink dark:hover:text-slate-300 transition-colors">
+                  Not now
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Right rail on desktop; collapsible sections above the description on mobile -->
+        <aside class="-order-1 lg:order-none lg:pt-1">
+          <div class="lg:sticky lg:top-24 space-y-3 lg:space-y-0 lg:divide-y lg:divide-line lg:dark:divide-slate-700/50">
+
+            {contacts.length > 0 && (
+              <details id="s-contact" class="scroll-mt-20 rail-section group animate-fade-up stagger-2" open data-default-open>
+                <summary class="rail-summary">
+                  <span class="flex items-center gap-1.5">
+                    <h2 class="font-mono text-[11px] leading-none uppercase tracking-[0.14em] text-muted dark:text-slate-500">Who to contact</h2>
+                    <span class="rail-tip" tabindex="0" role="note" aria-label="Our best guess from public profiles — they look involved in hiring, but we could be wrong.">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                      <span class="tip-body">Our best guess from public profiles — they look involved in hiring, but we could be wrong.</span>
+                    </span>
+                  </span>
+                  <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </summary>
+                <div class="rail-content">
+                <ul class="space-y-3">
+                  {contacts.map(c => (
+                    <li>
+                      <a
+                        href={c.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group flex items-start justify-between gap-3"
+                      >
+                        <span class="min-w-0">
+                          <span class="block text-sm text-ink dark:text-slate-100 group-hover:underline underline-offset-2">{c.name}</span>
+                          {c.title && c.title.toLowerCase() !== (roleLabel[c.role] || '').toLowerCase() && (
+                            <span class="block text-xs text-muted dark:text-slate-400 leading-snug mt-0.5 line-clamp-2">{c.title}</span>
+                          )}
+                        </span>
+                        <span class="shrink-0 inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5">
+                          {roleLabel[c.role] || c.role}
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+                          </svg>
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                </div>
+              </details>
+            )}
+
+            <details id="s-process" class="scroll-mt-20 rail-section group animate-fade-up stagger-2" open data-default-open>
+              <summary class="rail-summary">
+                <span class="flex items-center gap-1.5">
+                  <h2 class="font-mono text-[11px] leading-none uppercase tracking-[0.14em] text-muted dark:text-slate-500">Candidate experience</h2>
+                  {interviewProcess && (
+                    <span class="rail-tip" tabindex="0" role="note" aria-label="Gathered from community reports of past interviews — processes change and details may be off.">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                      <span class="tip-body">Gathered from community reports of past interviews — processes change and details may be off.</span>
+                    </span>
+                  )}
+                </span>
+                <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="rail-content">
+              {interviewProcess && (
+                <div>
+                  {(interviewProcess.rounds || interviewProcess.timeline) && (
+                    <p class="text-sm font-medium text-ink dark:text-slate-100 mb-4">
+                      {interviewProcess.rounds && interviewProcess.timeline
+                        ? `${interviewProcess.rounds} rounds over ${interviewProcess.timeline}`
+                        : interviewProcess.rounds
+                        ? `${interviewProcess.rounds} rounds`
+                        : `Typically ${interviewProcess.timeline}`}
+                    </p>
+                  )}
+
+                  {interviewProcess.roundTypes && interviewProcess.roundTypes.length > 0 && (
+                    <ol>
+                      {interviewProcess.roundTypes.map((rt: string, i: number) => (
+                        <li class="relative flex items-center gap-3 pb-3.5 last:pb-0">
+                          {i < interviewProcess.roundTypes.length - 1 && (
+                            <span class="absolute left-[9px] top-[21px] bottom-0.5 w-px bg-line dark:bg-slate-700/60" aria-hidden="true"></span>
+                          )}
+                          <span class="w-[19px] h-[19px] shrink-0 rounded-full border border-line dark:border-slate-700 bg-paper dark:bg-transparent font-mono text-[10px] text-muted dark:text-slate-400 inline-flex items-center justify-center leading-none">{i + 1}</span>
+                          <span class="text-sm text-ink dark:text-slate-100">{sentence(rt)}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  )}
+
+                  {(interviewProcess.hasAssessment !== undefined || typeof interviewProcess.gotFeedback === 'boolean') && (
+                    <div class="mt-5 flex flex-wrap gap-1.5">
+                      {interviewProcess.hasAssessment !== undefined && (
+                        <span class="px-3 py-1 rounded-full border border-line dark:border-slate-700 text-xs text-ink-soft dark:text-slate-300 font-mono">
+                          {interviewProcess.hasAssessment
+                            ? sentence(interviewProcess.assessmentType || 'take-home exercise')
+                            : 'No take-home reported'}
+                        </span>
+                      )}
+                      {typeof interviewProcess.gotFeedback === 'boolean' && (
+                        <span class:list={[
+                          "inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-mono",
+                          interviewProcess.gotFeedback
+                            ? 'border-line dark:border-slate-700 text-ink-soft dark:text-slate-300'
+                            : 'border-amber-300 dark:border-amber-700/60 text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30'
+                        ]}>
+                          {!interviewProcess.gotFeedback && (
+                            <svg class="shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8Z"/></svg>
+                          )}
+                          {interviewProcess.gotFeedback ? 'Candidates hear back' : 'Ghosting reported'}
+                        </span>
+                      )}
+                    </div>
+                  )}
+
+                  {anecdotes.length > 0 && (
+                    <div class="mt-5">
+                      <ul class="space-y-4">
+                        {anecdotes.slice(0, 2).map((a: Anecdote) => (
+                          <li class="border-l-2 border-line dark:border-slate-700 pl-3">
+                            <p class="text-[13px] text-ink-soft dark:text-slate-300 leading-relaxed">“{a.text}”</p>
+                            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-1.5">
+                              {a.source}{a.date ? ` · ${a.date}` : ''}
+                            </p>
+                          </li>
+                        ))}
+                      </ul>
+                      {anecdotes.length > 2 && (
+                        <button
+                          type="button"
+                          data-open-anecdotes-modal
+                          class="mt-4 text-xs font-mono uppercase tracking-[0.1em] text-ink dark:text-slate-300 hover:underline underline-offset-2 transition-colors"
+                        >
+                          Read all {anecdotes.length} reports →
+                        </button>
+                      )}
+                    </div>
+                  )}
+
+                </div>
+              )}
+              <!-- Live from Supabase on every request; the rest of the page is static -->
+              <div class:list={[interviewProcess && 'mt-6 pt-5 border-t border-line dark:border-slate-700/50']}>
+                <CandidateExperience server:defer company={company} feedbackUrl={feedbackUrl} companyPageUrl={companyPageUrl}>
+                  <p slot="fallback" class="text-[11px] font-mono text-muted dark:text-slate-500">Loading community reports…</p>
+                </CandidateExperience>
+              </div>
+              </div>
+            </details>
+
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+
+  <script define:vars={{ jobId: id }}>
+    // Apply tracking: record first click date in localStorage
+    const applyKey = `dj-apply-${jobId}`;
+    const applyData = JSON.parse(localStorage.getItem(applyKey) || 'null');
+
+    document.querySelectorAll('[data-apply-tracking]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const now = Date.now();
+        const existing = JSON.parse(localStorage.getItem(applyKey) || 'null');
+        localStorage.setItem(applyKey, JSON.stringify({
+          firstAt: existing?.firstAt ?? now,
+          count: (existing?.count ?? 0) + 1,
+          dismissed: existing?.dismissed ?? false,
+        }));
+      });
+    });
+
+    // Show feedback prompt if applied 14+ days ago and not dismissed
+    const FOURTEEN_DAYS_MS = 14 * 24 * 60 * 60 * 1000;
+    if (applyData?.firstAt && !applyData?.dismissed && Date.now() - applyData.firstAt >= FOURTEEN_DAYS_MS) {
+      document.getElementById('feedback-prompt')?.classList.remove('hidden');
+    }
+
+    document.getElementById('dismiss-feedback-prompt')?.addEventListener('click', () => {
+      document.getElementById('feedback-prompt')?.classList.add('hidden');
+      const existing = JSON.parse(localStorage.getItem(applyKey) || 'null');
+      localStorage.setItem(applyKey, JSON.stringify({ ...existing, dismissed: true }));
+    });
+  </script>
+
+    {anecdotes.length > 2 && (
+      <dialog
+        id="anecdotes-modal"
+        class="process-modal w-full max-w-lg bg-paper dark:bg-[#1B1B19] text-ink dark:text-slate-100 border border-line dark:border-[#2C2C2A] p-0"
+        aria-labelledby="anecdotes-modal-title"
+      >
+        <div class="flex flex-col min-h-0">
+          <div class="shrink-0 px-6 md:px-8 pt-5 pb-4 border-b border-line dark:border-[#2C2C2A]">
+            <div class="flex items-start justify-between gap-4">
+              <h2 id="anecdotes-modal-title" class="font-display font-semibold text-xl tracking-tight">Interview reports</h2>
+              <button type="button" data-close-anecdotes-modal class="shrink-0 -mt-1 -mr-2 p-2 text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors" aria-label="Close">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-muted dark:text-slate-400 mt-1">
+              {title} · {company} · {anecdotes.length} reports
+            </p>
+          </div>
+          <div class="pm-body flex-1 min-h-0 overflow-y-auto px-6 md:px-8 py-5">
+            {anecdotes.length > 5 && (
+              <button
+                type="button"
+                id="anecdote-sort"
+                aria-pressed="false"
+                class="inline-flex items-center gap-1.5 mb-5 px-3 py-1.5 rounded-full border border-line dark:border-slate-700 text-xs font-mono text-ink-soft dark:text-slate-300 hover:border-ink dark:hover:border-slate-400 transition-colors"
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="m21 8-4-4-4 4"/><path d="M17 4v16"/></svg>
+                <span>Newest first</span>
+              </button>
+            )}
+            <ul id="anecdotes-list" class="space-y-5">
+              {anecdotes.map((a: Anecdote) => (
+                <li class="border-l-2 border-line dark:border-slate-700 pl-3">
+                  <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">“{a.text}”</p>
+                  <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-1.5">
+                    {a.source}{a.date ? ` · ${a.date}` : ''}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="shrink-0 px-6 md:px-8 pt-4 pb-5 border-t border-line dark:border-[#2C2C2A]">
+            <a
+              href={feedbackUrl}
+              class="w-full inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-[15px] font-semibold hover:opacity-85 transition-opacity"
+            >
+              Share what I know
+            </a>
+            <p class="mt-2.5 text-[11px] text-center text-slate-400 dark:text-slate-500">
+              Interviewed here too? Anonymous &amp; reviewed before publishing.
+            </p>
+          </div>
+        </div>
+      </dialog>
+    )}
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Sticky section nav: slides in once the page header scrolls out of view.
+  const sectionNav = document.getElementById('section-nav');
+  const overviewEl = document.getElementById('overview');
+  if (sectionNav && overviewEl) {
+    // Cover the site header exactly — a shorter bar lets the header's own
+    // bottom border peek out underneath, reading as a double divider
+    const siteHeader = document.querySelector<HTMLElement>('header[role="banner"]');
+    const sizeNav = () => { sectionNav.style.height = `${siteHeader?.offsetHeight || 57}px`; };
+    sizeNav();
+    window.addEventListener('resize', sizeNav, { passive: true });
+
+    new IntersectionObserver(([entry]) => {
+      const show = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+      sectionNav.classList.toggle('section-nav--visible', show);
+    }, { threshold: 0 }).observe(overviewEl);
+
+    // Listings vary too much for section anchors to behave predictably
+    // (sticky rail, optional sections, wildly different description lengths).
+    // The bar is context + action: title returns to top, Apply stays at hand.
+    document.getElementById('nav-to-top')?.addEventListener('click', () => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
+  }
+
+  // Grade breakdown dialog — it lives inside the CandidateExperience server
+  // island, which streams in after this script runs, so bind on the document.
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const gradeModal = document.getElementById('grade-modal') as HTMLDialogElement | null;
+    if (!gradeModal) return;
+    if (target.closest('[data-open-grade-modal]')) gradeModal.showModal();
+    else if (target.closest('[data-close-grade-modal]') || e.target === gradeModal) gradeModal.close();
+  });
+
+  // Rail sections: open panel on desktop, accordions on mobile.
+  // SSR renders everything open (desktop-first, no-JS safe); on mobile we
+  // collapse all but the data-default-open section.
+  const railSections = document.querySelectorAll('details.rail-section');
+  const railMq = window.matchMedia('(min-width: 1024px)');
+  const applyRailState = () => {
+    railSections.forEach(d => {
+      (d as HTMLDetailsElement).open = railMq.matches || d.hasAttribute('data-default-open');
+    });
+  };
+  applyRailState();
+  railMq.addEventListener('change', applyRailState);
+
+  // "Read all N reports" dialog
+  const anecdotesModal = document.getElementById('anecdotes-modal') as HTMLDialogElement | null;
+  if (anecdotesModal) {
+    document.querySelectorAll('[data-open-anecdotes-modal]').forEach(b =>
+      b.addEventListener('click', () => anecdotesModal.showModal()));
+    document.querySelectorAll('[data-close-anecdotes-modal]').forEach(b =>
+      b.addEventListener('click', () => anecdotesModal.close()));
+    // Footer CTA hands off to the process modal by clicking a trigger that
+    // ProcessModal's inline script bound at parse time (this dialog renders
+    // after that script runs, so its own buttons can't be bound there).
+    document.querySelectorAll('[data-anecdotes-to-process]').forEach(b =>
+      b.addEventListener('click', () => {
+        anecdotesModal.close();
+        document.querySelector<HTMLButtonElement>('button[data-open-process-modal]')?.click();
+      }));
+    anecdotesModal.addEventListener('click', (e) => {
+      if (e.target === anecdotesModal) anecdotesModal.close();
+    });
+    // Sort toggle (only rendered with 5+ reports): list is SSR'd newest
+    // first, so each click just reverses the DOM order.
+    const sortBtn = document.getElementById('anecdote-sort');
+    const list = document.getElementById('anecdotes-list');
+    sortBtn?.addEventListener('click', () => {
+      const newest = sortBtn.getAttribute('aria-pressed') === 'false';
+      [...list!.children].reverse().forEach(li => list!.appendChild(li));
+      sortBtn.setAttribute('aria-pressed', String(newest));
+      sortBtn.querySelector('span')!.textContent = newest ? 'Oldest first' : 'Newest first';
+      list!.parentElement!.scrollTop = 0;
+    });
+  }
+</script>
+
+<style is:global>
+  /* Freeze the page behind any open dialog */
+  body:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  /* Rail sections — static headings on desktop, accordions on mobile */
+  .rail-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    list-style: none;
+    cursor: pointer;
+    padding: 0.9rem 0;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .rail-summary::-webkit-details-marker { display: none; }
+  .rail-chevron { color: #706F6A; transition: transform 0.15s ease; flex-shrink: 0; }
+  :root.dark .rail-chevron { color: #77746B; }
+  details[open] > .rail-summary .rail-chevron { transform: rotate(180deg); }
+  .rail-content { padding-bottom: 1.25rem; }
+  /* Mobile: sections are accordion cards, not divider rows */
+  @media (max-width: 1023.98px) {
+    .rail-section {
+      border: 1px solid #EFEFED;
+      border-radius: 0.75rem;
+      padding: 0 1rem;
+      background: #FBFBFA;
+    }
+    :root.dark .rail-section {
+      background: #1B1B19;
+      border-color: #2C2C2A;
+    }
+    .rail-summary { padding: 0.85rem 0; }
+    .rail-content { padding-bottom: 1.1rem; }
+  }
+  @media (min-width: 1024px) {
+    .rail-summary { padding: 0; margin-bottom: 1rem; cursor: default; pointer-events: none; }
+    .rail-chevron { display: none; }
+    .rail-content { padding-bottom: 0; }
+    .rail-summary .rail-tip { pointer-events: auto; }
+    .rail-section { padding: 1.75rem 0; }
+    .rail-section:first-child { padding-top: 0; }
+  }
+
+  /* Info-icon tooltips in rail section headers */
+  .rail-tip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    /* uppercase mono has no descenders — optically center the icon on cap height */
+    margin-top: -1px;
+    color: #A8A69E;
+    cursor: help;
+    outline: none;
+  }
+  .rail-tip:hover, .rail-tip:focus-visible { color: #706F6A; }
+  :root.dark .rail-tip { color: #7D7B76; }
+  :root.dark .rail-tip:hover, :root.dark .rail-tip:focus-visible { color: #A9A7A1; }
+  .rail-tip .tip-body {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230px;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.6rem;
+    background: #1A1917;
+    color: #F2F1EC;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-transform: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.12s ease;
+    z-index: 40;
+  }
+  :root.dark .rail-tip .tip-body { background: #EDEBE4; color: #1A1917; }
+  .rail-tip:hover .tip-body, .rail-tip:focus-visible .tip-body { opacity: 1; }
+  @media (min-width: 1024px) {
+    .rail-tip .tip-body { left: auto; right: -10px; transform: none; }
+  }
+
+  /* Sticky context bar */
+  #section-nav.section-nav--visible {
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Scraped ATS description — typographic defaults for whitelisted tags only */
+  .job-desc {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #3B3A36;
+    max-width: 72ch;
+  }
+  :root.dark .job-desc { color: #D6D6D3; }
+  .job-desc p { margin: 0 0 1em; }
+  .job-desc h3, .job-desc h4, .job-desc h5 {
+    font-family: 'Bricolage Grotesque', 'Be Vietnam Pro', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #1A1917;
+    margin: 2em 0 0.65em;
+  }
+  :root.dark .job-desc h3, :root.dark .job-desc h4, :root.dark .job-desc h5 { color: #F2F1EC; }
+  .job-desc h3 { font-size: 1.2em; }
+  .job-desc h4 { font-size: 1.05em; }
+  .job-desc h5 { font-size: 1em; }
+  .job-desc > :first-child { margin-top: 0; }
+  .job-desc ul, .job-desc ol { margin: 0 0 1.25em; padding-left: 1.35em; }
+  .job-desc ul { list-style: disc; }
+  .job-desc ol { list-style: decimal; }
+  .job-desc li { margin: 0.35em 0; padding-left: 0.15em; }
+  .job-desc li p { margin: 0; }
+  .job-desc li::marker { color: #A8A69E; }
+  :root.dark .job-desc li::marker { color: #77746B; }
+  .job-desc strong, .job-desc b { font-weight: 600; color: #1A1917; }
+  :root.dark .job-desc strong, :root.dark .job-desc b { color: #F2F1EC; }
+  .job-desc a { text-decoration: underline; text-underline-offset: 2px; }
+  .job-desc hr { border: 0; border-top: 1px solid #E8E8E6; margin: 2em 0; }
+  :root.dark .job-desc hr { border-top-color: rgb(51 65 85 / 0.5); }
+  .job-desc blockquote { border-left: 2px solid #E8E8E6; padding-left: 1em; color: #706F6A; margin: 0 0 1.25em; }
+  :root.dark .job-desc blockquote { border-left-color: rgb(51 65 85 / 0.5); color: #A3A099; }
+</style>

@@ -1,0 +1,261 @@
+---
+// Company page — the durable home for everything the community knows about
+// an employer. Rendered on every request from Supabase so a report filed a
+// moment ago is already here, and so the page outlives the job postings:
+// roles close, the candidate-experience record stays.
+//
+// Without Supabase keys (contributor running locally) it falls back to
+// jobs.json so the page still exists, just without reports.
+export const prerender = false;
+
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import JobTable from '../../components/JobTable.astro';
+import ReportList from '../../components/ReportList.astro';
+import jobsJson from '../../data/jobs.json';
+import { getServerClient, type CompanyRow, type JobRow } from '../../lib/supabase';
+import { slugify } from '../../lib/slug.js';
+import { fetchCompanyExperience, fetchCompanyJobs, toFeedbackReport, type ReportRow } from '../../lib/reports';
+import { computeGrade, gradeColorKey, MIN_REPORTS_FOR_GRADE } from '../../lib/grades';
+
+const slug = Astro.params.slug ?? '';
+const db = getServerClient();
+
+let company: CompanyRow | null = null;
+let jobRows: JobRow[] = [];
+let reports: ReportRow[] = [];
+
+if (db) {
+  const data = await fetchCompanyExperience(db, slug);
+  if (data) {
+    company = data.company;
+    reports = data.reports;
+    jobRows = await fetchCompanyJobs(db, company.id);
+  }
+}
+
+// Fallback to the static listings: no DB, or the sync hasn't run since this
+// company was added to jobs.json.
+type JsonJob = Record<string, any>;
+const fromJson = (jobsJson as JsonJob[]).filter(j => j.id && slugify(j.company) === slug);
+if (!company && fromJson.length) {
+  const first = fromJson[0];
+  company = { id: '', slug, name: first.company, url: first.companyUrl ?? null, vertical: first.vertical ?? null };
+}
+if (company && jobRows.length === 0 && fromJson.length) {
+  jobRows = fromJson.map(j => ({
+    id: j.id, company_id: company!.id, title: j.title, url: j.url,
+    level: j.level ?? null, location_type: j.locationType ?? null, location: j.location ?? null,
+    employment_type: j.employmentType ?? null, vertical: j.vertical ?? null, salary: j.salary ?? null,
+    tags: Array.isArray(j.tags) ? j.tags : [], posted_at: j.postedAt ?? j.postedDate ?? null,
+    status: 'active', removed_at: null,
+  }));
+}
+
+if (!company) {
+  return new Response('Not found', { status: 404 });
+}
+
+const activeJobs = jobRows.filter(j => j.status === 'active');
+const pastJobs = jobRows.filter(j => j.status === 'dead');
+
+// JobTable/JobCard speak the jobs.json shape
+const tableJobs = activeJobs.map(j => ({
+  id: j.id,
+  title: j.title,
+  company: company!.name,
+  companyUrl: company!.url ?? '',
+  level: j.level ?? '',
+  locationType: j.location_type ?? '',
+  location: j.location ?? '',
+  url: j.url,
+  postedAt: j.posted_at,
+  tags: j.tags,
+  vertical: j.vertical ?? undefined,
+  employmentType: j.employment_type ?? undefined,
+  salary: j.salary,
+}));
+
+const grade = reports.length ? computeGrade(reports.map(r => toFeedbackReport(r))) : null;
+const colorKey = grade?.hasEnoughData ? gradeColorKey(grade.grade) : null;
+const gradeRows = grade?.hasEnoughData ? [
+  { label: 'Communication', pts: grade.breakdown.communication, max: 30 },
+  { label: 'Respect for time', pts: grade.breakdown.respectForTime, max: 25 },
+  { label: 'Transparency', pts: grade.breakdown.transparency, max: 20 },
+  { label: 'Interviewer quality', pts: grade.breakdown.interviewerQuality, max: 15 },
+  { label: 'Community rating', pts: grade.breakdown.overall, max: 10 },
+] : [];
+
+const feedbackUrl = `/feedback?company=${encodeURIComponent(company.name)}`;
+const siteHost = (() => {
+  try { return company!.url ? new URL(company!.url).hostname.replace('www.', '') : null; }
+  catch { return null; }
+})();
+const monthYear = (iso: string | null) =>
+  iso ? new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : null;
+
+const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
+const pageTitle = `${company.name} — design jobs & interview experience | designjobs.cv`;
+const description = activeJobs.length
+  ? `${plural(activeJobs.length, 'open design role')} at ${company.name}, plus what candidates report about the interview process. Verified listings on designjobs.cv.`
+  : `What designers report about interviewing at ${company.name}: rounds, timeline, take-homes, whether they heard back. Community-sourced on designjobs.cv.`;
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": company.name,
+  ...(company.url ? { "url": company.url } : {}),
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "designjobs.cv", "item": "https://designjobs.cv" },
+    { "@type": "ListItem", "position": 2, "name": "All jobs", "item": "https://designjobs.cv/jobs" },
+    { "@type": "ListItem", "position": 3, "name": company.name, "item": `https://designjobs.cv/companies/${company.slug}` },
+  ],
+};
+---
+
+<Layout title={pageTitle} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <Header />
+
+  <main id="main-content" tabindex="-1">
+    <div class="hidden md:block w-full max-w-6xl mx-auto px-4 md:px-6 pt-6 pb-0">
+      <nav aria-label="Breadcrumb" class="animate-fade-in stagger-1">
+        <a href="/jobs" class="inline-flex items-center gap-1.5 text-sm text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+          All design jobs
+        </a>
+      </nav>
+    </div>
+
+    <section class="w-full max-w-6xl mx-auto px-4 md:px-6 pt-6 pb-28">
+      <header class="animate-fade-up stagger-1 pb-8 border-b border-line dark:border-slate-700/50">
+        <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-400 mb-4">Company</p>
+        <h1 class="font-display font-semibold text-[2rem] md:text-[2.75rem] leading-[1.04] tracking-tight [text-wrap:balance] mb-4">
+          {company.name}
+        </h1>
+        <div class="flex flex-wrap gap-x-5 gap-y-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-400">
+          {company.vertical && <span>{company.vertical}</span>}
+          <span>{plural(activeJobs.length, 'open role')}</span>
+          <span>{plural(reports.length, 'candidate report')}</span>
+          {company.url && siteHost && (
+            <a href={company.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 hover:text-ink dark:hover:text-white transition-colors">
+              {siteHost}
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
+            </a>
+          )}
+        </div>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-x-12 gap-y-12 mt-10">
+        <div class="min-w-0 animate-fade-up stagger-2">
+          <h2 class="font-mono text-[11px] leading-none uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-5">Open roles</h2>
+          {tableJobs.length > 0 ? (
+            <JobTable jobs={tableJobs} />
+          ) : (
+            <p class="text-sm text-ink-soft dark:text-slate-400 leading-relaxed max-w-md">
+              No open design roles right now. The candidate reports stay here so the next person who applies knows what to expect.
+              <a href="/jobs" class="ml-1 underline underline-offset-2 hover:text-ink dark:hover:text-white transition-colors">Browse all jobs</a>
+            </p>
+          )}
+
+          {pastJobs.length > 0 && (
+            <div class="mt-12">
+              <h2 class="font-mono text-[11px] leading-none uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-4">Past roles</h2>
+              <ul class="divide-y divide-line dark:divide-slate-700/60 border-y border-line dark:border-slate-700/60">
+                {pastJobs.map(j => (
+                  <li class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3">
+                    <span class="text-sm text-ink-soft dark:text-slate-300">{j.title}</span>
+                    <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500">
+                      {[j.level, monthYear(j.posted_at) ? `Posted ${monthYear(j.posted_at)}` : null, 'Closed'].filter(Boolean).join(' · ')}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <aside class="min-w-0 animate-fade-up stagger-2 lg:border-l lg:border-line lg:dark:border-slate-700/50 lg:pl-10">
+          <h2 class="font-mono text-[11px] leading-none uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-5">Candidate experience</h2>
+
+          {reports.length === 0 && (
+            <p class="text-sm text-ink-soft dark:text-slate-400 leading-relaxed">
+              No process details yet — rounds, timeline, take-home. Be the first to share what it's like to apply here.
+            </p>
+          )}
+
+          {grade && !grade.hasEnoughData && (
+            <p class="text-[11px] font-mono text-muted dark:text-slate-500 mb-4">
+              {plural(grade.reportCount, 'report')} — grade appears at {MIN_REPORTS_FOR_GRADE}
+            </p>
+          )}
+
+          {grade?.hasEnoughData && (
+            <div class="mb-6 pb-5 border-b border-line dark:border-slate-700/50">
+              <div class="flex items-center gap-3.5">
+                <span class={`grade-chip-lg grade-chip-${colorKey}`} aria-hidden="true">{grade.grade}</span>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-baseline justify-between gap-3">
+                    <span class="text-sm font-semibold text-ink dark:text-slate-100">Overall grade {grade.grade}</span>
+                    <span class="font-mono text-sm tabular-nums text-ink dark:text-slate-100">{grade.score}<span class="text-muted dark:text-slate-400">/100</span></span>
+                  </div>
+                  <div class="mt-2 h-[5px] bg-line dark:bg-slate-700/60 rounded-full overflow-hidden">
+                    <div class="h-full rounded-full bg-ink dark:bg-slate-100" style={`width: ${grade.score}%`}></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4 border-t border-line dark:border-slate-700/60">
+                {gradeRows.map(r => (
+                  <div class="py-2.5 border-b border-line dark:border-slate-700/60 last:border-b-0">
+                    <div class="flex items-baseline justify-between gap-3">
+                      <span class="text-[13px] font-medium text-ink dark:text-slate-100">{r.label}</span>
+                      <span class="font-mono text-xs tabular-nums text-ink dark:text-slate-100">{r.pts}<span class="text-muted dark:text-slate-500">/{r.max}</span></span>
+                    </div>
+                    <div class="mt-2 h-[3px] bg-line dark:bg-slate-700/60 rounded-full overflow-hidden">
+                      <div class="h-full rounded-full bg-ink dark:bg-slate-100" style={`width: ${Math.max(2, Math.round((r.pts / r.max) * 100))}%`}></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {grade.ghostingCount >= 2 && (
+                <p class="mt-4 flex items-start gap-1.5 text-[11px] leading-relaxed text-amber-700 dark:text-amber-400">
+                  <svg class="shrink-0 mt-px" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8Z"/></svg>
+                  {grade.ghostingCount} ghosting reports — grade capped at {grade.ghostingCount >= 4 ? 'D' : 'C+'}.
+                </p>
+              )}
+              <p class="mt-4 text-[11px] text-muted dark:text-slate-400 leading-relaxed">
+                Scored from structured reports by designers who interviewed here. Community-sourced, not company-provided.
+              </p>
+            </div>
+          )}
+
+          {reports.length > 0 && <ReportList reports={reports} showRole />}
+
+          <a
+            href={feedbackUrl}
+            class:list={[
+              'inline-flex items-center justify-center rounded-full border border-ink/25 dark:border-slate-600 font-semibold text-ink dark:text-slate-200 hover:border-ink dark:hover:border-slate-300 hover:bg-ink/[0.03] dark:hover:bg-white/[0.04] transition-colors',
+              reports.length ? 'mt-6 px-4 py-1.5 text-[13px]' : 'mt-4 px-5 py-2.5 text-sm',
+            ]}
+          >
+            Share what I know
+          </a>
+          <p class="mt-3 text-[11px] text-muted dark:text-slate-500 leading-relaxed">
+            Anonymous. Structured facts publish right away; any written note is checked first.
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
